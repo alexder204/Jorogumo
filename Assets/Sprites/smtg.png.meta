@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5466a1c3dee2d774a8473f044bd1360d
+guid: b65c206edbec94f458904fa43d6104d4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3746416415674292640
-    second: BackgroundLoop 3_0
+      213: -3735691112457856001
+    second: smtg_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 1
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BackgroundLoop 3_0
+      name: smtg_0
       rect:
         serializedVersion: 2
-        x: 423
+        x: 421
         y: 0
-        width: 1199
+        width: 1201
         height: 927
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a955f471e1fdf330800000000000000
-      internalID: 3746416415674292640
+      spriteID: ffb9d5bc9b8282cc0800000000000000
+      internalID: -3735691112457856001
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BackgroundLoop 3_0: 3746416415674292640
+      smtg_0: -3735691112457856001
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

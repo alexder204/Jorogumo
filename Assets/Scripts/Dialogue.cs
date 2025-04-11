@@ -59,8 +59,8 @@ namespace PlayerDialogue
             interactPopUp.SetActive(false);
             charImage1.SetActive(false);
             charImage2.SetActive(false);
-            playerMovement.moveSpeed = 5f;
-            playerMovement.sprintSpeed = 3f;
+            playerMovement.moveSpeed = 6f;
+            playerMovement.sprintSpeed = 14f;
             step = 0;
         }
 

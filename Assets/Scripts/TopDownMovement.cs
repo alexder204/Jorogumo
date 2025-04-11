@@ -24,7 +24,7 @@ public class TopDownMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            rb.linearVelocity = movement * (moveSpeed + sprintSpeed);
+            rb.linearVelocity = movement * sprintSpeed;
         }
         else
         {
