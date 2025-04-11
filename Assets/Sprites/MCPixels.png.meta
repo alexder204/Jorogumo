@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: b8af1ac1fe8d9e343b37e03e93db93d1
+guid: b975d3589e1062a458f45a7e2c14ca52
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7424846454124073262
-    second: Sprite_SunSpots_1_0
-  - first:
-      213: 8677585148873681083
-    second: Sprite_SunSpots_1_1
-  - first:
-      213: -6914574693853618318
-    second: Sprite_SunSpots_1_2
-  - first:
-      213: -2998640425119503421
-    second: Sprite_SunSpots_1_3
-  - first:
-      213: -6679158431307278624
-    second: Sprite_SunSpots_1_4
+      213: 915798626956208380
+    second: MCPixels_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -58,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -87,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -125,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite_SunSpots_1_0
+      name: MCPixels_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 23
-        width: 19
-        height: 18
+        x: 42
+        y: 7
+        width: 35
+        height: 83
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,96 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2dead1e0d75a5f890800000000000000
-      internalID: -7424846454124073262
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_SunSpots_1_1
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 19
-        width: 43
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bb822d297b9fc6870800000000000000
-      internalID: 8677585148873681083
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_SunSpots_1_2
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 0
-        width: 399
-        height: 86
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 27f13ff63fe7a00a0800000000000000
-      internalID: -6914574693853618318
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_SunSpots_1_3
-      rect:
-        serializedVersion: 2
-        x: 471
-        y: 8
-        width: 68
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3cb20abbb60b266d0800000000000000
-      internalID: -2998640425119503421
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_SunSpots_1_4
-      rect:
-        serializedVersion: 2
-        x: 543
-        y: 25
-        width: 37
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0e6df5f5bccde43a0800000000000000
-      internalID: -6679158431307278624
+      spriteID: cf8e385cff195bc00800000000000000
+      internalID: 915798626956208380
       vertices: []
       indices: 
       edges: []
@@ -238,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -248,11 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Sprite_SunSpots_1_0: -7424846454124073262
-      Sprite_SunSpots_1_1: 8677585148873681083
-      Sprite_SunSpots_1_2: -6914574693853618318
-      Sprite_SunSpots_1_3: -2998640425119503421
-      Sprite_SunSpots_1_4: -6679158431307278624
+      MCPixels_0: 915798626956208380
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

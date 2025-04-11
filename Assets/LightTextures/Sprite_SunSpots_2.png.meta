@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sprite_SunSpots_2_0: 3898527953288677268
+      Sprite_SunSpots_2_1: -817164920256679014
+      Sprite_SunSpots_2_2: -8277607859859977183
+      Sprite_SunSpots_2_3: -2080223572366743686
+      Sprite_SunSpots_2_4: 4797646195821937459
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
