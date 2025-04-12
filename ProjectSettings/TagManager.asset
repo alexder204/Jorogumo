@@ -16,8 +16,8 @@ TagManager:
   - Road
   - Player
   - Foreground
-  - 
-  - 
+  - Railing
+  - Everything
   - 
   - 
   - 
@@ -53,6 +53,9 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 1297889649
+    locked: 0
+  - name: Railing
+    uniqueID: 3097434479
     locked: 0
   m_RenderingLayers:
   - Default
