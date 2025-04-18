@@ -27,9 +27,39 @@ public class TopDownMovement : MonoBehaviour
         bool isMoving = movement.magnitude > 0.01f;
         bool isSprinting = Input.GetKey(KeyCode.LeftShift);
 
-        if (!isSprinting && isMoving)
+        if (isSprinting && isMoving)
         {
-            // Play walk animation based on direction
+            // Sprinting animation based on direction
+            if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
+            {
+                if (movement.x > 0)
+                {
+                    animator.Play("RunRight");
+                    lastDirection = "Right";
+                }
+                else
+                {
+                    animator.Play("RunLeft");
+                    lastDirection = "Left";
+                }
+            }
+            else
+            {
+                if (movement.y > 0)
+                {
+                    animator.Play("RunUp");
+                    lastDirection = "Up";
+                }
+                else
+                {
+                    animator.Play("RunDown");
+                    lastDirection = "Down";
+                }
+            }
+        }
+        else if (isMoving)
+        {
+            // Walking animation based on direction
             if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
             {
                 if (movement.x > 0)
@@ -59,10 +89,12 @@ public class TopDownMovement : MonoBehaviour
         }
         else
         {
-            // Idle based on last direction faced
+            // Idle animation based on last direction
             animator.Play("Idle" + lastDirection);
         }
     }
+
+
 
     void FixedUpdate()
     {
