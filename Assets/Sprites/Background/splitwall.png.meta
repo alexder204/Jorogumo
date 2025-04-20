@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 208d32341835ba242ba826fb3bb4c8b5
+guid: 060f082c5b06b914b936a0e0a36cc765
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4590664394118940121
-    second: Sea_0
+      213: -2249608010309301355
+    second: splitwall_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sea_0
+      name: splitwall_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 285
-        width: 640
-        height: 355
+        x: 283
+        y: 424
+        width: 91
+        height: 169
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 72ab1815e0faa40c0800000000000000
-      internalID: -4590664394118940121
+      spriteID: 59b04adfe69c7c0e0800000000000000
+      internalID: -2249608010309301355
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Sea_0: -4590664394118940121
+      splitwall_0: -2249608010309301355
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

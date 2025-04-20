@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 21c765959e68ec541abfb92b01589f67
+guid: 85f60f51d9f378d4babbb1d0215e5f71
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3349391187094723686
-    second: Cloud_0
+      213: 3177196835591455306
+    second: railingup_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cloud_0
+      name: railingup_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 252
+        y: 198
+        width: 19
+        height: 98
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 66cda90f98d6b7e20800000000000000
-      internalID: 3349391187094723686
+      spriteID: a428cee30bba71c20800000000000000
+      internalID: 3177196835591455306
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cloud_0: 3349391187094723686
+      railingup_0: 3177196835591455306
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

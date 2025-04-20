@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 73fa311a16f72bd4cb68b48edf171eb8
+guid: fdc3570d8e5cdbc44a4c72a49084235d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3181537920540701048
-    second: Railing1 1_0
+      213: 5289111002436373946
+    second: splitsidewalkdown_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Railing1 1_0
+      name: splitsidewalkdown_0
       rect:
         serializedVersion: 2
-        x: 271
-        y: 287
-        width: 98
-        height: 83
+        x: 0
+        y: 54
+        width: 287
+        height: 156
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8717349d1e7172c20800000000000000
-      internalID: 3181537920540701048
+      spriteID: abd84dd0f62b66940800000000000000
+      internalID: 5289111002436373946
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Railing1 1_0: 3181537920540701048
+      splitsidewalkdown_0: 5289111002436373946
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

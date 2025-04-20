@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a15cd013a1f4df449b51e7dd7a72c128
+guid: b05fea56b027f5a4e85733d90bff1bd1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7472141706524785659
-    second: BackgroundLoop 1_0
+      213: 2133790983224385302
+    second: splitsidewalkup_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BackgroundLoop 1_0
+      name: splitsidewalkup_0
       rect:
         serializedVersion: 2
-        x: 423
-        y: 0
-        width: 1214
-        height: 530
+        x: 0
+        y: 389
+        width: 298
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 504853ff4be9d4890800000000000000
-      internalID: -7472141706524785659
+      spriteID: 61f550c089fbc9d10800000000000000
+      internalID: 2133790983224385302
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BackgroundLoop 1_0: -7472141706524785659
+      splitsidewalkup_0: 2133790983224385302
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

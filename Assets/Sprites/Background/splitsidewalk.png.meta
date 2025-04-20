@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 30386802ec728a94294c4644ea310d14
+guid: 3106116aba1513843b54dd85a001e83c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8667466294985060184
-    second: tree_0
+      213: 8273855982717109224
+    second: splitsidewalk_0
   - first:
-      213: 5281997702118322174
-    second: tree_1
+      213: 2031521780132194564
+    second: splitsidewalk_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tree_0
+      name: splitsidewalk_0
       rect:
         serializedVersion: 2
-        x: 532
-        y: 230
-        width: 925
-        height: 850
+        x: 0
+        y: 389
+        width: 298
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8a09eb0b359f6b780800000000000000
-      internalID: -8667466294985060184
+      spriteID: 8e30894fd24a2d270800000000000000
+      internalID: 8273855982717109224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tree_1
+      name: splitsidewalk_1
       rect:
         serializedVersion: 2
-        x: 1444
-        y: 998
-        width: 9
-        height: 17
+        x: 0
+        y: 54
+        width: 299
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eff2133ccec6d4940800000000000000
-      internalID: 5281997702118322174
+      spriteID: 409af3aab4a613c10800000000000000
+      internalID: 2031521780132194564
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tree_0: -8667466294985060184
-      tree_1: 5281997702118322174
+      splitsidewalk_0: 8273855982717109224
+      splitsidewalk_1: 2031521780132194564
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
