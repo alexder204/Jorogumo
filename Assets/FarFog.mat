@@ -43,11 +43,11 @@ Material:
     m_Floats:
     - _FogSize: 10
     m_Colors:
-    - _Color: {r: 0.2679245, g: 0.2679245, b: 0.2679245, a: 0}
+    - _Color: {r: 0.16226411, g: 0.16226411, b: 0.16226411, a: 0}
     - _FogSpeed: {r: 0.5, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &8783107588177092783
+--- !u!114 &8590972269950973041
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
