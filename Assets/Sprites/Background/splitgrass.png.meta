@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      splitgrass_0: -7565623716120120722
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
