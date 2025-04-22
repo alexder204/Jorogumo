@@ -14,7 +14,7 @@ namespace PlayerDialogue
         [SerializeField] private Sprite[] portrait1, portrait2;
         [SerializeField, TextArea(3, 10)] private string[] dialogueWords;
 
-        private bool dialogueActived, canContinueText = true;
+        private bool dialogueActived = false, playerInRange = false, canContinueText = true;
         private int step;
         private float typingSpeed = 0.02f;
         private Coroutine typingRoutine;
@@ -27,22 +27,40 @@ namespace PlayerDialogue
 
         private void Update()
         {
-            if (Input.GetButtonDown("Interact") && dialogueActived && canContinueText)
+            if (Input.GetButtonDown("Interact"))
             {
-                if (typingRoutine != null)
+                if (dialogueActived && canContinueText)
                 {
-                    StopCoroutine(typingRoutine);
-                }
+                    if (typingRoutine != null)
+                        StopCoroutine(typingRoutine);
 
-                if (step >= speaker.Length)
-                {
-                    EndDialogue();
+                    if (step >= speaker.Length)
+                        EndDialogue();
+                    else
+                        ContinueDialogue();
                 }
-                else
+                else if (playerInRange && !dialogueActived)
                 {
-                    ContinueDialogue();
+                    StartDialogue();
                 }
             }
+        }
+
+        private void StartDialogue()
+        {
+            dialogueActived = true;
+            dialogueCanvas.SetActive(true);
+            interactItem.SetActive(true);
+            interactPopUp.SetActive(true);
+            charImage1.SetActive(true);
+            charImage2.SetActive(true);
+
+            playerMovement.moveSpeed = 0f;
+            playerMovement.sprintSpeed = 0f;
+            TopDownMovement.isInDialogue = true;
+
+            step = 0;
+            ContinueDialogue();
         }
 
         private void ContinueDialogue()
@@ -59,22 +77,17 @@ namespace PlayerDialogue
             interactPopUp.SetActive(false);
             charImage1.SetActive(false);
             charImage2.SetActive(false);
+
             playerMovement.moveSpeed = 6f;
             playerMovement.sprintSpeed = 14f;
+            TopDownMovement.isInDialogue = false;
+
             step = 0;
+            dialogueActived = false;
         }
 
         private void UpdateUIForDialogue(int index)
         {
-            dialogueCanvas.SetActive(true);
-            interactItem.SetActive(true);
-            interactPopUp.SetActive(true);
-            charImage1.SetActive(true);
-            charImage2.SetActive(true);
-
-            playerMovement.moveSpeed = 0f;
-            playerMovement.sprintSpeed = 0f;
-
             speakerText.text = speaker[index];
             portraitImage1.sprite = portrait1[index];
             portraitImage2.sprite = portrait2[index];
@@ -108,6 +121,7 @@ namespace PlayerDialogue
                     yield return new WaitForSeconds(typingSpeed);
                 }
             }
+
             canContinueText = true;
         }
 
@@ -115,16 +129,21 @@ namespace PlayerDialogue
         {
             if (collision.CompareTag("Player"))
             {
-                dialogueActived = true;
+                playerInRange = true;
                 interactPopUp.SetActive(true);
             }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            dialogueActived = false;
-            interactPopUp.SetActive(false);
-            dialogueCanvas.SetActive(false);
+            if (collision.CompareTag("Player"))
+            {
+                playerInRange = false;
+                interactPopUp.SetActive(false);
+                dialogueCanvas.SetActive(false);
+                dialogueActived = false;
+                TopDownMovement.isInDialogue = false;
+            }
         }
     }
 }

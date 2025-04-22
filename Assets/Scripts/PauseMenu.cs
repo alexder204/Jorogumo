@@ -18,7 +18,8 @@ public class PauseManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        // Only allow pausing if not in dialogue
+        if (Input.GetKeyDown(KeyCode.Escape) && !TopDownMovement.isInDialogue)
         {
             if (settingsMenu.activeSelf)
             {

@@ -9,14 +9,19 @@ public class TopDownMovement : MonoBehaviour
     [Header("Footstep Settings")]
     public AudioSource footstepSource;
     public float footstepInterval = 0.4f; // Time between each footstep when walking
-    public float footstepIntervalRun = 0.3f; // Time between each footstep when running (set this in the Inspector)
+    public float footstepIntervalRun = 0.3f; // Time between each footstep when running
 
     private Rigidbody2D rb;
     private Vector2 movement;
     private Animator animator;
     private string lastDirection = "Down";
-    private string currentSurface = "Default"; // Default surface if no zone detected
+    private string currentSurface = "Default";
     private float footstepTimer;
+
+    // This should be controlled externally during dialogue
+    public static bool isInDialogue = false;
+
+    private bool lockedDirectionDuringDialogue = false;
 
     void Start()
     {
@@ -26,29 +31,32 @@ public class TopDownMovement : MonoBehaviour
 
     void Update()
     {
-        // Prevent movement when game is paused
-        if (PauseManager.isGamePaused)
+        if (PauseManager.isGamePaused || isInDialogue)
         {
-            animator.Play("Idle" + lastDirection);
+            if (!lockedDirectionDuringDialogue)
+            {
+                animator.Play("Idle" + lastDirection);
+                lockedDirectionDuringDialogue = true;
+            }
+
             rb.linearVelocity = Vector2.zero;
+            footstepSource.Stop();
             return;
         }
 
-        // Get movement input
+        lockedDirectionDuringDialogue = false;
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         movement.Normalize();
 
-        // Handle animation
         HandleAnimation();
-
-        // Handle footstep sounds
         HandleFootsteps();
     }
 
     void FixedUpdate()
     {
-        if (PauseManager.isGamePaused)
+        if (PauseManager.isGamePaused || isInDialogue)
         {
             rb.linearVelocity = Vector2.zero;
             return;
@@ -115,8 +123,6 @@ public class TopDownMovement : MonoBehaviour
         if (isMoving)
         {
             footstepTimer -= Time.deltaTime;
-
-            // Use footstepIntervalRun for running, footstepInterval for walking
             float currentFootstepInterval = isSprinting ? footstepIntervalRun : footstepInterval;
 
             if (footstepTimer <= 0f)
@@ -127,7 +133,6 @@ public class TopDownMovement : MonoBehaviour
         }
         else
         {
-            // Stop the footstep sound immediately when the player stops moving
             footstepSource.Stop();
             footstepTimer = 0f;
         }
@@ -135,7 +140,6 @@ public class TopDownMovement : MonoBehaviour
 
     void PlayFootstep()
     {
-        // Get the footstep clip for the current surface
         FootstepZone zone = GetCurrentFootstepZone();
         if (zone != null)
         {
@@ -149,7 +153,6 @@ public class TopDownMovement : MonoBehaviour
 
     FootstepZone GetCurrentFootstepZone()
     {
-        // Use colliders to check for the player's current zone (grass, pavement, etc.)
         Collider2D[] colliders = Physics2D.OverlapPointAll(transform.position);
         foreach (var col in colliders)
         {
@@ -167,7 +170,7 @@ public class TopDownMovement : MonoBehaviour
         FootstepZone zone = other.GetComponent<FootstepZone>();
         if (zone != null)
         {
-            currentSurface = zone.surfaceType; // Set the player's surface type to the zone they entered
+            currentSurface = zone.surfaceType;
         }
     }
 
@@ -176,7 +179,7 @@ public class TopDownMovement : MonoBehaviour
         FootstepZone zone = other.GetComponent<FootstepZone>();
         if (zone != null && currentSurface == zone.surfaceType)
         {
-            currentSurface = "Default"; // Reset to default surface when exiting the zone
+            currentSurface = "Default";
         }
     }
 }
