@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ba336509801caff4e862e2de701e834e
+guid: 73fa311a16f72bd4cb68b48edf171eb8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7544870196866983646
-    second: Railing1_0
+      213: 3181537920540701048
+    second: Railing1 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Railing1_0
+      name: Railing1 1_0
       rect:
         serializedVersion: 2
         x: 271
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 229df47c78c3b4790800000000000000
-      internalID: -7544870196866983646
+      spriteID: 8717349d1e7172c20800000000000000
+      internalID: 3181537920540701048
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Railing1_0: -7544870196866983646
+      Railing1 1_0: 3181537920540701048
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
