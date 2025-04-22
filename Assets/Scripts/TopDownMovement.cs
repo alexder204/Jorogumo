@@ -19,7 +19,12 @@ public class TopDownMovement : MonoBehaviour
 
     void Update()
     {
-        // Input
+        if (PauseManager.isGamePaused)
+        {
+            animator.Play("Idle" + lastDirection);
+            return;
+        }
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         movement.Normalize();
@@ -29,7 +34,6 @@ public class TopDownMovement : MonoBehaviour
 
         if (isSprinting && isMoving)
         {
-            // Sprinting animation based on direction
             if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
             {
                 if (movement.x > 0)
@@ -59,7 +63,6 @@ public class TopDownMovement : MonoBehaviour
         }
         else if (isMoving)
         {
-            // Walking animation based on direction
             if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
             {
                 if (movement.x > 0)
@@ -89,15 +92,18 @@ public class TopDownMovement : MonoBehaviour
         }
         else
         {
-            // Idle animation based on last direction
             animator.Play("Idle" + lastDirection);
         }
     }
 
-
-
     void FixedUpdate()
     {
+        if (PauseManager.isGamePaused)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
         float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : moveSpeed;
         rb.linearVelocity = movement * currentSpeed;
     }
