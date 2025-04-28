@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 73edd1637eab28d46a390d6a50d8466c
+guid: ce77867eebf58d045be9734f70a1777a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3942688128721783205
-    second: 2504336-200-removebg-preview_0
-  - first:
-      213: 7832587635638025024
-    second: 2504336-200-removebg-preview_1
-  - first:
-      213: -5372622536278700248
-    second: 2504336-200-removebg-preview_2
-  - first:
-      213: -8656557107700766914
-    second: 2504336-200-removebg-preview_3
-  - first:
-      213: -5931943456142093500
-    second: 2504336-200-removebg-preview_4
+      213: -6048882099314591427
+    second: UiSlot_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 2504336-200-removebg-preview_0
+      name: UiSlot_0
       rect:
         serializedVersion: 2
-        x: 45
-        y: 158
-        width: 25
-        height: 25
+        x: 15
+        y: 15
+        width: 34
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,96 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b5673634902c849c0800000000000000
-      internalID: -3942688128721783205
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2504336-200-removebg-preview_1
-      rect:
-        serializedVersion: 2
-        x: 77
-        y: 167
-        width: 15
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 04b325ea4f0f2bc60800000000000000
-      internalID: 7832587635638025024
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2504336-200-removebg-preview_2
-      rect:
-        serializedVersion: 2
-        x: 99
-        y: 158
-        width: 25
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 82f89d4c44c9075b0800000000000000
-      internalID: -5372622536278700248
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2504336-200-removebg-preview_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 137
-        width: 29
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e37ec99cc2bbdd780800000000000000
-      internalID: -8656557107700766914
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2504336-200-removebg-preview_4
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 3
-        width: 135
-        height: 155
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 44392fcfad08dada0800000000000000
-      internalID: -5931943456142093500
+      spriteID: d39722e67cd0e0ca0800000000000000
+      internalID: -6048882099314591427
       vertices: []
       indices: 
       edges: []
@@ -248,11 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      2504336-200-removebg-preview_0: -3942688128721783205
-      2504336-200-removebg-preview_1: 7832587635638025024
-      2504336-200-removebg-preview_2: -5372622536278700248
-      2504336-200-removebg-preview_3: -8656557107700766914
-      2504336-200-removebg-preview_4: -5931943456142093500
+      UiSlot_0: -6048882099314591427
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
