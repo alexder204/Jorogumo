@@ -20,8 +20,13 @@ public class InventoryUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))  // Toggle inventory UI
         {
-            inventoryUI.SetActive(!inventoryUI.activeSelf);
+            ToggleInventory();
         }
+    }
+
+    public void ToggleInventory()
+    {
+        inventoryUI.SetActive(!inventoryUI.activeSelf);
     }
 
     void UpdateUI()
