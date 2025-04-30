@@ -19,6 +19,7 @@ public class Inventory : MonoBehaviour
         instance = this;
     }
 
+    // Add items to inventory, stacking them if possible
     public bool Add(Item item)
     {
         // Check if the item already exists and can stack
@@ -46,25 +47,30 @@ public class Inventory : MonoBehaviour
         return true;
     }
 
+    // Remove item from inventory
     public void Remove(Item item)
     {
         items.Remove(item);
         onItemChangedCallback?.Invoke();
     }
 
+    // Use an item from the inventory
     public void UseItem(Item item)
     {
         if (item.isUsable)
         {
             Debug.Log($"Used item: {item.itemName}");
-            // Example of item usage: heal the player, etc.
+
+            // Reduce the quantity of the item in the inventory
             item.currentAmount--;
 
+            // If the item amount reaches 0, remove it from inventory
             if (item.currentAmount <= 0)
             {
-                Remove(item);  // Remove item if it's fully used
+                Remove(item);  // Remove item if its count reaches 0
             }
 
+            // Update the UI after using the item
             onItemChangedCallback?.Invoke();
         }
     }

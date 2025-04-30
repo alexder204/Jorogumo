@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Test
   icon: {fileID: 21300000, guid: efbb9cda588e12745baa3452e73c0b68, type: 3}
+  stackAmount: 1
+  currentAmount: 1
+  isUsable: 0
+  isEquippable: 0
