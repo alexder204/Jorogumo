@@ -1,0 +1,16 @@
+{
+    "name": "InteractionsAssembly",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3263612608b5d834e8ff9e4b9810cdb7"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

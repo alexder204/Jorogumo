@@ -1,0 +1,16 @@
+{
+    "name": "GameCoreAssembly",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6b37a2570199a7c48876ad2b42a304df"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
