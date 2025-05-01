@@ -1,13 +1,23 @@
 using UnityEngine;
+using System.Collections; // <-- Needed for IEnumerator
 
 public class PickupItem : MonoBehaviour
 {
     [Header("Item Data")]
-    [SerializeField] private Item item;  // This will be assigned automatically from the Item ScriptableObject
+    [SerializeField] private Item item;  // Assigned automatically from the Item ScriptableObject
+
     [Header("UI References")]
     public GameObject interactPopUp;
 
     private bool isPlayerNearby = false;
+    private SpriteRenderer spriteRenderer;
+    private Collider2D collider2d;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        collider2d = GetComponent<Collider2D>();
+    }
 
     void Update()
     {
@@ -43,7 +53,16 @@ public class PickupItem : MonoBehaviour
         if (wasPickedUp)
         {
             EndPickup();
-            Destroy(gameObject);  // Destroy the item after pickup
+
+            // Hide the item instantly
+            spriteRenderer.enabled = false;
+            collider2d.enabled = false;
+
+            // Show pickup message using UIManager
+            UIManager.instance.ShowMessage($"Picked up {item.itemName}!");
+
+            // Destroy the object after a delay
+            StartCoroutine(DestroyAfterDelay(2f));
         }
         else
         {
@@ -57,5 +76,11 @@ public class PickupItem : MonoBehaviour
 
         isPlayerNearby = false;
         interactPopUp.SetActive(false);
+    }
+
+    private IEnumerator DestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
     }
 }

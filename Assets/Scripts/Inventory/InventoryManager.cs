@@ -59,19 +59,19 @@ public class Inventory : MonoBehaviour
     {
         if (item.isUsable)
         {
-            Debug.Log($"Used item: {item.itemName}");
+            string usedItemName = item.itemName;  // Save the name first
 
-            // Reduce the quantity of the item in the inventory
-            item.currentAmount--;
+            item.currentAmount--;  // Reduce the quantity of the item in the inventory
 
-            // If the item amount reaches 0, remove it from inventory
             if (item.currentAmount <= 0)
             {
-                Remove(item);  // Remove item if its count reaches 0
+                Remove(item); // Remove item if its count reaches 0
             }
 
-            // Update the UI after using the item
-            onItemChangedCallback?.Invoke();
+            onItemChangedCallback?.Invoke();  // Update the UI
+
+            // Show message using UIManager
+            UIManager.instance.ShowMessage($"Used item: {usedItemName}");
         }
     }
 }

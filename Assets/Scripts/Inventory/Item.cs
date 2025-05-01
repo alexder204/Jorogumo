@@ -8,5 +8,4 @@ public class Item : ScriptableObject
     public int stackAmount = 10;  // Maximum stackable amount
     public int currentAmount = 0;  // Current stack in the inventory
     public bool isUsable = false;  // Determines if the item can be used (e.g., consumable)
-    public bool isEquippable = false;  // If the item can be equipped (e.g., armor, weapon)
 }
