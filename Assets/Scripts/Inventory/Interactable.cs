@@ -7,6 +7,9 @@ public class Interactable : MonoBehaviour
     public GameObject interactIcon;
     private bool isPlayerNearby = false;
 
+    [Header("Unique ID")]
+    [SerializeField] public string uniqueID;  // Serialize the uniqueID field
+
     public enum InteractableType
     {
         Door,
@@ -14,10 +17,21 @@ public class Interactable : MonoBehaviour
         // Add more types easily later!
     }
 
+    private void Awake()
+    {
+        if (string.IsNullOrEmpty(uniqueID))
+            uniqueID = System.Guid.NewGuid().ToString();
+    }
+
     private void Start()
     {
         if (interactIcon != null)
             interactIcon.SetActive(false);
+
+        if (string.IsNullOrEmpty(uniqueID))
+        {
+            uniqueID = System.Guid.NewGuid().ToString();  // Generate a unique ID if not set
+        }
     }
 
     private void Update()
@@ -76,16 +90,21 @@ public class Interactable : MonoBehaviour
         switch (type)
         {
             case InteractableType.Door:
-                Destroy(gameObject);
-                break;
-
             case InteractableType.LockedDoor:
-                Destroy(gameObject);
+                // Disable the object instead of destroying it
+                gameObject.SetActive(false);  // Deactivates the object, allowing for easy reactivation later
                 break;
 
             default:
                 Debug.Log("Default interaction.");
                 break;
         }
+    }
+
+    public string GetUniqueID()
+    {
+        if (string.IsNullOrEmpty(uniqueID))
+            uniqueID = System.Guid.NewGuid().ToString(); // Or assign a consistent one
+        return uniqueID;
     }
 }

@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -31,6 +29,12 @@ public class InventoryUI : MonoBehaviour
 
     void UpdateUI()
     {
+        if (itemsParent == null || slotPrefab == null)
+        {
+            Debug.LogWarning("InventoryUI not fully initialized yet. Skipping UI update.");
+            return;
+        }
+
         // Clear existing slots
         foreach (Transform child in itemsParent)
         {

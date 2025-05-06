@@ -6,21 +6,25 @@ public class InteractableEditor : Editor
 {
     public override void OnInspectorGUI()
     {
-        Interactable interactable = (Interactable)target;
+        serializedObject.Update();
 
-        // Show the enum dropdown
+        // Draw the uniqueID field so it's editable
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("uniqueID"));
+
+        // Draw the enum dropdown
         EditorGUILayout.PropertyField(serializedObject.FindProperty("type"));
 
         // If the type is LockedDoor, show the requiredItem field
+        Interactable interactable = (Interactable)target;
         if (interactable.type == Interactable.InteractableType.LockedDoor)
         {
-            // Show the requiredItem field only for LockedDoor type
             EditorGUILayout.PropertyField(serializedObject.FindProperty("requiredItem"));
         }
 
-        // Show interactIcon and other UI elements
+        // Draw the interactIcon field
         EditorGUILayout.PropertyField(serializedObject.FindProperty("interactIcon"));
 
         serializedObject.ApplyModifiedProperties();
     }
+
 }

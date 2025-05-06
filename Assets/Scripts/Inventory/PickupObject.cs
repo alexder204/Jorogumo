@@ -1,10 +1,13 @@
 using UnityEngine;
-using System.Collections; // <-- Needed for IEnumerator
+using System.Collections;
 
 public class PickupItem : MonoBehaviour
 {
     [Header("Item Data")]
     [SerializeField] private Item item;  // Assigned automatically from the Item ScriptableObject
+
+    [Header("Unique ID")]
+    public string uniqueID;
 
     [Header("UI References")]
     public GameObject interactPopUp;
@@ -17,6 +20,9 @@ public class PickupItem : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider2d = GetComponent<Collider2D>();
+
+        if (string.IsNullOrEmpty(uniqueID))
+            uniqueID = System.Guid.NewGuid().ToString();  // Generate a new unique ID if not assigned
     }
 
     void Update()
@@ -25,6 +31,13 @@ public class PickupItem : MonoBehaviour
         {
             AttemptPickup();
         }
+    }
+
+    public string GetUniqueID()
+    {
+        if (string.IsNullOrEmpty(uniqueID))
+            uniqueID = System.Guid.NewGuid().ToString(); // Ensure every item has a unique ID
+        return uniqueID;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -53,16 +66,12 @@ public class PickupItem : MonoBehaviour
         if (wasPickedUp)
         {
             EndPickup();
-
-            // Hide the item instantly
             spriteRenderer.enabled = false;
             collider2d.enabled = false;
 
-            // Show pickup message using UIManager
             UIManager.instance.ShowMessage($"Picked up {item.itemName}!");
 
-            // Destroy the object after a delay
-            StartCoroutine(DestroyAfterDelay(2f));
+            StartCoroutine(DisableAfterDelay(2f));
         }
         else
         {
@@ -78,9 +87,9 @@ public class PickupItem : MonoBehaviour
         interactPopUp.SetActive(false);
     }
 
-    private IEnumerator DestroyAfterDelay(float delay)
+    private IEnumerator DisableAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        Destroy(gameObject);
+        gameObject.SetActive(false);  // Disable the object after a delay
     }
 }
