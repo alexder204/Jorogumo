@@ -6,9 +6,6 @@ public class PickupItem : MonoBehaviour
     [Header("Item Data")]
     [SerializeField] private Item item;  // Assigned automatically from the Item ScriptableObject
 
-    [Header("Unique ID")]
-    public string uniqueID;
-
     [Header("UI References")]
     public GameObject interactPopUp;
 
@@ -20,9 +17,6 @@ public class PickupItem : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider2d = GetComponent<Collider2D>();
-
-        if (string.IsNullOrEmpty(uniqueID))
-            uniqueID = System.Guid.NewGuid().ToString();  // Generate a new unique ID if not assigned
     }
 
     void Update()
@@ -31,13 +25,6 @@ public class PickupItem : MonoBehaviour
         {
             AttemptPickup();
         }
-    }
-
-    public string GetUniqueID()
-    {
-        if (string.IsNullOrEmpty(uniqueID))
-            uniqueID = System.Guid.NewGuid().ToString(); // Ensure every item has a unique ID
-        return uniqueID;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
