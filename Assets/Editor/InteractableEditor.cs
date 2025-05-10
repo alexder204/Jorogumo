@@ -8,9 +8,6 @@ public class InteractableEditor : Editor
     {
         serializedObject.Update();
 
-        // Draw the uniqueID field so it's editable
-        EditorGUILayout.PropertyField(serializedObject.FindProperty("uniqueID"));
-
         // Draw the enum dropdown
         EditorGUILayout.PropertyField(serializedObject.FindProperty("type"));
 

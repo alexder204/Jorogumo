@@ -7,7 +7,6 @@ public class Interactable : MonoBehaviour
     public GameObject interactIcon;
     private bool isPlayerNearby = false;
 
-
     public enum InteractableType
     {
         Door,
