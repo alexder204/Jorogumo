@@ -74,4 +74,18 @@ public class Inventory : MonoBehaviour
             UIManager.instance.ShowMessage($"Used item: {usedItemName}");
         }
     }
+
+    public void ClearInventory()
+    {
+        items.Clear();
+        onItemChangedCallback?.Invoke();
+    }
+
+    public void AddItem(Item item, int amount)
+    {
+        Item itemClone = ScriptableObject.Instantiate(item);
+        itemClone.currentAmount = amount;
+        items.Add(itemClone);
+        onItemChangedCallback?.Invoke();
+    }
 }
