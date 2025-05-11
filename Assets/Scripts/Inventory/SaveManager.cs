@@ -4,16 +4,11 @@ using System.Collections.Generic;
 
 public class SaveSystem : MonoBehaviour
 {
-    public Transform playerTransform;  // Assign in Inspector
+    public Transform playerTransform;          // Assign in Inspector
     public UniqueIDRegistry uniqueIDRegistry;  // Assign in Inspector
-    private string savePath;
+    private string GetSlotPath(int slot) => Application.persistentDataPath + $"/saveslot{slot}.json";
 
-    private void Awake()
-    {
-        savePath = Application.persistentDataPath + "/savefile.json";
-    }
-
-    public void SaveGame()
+    public void SaveGame(int slot)
     {
         SaveData data = new SaveData
         {
@@ -22,7 +17,6 @@ public class SaveSystem : MonoBehaviour
             playerPosZ = playerTransform.position.z
         };
 
-        // Save all objects in registry (including inactive ones)
         UniqueID[] allObjects = uniqueIDRegistry.GetAllUniqueIDs();
         foreach (var obj in allObjects)
         {
@@ -33,7 +27,6 @@ public class SaveSystem : MonoBehaviour
             });
         }
 
-        // Save inventory
         foreach (Item item in Inventory.instance.items)
         {
             data.inventory.Add(new InventoryItemData
@@ -44,25 +37,24 @@ public class SaveSystem : MonoBehaviour
         }
 
         string json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(savePath, json);
-        Debug.Log("Game Saved to " + savePath);
+        File.WriteAllText(GetSlotPath(slot), json);
+        Debug.Log($"Game Saved to slot {slot}");
     }
 
-    public void LoadGame()
+    public void LoadGame(int slot)
     {
-        if (!File.Exists(savePath))
+        string path = GetSlotPath(slot);
+        if (!File.Exists(path))
         {
-            Debug.LogWarning("No save file found at " + savePath);
+            Debug.LogWarning("No save file found at " + path);
             return;
         }
 
-        string json = File.ReadAllText(savePath);
+        string json = File.ReadAllText(path);
         SaveData data = JsonUtility.FromJson<SaveData>(json);
 
-        // Restore player position
         playerTransform.position = new Vector3(data.playerPosX, data.playerPosY, data.playerPosZ);
 
-        // Restore object active states (including inactive)
         UniqueID[] allObjects = uniqueIDRegistry.GetAllUniqueIDs();
         foreach (var obj in allObjects)
         {
@@ -73,7 +65,6 @@ public class SaveSystem : MonoBehaviour
             }
         }
 
-        // Restore inventory
         Inventory.instance.ClearInventory();
         foreach (var savedItem in data.inventory)
         {
@@ -88,6 +79,6 @@ public class SaveSystem : MonoBehaviour
             }
         }
 
-        Debug.Log("Game Loaded from " + savePath);
+        Debug.Log($"Game Loaded from slot {slot}");
     }
 }
