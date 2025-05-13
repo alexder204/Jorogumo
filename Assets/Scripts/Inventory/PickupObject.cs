@@ -13,6 +13,9 @@ public class PickupItem : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Collider2D collider2d;
 
+    [HideInInspector]
+    public bool hasBeenPickedUp = false;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -52,13 +55,14 @@ public class PickupItem : MonoBehaviour
         bool wasPickedUp = Inventory.instance.Add(item);
         if (wasPickedUp)
         {
+            hasBeenPickedUp = true;
             EndPickup();
             spriteRenderer.enabled = false;
             collider2d.enabled = false;
 
             UIManager.instance.ShowMessage($"Picked up {item.itemName}!");
 
-            StartCoroutine(DisableAfterDelay(2f));
+            gameObject.SetActive(false);
         }
         else
         {
@@ -72,11 +76,5 @@ public class PickupItem : MonoBehaviour
 
         isPlayerNearby = false;
         interactPopUp.SetActive(false);
-    }
-
-    private IEnumerator DisableAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        gameObject.SetActive(false);  // Disable the object after a delay
     }
 }

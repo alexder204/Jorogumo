@@ -27,7 +27,7 @@ public class InventoryUI : MonoBehaviour
         inventoryUI.SetActive(!inventoryUI.activeSelf);
     }
 
-    void UpdateUI()
+    public void UpdateUI()
     {
         if (itemsParent == null || slotPrefab == null)
         {

@@ -58,7 +58,7 @@ public class SaveMenuUI : MonoBehaviour
         UpdateSlotLabels();
     }
 
-    private void UpdateSlotLabels()
+    public void UpdateSlotLabels()
     {
         UpdateSlotLabel(slot0Label, 0);
         UpdateSlotLabel(slot1Label, 1);
@@ -73,5 +73,29 @@ public class SaveMenuUI : MonoBehaviour
         string path = Application.persistentDataPath + $"/saveslot{slot}.json";
         string status = File.Exists(path) ? "Saved" : "Empty";
         label.text = $"SaveSlot{slot} - {status}";
+    }
+
+    public void OnDeleteSlot0()
+    {
+        saveSystem.DeleteSave(0);
+        UpdateSlotLabels();
+    }
+
+    public void OnDeleteSlot1()
+    {
+        saveSystem.DeleteSave(1);
+        UpdateSlotLabels();
+    }
+
+    public void OnDeleteSlot2()
+    {
+        saveSystem.DeleteSave(2);
+        UpdateSlotLabels();
+    }
+
+    public void OnDeleteSlot3()
+    {
+        saveSystem.DeleteSave(3);
+        UpdateSlotLabels();
     }
 }
