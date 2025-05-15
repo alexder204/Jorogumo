@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TopDownMovement : MonoBehaviour
 {
@@ -22,6 +22,26 @@ public class TopDownMovement : MonoBehaviour
     public static bool isInDialogue = false;
 
     private bool lockedDirectionDuringDialogue = false;
+
+    public static TopDownMovement instance;
+
+    void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            // ✅ Move persistent player (old one) to this new scene object's position
+            instance.transform.position = transform.position;
+
+            // ✅ Destroy the scene’s player object
+            Destroy(gameObject);
+            return;
+        }
+
+        // ✅ First time player is created
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
 
     void Start()
     {
