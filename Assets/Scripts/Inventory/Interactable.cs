@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
@@ -22,6 +22,7 @@ public class Interactable : MonoBehaviour
 
     private void Update()
     {
+        if (TopDownMovement.isInDialogue) return;
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
         {
             TryInteract();
@@ -50,9 +51,13 @@ public class Interactable : MonoBehaviour
     {
         if (type == InteractableType.LockedDoor)
         {
-            if (requiredItem != null && Inventory.instance.items.Exists(item => item == requiredItem && item.currentAmount > 0))
+            // ✅ Use ID comparison instead of instance reference
+            Item itemToUse = Inventory.instance.items.Find(item =>
+                item.id == requiredItem.id && item.currentAmount > 0);
+
+            if (itemToUse != null)
             {
-                Inventory.instance.UseItem(requiredItem);
+                Inventory.instance.UseItem(itemToUse);
                 PerformAction();
             }
             else
@@ -77,8 +82,7 @@ public class Interactable : MonoBehaviour
         {
             case InteractableType.Door:
             case InteractableType.LockedDoor:
-                // Disable the object instead of destroying it
-                gameObject.SetActive(false);  // Deactivates the object, allowing for easy reactivation later
+                gameObject.SetActive(false);  // Deactivates the object
                 break;
 
             default:

@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     public GameObject pickUpPanel;
     public TMP_Text pickUpText;
 
-    private Coroutine messageCoroutine;  // To track and cancel ongoing message
+    private Coroutine messageCoroutine;  // Tracks active message display
 
     void Awake()
     {
@@ -24,15 +24,22 @@ public class UIManager : MonoBehaviour
 
     public void ShowMessage(string message)
     {
+        if (messageCoroutine != null)
+        {
+            StopCoroutine(messageCoroutine);
+            messageCoroutine = null;
+        }
+
         pickUpPanel.SetActive(true);
         pickUpText.text = message;
-        TopDownMovement.isInDialogue = true; // Freeze player movement
-        StartCoroutine(WaitForCloseInput());
+        TopDownMovement.isInDialogue = true;
+
+        messageCoroutine = StartCoroutine(WaitForCloseInput());
     }
 
     private IEnumerator WaitForCloseInput()
     {
-        yield return null; // Wait one frame so the panel fully activates
+        yield return null; // Allow UI to render
 
         while (!Input.GetKeyDown(KeyCode.E))
         {
@@ -41,5 +48,6 @@ public class UIManager : MonoBehaviour
 
         pickUpPanel.SetActive(false);
         TopDownMovement.isInDialogue = false;
+        messageCoroutine = null;
     }
 }
