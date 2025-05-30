@@ -12,8 +12,32 @@ public class SaveSystem : MonoBehaviour
     private string GetSlotPath(int slot) =>
         Application.persistentDataPath + $"/saveslot{slot}.json";
 
+    private void FindPlayerTransform()
+    {
+        if (playerTransform == null)
+        {
+            GameObject playerObj = GameObject.FindWithTag("Player");
+            if (playerObj != null)
+            {
+                playerTransform = playerObj.transform;
+            }
+            else
+            {
+                Debug.LogWarning("Player object not found in scene.");
+            }
+        }
+    }
+
     public void SaveGame(int slot)
     {
+        FindPlayerTransform();
+
+        if (playerTransform == null)
+        {
+            Debug.LogWarning("Player transform is not set. Cannot save.");
+            return;
+        }
+
         SaveData data = new SaveData
         {
             sceneName = SceneManager.GetActiveScene().name,
@@ -62,6 +86,14 @@ public class SaveSystem : MonoBehaviour
 
     private IEnumerator LoadGameCoroutine(int slot)
     {
+        FindPlayerTransform();
+
+        if (playerTransform == null)
+        {
+            Debug.LogWarning("Player transform not found before loading.");
+            yield break;
+        }
+
         string path = GetSlotPath(slot);
         if (!File.Exists(path))
         {
@@ -79,6 +111,14 @@ public class SaveSystem : MonoBehaviour
 
         // Wait an extra frame to ensure scene objects initialize
         yield return null;
+
+        // Now that scene is loaded and playerTransform hopefully exists:
+        FindPlayerTransform();
+        if (playerTransform == null)
+        {
+            Debug.LogWarning("Player transform not found after scene load.");
+            yield break;
+        }
 
         // Restore player position
         playerTransform.position = new Vector3(data.playerPosX, data.playerPosY, data.playerPosZ);

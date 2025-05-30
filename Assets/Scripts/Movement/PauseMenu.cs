@@ -15,8 +15,6 @@ public class PauseManager : MonoBehaviour
 
     void Start()
     {
-        // Use FindObjectsByType to get all AudioSource components
-        allAudioSources = Object.FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
         areYouSure.SetActive(false);  // Make sure the AreYouSure panel is hidden initially
     }
 
@@ -119,19 +117,24 @@ public class PauseManager : MonoBehaviour
 
     private void PauseAllAudio()
     {
-        foreach (AudioSource audioSource in allAudioSources)
+        var sources = Object.FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        foreach (AudioSource audioSource in sources)
         {
-            audioSource.Pause(); // Pause every audio source (including music)
+            if (audioSource != null && audioSource.isActiveAndEnabled)
+                audioSource.Pause();
         }
     }
 
     private void UnpauseAllAudio()
     {
-        foreach (AudioSource audioSource in allAudioSources)
+        var sources = Object.FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        foreach (AudioSource audioSource in sources)
         {
-            audioSource.UnPause(); // Resume every audio source
+            if (audioSource != null && audioSource.isActiveAndEnabled)
+                audioSource.UnPause();
         }
     }
+
 
     // Disable interactions in the pause menu (e.g., buttons)
     private void DisablePauseMenuInteractions()
