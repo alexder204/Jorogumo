@@ -92,8 +92,13 @@ AudioMixerSnapshotController:
   m_SnapshotID: 2486882511328a240acab1a4dbaf1eff
   m_FloatValues:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     0cb45f41320ecd147826cf72b62136f2: -0.037667945
     76bc1ed2aecbe4b47b416c3392b237bc: -0.037667945
+=======
+    0cb45f41320ecd147826cf72b62136f2: 0.10800299
+    76bc1ed2aecbe4b47b416c3392b237bc: 0.3945694
+>>>>>>> Stashed changes
 =======
     0cb45f41320ecd147826cf72b62136f2: 0.10800299
     76bc1ed2aecbe4b47b416c3392b237bc: 0.3945694
