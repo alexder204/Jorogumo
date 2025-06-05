@@ -14,9 +14,8 @@ public class UIManager : MonoBehaviour
 
     void Awake()
     {
-        if (instance != null)
+        if (instance != null && instance != this)
         {
-            Debug.LogWarning("More than one instance of UIManager found!");
             return;
         }
         instance = this;

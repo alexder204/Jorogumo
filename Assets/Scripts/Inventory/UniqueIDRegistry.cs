@@ -1,21 +1,37 @@
-using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class UniqueIDRegistry : MonoBehaviour
 {
+    public static UniqueIDRegistry Instance { get; private set; }
+
     private UniqueID[] allUniqueIDs;
 
     public UniqueID[] GetAllUniqueIDs() => allUniqueIDs;
 
+
     void Awake()
     {
-        RefreshUniqueIDs();
+        if (Instance != null && Instance != this)
+        {
+            // Unsubscribe before destroying
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnDestroy()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        if (Instance == this)
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -25,10 +41,8 @@ public class UniqueIDRegistry : MonoBehaviour
 
     public void RefreshUniqueIDs()
     {
-        // Find all UniqueID objects, including inactive, without sorting (faster)
         allUniqueIDs = Object.FindObjectsByType<UniqueID>(FindObjectsSortMode.None);
 
-        // Optional: filter to only scene objects (exclude assets)
         var sceneObjects = new System.Collections.Generic.List<UniqueID>();
         foreach (var obj in allUniqueIDs)
         {
