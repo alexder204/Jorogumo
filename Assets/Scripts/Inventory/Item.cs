@@ -5,6 +5,8 @@ public class Item : ScriptableObject
 {
     public string id;  // Unique identifier for the item
     public string itemName;
+    [TextArea]
+    public string description;
     public Sprite icon;
     public int stackAmount = 10;
     public int currentAmount = 0;

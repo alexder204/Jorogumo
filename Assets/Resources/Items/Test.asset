@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: test
   itemName: Test
+  description: I don't give a fuck.
   icon: {fileID: 21300000, guid: efbb9cda588e12745baa3452e73c0b68, type: 3}
   stackAmount: 1
   currentAmount: 1

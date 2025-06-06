@@ -7,6 +7,7 @@ public class InventoryUI : MonoBehaviour
     public GameObject inventoryUI;
 
     private Inventory inventory;
+    public ItemDetailsUI itemDetailsUI;
 
     void Start()
     {
@@ -35,17 +36,16 @@ public class InventoryUI : MonoBehaviour
             return;
         }
 
-        // Clear existing slots
         foreach (Transform child in itemsParent)
         {
             Destroy(child.gameObject);
         }
 
-        // Add new slots based on the inventory items
         foreach (Item item in inventory.items)
         {
             GameObject newSlot = Instantiate(slotPrefab, itemsParent);
             InventorySlot slot = newSlot.GetComponent<InventorySlot>();
+            slot.itemDetailsUI = itemDetailsUI;  // Assign the reference here
             slot.AddItem(item);
         }
     }
