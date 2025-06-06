@@ -41,7 +41,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FogSize: 10
+    - _FogSize: 100
     m_Colors:
     - _Color: {r: 0.2679245, g: 0.2679245, b: 0.2679245, a: 0}
     - _FogSpeed: {r: 0.1, g: 0, b: 0, a: 0}

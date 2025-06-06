@@ -26,6 +26,7 @@ public class TopDownMovement : MonoBehaviour
 
     void Update()
     {
+        footstepSource.volume = 1.0f;
         // Prevent movement when game is paused
         if (PauseManager.isGamePaused)
         {
