@@ -17,6 +17,13 @@ public class InventoryItemData
 }
 
 [System.Serializable]
+public class SavedJournalNote
+{
+    public string noteId;  // Assuming JournalNote has a unique ID or title string
+}
+
+
+[System.Serializable]
 public class SaveData
 {
     public string sceneName;
@@ -25,5 +32,8 @@ public class SaveData
     public float playerPosZ;
     public List<ObjectState> objectStates = new List<ObjectState>();
     public List<InventoryItemData> inventory = new List<InventoryItemData>();
+    public List<SavedJournalNote> collectedJournalNotes = new List<SavedJournalNote>();
+
+    public List<string> pickedUpIDs = new();
 }
 

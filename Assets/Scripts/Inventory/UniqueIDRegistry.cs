@@ -47,10 +47,23 @@ public class UniqueIDRegistry : MonoBehaviour
         foreach (var obj in allUniqueIDs)
         {
             if (obj.gameObject.scene.IsValid())
+            {
                 sceneObjects.Add(obj);
+
+                if (PickedUpObjectsManager.Instance != null && PickedUpObjectsManager.Instance.HasBeenPickedUp(obj.id))
+                {
+                    obj.gameObject.SetActive(false);
+                }
+                else
+                {
+                    // Optional: restore default active state
+                    obj.gameObject.SetActive(obj.defaultActiveState);
+                }
+            }
         }
         allUniqueIDs = sceneObjects.ToArray();
 
         Debug.Log($"UniqueIDRegistry refreshed: found {allUniqueIDs.Length} UniqueID objects.");
     }
+
 }

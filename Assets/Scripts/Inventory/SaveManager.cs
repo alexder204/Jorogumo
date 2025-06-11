@@ -62,6 +62,12 @@ public class SaveSystem : MonoBehaviour
                 state.hasBeenPickedUp = pickup.hasBeenPickedUp;
             }
 
+            JournalNotePickup notePickup = obj.GetComponent<JournalNotePickup>();
+            if (notePickup != null)
+            {
+                state.hasBeenPickedUp = notePickup.hasBeenPickedUp;
+            }
+
             data.objectStates.Add(state);
         }
 
@@ -71,6 +77,14 @@ public class SaveSystem : MonoBehaviour
             {
                 itemId = item.id,
                 currentAmount = item.currentAmount
+            });
+        }
+
+        foreach (var note in JournalManager.instance.GetCollectedNotes())
+        {
+            data.collectedJournalNotes.Add(new SavedJournalNote
+            {
+                noteId = note.noteID
             });
         }
 
@@ -88,12 +102,6 @@ public class SaveSystem : MonoBehaviour
     {
         FindPlayerTransform();
 
-        if (playerTransform == null)
-        {
-            Debug.LogWarning("Player transform not found before loading.");
-            yield break;
-        }
-
         string path = GetSlotPath(slot);
         if (!File.Exists(path))
         {
@@ -104,15 +112,12 @@ public class SaveSystem : MonoBehaviour
         string json = File.ReadAllText(path);
         SaveData data = JsonUtility.FromJson<SaveData>(json);
 
-        // Load the correct scene
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(data.sceneName);
         while (!asyncLoad.isDone)
             yield return null;
 
-        // Wait an extra frame to ensure scene objects initialize
         yield return null;
 
-        // Now that scene is loaded and playerTransform hopefully exists:
         FindPlayerTransform();
         if (playerTransform == null)
         {
@@ -120,14 +125,11 @@ public class SaveSystem : MonoBehaviour
             yield break;
         }
 
-        // Restore player position
         playerTransform.position = new Vector3(data.playerPosX, data.playerPosY, data.playerPosZ);
 
-        // Refresh object references
         uniqueIDRegistry.RefreshUniqueIDs();
-
-        // Restore object states (same as before)
         UniqueID[] allObjects = uniqueIDRegistry.GetAllUniqueIDs();
+
         foreach (var obj in allObjects)
         {
             ObjectState state = data.objectStates.Find(s => s.id == obj.id);
@@ -140,25 +142,22 @@ public class SaveSystem : MonoBehaviour
             {
                 pickup.hasBeenPickedUp = state.hasBeenPickedUp;
 
-                var sprite = pickup.GetComponent<SpriteRenderer>();
-                var coll = pickup.GetComponent<Collider2D>();
+                if (pickup.hasBeenPickedUp)
+                {
+                    pickup.GetComponent<SpriteRenderer>()?.gameObject.SetActive(false);
+                    pickup.GetComponent<Collider2D>()?.gameObject.SetActive(false);
+                    pickup.interactPopUp?.SetActive(false);
+                }
+            }
 
-                if (state.hasBeenPickedUp)
-                {
-                    if (sprite) sprite.enabled = false;
-                    if (coll) coll.enabled = false;
-                    if (pickup.interactPopUp) pickup.interactPopUp.SetActive(false);
-                }
-                else
-                {
-                    if (sprite) sprite.enabled = true;
-                    if (coll) coll.enabled = true;
-                    if (pickup.interactPopUp) pickup.interactPopUp.SetActive(false);
-                }
+            JournalNotePickup notePickup = obj.GetComponent<JournalNotePickup>();
+            if (notePickup != null)
+            {
+                notePickup.hasBeenPickedUp = state.hasBeenPickedUp;
+                notePickup.gameObject.SetActive(!state.hasBeenPickedUp);
             }
         }
 
-        // Restore inventory (same as before)
         Inventory.instance.ClearInventory();
         foreach (var saved in data.inventory)
         {
@@ -169,9 +168,27 @@ public class SaveSystem : MonoBehaviour
                 Debug.LogWarning($"Item ID {saved.itemId} not found in ItemDatabase");
         }
 
+        JournalManager.instance.ClearNotes();
+        foreach (var savedNote in data.collectedJournalNotes)
+        {
+            JournalNote note = JournalManager.instance.GetNoteByID(savedNote.noteId);
+            if (note != null)
+            {
+                JournalManager.instance.AddNote(note);
+            }
+            else
+            {
+                Debug.LogWarning($"Saved note with ID {savedNote.noteId} not found.");
+            }
+        }
+
+        if (JournalManager.instance.GetCollectedNotes().Count > 0)
+        {
+            JournalManager.instance.DisplayNote(JournalManager.instance.GetCollectedNotes()[0]);
+        }
+
         Debug.Log($"Game Loaded from slot {slot}");
     }
-
 
     public void DeleteSave(int slot)
     {

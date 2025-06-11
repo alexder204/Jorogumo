@@ -1,10 +1,9 @@
 using UnityEngine;
-using System.Collections;
 
 public class PickupItem : MonoBehaviour
 {
     [Header("Item Data")]
-    [SerializeField] private Item item;  // Assigned automatically from the Item ScriptableObject
+    [SerializeField] private Item item;
 
     [Header("UI References")]
     public GameObject interactPopUp;
@@ -16,10 +15,13 @@ public class PickupItem : MonoBehaviour
     [HideInInspector]
     public bool hasBeenPickedUp = false;
 
+    private UniqueID uniqueID;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider2d = GetComponent<Collider2D>();
+        uniqueID = GetComponent<UniqueID>(); // add this
     }
 
     void Update()
@@ -56,12 +58,16 @@ public class PickupItem : MonoBehaviour
         if (wasPickedUp)
         {
             hasBeenPickedUp = true;
+
+            // Mark as picked up globally:
+            if (uniqueID != null)
+                PickedUpObjectsManager.Instance.MarkPickedUp(uniqueID.id);
+
             EndPickup();
             spriteRenderer.enabled = false;
             collider2d.enabled = false;
 
             UIManager.instance.ShowMessage($"Picked up {item.itemName}!");
-
             gameObject.SetActive(false);
         }
         else
