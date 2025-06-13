@@ -39,7 +39,7 @@ public class PlayerSpawnManager : MonoBehaviour
 
         if (string.IsNullOrEmpty(SceneTransitionData.spawnPointID))
         {
-            Debug.LogWarning("No spawnPointID set for this scene load.");
+            Debug.Log("No spawnPointID set for this scene load. Spawning Default");
             yield break;
         }
 

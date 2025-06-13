@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using System.IO;
+using System.Collections;
+using System.Collections.Generic;
 
 public class SaveMenuUI : MonoBehaviour
 {
@@ -24,10 +26,21 @@ public class SaveMenuUI : MonoBehaviour
 
     public void ToggleSaveSlots()
     {
-        saveSlotsMenu.SetActive(!saveSlotsMenu.activeSelf);
+        if (!saveSlotsMenu.activeSelf)
+        {
+            StartCoroutine(ShowSaveSlotsWithDelay(0.25f));
+        }
+        else
+        {
+            saveSlotsMenu.SetActive(false);
+        }
+    }
 
-        if (saveSlotsMenu.activeSelf)
-            UpdateSlotLabels();
+    private IEnumerator ShowSaveSlotsWithDelay(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        saveSlotsMenu.SetActive(true);
+        UpdateSlotLabels();
     }
 
     public void OnClickSlot0() => HandleSlotPress(0);

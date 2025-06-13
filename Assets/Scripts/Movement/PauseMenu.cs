@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;  // Add this for interacting with UI elements (like buttons)
+using System.Collections;
+using System.Collections.Generic;
 
 public class PauseManager : MonoBehaviour
 {
@@ -69,12 +71,23 @@ public class PauseManager : MonoBehaviour
 
     public void OpenSettings()
     {
+        StartCoroutine(OpenSettingsDelay(0.25f));
+    }
+    private IEnumerator OpenSettingsDelay(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
         pauseMenu.SetActive(false);
         settingsMenu.SetActive(true);
     }
 
     public void BackToPauseMenu()
     {
+        StartCoroutine(CloseSettingsDelay(0.25f));
+    }
+
+    private IEnumerator CloseSettingsDelay(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
         settingsMenu.SetActive(false);
         pauseMenu.SetActive(true);
     }
@@ -84,7 +97,7 @@ public class PauseManager : MonoBehaviour
         if (!isConfirmingQuit)
         {
             // Display the "Are you sure?" confirmation dialog
-            areYouSure.SetActive(true);
+            StartCoroutine(QuitButtonClickedDelay(0.25f));
             isConfirmingQuit = true;
 
             // Hide the pause menu to prevent access while confirming
@@ -92,25 +105,40 @@ public class PauseManager : MonoBehaviour
         }
     }
 
+    private IEnumerator QuitButtonClickedDelay(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        areYouSure.SetActive(true);
+    }
+
     public void OnYesQuitClicked()
     {
-        // Confirm quit and exit the game
         Debug.Log("Game is quitting...");
-        Application.Quit();
+        StartCoroutine(YesQuitButtonClickedDelay(0.25f));
+    }
 
-        // If we're in the editor, simulate quit (doesn't work in the editor as Application.Quit() only works in the built game)
+    private IEnumerator YesQuitButtonClickedDelay(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
+#else
+    Application.Quit();
 #endif
     }
 
     public void OnNoQuitClicked()
     {
-        // Close the "Are you sure?" dialog and show the pause menu again
-        areYouSure.SetActive(false);
         isConfirmingQuit = false;
+        StartCoroutine(NoQuitButtonClickedDelay(0.25f));
+    }
 
-        // Re-enable the pause menu if the player cancels quitting
+    private IEnumerator NoQuitButtonClickedDelay(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        areYouSure.SetActive(false);
+
         EnablePauseMenuInteractions();  // Enable the interactions in the pause menu
         pauseMenu.SetActive(true);
     }
