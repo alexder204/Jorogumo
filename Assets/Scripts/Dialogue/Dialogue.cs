@@ -20,10 +20,37 @@ namespace PlayerDialogue
         private Coroutine typingRoutine;
         private TopDownMovement playerMovement;
 
+        private DialogueID dialogueID;
+
         private void Start()
         {
+            dialogueID = GetComponent<DialogueID>();
+
             playerMovement = GameObject.Find("Player").GetComponent<TopDownMovement>();
+
+            var ui = DialogueUIManager.Instance;
+
+            dialogueCanvas = ui.dialogueCanvas;
+            charImage1 = ui.charImage1;
+            charImage2 = ui.charImage2;
+            speakerText = ui.speakerText;
+            dialogueText = ui.dialogueText;
+            portraitImage1 = ui.portraitImage1;
+            portraitImage2 = ui.portraitImage2;
+
+            if (interactPopUp == null)
+                interactPopUp = GameObject.Find("InteractPopUp");
+
+            if (DialogueUIManager.Instance.HasCompletedDialogue(dialogueID))
+            {
+                if (interactPopUp != null)
+                    interactPopUp.SetActive(false);
+
+                if (interactItem != null)
+                    interactItem.SetActive(false);
+            }
         }
+
 
         private void Update()
         {
@@ -35,12 +62,18 @@ namespace PlayerDialogue
                         StopCoroutine(typingRoutine);
 
                     if (step >= speaker.Length)
+                    {
+                        DialogueUIManager.Instance.MarkDialogueComplete(dialogueID);
                         EndDialogue();
+                    }
+
                     else
                         ContinueDialogue();
                 }
                 else if (playerInRange && !dialogueActived)
                 {
+                    if (DialogueUIManager.Instance.HasCompletedDialogue(dialogueID))
+                        return;
                     StartDialogue();
                 }
             }
@@ -130,7 +163,10 @@ namespace PlayerDialogue
             if (collision.CompareTag("Player"))
             {
                 playerInRange = true;
-                interactPopUp.SetActive(true);
+                if (!DialogueUIManager.Instance.HasCompletedDialogue(dialogueID))
+                {
+                    interactPopUp.SetActive(true);
+                }
             }
         }
 

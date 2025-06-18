@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Xml;
 
 namespace PlayerDialogue
 {
@@ -33,10 +34,38 @@ namespace PlayerDialogue
         private bool dialogueActive = false;
         private bool canContinueText = false;
 
-        void Start()
+        private DialogueID dialogueID;
+
+        private void Start()
         {
+            dialogueID = GetComponent<DialogueID>();
+
             playerMovement = GameObject.Find("Player").GetComponent<TopDownMovement>();
+
+            var ui = DialogueUIManager.Instance;
+
+            dialogueCanvas = ui.dialogueCanvas;
+            charImage1 = ui.charImage1;
+            charImage2 = ui.charImage2;
+            speakerText = ui.speakerText;
+            dialogueText = ui.dialogueText;
+            portraitImage1 = ui.portraitImage1;
+            portraitImage2 = ui.portraitImage2;
+
+            if (interactPopUp == null)
+                interactPopUp = GameObject.Find("InteractPopUp");
+
+            // At start, check if this dialogue was completed before; if yes, disable interaction UI
+            if (DialogueUIManager.Instance.HasCompletedDialogue(dialogueID))
+            {
+                if (interactPopUp != null)
+                    interactPopUp.SetActive(false);
+
+                if (interactItem != null)
+                    interactItem.SetActive(false);
+            }
         }
+
 
         void Update()
         {
@@ -59,6 +88,17 @@ namespace PlayerDialogue
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (!collision.CompareTag("Player")) return;
+
+            // If dialogue was completed, do not start or show interaction prompt
+            if (DialogueUIManager.Instance.HasCompletedDialogue(dialogueID))
+            {
+                if (interactPopUp != null)
+                    interactPopUp.SetActive(false);
+
+                if (interactItem != null)
+                    interactItem.SetActive(false);
+                return;
+            }
 
             StartDialogue();
         }
@@ -95,6 +135,9 @@ namespace PlayerDialogue
 
             if (step >= dialogueWords.Length)
             {
+                // Mark this dialogue as completed before ending
+                DialogueUIManager.Instance.MarkDialogueComplete(dialogueID);
+
                 EndDialogue();
             }
             else

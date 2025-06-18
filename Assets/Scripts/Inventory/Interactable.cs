@@ -7,6 +7,8 @@ public class Interactable : MonoBehaviour
     public GameObject interactIcon;
     private bool isPlayerNearby = false;
 
+    private UniqueID uniqueID;
+
     public enum InteractableType
     {
         Door,
@@ -18,6 +20,15 @@ public class Interactable : MonoBehaviour
     {
         if (interactIcon != null)
             interactIcon.SetActive(false);
+
+        uniqueID = GetComponent<UniqueID>();
+
+        if (uniqueID != null && PickedUpObjectsManager.Instance != null &&
+            PickedUpObjectsManager.Instance.HasBeenUsed(uniqueID.id))
+        {
+            gameObject.SetActive(false);
+        }
+
     }
 
     private void Update()
@@ -78,11 +89,16 @@ public class Interactable : MonoBehaviour
 
     private void PerformAction()
     {
+        if (uniqueID != null && PickedUpObjectsManager.Instance != null)
+        {
+            PickedUpObjectsManager.Instance.MarkUsed(uniqueID.id);
+        }
+
         switch (type)
         {
             case InteractableType.Door:
             case InteractableType.LockedDoor:
-                gameObject.SetActive(false);  // Deactivates the object
+                gameObject.SetActive(false);
                 break;
 
             default:

@@ -6,6 +6,7 @@ public class PickedUpObjectsManager : MonoBehaviour
     public static PickedUpObjectsManager Instance { get; private set; }
 
     private HashSet<string> pickedUpIDs = new HashSet<string>();
+    private HashSet<string> usedInteractableIDs = new HashSet<string>();
 
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class PickedUpObjectsManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    // ========== PICKUPS ==========
     public void MarkPickedUp(string id)
     {
         if (!pickedUpIDs.Contains(id))
@@ -29,8 +31,21 @@ public class PickedUpObjectsManager : MonoBehaviour
         return pickedUpIDs.Contains(id);
     }
 
+    // ========== INTERACTABLES ==========
+    public void MarkUsed(string id)
+    {
+        if (!usedInteractableIDs.Contains(id))
+            usedInteractableIDs.Add(id);
+    }
+
+    public bool HasBeenUsed(string id)
+    {
+        return usedInteractableIDs.Contains(id);
+    }
+
     public void Clear()
     {
         pickedUpIDs.Clear();
+        usedInteractableIDs.Clear();
     }
 }
