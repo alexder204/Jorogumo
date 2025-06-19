@@ -61,8 +61,14 @@ public class SaveMenuUI : MonoBehaviour
             Debug.Log($"Loaded from slot {slotIndex}");
         }
 
-        UpdateSlotLabels();
+        StartCoroutine(HideSaveSlotsWithDelay(0.25f));
+    }
+
+    private IEnumerator HideSaveSlotsWithDelay(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
         saveSlotsMenu.SetActive(false);
+        UpdateSlotLabels();
     }
 
     public void SetSaveMode(bool saveMode)
