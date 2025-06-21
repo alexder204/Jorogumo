@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class ItemDetailsUI : MonoBehaviour
 {
@@ -30,6 +32,12 @@ public class ItemDetailsUI : MonoBehaviour
 
     public void HideDetails()
     {
+        StartCoroutine(HideDetailsTimer(0.25f));
+    }
+
+    private IEnumerator HideDetailsTimer(float duration)
+    {
+        yield return new WaitForSeconds(duration);
         panel.SetActive(false);
     }
 }
