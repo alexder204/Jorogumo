@@ -9,6 +9,10 @@ public class SaveSystem : MonoBehaviour
     public Transform playerTransform;
     public UniqueIDRegistry uniqueIDRegistry;
 
+    public float autosaveInterval = 10f; // 10 minutes = 600 seconds
+    public int autosaveSlot = 99;         // Reserved slot for autosave
+    private Coroutine autosaveCoroutine;
+
     private string GetSlotPath(int slot) =>
         Application.persistentDataPath + $"/saveslot{slot}.json";
 
@@ -27,6 +31,46 @@ public class SaveSystem : MonoBehaviour
             }
         }
     }
+
+    private void Start()
+    {
+        StartAutosave();
+    }
+
+    public void StartAutosave()
+    {
+        if (autosaveCoroutine != null)
+            StopCoroutine(autosaveCoroutine);
+
+
+        autosaveCoroutine = StartCoroutine(AutosaveLoop());
+        Debug.Log("Autosave path: " + GetSlotPath(autosaveSlot));
+    }
+
+    private IEnumerator AutosaveLoop()
+    {
+        Debug.Log("Autosave loop started");
+
+        while (true)
+        {
+            Debug.Log("Started wait at: " + Time.realtimeSinceStartup);
+            yield return new WaitForSecondsRealtime(autosaveInterval);
+            Debug.Log("Finished wait at: " + Time.realtimeSinceStartup);
+
+            Debug.Log("Autosave interval passed. Checking if paused...");
+            if (!PauseManager.isGamePaused)
+            {
+                Debug.Log("Not paused, saving...");
+                SaveGame(autosaveSlot);
+                Debug.Log($"Autosaved to slot {autosaveSlot} at {System.DateTime.Now}");
+            }
+            else
+            {
+                Debug.Log("Paused — skipping autosave");
+            }
+        }
+    }
+
 
     public void SaveGame(int slot)
     {
