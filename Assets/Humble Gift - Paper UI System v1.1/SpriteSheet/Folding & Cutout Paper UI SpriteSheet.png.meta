@@ -1,0 +1,7455 @@
+fileFormatVersion: 2
+guid: 43698999a4ea13d40b05c24390677abe
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9197255356440242682
+    second: Folding & Cutout Paper UI SpriteSheet_0
+  - first:
+      213: -3574242029333188387
+    second: Folding & Cutout Paper UI SpriteSheet_1
+  - first:
+      213: -4906773764181241742
+    second: Folding & Cutout Paper UI SpriteSheet_2
+  - first:
+      213: -1620332542511828860
+    second: Folding & Cutout Paper UI SpriteSheet_3
+  - first:
+      213: 3769952093974002333
+    second: Folding & Cutout Paper UI SpriteSheet_4
+  - first:
+      213: -2875342555103514990
+    second: Folding & Cutout Paper UI SpriteSheet_5
+  - first:
+      213: 912216036575629267
+    second: Folding & Cutout Paper UI SpriteSheet_6
+  - first:
+      213: -4191226926934397896
+    second: Folding & Cutout Paper UI SpriteSheet_7
+  - first:
+      213: -1371833372879509113
+    second: Folding & Cutout Paper UI SpriteSheet_8
+  - first:
+      213: -415941699312403934
+    second: Folding & Cutout Paper UI SpriteSheet_9
+  - first:
+      213: -2396358574061499362
+    second: Folding & Cutout Paper UI SpriteSheet_10
+  - first:
+      213: -1632611439974555067
+    second: Folding & Cutout Paper UI SpriteSheet_11
+  - first:
+      213: -576057477237516270
+    second: Folding & Cutout Paper UI SpriteSheet_12
+  - first:
+      213: -4661832447567952240
+    second: Folding & Cutout Paper UI SpriteSheet_13
+  - first:
+      213: -5658277823486885811
+    second: Folding & Cutout Paper UI SpriteSheet_14
+  - first:
+      213: -329032523914866304
+    second: Folding & Cutout Paper UI SpriteSheet_15
+  - first:
+      213: 3510565236416966051
+    second: Folding & Cutout Paper UI SpriteSheet_16
+  - first:
+      213: -3978452867001479982
+    second: Folding & Cutout Paper UI SpriteSheet_17
+  - first:
+      213: 2336405737663007720
+    second: Folding & Cutout Paper UI SpriteSheet_18
+  - first:
+      213: 8269544836651332406
+    second: Folding & Cutout Paper UI SpriteSheet_19
+  - first:
+      213: 8502366743004171901
+    second: Folding & Cutout Paper UI SpriteSheet_20
+  - first:
+      213: -7110521742879403551
+    second: Folding & Cutout Paper UI SpriteSheet_21
+  - first:
+      213: 7238885743759615878
+    second: Folding & Cutout Paper UI SpriteSheet_22
+  - first:
+      213: 1838190252946701872
+    second: Folding & Cutout Paper UI SpriteSheet_23
+  - first:
+      213: -9116996430293616693
+    second: Folding & Cutout Paper UI SpriteSheet_24
+  - first:
+      213: 7955222015930649914
+    second: Folding & Cutout Paper UI SpriteSheet_25
+  - first:
+      213: -4167016871722891600
+    second: Folding & Cutout Paper UI SpriteSheet_26
+  - first:
+      213: -291290174678390524
+    second: Folding & Cutout Paper UI SpriteSheet_27
+  - first:
+      213: -5532411652633531975
+    second: Folding & Cutout Paper UI SpriteSheet_28
+  - first:
+      213: 2865058310528225032
+    second: Folding & Cutout Paper UI SpriteSheet_29
+  - first:
+      213: -4534943959052381945
+    second: Folding & Cutout Paper UI SpriteSheet_30
+  - first:
+      213: -8719090870606498852
+    second: Folding & Cutout Paper UI SpriteSheet_31
+  - first:
+      213: -5845183036141742536
+    second: Folding & Cutout Paper UI SpriteSheet_32
+  - first:
+      213: 9089264856466610710
+    second: Folding & Cutout Paper UI SpriteSheet_33
+  - first:
+      213: -6109635614782780161
+    second: Folding & Cutout Paper UI SpriteSheet_34
+  - first:
+      213: -1172492735587477495
+    second: Folding & Cutout Paper UI SpriteSheet_35
+  - first:
+      213: -8401108168601112540
+    second: Folding & Cutout Paper UI SpriteSheet_36
+  - first:
+      213: 942999211574819688
+    second: Folding & Cutout Paper UI SpriteSheet_37
+  - first:
+      213: 7746987691193183667
+    second: Folding & Cutout Paper UI SpriteSheet_38
+  - first:
+      213: -7028522828640362538
+    second: Folding & Cutout Paper UI SpriteSheet_39
+  - first:
+      213: -5345557822294600798
+    second: Folding & Cutout Paper UI SpriteSheet_40
+  - first:
+      213: 2587528365163673423
+    second: Folding & Cutout Paper UI SpriteSheet_41
+  - first:
+      213: 8821419044045186340
+    second: Folding & Cutout Paper UI SpriteSheet_42
+  - first:
+      213: -3721603471818153857
+    second: Folding & Cutout Paper UI SpriteSheet_43
+  - first:
+      213: -7193195425384317521
+    second: Folding & Cutout Paper UI SpriteSheet_44
+  - first:
+      213: 1845025353713729000
+    second: Folding & Cutout Paper UI SpriteSheet_45
+  - first:
+      213: 6062395883135110990
+    second: Folding & Cutout Paper UI SpriteSheet_46
+  - first:
+      213: -2120086933687554011
+    second: Folding & Cutout Paper UI SpriteSheet_47
+  - first:
+      213: 6096402218796273067
+    second: Folding & Cutout Paper UI SpriteSheet_48
+  - first:
+      213: -4794660233032847341
+    second: Folding & Cutout Paper UI SpriteSheet_49
+  - first:
+      213: -4830237774855457270
+    second: Folding & Cutout Paper UI SpriteSheet_50
+  - first:
+      213: 2755820603946505939
+    second: Folding & Cutout Paper UI SpriteSheet_51
+  - first:
+      213: -763632356438156013
+    second: Folding & Cutout Paper UI SpriteSheet_52
+  - first:
+      213: -9164659791465683407
+    second: Folding & Cutout Paper UI SpriteSheet_53
+  - first:
+      213: 8264020187132398657
+    second: Folding & Cutout Paper UI SpriteSheet_54
+  - first:
+      213: 4832802668559775596
+    second: Folding & Cutout Paper UI SpriteSheet_55
+  - first:
+      213: 9138163231133172747
+    second: Folding & Cutout Paper UI SpriteSheet_56
+  - first:
+      213: 2031094925325919658
+    second: Folding & Cutout Paper UI SpriteSheet_57
+  - first:
+      213: 1951698284011419883
+    second: Folding & Cutout Paper UI SpriteSheet_58
+  - first:
+      213: 5807319621717603057
+    second: Folding & Cutout Paper UI SpriteSheet_59
+  - first:
+      213: -2185620336739855925
+    second: Folding & Cutout Paper UI SpriteSheet_60
+  - first:
+      213: -7854717068285174149
+    second: Folding & Cutout Paper UI SpriteSheet_61
+  - first:
+      213: -1154049379904660329
+    second: Folding & Cutout Paper UI SpriteSheet_62
+  - first:
+      213: -1969528381291656116
+    second: Folding & Cutout Paper UI SpriteSheet_63
+  - first:
+      213: 7525740206585735673
+    second: Folding & Cutout Paper UI SpriteSheet_64
+  - first:
+      213: -7739544954950425022
+    second: Folding & Cutout Paper UI SpriteSheet_65
+  - first:
+      213: 1397080571930172271
+    second: Folding & Cutout Paper UI SpriteSheet_66
+  - first:
+      213: 3906456837081436544
+    second: Folding & Cutout Paper UI SpriteSheet_67
+  - first:
+      213: 5117836399794794827
+    second: Folding & Cutout Paper UI SpriteSheet_68
+  - first:
+      213: 6862940776137929451
+    second: Folding & Cutout Paper UI SpriteSheet_69
+  - first:
+      213: -7798084216922763193
+    second: Folding & Cutout Paper UI SpriteSheet_70
+  - first:
+      213: -6685114611291727116
+    second: Folding & Cutout Paper UI SpriteSheet_71
+  - first:
+      213: 8644710727266217537
+    second: Folding & Cutout Paper UI SpriteSheet_72
+  - first:
+      213: -667397190286490222
+    second: Folding & Cutout Paper UI SpriteSheet_73
+  - first:
+      213: -5983890327059911190
+    second: Folding & Cutout Paper UI SpriteSheet_74
+  - first:
+      213: 5274924803132995472
+    second: Folding & Cutout Paper UI SpriteSheet_75
+  - first:
+      213: 4693498613522501576
+    second: Folding & Cutout Paper UI SpriteSheet_76
+  - first:
+      213: -392134269496539364
+    second: Folding & Cutout Paper UI SpriteSheet_77
+  - first:
+      213: 9187630614831556289
+    second: Folding & Cutout Paper UI SpriteSheet_78
+  - first:
+      213: -2995292585552164624
+    second: Folding & Cutout Paper UI SpriteSheet_79
+  - first:
+      213: -2784906220713315422
+    second: Folding & Cutout Paper UI SpriteSheet_80
+  - first:
+      213: -4336093470133012958
+    second: Folding & Cutout Paper UI SpriteSheet_81
+  - first:
+      213: -4361673708832682143
+    second: Folding & Cutout Paper UI SpriteSheet_82
+  - first:
+      213: 2548290237636051548
+    second: Folding & Cutout Paper UI SpriteSheet_83
+  - first:
+      213: -375747882693070738
+    second: Folding & Cutout Paper UI SpriteSheet_84
+  - first:
+      213: 3640607475064111066
+    second: Folding & Cutout Paper UI SpriteSheet_85
+  - first:
+      213: -3666897746823934086
+    second: Folding & Cutout Paper UI SpriteSheet_86
+  - first:
+      213: 754451575268852061
+    second: Folding & Cutout Paper UI SpriteSheet_87
+  - first:
+      213: -7468259622143428640
+    second: Folding & Cutout Paper UI SpriteSheet_88
+  - first:
+      213: 1636730115541985850
+    second: Folding & Cutout Paper UI SpriteSheet_89
+  - first:
+      213: 7329055738546799636
+    second: Folding & Cutout Paper UI SpriteSheet_90
+  - first:
+      213: 454876305430305862
+    second: Folding & Cutout Paper UI SpriteSheet_91
+  - first:
+      213: -3688912535528781189
+    second: Folding & Cutout Paper UI SpriteSheet_92
+  - first:
+      213: 762498144434278161
+    second: Folding & Cutout Paper UI SpriteSheet_93
+  - first:
+      213: 5428298618115636631
+    second: Folding & Cutout Paper UI SpriteSheet_94
+  - first:
+      213: 3640455093569458186
+    second: Folding & Cutout Paper UI SpriteSheet_95
+  - first:
+      213: -2016370017243649693
+    second: Folding & Cutout Paper UI SpriteSheet_96
+  - first:
+      213: 8166861090866601419
+    second: Folding & Cutout Paper UI SpriteSheet_97
+  - first:
+      213: -1810507262828525717
+    second: Folding & Cutout Paper UI SpriteSheet_98
+  - first:
+      213: 8979646642594750668
+    second: Folding & Cutout Paper UI SpriteSheet_99
+  - first:
+      213: -2227270258206044035
+    second: Folding & Cutout Paper UI SpriteSheet_100
+  - first:
+      213: 6514682196723163945
+    second: Folding & Cutout Paper UI SpriteSheet_101
+  - first:
+      213: -6534143127417013490
+    second: Folding & Cutout Paper UI SpriteSheet_102
+  - first:
+      213: -1931143787667161411
+    second: Folding & Cutout Paper UI SpriteSheet_103
+  - first:
+      213: -1709123894253852969
+    second: Folding & Cutout Paper UI SpriteSheet_104
+  - first:
+      213: -2541840992987717213
+    second: Folding & Cutout Paper UI SpriteSheet_105
+  - first:
+      213: 2307812467794527999
+    second: Folding & Cutout Paper UI SpriteSheet_106
+  - first:
+      213: 8854317016476719969
+    second: Folding & Cutout Paper UI SpriteSheet_107
+  - first:
+      213: 5732595233811360734
+    second: Folding & Cutout Paper UI SpriteSheet_108
+  - first:
+      213: -3002994198986384525
+    second: Folding & Cutout Paper UI SpriteSheet_109
+  - first:
+      213: 7982176983471473290
+    second: Folding & Cutout Paper UI SpriteSheet_110
+  - first:
+      213: -1639476099163446575
+    second: Folding & Cutout Paper UI SpriteSheet_111
+  - first:
+      213: 7048108857697442222
+    second: Folding & Cutout Paper UI SpriteSheet_112
+  - first:
+      213: -1766114895359832087
+    second: Folding & Cutout Paper UI SpriteSheet_113
+  - first:
+      213: 8479213012083773820
+    second: Folding & Cutout Paper UI SpriteSheet_114
+  - first:
+      213: -2139233158950130256
+    second: Folding & Cutout Paper UI SpriteSheet_115
+  - first:
+      213: -1254347321757076998
+    second: Folding & Cutout Paper UI SpriteSheet_116
+  - first:
+      213: -9158524258440818405
+    second: Folding & Cutout Paper UI SpriteSheet_117
+  - first:
+      213: 4214866743533991250
+    second: Folding & Cutout Paper UI SpriteSheet_118
+  - first:
+      213: -6538989022243780653
+    second: Folding & Cutout Paper UI SpriteSheet_119
+  - first:
+      213: -610824895812081730
+    second: Folding & Cutout Paper UI SpriteSheet_120
+  - first:
+      213: -5146615991191115741
+    second: Folding & Cutout Paper UI SpriteSheet_121
+  - first:
+      213: 8636800495377955831
+    second: Folding & Cutout Paper UI SpriteSheet_122
+  - first:
+      213: 157185131580326661
+    second: Folding & Cutout Paper UI SpriteSheet_123
+  - first:
+      213: -8718468782777722724
+    second: Folding & Cutout Paper UI SpriteSheet_124
+  - first:
+      213: 8268213005856729156
+    second: Folding & Cutout Paper UI SpriteSheet_125
+  - first:
+      213: -8366521526024299602
+    second: Folding & Cutout Paper UI SpriteSheet_126
+  - first:
+      213: 2420523078049165114
+    second: Folding & Cutout Paper UI SpriteSheet_127
+  - first:
+      213: -5985366919287626243
+    second: Folding & Cutout Paper UI SpriteSheet_128
+  - first:
+      213: 2798431842693244452
+    second: Folding & Cutout Paper UI SpriteSheet_129
+  - first:
+      213: 8169679781814642005
+    second: Folding & Cutout Paper UI SpriteSheet_130
+  - first:
+      213: -33359583866258906
+    second: Folding & Cutout Paper UI SpriteSheet_131
+  - first:
+      213: 8112508530150039700
+    second: Folding & Cutout Paper UI SpriteSheet_132
+  - first:
+      213: -2023274473672615988
+    second: Folding & Cutout Paper UI SpriteSheet_133
+  - first:
+      213: 2857961129400154116
+    second: Folding & Cutout Paper UI SpriteSheet_134
+  - first:
+      213: -4122317003248019571
+    second: Folding & Cutout Paper UI SpriteSheet_135
+  - first:
+      213: 489578595563938146
+    second: Folding & Cutout Paper UI SpriteSheet_136
+  - first:
+      213: 2514725567394664762
+    second: Folding & Cutout Paper UI SpriteSheet_137
+  - first:
+      213: -816048600166718006
+    second: Folding & Cutout Paper UI SpriteSheet_138
+  - first:
+      213: 3403960005523934889
+    second: Folding & Cutout Paper UI SpriteSheet_139
+  - first:
+      213: 4800108811614460184
+    second: Folding & Cutout Paper UI SpriteSheet_140
+  - first:
+      213: -2901513929421350434
+    second: Folding & Cutout Paper UI SpriteSheet_141
+  - first:
+      213: 4102228919128878436
+    second: Folding & Cutout Paper UI SpriteSheet_142
+  - first:
+      213: 8725088273419484030
+    second: Folding & Cutout Paper UI SpriteSheet_143
+  - first:
+      213: 873255275650175208
+    second: Folding & Cutout Paper UI SpriteSheet_144
+  - first:
+      213: 7900092893117243697
+    second: Folding & Cutout Paper UI SpriteSheet_145
+  - first:
+      213: -8060062422787660518
+    second: Folding & Cutout Paper UI SpriteSheet_146
+  - first:
+      213: 555868644384392061
+    second: Folding & Cutout Paper UI SpriteSheet_147
+  - first:
+      213: 126852316712223126
+    second: Folding & Cutout Paper UI SpriteSheet_148
+  - first:
+      213: -2987980177614818580
+    second: Folding & Cutout Paper UI SpriteSheet_149
+  - first:
+      213: -6236148493703174418
+    second: Folding & Cutout Paper UI SpriteSheet_150
+  - first:
+      213: -553069362800864588
+    second: Folding & Cutout Paper UI SpriteSheet_151
+  - first:
+      213: 4328872913639990498
+    second: Folding & Cutout Paper UI SpriteSheet_152
+  - first:
+      213: -5366269656474827587
+    second: Folding & Cutout Paper UI SpriteSheet_153
+  - first:
+      213: -3373415847161194289
+    second: Folding & Cutout Paper UI SpriteSheet_154
+  - first:
+      213: -5161127097430982081
+    second: Folding & Cutout Paper UI SpriteSheet_155
+  - first:
+      213: 5059718191863964775
+    second: Folding & Cutout Paper UI SpriteSheet_156
+  - first:
+      213: -2876207935172884608
+    second: Folding & Cutout Paper UI SpriteSheet_157
+  - first:
+      213: -413712462470760386
+    second: Folding & Cutout Paper UI SpriteSheet_158
+  - first:
+      213: 1140863192109599772
+    second: Folding & Cutout Paper UI SpriteSheet_159
+  - first:
+      213: 1724511587479562261
+    second: Folding & Cutout Paper UI SpriteSheet_160
+  - first:
+      213: 4375019856946267298
+    second: Folding & Cutout Paper UI SpriteSheet_161
+  - first:
+      213: -6779130064756877554
+    second: Folding & Cutout Paper UI SpriteSheet_162
+  - first:
+      213: 6029198582308016558
+    second: Folding & Cutout Paper UI SpriteSheet_163
+  - first:
+      213: -700544948140232058
+    second: Folding & Cutout Paper UI SpriteSheet_164
+  - first:
+      213: 6352290835039634838
+    second: Folding & Cutout Paper UI SpriteSheet_165
+  - first:
+      213: 8329971687949285993
+    second: Folding & Cutout Paper UI SpriteSheet_166
+  - first:
+      213: 4688100923222898415
+    second: Folding & Cutout Paper UI SpriteSheet_167
+  - first:
+      213: -5981209935351013223
+    second: Folding & Cutout Paper UI SpriteSheet_168
+  - first:
+      213: 8993156485787565187
+    second: Folding & Cutout Paper UI SpriteSheet_169
+  - first:
+      213: 7866371681031669961
+    second: Folding & Cutout Paper UI SpriteSheet_170
+  - first:
+      213: -1269600440638130644
+    second: Folding & Cutout Paper UI SpriteSheet_171
+  - first:
+      213: 8333901176829815488
+    second: Folding & Cutout Paper UI SpriteSheet_172
+  - first:
+      213: -6939067104161330390
+    second: Folding & Cutout Paper UI SpriteSheet_173
+  - first:
+      213: -167948936908796314
+    second: Folding & Cutout Paper UI SpriteSheet_174
+  - first:
+      213: 5812149281035263289
+    second: Folding & Cutout Paper UI SpriteSheet_175
+  - first:
+      213: -1558838600427409727
+    second: Folding & Cutout Paper UI SpriteSheet_176
+  - first:
+      213: 2067931331790744531
+    second: Folding & Cutout Paper UI SpriteSheet_177
+  - first:
+      213: -118903384514409102
+    second: Folding & Cutout Paper UI SpriteSheet_178
+  - first:
+      213: -1342542715145062230
+    second: Folding & Cutout Paper UI SpriteSheet_179
+  - first:
+      213: 6468643289525555764
+    second: Folding & Cutout Paper UI SpriteSheet_180
+  - first:
+      213: 3031651365976977107
+    second: Folding & Cutout Paper UI SpriteSheet_181
+  - first:
+      213: -5580329358737907421
+    second: Folding & Cutout Paper UI SpriteSheet_182
+  - first:
+      213: -3476278957008591314
+    second: Folding & Cutout Paper UI SpriteSheet_183
+  - first:
+      213: -5032896437073542106
+    second: Folding & Cutout Paper UI SpriteSheet_184
+  - first:
+      213: 2028593905706276251
+    second: Folding & Cutout Paper UI SpriteSheet_185
+  - first:
+      213: -4869323235213607498
+    second: Folding & Cutout Paper UI SpriteSheet_186
+  - first:
+      213: 8789727483454923881
+    second: Folding & Cutout Paper UI SpriteSheet_187
+  - first:
+      213: 5609346716061884930
+    second: Folding & Cutout Paper UI SpriteSheet_188
+  - first:
+      213: 602707425673782422
+    second: Folding & Cutout Paper UI SpriteSheet_189
+  - first:
+      213: 5583999125301507355
+    second: Folding & Cutout Paper UI SpriteSheet_190
+  - first:
+      213: -8817647042324006729
+    second: Folding & Cutout Paper UI SpriteSheet_191
+  - first:
+      213: -6271765971004186505
+    second: Folding & Cutout Paper UI SpriteSheet_192
+  - first:
+      213: 6290580521960443613
+    second: Folding & Cutout Paper UI SpriteSheet_193
+  - first:
+      213: 819464307101267001
+    second: Folding & Cutout Paper UI SpriteSheet_194
+  - first:
+      213: -2823184924809902980
+    second: Folding & Cutout Paper UI SpriteSheet_195
+  - first:
+      213: 4449432382054184254
+    second: Folding & Cutout Paper UI SpriteSheet_196
+  - first:
+      213: -4595933581804916552
+    second: Folding & Cutout Paper UI SpriteSheet_197
+  - first:
+      213: -6513294063595943026
+    second: Folding & Cutout Paper UI SpriteSheet_198
+  - first:
+      213: -7629344849340559278
+    second: Folding & Cutout Paper UI SpriteSheet_199
+  - first:
+      213: 410302226089738878
+    second: Folding & Cutout Paper UI SpriteSheet_200
+  - first:
+      213: 6011776177753452288
+    second: Folding & Cutout Paper UI SpriteSheet_201
+  - first:
+      213: 1462531766078708366
+    second: Folding & Cutout Paper UI SpriteSheet_202
+  - first:
+      213: 6808115682517028283
+    second: Folding & Cutout Paper UI SpriteSheet_203
+  - first:
+      213: -3162224493184632161
+    second: Folding & Cutout Paper UI SpriteSheet_204
+  - first:
+      213: 7911263321543484140
+    second: Folding & Cutout Paper UI SpriteSheet_205
+  - first:
+      213: -2350552376936746680
+    second: Folding & Cutout Paper UI SpriteSheet_206
+  - first:
+      213: -3547773374384308987
+    second: Folding & Cutout Paper UI SpriteSheet_207
+  - first:
+      213: -784838295973093806
+    second: Folding & Cutout Paper UI SpriteSheet_208
+  - first:
+      213: 8458271944307408185
+    second: Folding & Cutout Paper UI SpriteSheet_209
+  - first:
+      213: 2494901181705866463
+    second: Folding & Cutout Paper UI SpriteSheet_210
+  - first:
+      213: -3485397645638230172
+    second: Folding & Cutout Paper UI SpriteSheet_211
+  - first:
+      213: 4430926353635844074
+    second: Folding & Cutout Paper UI SpriteSheet_212
+  - first:
+      213: -2893309958706474694
+    second: Folding & Cutout Paper UI SpriteSheet_213
+  - first:
+      213: 6801980160829255283
+    second: Folding & Cutout Paper UI SpriteSheet_214
+  - first:
+      213: -8095196405914836327
+    second: Folding & Cutout Paper UI SpriteSheet_215
+  - first:
+      213: -5173955468604087103
+    second: Folding & Cutout Paper UI SpriteSheet_216
+  - first:
+      213: -3936996731872352366
+    second: Folding & Cutout Paper UI SpriteSheet_217
+  - first:
+      213: 1746436950067905306
+    second: Folding & Cutout Paper UI SpriteSheet_218
+  - first:
+      213: 2746225978331244316
+    second: Folding & Cutout Paper UI SpriteSheet_219
+  - first:
+      213: -1359943552546262394
+    second: Folding & Cutout Paper UI SpriteSheet_220
+  - first:
+      213: -3425356096014191143
+    second: Folding & Cutout Paper UI SpriteSheet_221
+  - first:
+      213: 913902980239981260
+    second: Folding & Cutout Paper UI SpriteSheet_222
+  - first:
+      213: -7636669509388968866
+    second: Folding & Cutout Paper UI SpriteSheet_223
+  - first:
+      213: 5364273167595301990
+    second: Folding & Cutout Paper UI SpriteSheet_224
+  - first:
+      213: -7025439477090629484
+    second: Folding & Cutout Paper UI SpriteSheet_225
+  - first:
+      213: -3232618172662288562
+    second: Folding & Cutout Paper UI SpriteSheet_226
+  - first:
+      213: 822287190211824630
+    second: Folding & Cutout Paper UI SpriteSheet_227
+  - first:
+      213: 5894053507783329109
+    second: Folding & Cutout Paper UI SpriteSheet_228
+  - first:
+      213: -5407386923193347651
+    second: Folding & Cutout Paper UI SpriteSheet_229
+  - first:
+      213: -5706167642057724712
+    second: Folding & Cutout Paper UI SpriteSheet_230
+  - first:
+      213: -4229156237770528231
+    second: Folding & Cutout Paper UI SpriteSheet_231
+  - first:
+      213: 776743948357540504
+    second: Folding & Cutout Paper UI SpriteSheet_232
+  - first:
+      213: -2556893467222429493
+    second: Folding & Cutout Paper UI SpriteSheet_233
+  - first:
+      213: -7640644034673142584
+    second: Folding & Cutout Paper UI SpriteSheet_234
+  - first:
+      213: 7933451031313345489
+    second: Folding & Cutout Paper UI SpriteSheet_235
+  - first:
+      213: -3536003957951411653
+    second: Folding & Cutout Paper UI SpriteSheet_236
+  - first:
+      213: -5756880934419536804
+    second: Folding & Cutout Paper UI SpriteSheet_237
+  - first:
+      213: 3749973350129433287
+    second: Folding & Cutout Paper UI SpriteSheet_238
+  - first:
+      213: -1998715563800572531
+    second: Folding & Cutout Paper UI SpriteSheet_239
+  - first:
+      213: 7040109480752941454
+    second: Folding & Cutout Paper UI SpriteSheet_240
+  - first:
+      213: -6069021234791509477
+    second: Folding & Cutout Paper UI SpriteSheet_241
+  - first:
+      213: 2567034599549623212
+    second: Folding & Cutout Paper UI SpriteSheet_242
+  - first:
+      213: -8291793663296218090
+    second: Folding & Cutout Paper UI SpriteSheet_243
+  - first:
+      213: 8093572499151514867
+    second: Folding & Cutout Paper UI SpriteSheet_244
+  - first:
+      213: 5762161998548663235
+    second: Folding & Cutout Paper UI SpriteSheet_245
+  - first:
+      213: -7109633998253624189
+    second: Folding & Cutout Paper UI SpriteSheet_246
+  - first:
+      213: -2557871695094574222
+    second: Folding & Cutout Paper UI SpriteSheet_247
+  - first:
+      213: -3355140449135862760
+    second: Folding & Cutout Paper UI SpriteSheet_248
+  - first:
+      213: 2762954769907377105
+    second: Folding & Cutout Paper UI SpriteSheet_249
+  - first:
+      213: -5941589209169503980
+    second: Folding & Cutout Paper UI SpriteSheet_250
+  - first:
+      213: 2554418364193987830
+    second: Folding & Cutout Paper UI SpriteSheet_251
+  - first:
+      213: -5862419555917570849
+    second: Folding & Cutout Paper UI SpriteSheet_252
+  - first:
+      213: -5536925547760206850
+    second: Folding & Cutout Paper UI SpriteSheet_253
+  - first:
+      213: 6206755536749293427
+    second: Folding & Cutout Paper UI SpriteSheet_254
+  - first:
+      213: -4301122950351228131
+    second: Folding & Cutout Paper UI SpriteSheet_255
+  - first:
+      213: -6218552936273046449
+    second: Folding & Cutout Paper UI SpriteSheet_256
+  - first:
+      213: -662662536290501779
+    second: Folding & Cutout Paper UI SpriteSheet_257
+  - first:
+      213: 1907230602184136750
+    second: Folding & Cutout Paper UI SpriteSheet_258
+  - first:
+      213: 2613629086471067086
+    second: Folding & Cutout Paper UI SpriteSheet_259
+  - first:
+      213: -4783081763888763004
+    second: Folding & Cutout Paper UI SpriteSheet_260
+  - first:
+      213: -8760562596271386898
+    second: Folding & Cutout Paper UI SpriteSheet_261
+  - first:
+      213: -2811382817030708805
+    second: Folding & Cutout Paper UI SpriteSheet_262
+  - first:
+      213: -3542206774961580533
+    second: Folding & Cutout Paper UI SpriteSheet_263
+  - first:
+      213: -1338405825932453988
+    second: Folding & Cutout Paper UI SpriteSheet_264
+  - first:
+      213: 7822105223145141420
+    second: Folding & Cutout Paper UI SpriteSheet_265
+  - first:
+      213: 3167774182825326986
+    second: Folding & Cutout Paper UI SpriteSheet_266
+  - first:
+      213: -63844431272587683
+    second: Folding & Cutout Paper UI SpriteSheet_267
+  - first:
+      213: -4273140207881333147
+    second: Folding & Cutout Paper UI SpriteSheet_268
+  - first:
+      213: 4157651551880713880
+    second: Folding & Cutout Paper UI SpriteSheet_269
+  - first:
+      213: -4717093000380931148
+    second: Folding & Cutout Paper UI SpriteSheet_270
+  - first:
+      213: -8379214094460780782
+    second: Folding & Cutout Paper UI SpriteSheet_271
+  - first:
+      213: 1454029375600553132
+    second: Folding & Cutout Paper UI SpriteSheet_272
+  - first:
+      213: 6978472138491367097
+    second: Folding & Cutout Paper UI SpriteSheet_273
+  - first:
+      213: 2672439458860717562
+    second: Folding & Cutout Paper UI SpriteSheet_274
+  - first:
+      213: 8394291893644679835
+    second: Folding & Cutout Paper UI SpriteSheet_275
+  - first:
+      213: -8023106156075348424
+    second: Folding & Cutout Paper UI SpriteSheet_276
+  - first:
+      213: 8490368659543054775
+    second: Folding & Cutout Paper UI SpriteSheet_277
+  - first:
+      213: 268478415218006480
+    second: Folding & Cutout Paper UI SpriteSheet_278
+  - first:
+      213: -7070666244132462142
+    second: Folding & Cutout Paper UI SpriteSheet_279
+  - first:
+      213: -8671284159731694266
+    second: Folding & Cutout Paper UI SpriteSheet_280
+  - first:
+      213: 4786090856595172026
+    second: Folding & Cutout Paper UI SpriteSheet_281
+  - first:
+      213: 3088962660355567542
+    second: Folding & Cutout Paper UI SpriteSheet_282
+  - first:
+      213: 4417861636296849246
+    second: Folding & Cutout Paper UI SpriteSheet_283
+  - first:
+      213: -5452276740604917968
+    second: Folding & Cutout Paper UI SpriteSheet_284
+  - first:
+      213: -1028595208572871310
+    second: Folding & Cutout Paper UI SpriteSheet_285
+  - first:
+      213: 4665451706005845163
+    second: Folding & Cutout Paper UI SpriteSheet_286
+  - first:
+      213: 4415643527996073639
+    second: Folding & Cutout Paper UI SpriteSheet_287
+  - first:
+      213: 4447614570042429093
+    second: Folding & Cutout Paper UI SpriteSheet_288
+  - first:
+      213: 4139364552543832104
+    second: Folding & Cutout Paper UI SpriteSheet_289
+  - first:
+      213: 7635702310854440773
+    second: Folding & Cutout Paper UI SpriteSheet_290
+  - first:
+      213: -9003857071917478240
+    second: Folding & Cutout Paper UI SpriteSheet_291
+  - first:
+      213: 3038270830555685695
+    second: Folding & Cutout Paper UI SpriteSheet_292
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 3740
+        width: 382
+        height: 415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60612d28bf8cc5080800000000000000
+      internalID: -9197255356440242682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 4016
+        width: 391
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd0f25cbfcdb56ec0800000000000000
+      internalID: -3574242029333188387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 3954
+        width: 635
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27055c83243a7ebb0800000000000000
+      internalID: -4906773764181241742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1999
+        y: 3951
+        width: 194
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 480b391332c6389e0800000000000000
+      internalID: -1620332542511828860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 2271
+        y: 3951
+        width: 194
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9a7f85947f815430800000000000000
+      internalID: 3769952093974002333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 3913
+        width: 253
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29ead7b2e2bb818d0800000000000000
+      internalID: -2875342555103514990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 2271
+        y: 3759
+        width: 210
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3df4182f6a7d8ac00800000000000000
+      internalID: 912216036575629267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 3802
+        width: 297
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83ce507e055c5d5c0800000000000000
+      internalID: -4191226926934397896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 3719
+        width: 179
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 789ad7ec0d446fce0800000000000000
+      internalID: -1371833372879509113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 3780
+        width: 235
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a363d6a374a3af0800000000000000
+      internalID: -415941699312403934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 1992
+        y: 3839
+        width: 201
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1c4a96c29c6ebed0800000000000000
+      internalID: -2396358574061499362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 3648
+        width: 565
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 542e3189b8cc759e0800000000000000
+      internalID: -1632611439974555067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 3663
+        width: 66
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 218dc0bc6ce6108f0800000000000000
+      internalID: -576057477237516270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 1631
+        y: 3663
+        width: 66
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0968250a618dd4fb0800000000000000
+      internalID: -4661832447567952240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 1983
+        y: 3695
+        width: 226
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4008926c42c971b0800000000000000
+      internalID: -5658277823486885811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 2271
+        y: 3567
+        width: 210
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 081118ca9aa0f6bf0800000000000000
+      internalID: -329032523914866304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 3504
+        width: 393
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ade7759b7808b030800000000000000
+      internalID: 3510565236416966051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 3423
+        width: 578
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dc0eba3232b9c8c0800000000000000
+      internalID: -3978452867001479982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 3327
+        width: 66
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eb869cb3a49c6020800000000000000
+      internalID: 2336405737663007720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 3327
+        width: 66
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 633b4ca073353c270800000000000000
+      internalID: 8269544836651332406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 2940
+        width: 623
+        height: 505
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7ecbda51897ef570800000000000000
+      internalID: 8502366743004171901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 3199
+        width: 418
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e15bf3e52a525d90800000000000000
+      internalID: -7110521742879403551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 3103
+        width: 66
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6876e6e0b30b57460800000000000000
+      internalID: 7238885743759615878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 3103
+        width: 66
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03e3970cb40928910800000000000000
+      internalID: 1838190252946701872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 3023
+        width: 418
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc738d1fc0ce97180800000000000000
+      internalID: -9116996430293616693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 2162
+        y: 3008
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3dc9e06640a66e60800000000000000
+      internalID: 7955222015930649914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 2193
+        y: 3008
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b6c5e3ab38cb26c0800000000000000
+      internalID: -4167016871722891600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 2227
+        y: 3008
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 409abb3212125fbf0800000000000000
+      internalID: -291290174678390524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 3008
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b9eb85f9ece833b0800000000000000
+      internalID: -5532411652633531975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 2291
+        y: 3002
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80fc0db8a5bb2c720800000000000000
+      internalID: 2865058310528225032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 2323
+        y: 3002
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70111641f74a011c0800000000000000
+      internalID: -4534943959052381945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 2997
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd3f5258c019ff680800000000000000
+      internalID: -8719090870606498852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 2997
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 836d1ab6ffcb1eea0800000000000000
+      internalID: -5845183036141742536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 2997
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61a522fda3e832e70800000000000000
+      internalID: 9089264856466610710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 2997
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc0cc157c6363ba0800000000000000
+      internalID: -6109635614782780161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 2997
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9081591b1187abfe0800000000000000
+      internalID: -1172492735587477495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 2031
+        y: 2997
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 420f5e2b1a4496b80800000000000000
+      internalID: -8401108168601112540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 2355
+        y: 3010
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86bf36569c4361d00800000000000000
+      internalID: 942999211574819688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 2393
+        y: 3002
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bda4e48244d28b60800000000000000
+      internalID: 7746987691193183667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 2964
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dfda2fd9bba57e90800000000000000
+      internalID: -7028522828640362538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 2964
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a3d1db8b73c0d5b0800000000000000
+      internalID: -5345557822294600798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 2964
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f47f3dbb65fb8e320800000000000000
+      internalID: 2587528365163673423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 2964
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 425ed27f1e9fb6a70800000000000000
+      internalID: 8821419044045186340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 2964
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f702b6b3c553a5cc0800000000000000
+      internalID: -3721603471818153857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 2031
+        y: 2964
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fadb00e2fd2ac2c90800000000000000
+      internalID: -7193195425384317521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 2161
+        y: 2959
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ed32b9a8c8da9910800000000000000
+      internalID: 1845025353713729000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 2193
+        y: 2959
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4f0f0e8fe4f12450800000000000000
+      internalID: 6062395883135110990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 2225
+        y: 2969
+        width: 30
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5203b90aa20f392e0800000000000000
+      internalID: -2120086933687554011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 2257
+        y: 2970
+        width: 30
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bad41439485ca9450800000000000000
+      internalID: 6096402218796273067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 2305
+        y: 2961
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 310b267dbe1f57db0800000000000000
+      internalID: -4794660233032847341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 2961
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a063111e55c87fcb0800000000000000
+      internalID: -4830237774855457270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 2371
+        y: 2965
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d61fe20d34ae3620800000000000000
+      internalID: 2755820603946505939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 2895
+        width: 418
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31d528fea680765f0800000000000000
+      internalID: -763632356438156013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 2917
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 136e162e97690d080800000000000000
+      internalID: -9164659791465683407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_54
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 2917
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14c0fa65392bfa270800000000000000
+      internalID: 8264020187132398657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_55
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 2917
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c67b019fb60911340800000000000000
+      internalID: 4832802668559775596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_56
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 2917
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b048a3bea0741de70800000000000000
+      internalID: 9138163231133172747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_57
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 2917
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa56629c216ef2c10800000000000000
+      internalID: 2031094925325919658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 2031
+        y: 2917
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be87d3faf33d51b10800000000000000
+      internalID: 1951698284011419883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_59
+      rect:
+        serializedVersion: 2
+        x: 2164
+        y: 2917
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f232ad6d6eb79050800000000000000
+      internalID: 5807319621717603057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_60
+      rect:
+        serializedVersion: 2
+        x: 2196
+        y: 2914
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc150c632ed1ba1e0800000000000000
+      internalID: -2185620336739855925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_61
+      rect:
+        serializedVersion: 2
+        x: 2228
+        y: 2914
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7e1aa541707ef290800000000000000
+      internalID: -7854717068285174149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_62
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 2884
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79cd581143efbffe0800000000000000
+      internalID: -1154049379904660329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_63
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 2884
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4c8f0a4f54daa4e0800000000000000
+      internalID: -1969528381291656116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_64
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 2884
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f9ea6548dcc07860800000000000000
+      internalID: 7525740206585735673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_65
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 2884
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 246630d8edc979490800000000000000
+      internalID: -7739544954950425022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_66
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 2884
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6b5f7cc06d636310800000000000000
+      internalID: 1397080571930172271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_67
+      rect:
+        serializedVersion: 2
+        x: 2031
+        y: 2884
+        width: 82
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08192a8cbc5863630800000000000000
+      internalID: 3906456837081436544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_68
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 2688
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4135541715360740800000000000000
+      internalID: 5117836399794794827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_69
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 2681
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be2be3446401e3f50800000000000000
+      internalID: 6862940776137929451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_70
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 2687
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7401db188b3a7c390800000000000000
+      internalID: -7798084216922763193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_71
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 2692
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fade272ea3b933a0800000000000000
+      internalID: -6685114611291727116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_72
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 2698
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14e26b4da9e28f770800000000000000
+      internalID: 8644710727266217537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_73
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 2703
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29541ec9acdecb6f0800000000000000
+      internalID: -667397190286490222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_74
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 2705
+        width: 51
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeda2b89373f4fca0800000000000000
+      internalID: -5983890327059911190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_75
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 2707
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 097b3a3292c443940800000000000000
+      internalID: 5274924803132995472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_76
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 2707
+        width: 58
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cf0ccc2f18a22140800000000000000
+      internalID: 4693498613522501576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_77
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 2707
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c17c662a5fbde8af0800000000000000
+      internalID: -392134269496539364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_78
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 2707
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c6e984bd55018f70800000000000000
+      internalID: 9187630614831556289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_79
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 2707
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f84dcf53459e66d0800000000000000
+      internalID: -2995292585552164624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_80
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 2707
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a37b9d1c860a59d0800000000000000
+      internalID: -2784906220713315422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_81
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 2707
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 226b4d766f913d3c0800000000000000
+      internalID: -4336093470133012958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_82
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 2707
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16f0ed6fed83873c0800000000000000
+      internalID: -4361673708832682143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_83
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 2705
+        width: 51
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5284ee38785d5320800000000000000
+      internalID: 2548290237636051548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_84
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 2703
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6079fe9a4319caf0800000000000000
+      internalID: -375747882693070738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_85
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 2698
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adff3d5b539068230800000000000000
+      internalID: 3640607475064111066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_86
+      rect:
+        serializedVersion: 2
+        x: 1512
+        y: 2692
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7f01e46def8c1dc0800000000000000
+      internalID: -3666897746823934086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_87
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 2687
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d514220e5b9587a00800000000000000
+      internalID: 754451575268852061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_88
+      rect:
+        serializedVersion: 2
+        x: 1661
+        y: 2681
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e77fb331796b5890800000000000000
+      internalID: -7468259622143428640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_89
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 1999
+        width: 770
+        height: 562
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3a601a4e55d6b610800000000000000
+      internalID: 1636730115541985850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_90
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 1999
+        width: 770
+        height: 562
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 414ce1bfc5906b560800000000000000
+      internalID: 7329055738546799636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_91
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 1999
+        width: 770
+        height: 562
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64c5ae9f69b005600800000000000000
+      internalID: 454876305430305862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_92
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 1375
+        width: 770
+        height: 562
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7a4258f7995eccc0800000000000000
+      internalID: -3688912535528781189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_93
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 1375
+        width: 770
+        height: 562
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11f46e0c500f49a00800000000000000
+      internalID: 762498144434278161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_94
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 751
+        width: 770
+        height: 562
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79db68335d0355b40800000000000000
+      internalID: 5428298618115636631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_95
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 751
+        width: 770
+        height: 562
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0018f0ae9e758230800000000000000
+      internalID: 3640455093569458186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_96
+      rect:
+        serializedVersion: 2
+        x: 3631
+        y: 623
+        width: 578
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 369a17a072a6404e0800000000000000
+      internalID: -2016370017243649693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_97
+      rect:
+        serializedVersion: 2
+        x: 4303
+        y: 639
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcd101b64e4865170800000000000000
+      internalID: 8166861090866601419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_98
+      rect:
+        serializedVersion: 2
+        x: 4431
+        y: 639
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6747d7ac39cfd6e0800000000000000
+      internalID: -1810507262828525717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_99
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 362
+        width: 212
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc0a3649b0d1e9c70800000000000000
+      internalID: 8979646642594750668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_100
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 559
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7016d030852711e0800000000000000
+      internalID: -2227270258206044035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_101
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 559
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 923ee3011fcc86a50800000000000000
+      internalID: 6514682196723163945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_102
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 561
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0bbfbae17f0255a0800000000000000
+      internalID: -6534143127417013490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_103
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 559
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbe75ede4f23335e0800000000000000
+      internalID: -1931143787667161411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_104
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 559
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d6eddd9fd8f748e0800000000000000
+      internalID: -1709123894253852969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_105
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 558
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a1e079851199bcd0800000000000000
+      internalID: -2541840992987717213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_106
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 479
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff64c1f463ff60020800000000000000
+      internalID: 2307812467794527999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_107
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 479
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16b9acf0a6ad0ea70800000000000000
+      internalID: 8854317016476719969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_108
+      rect:
+        serializedVersion: 2
+        x: 1453
+        y: 479
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edb6c681ef44e8f40800000000000000
+      internalID: 5732595233811360734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_109
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 479
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37b9bd2cfa83356d0800000000000000
+      internalID: -3002994198986384525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_110
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 479
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a82cd12dca366ce60800000000000000
+      internalID: 7982176983471473290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_111
+      rect:
+        serializedVersion: 2
+        x: 1889
+        y: 527
+        width: 77
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d2ae939c296f39e0800000000000000
+      internalID: -1639476099163446575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_112
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 527
+        width: 61
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea91751e9a9efc160800000000000000
+      internalID: 7048108857697442222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_113
+      rect:
+        serializedVersion: 2
+        x: 2105
+        y: 527
+        width: 61
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ef0d852cdf7d77e0800000000000000
+      internalID: -1766114895359832087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_114
+      rect:
+        serializedVersion: 2
+        x: 2201
+        y: 527
+        width: 61
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c719f184f473ca570800000000000000
+      internalID: 8479213012083773820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_115
+      rect:
+        serializedVersion: 2
+        x: 2297
+        y: 527
+        width: 61
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bd6a0da6caef42e0800000000000000
+      internalID: -2139233158950130256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_116
+      rect:
+        serializedVersion: 2
+        x: 2393
+        y: 527
+        width: 61
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af1f4b5b1c9a79ee0800000000000000
+      internalID: -1254347321757076998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_117
+      rect:
+        serializedVersion: 2
+        x: 2655
+        y: 479
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1156dcf5b266e080800000000000000
+      internalID: -9158524258440818405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_118
+      rect:
+        serializedVersion: 2
+        x: 2789
+        y: 485
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25573ffc8f63e7a30800000000000000
+      internalID: 4214866743533991250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_119
+      rect:
+        serializedVersion: 2
+        x: 2959
+        y: 447
+        width: 194
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d70bfa1128d045a0800000000000000
+      internalID: -6538989022243780653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_120
+      rect:
+        serializedVersion: 2
+        x: 3231
+        y: 447
+        width: 194
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb7e7295ef9e587f0800000000000000
+      internalID: -610824895812081730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_121
+      rect:
+        serializedVersion: 2
+        x: 3695
+        y: 447
+        width: 418
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32865b1260c8398b0800000000000000
+      internalID: -5146615991191115741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_122
+      rect:
+        serializedVersion: 2
+        x: 4303
+        y: 559
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fbbbe27a441cd770800000000000000
+      internalID: 8636800495377955831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_123
+      rect:
+        serializedVersion: 2
+        x: 4431
+        y: 559
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50381db5b0f6e2200800000000000000
+      internalID: 157185131580326661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_124
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 438
+        width: 111
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c989331a5d6c10780800000000000000
+      internalID: -8718468782777722724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_125
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 527
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 448ea550ce79eb270800000000000000
+      internalID: 8268213005856729156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_126
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 527
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eab99a3fff424eb80800000000000000
+      internalID: -8366521526024299602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_127
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 527
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3f61cd3aec679120800000000000000
+      internalID: 2420523078049165114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_128
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 527
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df5ac7daf74bfeca0800000000000000
+      internalID: -5985366919287626243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_129
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 527
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4266fd72fe606d620800000000000000
+      internalID: 2798431842693244452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_130
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 528
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 555a0cb0a78806170800000000000000
+      internalID: 8169679781814642005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_131
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 528
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62afbcd92ab798ff0800000000000000
+      internalID: -33359583866258906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_132
+      rect:
+        serializedVersion: 2
+        x: 4303
+        y: 479
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4906be8b68b659070800000000000000
+      internalID: 8112508530150039700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_133
+      rect:
+        serializedVersion: 2
+        x: 4431
+        y: 479
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc7d0a10692ebe3e0800000000000000
+      internalID: -2023274473672615988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_134
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 495
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40835cb418489a720800000000000000
+      internalID: 2857961129400154116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_135
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 495
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8759d9c6869ac6c0800000000000000
+      internalID: -4122317003248019571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_136
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 496
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 261293683255bc600800000000000000
+      internalID: 489578595563938146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_137
+      rect:
+        serializedVersion: 2
+        x: 2027
+        y: 456
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a31d628749916e220800000000000000
+      internalID: 2514725567394664762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_138
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 456
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac5ab9b2f10dca4f0800000000000000
+      internalID: -816048600166718006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_139
+      rect:
+        serializedVersion: 2
+        x: 2122
+        y: 475
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae04ee079b4d3f20800000000000000
+      internalID: 3403960005523934889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_140
+      rect:
+        serializedVersion: 2
+        x: 2131
+        y: 480
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 819908738896d9240800000000000000
+      internalID: 4800108811614460184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_141
+      rect:
+        serializedVersion: 2
+        x: 2142
+        y: 475
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed91efd3470cbb7d0800000000000000
+      internalID: -2901513929421350434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_142
+      rect:
+        serializedVersion: 2
+        x: 2219
+        y: 456
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46de208a77b0ee830800000000000000
+      internalID: 4102228919128878436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_143
+      rect:
+        serializedVersion: 2
+        x: 2306
+        y: 455
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7b3813ae8db51970800000000000000
+      internalID: 8725088273419484030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_144
+      rect:
+        serializedVersion: 2
+        x: 2411
+        y: 456
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e05d57eb0d6e1c00800000000000000
+      internalID: 873255275650175208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_145
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 367
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13167da31a4c2ad60800000000000000
+      internalID: 7900092893117243697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_146
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 367
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1564463ee7e42090800000000000000
+      internalID: -8060062422787660518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_147
+      rect:
+        serializedVersion: 2
+        x: 1453
+        y: 367
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d734f424697d6b700800000000000000
+      internalID: 555868644384392061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_148
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 367
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 691419c828ba2c100800000000000000
+      internalID: 126852316712223126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_149
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 367
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce23c550cdf8886d0800000000000000
+      internalID: -2987980177614818580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_150
+      rect:
+        serializedVersion: 2
+        x: 2117
+        y: 464
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee62c3a4cffb479a0800000000000000
+      internalID: -6236148493703174418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_151
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 453
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b25a16485a1358f0800000000000000
+      internalID: -553069362800864588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_152
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 453
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e46257cafe331c30800000000000000
+      internalID: 4328872913639990498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_153
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 464
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db44cdcdd2e2785b0800000000000000
+      internalID: -5366269656474827587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_154
+      rect:
+        serializedVersion: 2
+        x: 2330
+        y: 454
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc8984ef8283f21d0800000000000000
+      internalID: -3373415847161194289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_155
+      rect:
+        serializedVersion: 2
+        x: 2655
+        y: 367
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f32cbfcef3eff58b0800000000000000
+      internalID: -5161127097430982081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_156
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 450
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76422a153eab73640800000000000000
+      internalID: 5059718191863964775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_157
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 448
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0874cdb2f18a518d0800000000000000
+      internalID: -2876207935172884608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_158
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 448
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e38374315b2324af0800000000000000
+      internalID: -413712462470760386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_159
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 448
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1cc207570925df00800000000000000
+      internalID: 1140863192109599772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_160
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 448
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 518a3c6e622bee710800000000000000
+      internalID: 1724511587479562261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_161
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 448
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a4009a416137bc30800000000000000
+      internalID: 4375019856946267298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_162
+      rect:
+        serializedVersion: 2
+        x: 2131
+        y: 450
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e07defb9f11bbe1a0800000000000000
+      internalID: -6779130064756877554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_163
+      rect:
+        serializedVersion: 2
+        x: 2789
+        y: 373
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea112c2aa240ca350800000000000000
+      internalID: 6029198582308016558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_164
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 321
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68238e0d41a2746f0800000000000000
+      internalID: -700544948140232058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_165
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 383
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 695c18ccbded72850800000000000000
+      internalID: 6352290835039634838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_166
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 383
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96a3749bd110a9370800000000000000
+      internalID: 8329971687949285993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_167
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 383
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe6b1e773fa7f0140800000000000000
+      internalID: 4688100923222898415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_168
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 340
+        width: 41
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 990ad5ce0497efca0800000000000000
+      internalID: -5981209935351013223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_169
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 319
+        width: 66
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38c3ed01d2c1ecc70800000000000000
+      internalID: 8993156485787565187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_170
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 319
+        width: 66
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c8c517bd57fa2d60800000000000000
+      internalID: 7866371681031669961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_171
+      rect:
+        serializedVersion: 2
+        x: 2006
+        y: 386
+        width: 66
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c26b5193029716ee0800000000000000
+      internalID: -1269600440638130644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_172
+      rect:
+        serializedVersion: 2
+        x: 2102
+        y: 386
+        width: 66
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0caa62627f6f7a370800000000000000
+      internalID: 8333901176829815488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_173
+      rect:
+        serializedVersion: 2
+        x: 2198
+        y: 386
+        width: 66
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2b8dd7cb3b73bf90800000000000000
+      internalID: -6939067104161330390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_174
+      rect:
+        serializedVersion: 2
+        x: 2294
+        y: 386
+        width: 66
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e852be4535badf0800000000000000
+      internalID: -167948936908796314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_175
+      rect:
+        serializedVersion: 2
+        x: 2390
+        y: 386
+        width: 66
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93d16ad1af6e8a050800000000000000
+      internalID: 5812149281035263289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_176
+      rect:
+        serializedVersion: 2
+        x: 2959
+        y: 367
+        width: 194
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ce6b5f4d84ed5ae0800000000000000
+      internalID: -1558838600427409727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_177
+      rect:
+        serializedVersion: 2
+        x: 3231
+        y: 255
+        width: 210
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dba9430794c2bc10800000000000000
+      internalID: 2067931331790744531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_178
+      rect:
+        serializedVersion: 2
+        x: 4063
+        y: 309
+        width: 82
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27d4d637002995ef0800000000000000
+      internalID: -118903384514409102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_179
+      rect:
+        serializedVersion: 2
+        x: 4303
+        y: 383
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa87dff73845e5de0800000000000000
+      internalID: -1342542715145062230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_180
+      rect:
+        serializedVersion: 2
+        x: 4431
+        y: 383
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43292eaaccc35c950800000000000000
+      internalID: 6468643289525555764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_181
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 335
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dea2efdad6921a20800000000000000
+      internalID: 3031651365976977107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_182
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 335
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3216eba9300be82b0800000000000000
+      internalID: -5580329358737907421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_183
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 351
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e26665be4b6c1cfc0800000000000000
+      internalID: -3476278957008591314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_184
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 351
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62407ec1b5f872ab0800000000000000
+      internalID: -5032896437073542106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_185
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 255
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b951527c863072c10800000000000000
+      internalID: 2028593905706276251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_186
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 255
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bd798cf050bc6cb0800000000000000
+      internalID: -4869323235213607498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_187
+      rect:
+        serializedVersion: 2
+        x: 1453
+        y: 255
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 964a1d383926bf970800000000000000
+      internalID: 8789727483454923881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_188
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 255
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2026fd06e1768dd40800000000000000
+      internalID: 5609346716061884930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_189
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 255
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 694a6cad53f3d5800800000000000000
+      internalID: 602707425673782422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_190
+      rect:
+        serializedVersion: 2
+        x: 3695
+        y: 239
+        width: 114
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1530b18e995e7d40800000000000000
+      internalID: 5583999125301507355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_191
+      rect:
+        serializedVersion: 2
+        x: 3823
+        y: 309
+        width: 226
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b8f08f9bbc61a580800000000000000
+      internalID: -8817647042324006729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_192
+      rect:
+        serializedVersion: 2
+        x: 4303
+        y: 303
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 770a9ef141636f8a0800000000000000
+      internalID: -6271765971004186505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_193
+      rect:
+        serializedVersion: 2
+        x: 4431
+        y: 303
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dde8172e7a1ac4750800000000000000
+      internalID: 6290580521960443613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_194
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 293
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 934f1e212725f5b00800000000000000
+      internalID: 819464307101267001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_195
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 293
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c74c77dc44802d8d0800000000000000
+      internalID: -2823184924809902980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_196
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 293
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e35b5786d2f8fbd30800000000000000
+      internalID: 4449432382054184254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_197
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 294
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b0ba35f1c6f730c0800000000000000
+      internalID: -4595933581804916552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_198
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 307
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8b04bdde812c95a0800000000000000
+      internalID: -6513294063595943026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_199
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 307
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2509912184f1f1690800000000000000
+      internalID: -7629344849340559278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_200
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 304
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7281a463bfa1b500800000000000000
+      internalID: 410302226089738878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_201
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 304
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00f6628f49e1e6350800000000000000
+      internalID: 6011776177753452288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_202
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 305
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8a98d574e4fb4410800000000000000
+      internalID: 1462531766078708366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_203
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 305
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbd813e64294b7e50800000000000000
+      internalID: 6808115682517028283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_204
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 304
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9ab0bfd3958d14d0800000000000000
+      internalID: -3162224493184632161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_205
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 304
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce22d2543147acd60800000000000000
+      internalID: 7911263321543484140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_206
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 225
+        width: 79
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8413cb22119216fd0800000000000000
+      internalID: -2350552376936746680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_207
+      rect:
+        serializedVersion: 2
+        x: 2649
+        y: 314
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50dfb34b9e6c3cec0800000000000000
+      internalID: -3547773374384308987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_208
+      rect:
+        serializedVersion: 2
+        x: 2680
+        y: 314
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25e96626ab1bb15f0800000000000000
+      internalID: -784838295973093806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_209
+      rect:
+        serializedVersion: 2
+        x: 2714
+        y: 314
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93d781ef481d16570800000000000000
+      internalID: 8458271944307408185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_210
+      rect:
+        serializedVersion: 2
+        x: 2746
+        y: 314
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdcc74df76baf9220800000000000000
+      internalID: 2494901181705866463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_211
+      rect:
+        serializedVersion: 2
+        x: 2778
+        y: 308
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46f10c6ce4161afc0800000000000000
+      internalID: -3485397645638230172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_212
+      rect:
+        serializedVersion: 2
+        x: 2810
+        y: 308
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aef9166ea00dd7d30800000000000000
+      internalID: 4430926353635844074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_213
+      rect:
+        serializedVersion: 2
+        x: 2838
+        y: 316
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3153360ce5e8d7d0800000000000000
+      internalID: -2893309958706474694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_214
+      rect:
+        serializedVersion: 2
+        x: 2874
+        y: 311
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e6b77faec756e50800000000000000
+      internalID: 6801980160829255283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_215
+      rect:
+        serializedVersion: 2
+        x: 2943
+        y: 255
+        width: 226
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9926d6e42c518af80800000000000000
+      internalID: -8095196405914836327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_216
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 260
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c4e9220aea6238b0800000000000000
+      internalID: -5173955468604087103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_217
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 260
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 297efdad45afc59c0800000000000000
+      internalID: -3936996731872352366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_218
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 260
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a130a6f27279c3810800000000000000
+      internalID: 1746436950067905306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_219
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 271
+        width: 50
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1722672afd8c1620800000000000000
+      internalID: 2746225978331244316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_220
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 271
+        width: 50
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 682b5e35b82802de0800000000000000
+      internalID: -1359943552546262394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_221
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 231
+        width: 57
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d5fadb67c0b670d0800000000000000
+      internalID: -3425356096014191143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_222
+      rect:
+        serializedVersion: 2
+        x: 2648
+        y: 271
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccaff502be5deac00800000000000000
+      internalID: 913902980239981260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_223
+      rect:
+        serializedVersion: 2
+        x: 2680
+        y: 271
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5c50d1ca89150690800000000000000
+      internalID: -7636669509388968866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_224
+      rect:
+        serializedVersion: 2
+        x: 2705
+        y: 280
+        width: 30
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66c6da8560ab17a40800000000000000
+      internalID: 5364273167595301990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_225
+      rect:
+        serializedVersion: 2
+        x: 2737
+        y: 281
+        width: 30
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 498c1099400a08e90800000000000000
+      internalID: -7025439477090629484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_226
+      rect:
+        serializedVersion: 2
+        x: 2778
+        y: 273
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4fedfb26ee6323d0800000000000000
+      internalID: -3232618172662288562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_227
+      rect:
+        serializedVersion: 2
+        x: 2809
+        y: 273
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fb0ee3c7d9596b00800000000000000
+      internalID: 822287190211824630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_228
+      rect:
+        serializedVersion: 2
+        x: 2835
+        y: 277
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5550292ff62ebc150800000000000000
+      internalID: 5894053507783329109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_229
+      rect:
+        serializedVersion: 2
+        x: 2868
+        y: 277
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db1d7ff2e3a15f4b0800000000000000
+      internalID: -5407386923193347651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_230
+      rect:
+        serializedVersion: 2
+        x: 4303
+        y: 223
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dc225a13ce9fc0b0800000000000000
+      internalID: -5706167642057724712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_231
+      rect:
+        serializedVersion: 2
+        x: 4431
+        y: 223
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91a6f0c0fc40f45c0800000000000000
+      internalID: -4229156237770528231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_232
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 239
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89a1943718c87ca00800000000000000
+      internalID: 776743948357540504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_233
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 239
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc0b0b540f6148cd0800000000000000
+      internalID: -2556893467222429493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_234
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 239
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c4991a7bbaf6f590800000000000000
+      internalID: -7640644034673142584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_235
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 239
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1db63640ea7491e60800000000000000
+      internalID: 7933451031313345489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_236
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 228
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3a4ee182279deec0800000000000000
+      internalID: -3536003957951411653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_237
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 234
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5464b99a437b10b0800000000000000
+      internalID: -5756880934419536804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_238
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 232
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ca75abc4e49a0430800000000000000
+      internalID: 3749973350129433287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_239
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 232
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8d4f9cc8c22344e0800000000000000
+      internalID: -1998715563800572531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_240
+      rect:
+        serializedVersion: 2
+        x: 2645
+        y: 243
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e89832cc54e73b160800000000000000
+      internalID: 7040109480752941454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_241
+      rect:
+        serializedVersion: 2
+        x: 2677
+        y: 243
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1213fd875186cba0800000000000000
+      internalID: -6069021234791509477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_242
+      rect:
+        serializedVersion: 2
+        x: 2722
+        y: 244
+        width: 28
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cabda481e50ff9320800000000000000
+      internalID: 2567034599549623212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_243
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 213
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61cd4645891adec80800000000000000
+      internalID: -8291793663296218090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_244
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 213
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fcebcf6e45225070800000000000000
+      internalID: 8093572499151514867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_245
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 213
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cb7fb5fecf47ff40800000000000000
+      internalID: 5762161998548663235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_246
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 207
+        width: 7
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3847d0b0c81855d90800000000000000
+      internalID: -7109633998253624189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_247
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 194
+        width: 7
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2739cd8de3d908cd0800000000000000
+      internalID: -2557871695094574222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_248
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 208
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81c56bda9852071d0800000000000000
+      internalID: -3355140449135862760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_249
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 218
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d3ecc679bcf75620800000000000000
+      internalID: 2762954769907377105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_250
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 209
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 419582a181c3b8da0800000000000000
+      internalID: -5941589209169503980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_251
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 209
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fc5485e7fd137320800000000000000
+      internalID: 2554418364193987830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_252
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 143
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdcda3d697084aea0800000000000000
+      internalID: -5862419555917570849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_253
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 143
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efbb7f9dc83e823b0800000000000000
+      internalID: -5536925547760206850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_254
+      rect:
+        serializedVersion: 2
+        x: 1453
+        y: 143
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37f61af9643d22650800000000000000
+      internalID: 6206755536749293427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_255
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 143
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d13f80907775f44c0800000000000000
+      internalID: -4301122950351228131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_256
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 143
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f449b704d0343b9a0800000000000000
+      internalID: -6218552936273046449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_257
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 211
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6bf1762fefbdc6f0800000000000000
+      internalID: -662662536290501779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_258
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 211
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2890f3b028d77a10800000000000000
+      internalID: 1907230602184136750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_259
+      rect:
+        serializedVersion: 2
+        x: 1951
+        y: 211
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec59cb97ec9754420800000000000000
+      internalID: 2613629086471067086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_260
+      rect:
+        serializedVersion: 2
+        x: 3231
+        y: 63
+        width: 210
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48fe2c34a741f9db0800000000000000
+      internalID: -4783081763888763004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_261
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 208
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eee8ba0fbba3c6680800000000000000
+      internalID: -8760562596271386898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_262
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 180
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb16f372936fbf8d0800000000000000
+      internalID: -2811382817030708805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_263
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 180
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b06de61a4bd87dec0800000000000000
+      internalID: -3542206774961580533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_264
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 180
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c979bf31ef60d6de0800000000000000
+      internalID: -1338405825932453988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_265
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 194
+        width: 27
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca43b45d143bd8c60800000000000000
+      internalID: 7822105223145141420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_266
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 195
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a89f4ffe5d136fb20800000000000000
+      internalID: 3167774182825326986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_267
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 179
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5e4c19f3dd2d1ff0800000000000000
+      internalID: -63844431272587683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_268
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 179
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5665bc9fe91c2b4c0800000000000000
+      internalID: -4273140207881333147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_269
+      rect:
+        serializedVersion: 2
+        x: 1951
+        y: 195
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89693b9ee02f2b930800000000000000
+      internalID: 4157651551880713880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_270
+      rect:
+        serializedVersion: 2
+        x: 3695
+        y: 127
+        width: 114
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b320db88e4898eb0800000000000000
+      internalID: -4717093000380931148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_271
+      rect:
+        serializedVersion: 2
+        x: 3823
+        y: 143
+        width: 194
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21ff7b21d2d07bb80800000000000000
+      internalID: -8379214094460780782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_272
+      rect:
+        serializedVersion: 2
+        x: 4031
+        y: 127
+        width: 114
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cac67a96300cd2410800000000000000
+      internalID: 1454029375600553132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_273
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 175
+        width: 7
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9be0db9bf6388d060800000000000000
+      internalID: 6978472138491367097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_274
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 184
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af551255789661520800000000000000
+      internalID: 2672439458860717562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_275
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 184
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9ad1ad90048e7470800000000000000
+      internalID: 8394291893644679835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_276
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83e01e3957338a090800000000000000
+      internalID: -8023106156075348424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_277
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 180
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b95c2cdf49d3d570800000000000000
+      internalID: 8490368659543054775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_278
+      rect:
+        serializedVersion: 2
+        x: 1951
+        y: 179
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d9dde832b3d9b300800000000000000
+      internalID: 268478415218006480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_279
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 133
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c1a3215382ffdd90800000000000000
+      internalID: -7070666244132462142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_280
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 133
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64588b8cff869a780800000000000000
+      internalID: -8671284159731694266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_281
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 133
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abaa91ab64c9b6240800000000000000
+      internalID: 4786090856595172026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_282
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 143
+        width: 7
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bf60fe6c233eda20800000000000000
+      internalID: 3088962660355567542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_283
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 150
+        width: 49
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e57bc4a50c56f4d30800000000000000
+      internalID: 4417861636296849246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_284
+      rect:
+        serializedVersion: 2
+        x: 1889
+        y: 149
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0378e1b113f9554b0800000000000000
+      internalID: -5452276740604917968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_285
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 149
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27d58578b12b9b1f0800000000000000
+      internalID: -1028595208572871310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_286
+      rect:
+        serializedVersion: 2
+        x: 1923
+        y: 149
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba4f735ab930fb040800000000000000
+      internalID: 4665451706005845163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_287
+      rect:
+        serializedVersion: 2
+        x: 1889
+        y: 133
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a665f4c464874d30800000000000000
+      internalID: 4415643527996073639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_288
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 133
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ae0b3113e919bd30800000000000000
+      internalID: 4447614570042429093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_289
+      rect:
+        serializedVersion: 2
+        x: 1923
+        y: 133
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8280836112af17930800000000000000
+      internalID: 4139364552543832104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_290
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 100
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 547bb19cbc677f960800000000000000
+      internalID: 7635702310854440773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_291
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 100
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ae48f392bfdb0380800000000000000
+      internalID: -9003857071917478240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding & Cutout Paper UI SpriteSheet_292
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 100
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f33e3b2193b1a2a20800000000000000
+      internalID: 3038270830555685695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class JournalManager : MonoBehaviour
 {
     public static JournalManager instance;
+    public static bool IsJournalOpen => instance != null && instance.journalUI.activeSelf;
 
     public GameObject journalUI;
     public TextMeshProUGUI noteTitleText;
@@ -21,11 +22,16 @@ public class JournalManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J) && !PauseManager.isGamePaused)
         {
             ToggleJournal();
         }
+        else if (Input.GetKeyDown(KeyCode.Escape) && journalUI.activeSelf)
+        {
+            ToggleJournal(); // Close journal
+        }
     }
+
 
     public void FlipForward()
     {
@@ -85,7 +91,9 @@ public class JournalManager : MonoBehaviour
         bool isActive = journalUI.activeSelf;
         journalUI.SetActive(!isActive);
 
-        Time.timeScale = isActive ? 1f : 0f; // Pause/unpause game
+        Time.timeScale = isActive ? 1f : 0f;
+
+        UIState.isJournalOpen = !isActive;  // Update global flag
     }
 
     public void DisplayNote(JournalNote note)

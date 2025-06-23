@@ -42,6 +42,7 @@ public class PauseManager : MonoBehaviour
         }
     }
 
+
     public void TogglePause()
     {
         if (isConfirmingQuit) return; // Don't toggle pause if confirming quit

@@ -22,15 +22,28 @@ public class InventoryUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            // If trying to open inventory, check cooldown
+            // Trying to open inventory but cooldown is active
             if (!inventoryUI.activeSelf && !canToggle)
             {
                 Debug.Log("Inventory opening is on cooldown.");
                 return;
             }
+
+            // If both inventory and item details are open, close both
+            if (inventoryUI.activeSelf && itemDetailsUI.panel.activeSelf)
+            {
+                itemDetailsUI.panel.SetActive(false); // Instantly hide detail panel
+                inventoryUI.SetActive(false);         // Close inventory
+                canToggle = false;
+                StartCoroutine(CooldownTimer(1f));    // Start cooldown after closing
+                return;
+            }
+
+            // Otherwise just toggle inventory normally
             ToggleInventory();
         }
     }
+
 
     public void ToggleInventoryWithButton()
     {
