@@ -13,6 +13,8 @@ public class SaveSystem : MonoBehaviour
     public int autosaveSlot = 99;         // Reserved slot for autosave
     private Coroutine autosaveCoroutine;
 
+    private bool isLoading = false;
+
     private string GetSlotPath(int slot) =>
         Application.persistentDataPath + $"/saveslot{slot}.json";
 
@@ -34,6 +36,14 @@ public class SaveSystem : MonoBehaviour
 
     private void Start()
     {
+        if (PendingLoadSlot.loadSlot != -1)
+        {
+            int slotToLoad = PendingLoadSlot.loadSlot;
+            PendingLoadSlot.loadSlot = -1;
+
+            LoadGame(slotToLoad);
+        }
+
         StartAutosave();
     }
 
@@ -49,25 +59,18 @@ public class SaveSystem : MonoBehaviour
 
     private IEnumerator AutosaveLoop()
     {
-        Debug.Log("Autosave loop started");
-
         while (true)
         {
-            Debug.Log("Started wait at: " + Time.realtimeSinceStartup);
             yield return new WaitForSecondsRealtime(autosaveInterval);
-            Debug.Log("Finished wait at: " + Time.realtimeSinceStartup);
 
-            Debug.Log("Autosave interval passed. Checking if paused...");
-            if (!PauseManager.isGamePaused)
+            if (PauseManager.isGamePaused || isLoading)
             {
-                Debug.Log("Not paused, saving...");
-                SaveGame(autosaveSlot);
-                Debug.Log($"Autosaved to slot {autosaveSlot} at {System.DateTime.Now}");
+                Debug.Log("Skipping autosave because game is paused or loading");
+                continue;
             }
-            else
-            {
-                Debug.Log("Paused — skipping autosave");
-            }
+
+            SaveGame(autosaveSlot);
+            Debug.Log($"Autosaved at {System.DateTime.Now}");
         }
     }
 
@@ -139,13 +142,16 @@ public class SaveSystem : MonoBehaviour
 
     public void LoadGame(int slot)
     {
+        if (autosaveCoroutine != null)
+            StopCoroutine(autosaveCoroutine);
+
+        isLoading = true;
         StartCoroutine(LoadGameCoroutine(slot));
     }
 
-    private IEnumerator LoadGameCoroutine(int slot)
+    public IEnumerator LoadGameCoroutine(int slot)
     {
         FindPlayerTransform();
-
         string path = GetSlotPath(slot);
         if (!File.Exists(path))
         {
@@ -156,16 +162,13 @@ public class SaveSystem : MonoBehaviour
         string json = File.ReadAllText(path);
         SaveData data = JsonUtility.FromJson<SaveData>(json);
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(data.sceneName);
-        while (!asyncLoad.isDone)
-            yield return null;
-
-        yield return null;
+        // Don’t load scene here — it’s already loaded
+        yield return null; // give it one frame if needed
 
         FindPlayerTransform();
         if (playerTransform == null)
         {
-            Debug.LogWarning("Player transform not found after scene load.");
+            Debug.LogWarning("Player transform not found.");
             yield break;
         }
 
@@ -232,6 +235,11 @@ public class SaveSystem : MonoBehaviour
         }
 
         Debug.Log($"Game Loaded from slot {slot}");
+
+        yield return null;  // wait a frame or two
+
+        isLoading = false;
+        StartAutosave();
     }
 
     public void DeleteSave(int slot)
