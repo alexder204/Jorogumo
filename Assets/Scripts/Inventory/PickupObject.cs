@@ -12,19 +12,16 @@ public class PickupItem : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Collider2D collider2d;
 
-    [HideInInspector]
-    public bool hasBeenPickedUp = false;
-
     private UniqueID uniqueID;
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider2d = GetComponent<Collider2D>();
-        uniqueID = GetComponent<UniqueID>(); // add this
+        uniqueID = GetComponent<UniqueID>();
     }
 
-    void Update()
+    private void Update()
     {
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
         {
@@ -36,20 +33,16 @@ public class PickupItem : MonoBehaviour
     {
         if (!collision.CompareTag("Player")) return;
 
-        StartPickup();
+        isPlayerNearby = true;
+        interactPopUp?.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!collision.CompareTag("Player")) return;
 
-        EndPickup();
-    }
-
-    private void StartPickup()
-    {
-        isPlayerNearby = true;
-        interactPopUp.SetActive(true);
+        isPlayerNearby = false;
+        interactPopUp?.SetActive(false);
     }
 
     private void AttemptPickup()
@@ -57,30 +50,16 @@ public class PickupItem : MonoBehaviour
         bool wasPickedUp = Inventory.instance.Add(item);
         if (wasPickedUp)
         {
-            hasBeenPickedUp = true;
-
-            // Mark as picked up globally:
             if (uniqueID != null)
                 PickedUpObjectsManager.Instance.MarkPickedUp(uniqueID.id);
 
-            EndPickup();
-            spriteRenderer.enabled = false;
-            collider2d.enabled = false;
-
             UIManager.instance.ShowMessage($"Picked up {item.itemName}!");
+
             gameObject.SetActive(false);
         }
         else
         {
             Debug.Log("Inventory full, cannot pick up item.");
         }
-    }
-
-    private void EndPickup()
-    {
-        if (!isPlayerNearby) return;
-
-        isPlayerNearby = false;
-        interactPopUp.SetActive(false);
     }
 }

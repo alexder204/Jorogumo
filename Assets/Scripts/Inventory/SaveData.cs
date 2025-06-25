@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 [System.Serializable]
@@ -27,13 +27,16 @@ public class SavedJournalNote
 public class SaveData
 {
     public string sceneName;
+
     public float playerPosX;
     public float playerPosY;
     public float playerPosZ;
-    public List<ObjectState> objectStates = new List<ObjectState>();
+
+    // Store only IDs of used/picked objects
+    public List<string> pickedUpIDs = new List<string>();
+    public List<string> usedInteractableIDs = new List<string>();
+
+    // Inventory & Journal as before
     public List<InventoryItemData> inventory = new List<InventoryItemData>();
     public List<SavedJournalNote> collectedJournalNotes = new List<SavedJournalNote>();
-
-    public List<string> pickedUpIDs = new();
 }
-

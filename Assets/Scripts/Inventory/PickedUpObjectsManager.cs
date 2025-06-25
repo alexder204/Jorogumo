@@ -48,4 +48,15 @@ public class PickedUpObjectsManager : MonoBehaviour
         pickedUpIDs.Clear();
         usedInteractableIDs.Clear();
     }
+
+    public List<string> GetPickedUpIDs()
+    {
+        return new List<string>(pickedUpIDs);
+    }
+
+    public List<string> GetUsedIDs()
+    {
+        return new List<string>(usedInteractableIDs);
+    }
+
 }
