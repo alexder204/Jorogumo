@@ -14,6 +14,7 @@ public class SaveMenuUI : MonoBehaviour
     public TextMeshProUGUI slot1Label;
     public TextMeshProUGUI slot2Label;
     public TextMeshProUGUI slot3Label;
+    public TextMeshProUGUI autosaveLabel;
 
     private void Update()
     {
@@ -47,9 +48,17 @@ public class SaveMenuUI : MonoBehaviour
     public void OnClickSlot1() => HandleSlotPress(1);
     public void OnClickSlot2() => HandleSlotPress(2);
     public void OnClickSlot3() => HandleSlotPress(3);
+    public void OnClickAutosave() => HandleSlotPress(99);
 
     private void HandleSlotPress(int slotIndex)
     {
+        // Prevent saving to autosave slot
+        if (slotIndex == 99 && isSaveMode)
+        {
+            Debug.LogWarning("Autosave slot is read-only.");
+            return;
+        }
+
         if (isSaveMode)
         {
             saveSystem.SaveGame(slotIndex);
@@ -83,6 +92,7 @@ public class SaveMenuUI : MonoBehaviour
         UpdateSlotLabel(slot1Label, 1);
         UpdateSlotLabel(slot2Label, 2);
         UpdateSlotLabel(slot3Label, 3);
+        UpdateSlotLabel(autosaveLabel, 99);
     }
 
     private void UpdateSlotLabel(TextMeshProUGUI label, int slot)
