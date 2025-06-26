@@ -50,7 +50,7 @@ public class UniqueIDRegistry : MonoBehaviour
             {
                 sceneObjects.Add(obj);
 
-                if (PickedUpObjectsManager.Instance != null && PickedUpObjectsManager.Instance.HasBeenPickedUp(obj.id))
+                if (ObjectStateTracker.Instance != null && ObjectStateTracker.Instance.HasBeenPickedUp(obj.id))
                 {
                     obj.gameObject.SetActive(false);
                 }

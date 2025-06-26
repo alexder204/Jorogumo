@@ -23,8 +23,8 @@ public class Interactable : MonoBehaviour
 
         uniqueID = GetComponent<UniqueID>();
 
-        if (uniqueID != null && PickedUpObjectsManager.Instance != null &&
-            PickedUpObjectsManager.Instance.HasBeenUsed(uniqueID.id))
+        if (uniqueID != null && ObjectStateTracker.Instance != null &&
+            ObjectStateTracker.Instance.HasBeenUsed(uniqueID.id))
         {
             gameObject.SetActive(false);
         }
@@ -89,9 +89,9 @@ public class Interactable : MonoBehaviour
 
     private void PerformAction()
     {
-        if (uniqueID != null && PickedUpObjectsManager.Instance != null)
+        if (uniqueID != null && ObjectStateTracker.Instance != null)
         {
-            PickedUpObjectsManager.Instance.MarkUsed(uniqueID.id);
+            ObjectStateTracker.Instance.MarkUsed(uniqueID.id);
         }
 
         switch (type)

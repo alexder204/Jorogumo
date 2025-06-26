@@ -87,8 +87,8 @@ public class SaveSystem : MonoBehaviour
             playerPosY = playerTransform.position.y,
             playerPosZ = playerTransform.position.z,
 
-            pickedUpIDs = PickedUpObjectsManager.Instance.GetPickedUpIDs(),
-            usedInteractableIDs = PickedUpObjectsManager.Instance.GetUsedIDs(),
+            pickedUpIDs = ObjectStateTracker.Instance.GetPickedUpIDs(),
+            usedInteractableIDs = ObjectStateTracker.Instance.GetUsedIDs(),
 
             inventory = new List<InventoryItemData>(),
             collectedJournalNotes = new List<SavedJournalNote>()
@@ -145,19 +145,19 @@ public class SaveSystem : MonoBehaviour
         playerTransform.position = new Vector3(data.playerPosX, data.playerPosY, data.playerPosZ);
 
         // Clear & restore picked/used IDs
-        PickedUpObjectsManager.Instance.Clear();
+        ObjectStateTracker.Instance.Clear();
 
         foreach (string id in data.pickedUpIDs)
-            PickedUpObjectsManager.Instance.MarkPickedUp(id);
+            ObjectStateTracker.Instance.MarkPickedUp(id);
 
         foreach (string id in data.usedInteractableIDs)
-            PickedUpObjectsManager.Instance.MarkUsed(id);
+            ObjectStateTracker.Instance.MarkUsed(id);
 
         // Immediately disable picked/used objects
         foreach (var obj in uniqueIDRegistry.GetAllUniqueIDs())
         {
-            if (PickedUpObjectsManager.Instance.HasBeenPickedUp(obj.id) ||
-                PickedUpObjectsManager.Instance.HasBeenUsed(obj.id))
+            if (ObjectStateTracker.Instance.HasBeenPickedUp(obj.id) ||
+                ObjectStateTracker.Instance.HasBeenUsed(obj.id))
             {
                 obj.gameObject.SetActive(false);
             }

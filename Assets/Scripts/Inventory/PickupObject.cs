@@ -51,7 +51,7 @@ public class PickupItem : MonoBehaviour
         if (wasPickedUp)
         {
             if (uniqueID != null)
-                PickedUpObjectsManager.Instance.MarkPickedUp(uniqueID.id);
+                ObjectStateTracker.Instance.MarkPickedUp(uniqueID.id);
 
             UIManager.instance.ShowMessage($"Picked up {item.itemName}!");
 

@@ -47,24 +47,46 @@ public class SceneFader : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Refresh fadePanel if it's missing (like in MainMenu)
         if (fadePanel == null)
         {
+            Debug.Log("FadePanel is null on scene load, searching for it...");
             GameObject foundPanel = GameObject.FindWithTag("FadePanel");
             if (foundPanel != null)
             {
-                fadePanel = foundPanel.GetComponent<Image>();
+                fadePanel = foundPanel.GetComponent<UnityEngine.UI.Image>();
+                Debug.Log("Found FadePanel in new scene.");
+
                 if (fadePanel != null)
                 {
                     Color c = fadePanel.color;
                     c.a = 1f;
                     fadePanel.color = c;
                     fadePanel.gameObject.SetActive(true);
+
+                    Debug.Log("Starting FadeIn coroutine...");
                     StartCoroutine(FadeIn());
                 }
+                else
+                {
+                    Debug.LogWarning("Found GameObject with FadePanel tag but no Image component.");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("No GameObject with FadePanel tag found in the scene.");
+            }
+        }
+        else
+        {
+            Debug.Log("FadePanel already assigned.");
+            // Just in case, restart FadeIn if panel exists and alpha is 1
+            if (fadePanel.color.a >= 1f)
+            {
+                StartCoroutine(FadeIn());
             }
         }
     }
+
 
     public void FadeOutAndLoad(string sceneName)
     {

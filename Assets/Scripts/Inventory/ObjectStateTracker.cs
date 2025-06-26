@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickedUpObjectsManager : MonoBehaviour
+public class ObjectStateTracker : MonoBehaviour
 {
-    public static PickedUpObjectsManager Instance { get; private set; }
+    public static ObjectStateTracker Instance { get; private set; }
 
     private HashSet<string> pickedUpIDs = new HashSet<string>();
     private HashSet<string> usedInteractableIDs = new HashSet<string>();

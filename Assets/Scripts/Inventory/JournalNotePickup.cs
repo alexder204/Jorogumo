@@ -50,7 +50,7 @@ public class JournalNotePickup : MonoBehaviour
         JournalManager.instance.AddNote(note);
 
         if (uniqueID != null)
-            PickedUpObjectsManager.Instance.MarkPickedUp(uniqueID.id);
+            ObjectStateTracker.Instance.MarkPickedUp(uniqueID.id);
 
         UIManager.instance.ShowMessage($"Note added: {note.noteTitle}");
 
