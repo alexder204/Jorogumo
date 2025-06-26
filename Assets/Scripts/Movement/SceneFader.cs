@@ -133,4 +133,23 @@ public class SceneFader : MonoBehaviour
         color.a = 0f;
         fadePanel.color = color;
     }
+    public IEnumerator FadeOutRoutine()
+    {
+        if (fadePanel == null) yield break;
+
+        float elapsed = 0f;
+        Color color = fadePanel.color;
+
+        while (elapsed < fadeDuration)
+        {
+            elapsed += Time.deltaTime;
+            color.a = Mathf.Lerp(0f, 1f, elapsed / fadeDuration);
+            fadePanel.color = color;
+            yield return null;
+        }
+
+        color.a = 1f;
+        fadePanel.color = color;
+    }
+
 }
