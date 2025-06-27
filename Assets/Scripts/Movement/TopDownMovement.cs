@@ -21,6 +21,8 @@ public class TopDownMovement : MonoBehaviour
     // This should be controlled externally during dialogue
     public static bool isInDialogue = false;
 
+    public static bool isFading = false;
+
     private bool lockedDirectionDuringDialogue = false;
 
     public static TopDownMovement instance;
@@ -34,7 +36,7 @@ public class TopDownMovement : MonoBehaviour
 
     void Update()
     {
-        if (PauseManager.isGamePaused || isInDialogue)
+        if (PauseManager.isGamePaused || isInDialogue || isFading)
         {
             if (!lockedDirectionDuringDialogue)
             {
@@ -59,7 +61,7 @@ public class TopDownMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (PauseManager.isGamePaused || isInDialogue)
+        if (PauseManager.isGamePaused || isInDialogue || isFading)
         {
             rb.linearVelocity = Vector2.zero;
             return;

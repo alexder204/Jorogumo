@@ -9,7 +9,7 @@ public class SceneFader : MonoBehaviour
     public static SceneFader instance;
 
     public Image fadePanel;
-    public float fadeDuration = 1f;
+    public float fadeDuration = 1.5f;
 
     private void Awake()
     {
@@ -132,10 +132,15 @@ public class SceneFader : MonoBehaviour
 
         color.a = 0f;
         fadePanel.color = color;
+
+        TopDownMovement.isFading = false;
     }
+
     public IEnumerator FadeOutRoutine()
     {
         if (fadePanel == null) yield break;
+
+        TopDownMovement.isFading = true;
 
         float elapsed = 0f;
         Color color = fadePanel.color;
@@ -151,5 +156,4 @@ public class SceneFader : MonoBehaviour
         color.a = 1f;
         fadePanel.color = color;
     }
-
 }
