@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
@@ -23,37 +23,49 @@ public class PlayerSpawnManager : MonoBehaviour
 
     private IEnumerator MovePlayerToSpawnPoint()
     {
-        yield return null; // wait a frame
+        TopDownMovement.isSceneLoading = true;
+
+        yield return null;  // wait one frame for the scene to initialize
 
         if (playerTransform == null)
         {
-            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-            if (playerObj != null)
-                playerTransform = playerObj.transform;
-            else
+            var playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj == null)
             {
-                Debug.LogWarning("Player GameObject with tag 'Player' not found.");
+                Debug.LogWarning("[PlayerSpawnManager] Player tag not found.");
                 yield break;
             }
+            playerTransform = playerObj.transform;
         }
 
-        if (string.IsNullOrEmpty(SceneTransitionData.spawnPointID))
-        {
-            Debug.Log("No spawnPointID set for this scene load. Spawning Default");
-            yield break;
-        }
+        // hide player to avoid any flash at default position
+        playerTransform.gameObject.SetActive(false);
 
-        SpawnPoint[] spawnPoints = Object.FindObjectsByType<SpawnPoint>(FindObjectsSortMode.None);
-
-        foreach (var sp in spawnPoints)
+        // position player
+        if (!string.IsNullOrEmpty(SceneTransitionData.spawnPointID))
         {
-            if (sp.spawnPointID == SceneTransitionData.spawnPointID)
+            var spawns = Object.FindObjectsByType<SpawnPoint>(FindObjectsSortMode.None);
+            foreach (var sp in spawns)
             {
-                playerTransform.position = sp.transform.position;
-                break;
+                if (sp.spawnPointID == SceneTransitionData.spawnPointID)
+                {
+                    playerTransform.position = sp.transform.position;
+                    break;
+                }
             }
+            SceneTransitionData.spawnPointID = null;
         }
 
-        SceneTransitionData.spawnPointID = null;
+        // show player
+        playerTransform.gameObject.SetActive(true);
+
+        // ensure one more frame before fade-in (optional but stabilizes)
+        yield return null;
+
+        // fade in
+        if (SceneFader.instance != null)
+            yield return SceneFader.instance.FadeIn();
+
+        TopDownMovement.isSceneLoading = false;
     }
 }

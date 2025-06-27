@@ -1,19 +1,19 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Collections;
 
 public class SceneFader : MonoBehaviour
 {
     public static SceneFader instance;
 
+    [Tooltip("Assign the Image on your persistent Canvas (tagged \"FadePanel\").")]
     public Image fadePanel;
-    public float fadeDuration = 1.5f;
+    public float fadeDuration = 1f;
 
     private void Awake()
     {
-        // Singleton logic
+        // Singleton
         if (instance == null)
         {
             instance = this;
@@ -26,18 +26,13 @@ public class SceneFader : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void Start()
-    {
+        // keep black immediately
         if (fadePanel != null)
         {
-            Color c = fadePanel.color;
+            var c = fadePanel.color;
             c.a = 1f;
             fadePanel.color = c;
         }
-
-        StartCoroutine(FadeIn());
     }
 
     private void OnDestroy()
@@ -47,46 +42,71 @@ public class SceneFader : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        // Try to find the FadePanel in the newly loaded scene (if our reference is null)
         if (fadePanel == null)
         {
-            Debug.Log("FadePanel is null on scene load, searching for it...");
-            GameObject foundPanel = GameObject.FindWithTag("FadePanel");
-            if (foundPanel != null)
+            var go = GameObject.FindWithTag("FadePanel");
+            if (go != null)
             {
-                fadePanel = foundPanel.GetComponent<UnityEngine.UI.Image>();
-                Debug.Log("Found FadePanel in new scene.");
-
-                if (fadePanel != null)
-                {
-                    Color c = fadePanel.color;
-                    c.a = 1f;
-                    fadePanel.color = c;
-                    fadePanel.gameObject.SetActive(true);
-
-                    Debug.Log("Starting FadeIn coroutine...");
-                    StartCoroutine(FadeIn());
-                }
-                else
-                {
-                    Debug.LogWarning("Found GameObject with FadePanel tag but no Image component.");
-                }
+                fadePanel = go.GetComponent<Image>();
+                Debug.Log("[SceneFader] Found FadePanel in new scene.");
+                // make sure it starts fully opaque
+                var c = fadePanel.color;
+                c.a = 1f;
+                fadePanel.color = c;
             }
             else
             {
-                Debug.LogWarning("No GameObject with FadePanel tag found in the scene.");
-            }
-        }
-        else
-        {
-            Debug.Log("FadePanel already assigned.");
-            // Just in case, restart FadeIn if panel exists and alpha is 1
-            if (fadePanel.color.a >= 1f)
-            {
-                StartCoroutine(FadeIn());
+                Debug.LogWarning("[SceneFader] No FadePanel with tag found in scene.");
             }
         }
     }
 
+    public IEnumerator FadeOutRoutine()
+    {
+        if (fadePanel == null)
+        {
+            Debug.LogWarning("[SceneFader] FadePanel is null in FadeOutRoutine.");
+            yield break;
+        }
+
+        TopDownMovement.isFading = true;
+
+        float elapsed = 0f;
+        var color = fadePanel.color;
+        while (elapsed < fadeDuration)
+        {
+            elapsed += Time.deltaTime;
+            color.a = Mathf.Lerp(0f, 1f, elapsed / fadeDuration);
+            fadePanel.color = color;
+            yield return null;
+        }
+        color.a = 1f;
+        fadePanel.color = color;
+    }
+
+    public IEnumerator FadeIn()
+    {
+        if (fadePanel == null)
+        {
+            Debug.LogWarning("[SceneFader] FadePanel is null in FadeIn.");
+            yield break;
+        }
+
+        float elapsed = 0f;
+        var color = fadePanel.color;
+        while (elapsed < fadeDuration)
+        {
+            elapsed += Time.deltaTime;
+            color.a = Mathf.Lerp(1f, 0f, elapsed / fadeDuration);
+            fadePanel.color = color;
+            yield return null;
+        }
+        color.a = 0f;
+        fadePanel.color = color;
+
+        TopDownMovement.isFading = false;
+    }
 
     public void FadeOutAndLoad(string sceneName)
     {
@@ -95,65 +115,7 @@ public class SceneFader : MonoBehaviour
 
     private IEnumerator FadeOutAndLoadRoutine(string sceneName)
     {
-        if (fadePanel != null)
-        {
-            float elapsed = 0f;
-            Color color = fadePanel.color;
-
-            while (elapsed < fadeDuration)
-            {
-                elapsed += Time.deltaTime;
-                color.a = Mathf.Lerp(0f, 1f, elapsed / fadeDuration);
-                fadePanel.color = color;
-                yield return null;
-            }
-
-            color.a = 1f;
-            fadePanel.color = color;
-        }
-
+        yield return FadeOutRoutine();
         SceneManager.LoadScene(sceneName);
-    }
-
-    private IEnumerator FadeIn()
-    {
-        if (fadePanel == null) yield break;
-
-        float elapsed = 0f;
-        Color color = fadePanel.color;
-
-        while (elapsed < fadeDuration)
-        {
-            elapsed += Time.deltaTime;
-            color.a = Mathf.Lerp(1f, 0f, elapsed / fadeDuration);
-            fadePanel.color = color;
-            yield return null;
-        }
-
-        color.a = 0f;
-        fadePanel.color = color;
-
-        TopDownMovement.isFading = false;
-    }
-
-    public IEnumerator FadeOutRoutine()
-    {
-        if (fadePanel == null) yield break;
-
-        TopDownMovement.isFading = true;
-
-        float elapsed = 0f;
-        Color color = fadePanel.color;
-
-        while (elapsed < fadeDuration)
-        {
-            elapsed += Time.deltaTime;
-            color.a = Mathf.Lerp(0f, 1f, elapsed / fadeDuration);
-            fadePanel.color = color;
-            yield return null;
-        }
-
-        color.a = 1f;
-        fadePanel.color = color;
     }
 }

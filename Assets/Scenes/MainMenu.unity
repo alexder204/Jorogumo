@@ -1993,6 +1993,7 @@ GameObject:
   - component: {fileID: 346182132}
   - component: {fileID: 346182127}
   - component: {fileID: 346182133}
+  - component: {fileID: 346182134}
   m_Layer: 0
   m_Name: MainMenuManager
   m_TagString: Untagged
@@ -2052,6 +2053,19 @@ MonoBehaviour:
   slot2Label: {fileID: 55927021}
   slot3Label: {fileID: 1326219276}
   newLevel: Scene1
+--- !u!114 &346182134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346182116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d08c699c21e154e8f46f6d1aad7a32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 1076971578}
 --- !u!1 &361685727
 GameObject:
   m_ObjectHideFlags: 0

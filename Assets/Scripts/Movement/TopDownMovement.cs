@@ -8,8 +8,8 @@ public class TopDownMovement : MonoBehaviour
 
     [Header("Footstep Settings")]
     public AudioSource footstepSource;
-    public float footstepInterval = 0.4f; // Time between each footstep when walking
-    public float footstepIntervalRun = 0.3f; // Time between each footstep when running
+    public float footstepInterval = 0.4f;
+    public float footstepIntervalRun = 0.3f;
 
     private Rigidbody2D rb;
     private Vector2 movement;
@@ -18,15 +18,11 @@ public class TopDownMovement : MonoBehaviour
     private string currentSurface = "Default";
     private float footstepTimer;
 
-    // This should be controlled externally during dialogue
     public static bool isInDialogue = false;
-
     public static bool isFading = false;
+    public static bool isSceneLoading = false;
 
-    private bool lockedDirectionDuringDialogue = false;
-
-    public static TopDownMovement instance;
-
+    private bool lockedDirection = false;
 
     void Start()
     {
@@ -36,12 +32,12 @@ public class TopDownMovement : MonoBehaviour
 
     void Update()
     {
-        if (PauseManager.isGamePaused || isInDialogue || isFading)
+        if (PauseManager.isGamePaused || isInDialogue || isFading || isSceneLoading)
         {
-            if (!lockedDirectionDuringDialogue)
+            if (!lockedDirection)
             {
                 animator.Play("Idle" + lastDirection);
-                lockedDirectionDuringDialogue = true;
+                lockedDirection = true;
             }
 
             rb.linearVelocity = Vector2.zero;
@@ -49,7 +45,7 @@ public class TopDownMovement : MonoBehaviour
             return;
         }
 
-        lockedDirectionDuringDialogue = false;
+        lockedDirection = false;
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -61,7 +57,7 @@ public class TopDownMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (PauseManager.isGamePaused || isInDialogue || isFading)
+        if (PauseManager.isGamePaused || isInDialogue || isFading || isSceneLoading)
         {
             rb.linearVelocity = Vector2.zero;
             return;
@@ -77,17 +73,11 @@ public class TopDownMovement : MonoBehaviour
         bool isSprinting = Input.GetKey(KeyCode.LeftShift);
 
         if (isSprinting && isMoving)
-        {
             PlayDirectionAnimation("Run");
-        }
         else if (isMoving)
-        {
             PlayDirectionAnimation("Walk");
-        }
         else
-        {
             animator.Play("Idle" + lastDirection);
-        }
     }
 
     void PlayDirectionAnimation(string prefix)
@@ -95,51 +85,37 @@ public class TopDownMovement : MonoBehaviour
         if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
         {
             if (movement.x > 0)
-            {
-                animator.Play(prefix + "Right");
                 lastDirection = "Right";
-            }
             else
-            {
-                animator.Play(prefix + "Left");
                 lastDirection = "Left";
-            }
         }
         else
         {
             if (movement.y > 0)
-            {
-                animator.Play(prefix + "Up");
                 lastDirection = "Up";
-            }
             else
-            {
-                animator.Play(prefix + "Down");
                 lastDirection = "Down";
-            }
         }
+
+        animator.Play(prefix + lastDirection);
     }
 
     void HandleFootsteps()
     {
-        bool isMoving = movement.magnitude > 0.01f;
-        bool isSprinting = Input.GetKey(KeyCode.LeftShift);
-
-        if (isMoving)
-        {
-            footstepTimer -= Time.deltaTime;
-            float currentFootstepInterval = isSprinting ? footstepIntervalRun : footstepInterval;
-
-            if (footstepTimer <= 0f)
-            {
-                PlayFootstep();
-                footstepTimer = currentFootstepInterval;
-            }
-        }
-        else
+        if (movement.magnitude <= 0.01f)
         {
             footstepSource.Stop();
             footstepTimer = 0f;
+            return;
+        }
+
+        footstepTimer -= Time.deltaTime;
+        float interval = Input.GetKey(KeyCode.LeftShift) ? footstepIntervalRun : footstepInterval;
+
+        if (footstepTimer <= 0f)
+        {
+            PlayFootstep();
+            footstepTimer = interval;
         }
     }
 
@@ -150,9 +126,7 @@ public class TopDownMovement : MonoBehaviour
         {
             AudioClip clip = zone.GetRandomClip(currentSurface);
             if (clip != null)
-            {
                 footstepSource.PlayOneShot(clip);
-            }
         }
     }
 
@@ -163,9 +137,7 @@ public class TopDownMovement : MonoBehaviour
         {
             FootstepZone zone = col.GetComponent<FootstepZone>();
             if (zone != null && zone.surfaceType == currentSurface)
-            {
                 return zone;
-            }
         }
         return null;
     }
@@ -174,17 +146,13 @@ public class TopDownMovement : MonoBehaviour
     {
         FootstepZone zone = other.GetComponent<FootstepZone>();
         if (zone != null)
-        {
             currentSurface = zone.surfaceType;
-        }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         FootstepZone zone = other.GetComponent<FootstepZone>();
         if (zone != null && currentSurface == zone.surfaceType)
-        {
             currentSurface = "Default";
-        }
     }
 }
