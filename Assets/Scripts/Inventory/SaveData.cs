@@ -39,4 +39,7 @@ public class SaveData
     // Inventory & Journal as before
     public List<InventoryItemData> inventory = new List<InventoryItemData>();
     public List<SavedJournalNote> collectedJournalNotes = new List<SavedJournalNote>();
+
+    // Dialogue
+    public List<string> completedDialogueIDs = new List<string>();
 }

@@ -40,4 +40,23 @@ public class DialogueUIManager : MonoBehaviour
         if (!completedDialogues.Contains(dialogue.id))
             completedDialogues.Add(dialogue.id);
     }
+
+    public List<string> GetCompletedDialogueIDs()
+    {
+        return new List<string>(completedDialogues);
+    }
+
+    // Also add to clear all, useful on load:
+    public void ClearCompletedDialogues()
+    {
+        completedDialogues.Clear();
+    }
+
+    // Add a method to mark complete by ID string:
+    public void MarkDialogueCompleteById(string dialogueId)
+    {
+        if (!completedDialogues.Contains(dialogueId))
+            completedDialogues.Add(dialogueId);
+    }
+
 }

@@ -91,7 +91,9 @@ public class SaveSystem : MonoBehaviour
             usedInteractableIDs = ObjectStateTracker.Instance.GetUsedIDs(),
 
             inventory = new List<InventoryItemData>(),
-            collectedJournalNotes = new List<SavedJournalNote>()
+            collectedJournalNotes = new List<SavedJournalNote>(),
+
+            completedDialogueIDs = new List<string>(DialogueUIManager.Instance.GetCompletedDialogueIDs())
         };
 
         foreach (var item in Inventory.instance.items)
@@ -176,6 +178,40 @@ public class SaveSystem : MonoBehaviour
                 Inventory.instance.AddItem(baseItem, saved.currentAmount);
             else
                 Debug.LogWarning($"Item ID {saved.itemId} not found in ItemDatabase");
+        }
+
+        // Dialogue
+        // Clear existing completed dialogues first
+        DialogueUIManager.Instance.ClearCompletedDialogues();
+
+        // Mark loaded dialogues as completed
+        foreach (string dialogueId in data.completedDialogueIDs)
+        {
+            DialogueUIManager.Instance.MarkDialogueCompleteById(dialogueId);
+        }
+
+        // Enable all dialogue objects first (to reset any leftover state)
+        foreach (var obj in uniqueIDRegistry.GetAllUniqueIDs())
+        {
+            var dialogue = obj.GetComponent<DialogueID>();
+            if (dialogue != null)
+            {
+                obj.gameObject.SetActive(true);
+            }
+        }
+
+        // Then disable dialogue objects that are completed
+        foreach (var obj in uniqueIDRegistry.GetAllUniqueIDs())
+        {
+            var dialogue = obj.GetComponent<DialogueID>();
+            if (dialogue != null)
+            {
+                if (DialogueUIManager.Instance.HasCompletedDialogue(dialogue))
+                {
+                    obj.gameObject.SetActive(false);
+                    Debug.Log($"Disabling completed dialogue object: {dialogue.id}");
+                }
+            }
         }
 
         // Journal
