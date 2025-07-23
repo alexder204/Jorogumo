@@ -1514,7 +1514,7 @@ MonoBehaviour:
   - sceneName: MainMenu
     musicClip: {fileID: 8300000, guid: 5de079d38fb6f0d48b5c45a73214f1ab, type: 3}
     allowCrossfade: 0
-    allowFade: 0
+    allowFade: 1
   - sceneName: Scene1
     musicClip: {fileID: 8300000, guid: 8b675804fcd6eb8448cc9eedb762edad, type: 3}
     allowCrossfade: 0
@@ -1522,7 +1522,11 @@ MonoBehaviour:
   - sceneName: Scene2
     musicClip: {fileID: 8300000, guid: 8b675804fcd6eb8448cc9eedb762edad, type: 3}
     allowCrossfade: 0
-    allowFade: 0
+    allowFade: 1
+  - sceneName: Scene3
+    musicClip: {fileID: 8300000, guid: 8b675804fcd6eb8448cc9eedb762edad, type: 3}
+    allowCrossfade: 0
+    allowFade: 1
   mainMixer: {fileID: 24100000, guid: e3e221e39854f9246b799872b91947c0, type: 2}
 --- !u!114 &233381935
 MonoBehaviour:
