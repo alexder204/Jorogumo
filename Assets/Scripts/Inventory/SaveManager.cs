@@ -1,38 +1,65 @@
-﻿using UnityEngine;
-using System.IO;
+﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class SaveSystem : MonoBehaviour
 {
+    [Header("References")]
     public Transform playerTransform;
     public UniqueIDRegistry uniqueIDRegistry;
 
-    public float autosaveInterval = 10f; // 10 minutes = 600 seconds
-    public int autosaveSlot = 99;         // Reserved slot for autosave
-    private Coroutine autosaveCoroutine;
+    [Header("Autosave")]
+    public float autosaveInterval = 10f; // seconds
+    public int autosaveSlot = 99;        // Reserved slot for autosave
 
+    private Coroutine autosaveCoroutine;
     private bool isLoading = false;
+
+    // -------------------------------------------------------------------------
+    // Helpers
+    // -------------------------------------------------------------------------
 
     private string GetSlotPath(int slot) =>
         Application.persistentDataPath + $"/saveslot{slot}.json";
 
     private void FindPlayerTransform()
     {
-        if (playerTransform == null)
+        if (playerTransform != null) return;
+
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null)
         {
-            GameObject playerObj = GameObject.FindWithTag("Player");
-            if (playerObj != null)
-            {
-                playerTransform = playerObj.transform;
-            }
-            else
-            {
-                Debug.LogWarning("Player object not found in scene.");
-            }
+            playerTransform = playerObj.transform;
+        }
+        else
+        {
+            Debug.LogWarning("SaveSystem: Player object not found in scene.");
         }
     }
+
+    private void FindRegistry()
+    {
+        if (uniqueIDRegistry == null)
+            uniqueIDRegistry = FindAnyObjectByType<UniqueIDRegistry>();
+    }
+
+    private void ResetPauseState()
+    {
+        // Global unpause
+        PauseManager.isGamePaused = false;
+        Time.timeScale = 1f;
+
+        // Try to hide pause menu UI if tagged
+        GameObject pauseMenu = GameObject.FindWithTag("PauseMenu");
+        if (pauseMenu != null)
+            pauseMenu.SetActive(false);
+    }
+
+    // -------------------------------------------------------------------------
+    // Unity lifecycle
+    // -------------------------------------------------------------------------
 
     private void Start()
     {
@@ -40,18 +67,20 @@ public class SaveSystem : MonoBehaviour
         {
             int slotToLoad = PendingLoadSlot.loadSlot;
             PendingLoadSlot.loadSlot = -1;
-
             LoadGame(slotToLoad);
         }
 
         StartAutosave();
     }
 
+    // -------------------------------------------------------------------------
+    // Autosave
+    // -------------------------------------------------------------------------
+
     public void StartAutosave()
     {
         if (autosaveCoroutine != null)
             StopCoroutine(autosaveCoroutine);
-
 
         autosaveCoroutine = StartCoroutine(AutosaveLoop());
         Debug.Log("Autosave path: " + GetSlotPath(autosaveSlot));
@@ -65,15 +94,18 @@ public class SaveSystem : MonoBehaviour
 
             if (PauseManager.isGamePaused || isLoading)
             {
-                Debug.Log("Skipping autosave because game is paused or loading");
+                Debug.Log("SaveSystem: Skipping autosave (paused or loading).");
                 continue;
             }
 
             SaveGame(autosaveSlot);
-            Debug.Log($"Autosaved at {System.DateTime.Now}");
+            Debug.Log($"SaveSystem: Autosaved at {System.DateTime.Now}");
         }
     }
 
+    // -------------------------------------------------------------------------
+    // Save
+    // -------------------------------------------------------------------------
 
     public void SaveGame(int slot)
     {
@@ -96,26 +128,41 @@ public class SaveSystem : MonoBehaviour
             completedDialogueIDs = new List<string>(DialogueUIManager.Instance.GetCompletedDialogueIDs())
         };
 
+        // Inventory
         foreach (var item in Inventory.instance.items)
         {
-            data.inventory.Add(new InventoryItemData { itemId = item.id, currentAmount = item.currentAmount });
+            data.inventory.Add(new InventoryItemData
+            {
+                itemId = item.id,
+                currentAmount = item.currentAmount
+            });
         }
 
+        // Journal
         foreach (var note in JournalManager.instance.GetCollectedNotes())
         {
-            data.collectedJournalNotes.Add(new SavedJournalNote { noteId = note.noteID });
+            data.collectedJournalNotes.Add(new SavedJournalNote
+            {
+                noteId = note.noteID
+            });
         }
 
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(GetSlotPath(slot), json);
-        Debug.Log($"Game Saved to slot {slot}");
+        Debug.Log($"SaveSystem: Game saved to slot {slot}");
     }
 
+    // -------------------------------------------------------------------------
+    // Load
+    // -------------------------------------------------------------------------
 
     public void LoadGame(int slot)
     {
         if (autosaveCoroutine != null)
             StopCoroutine(autosaveCoroutine);
+
+        // Make sure the game is not paused and audio is unpaused
+        PauseManager.ForceUnpause();
 
         isLoading = true;
         StartCoroutine(LoadGameCoroutine(slot));
@@ -123,30 +170,62 @@ public class SaveSystem : MonoBehaviour
 
     public IEnumerator LoadGameCoroutine(int slot)
     {
-        FindPlayerTransform();
-
         string path = GetSlotPath(slot);
         if (!File.Exists(path))
         {
-            Debug.LogWarning($"No save file at {path}");
+            Debug.LogWarning($"SaveSystem: No save file at {path}");
+            isLoading = false;
+            StartAutosave();
             yield break;
         }
 
+        // 1. Read the save file
         string json = File.ReadAllText(path);
         SaveData data = JsonUtility.FromJson<SaveData>(json);
 
-        yield return null; // wait a frame
+        // 2. Load the correct scene if needed
+        string currentScene = SceneManager.GetActiveScene().name;
+        if (currentScene != data.sceneName)
+        {
+            Debug.Log($"SaveSystem: Loading saved scene '{data.sceneName}'");
+            AsyncOperation loadOp = SceneManager.LoadSceneAsync(data.sceneName);
 
+            while (!loadOp.isDone)
+                yield return null;
+
+            // Extra frame so everything initializes
+            yield return null;
+        }
+
+        // 2.5. Ensure game is unpaused and pause menu closed
+        ResetPauseState();
+
+        // 3. Re-acquire references that exist in the scene
         FindPlayerTransform();
         if (playerTransform == null)
         {
-            Debug.LogWarning("Player transform not found.");
+            Debug.LogWarning("SaveSystem: Player transform not found after scene load.");
+            isLoading = false;
+            StartAutosave();
             yield break;
         }
 
+        FindRegistry();
+        if (uniqueIDRegistry == null)
+        {
+            Debug.LogWarning("SaveSystem: UniqueIDRegistry not found after scene load.");
+            isLoading = false;
+            StartAutosave();
+            yield break;
+        }
+
+        // Cache list once instead of calling GetAllUniqueIDs repeatedly
+        var uniqueObjects = uniqueIDRegistry.GetAllUniqueIDs();
+
+        // 4. Restore player position
         playerTransform.position = new Vector3(data.playerPosX, data.playerPosY, data.playerPosZ);
 
-        // Clear & restore picked/used IDs
+        // 5. Restore object state
         ObjectStateTracker.Instance.Clear();
 
         foreach (string id in data.pickedUpIDs)
@@ -155,88 +234,85 @@ public class SaveSystem : MonoBehaviour
         foreach (string id in data.usedInteractableIDs)
             ObjectStateTracker.Instance.MarkUsed(id);
 
-        // Immediately disable picked/used objects
-        foreach (var obj in uniqueIDRegistry.GetAllUniqueIDs())
+        foreach (var obj in uniqueObjects)
         {
-            if (ObjectStateTracker.Instance.HasBeenPickedUp(obj.id) ||
-                ObjectStateTracker.Instance.HasBeenUsed(obj.id))
-            {
-                obj.gameObject.SetActive(false);
-            }
-            else
-            {
-                obj.gameObject.SetActive(true);
-            }
+            bool picked = ObjectStateTracker.Instance.HasBeenPickedUp(obj.id);
+            bool used = ObjectStateTracker.Instance.HasBeenUsed(obj.id);
+            obj.gameObject.SetActive(!(picked || used));
         }
 
-        // Inventory
+        // 6. Restore inventory
         Inventory.instance.ClearInventory();
         foreach (var saved in data.inventory)
         {
             var baseItem = ItemDatabase.GetItemByID(saved.itemId);
             if (baseItem != null)
+            {
                 Inventory.instance.AddItem(baseItem, saved.currentAmount);
+            }
             else
-                Debug.LogWarning($"Item ID {saved.itemId} not found in ItemDatabase");
+            {
+                Debug.LogWarning($"SaveSystem: Item ID '{saved.itemId}' not found in ItemDatabase");
+            }
         }
 
-        // Dialogue
-        // Clear existing completed dialogues first
+        // 7. Restore dialogue
         DialogueUIManager.Instance.ClearCompletedDialogues();
 
-        // Mark loaded dialogues as completed
         foreach (string dialogueId in data.completedDialogueIDs)
-        {
             DialogueUIManager.Instance.MarkDialogueCompleteById(dialogueId);
-        }
 
-        // Enable all dialogue objects first (to reset any leftover state)
-        foreach (var obj in uniqueIDRegistry.GetAllUniqueIDs())
+        // Enable all dialogue objects first
+        foreach (var obj in uniqueObjects)
         {
             var dialogue = obj.GetComponent<DialogueID>();
             if (dialogue != null)
-            {
                 obj.gameObject.SetActive(true);
-            }
         }
 
-        // Then disable dialogue objects that are completed
-        foreach (var obj in uniqueIDRegistry.GetAllUniqueIDs())
+        // Then disable completed dialogue objects
+        foreach (var obj in uniqueObjects)
         {
             var dialogue = obj.GetComponent<DialogueID>();
-            if (dialogue != null)
+            if (dialogue != null &&
+                DialogueUIManager.Instance.HasCompletedDialogue(dialogue))
             {
-                if (DialogueUIManager.Instance.HasCompletedDialogue(dialogue))
-                {
-                    obj.gameObject.SetActive(false);
-                    Debug.Log($"Disabling completed dialogue object: {dialogue.id}");
-                }
+                obj.gameObject.SetActive(false);
+                Debug.Log($"SaveSystem: Disabling completed dialogue object '{dialogue.id}'");
             }
         }
 
-        // Journal
+        // 8. Restore journal
         JournalManager.instance.ClearNotes();
         foreach (var savedNote in data.collectedJournalNotes)
         {
             JournalNote note = JournalManager.instance.GetNoteByID(savedNote.noteId);
             if (note != null)
+            {
                 JournalManager.instance.AddNote(note);
+            }
             else
-                Debug.LogWarning($"Saved note with ID {savedNote.noteId} not found.");
+            {
+                Debug.LogWarning($"SaveSystem: Saved note with ID '{savedNote.noteId}' not found.");
+            }
         }
 
         if (JournalManager.instance.GetCollectedNotes().Count > 0)
         {
-            JournalManager.instance.DisplayNote(JournalManager.instance.GetCollectedNotes()[0]);
+            JournalManager.instance.DisplayNote(
+                JournalManager.instance.GetCollectedNotes()[0]
+            );
         }
 
-        Debug.Log($"Game Loaded from slot {slot}");
+        Debug.Log($"SaveSystem: Game loaded from slot {slot}");
 
-        yield return null;
-
+        isLoading = false;
         StartAutosave();
     }
 
+    // -------------------------------------------------------------------------
+    // Delete
+    // -------------------------------------------------------------------------
 
     public void DeleteSave(int slot)
     {
@@ -244,11 +320,11 @@ public class SaveSystem : MonoBehaviour
         if (File.Exists(path))
         {
             File.Delete(path);
-            Debug.Log($"Deleted save slot {slot}");
+            Debug.Log($"SaveSystem: Deleted save slot {slot}");
         }
         else
         {
-            Debug.LogWarning($"No save at slot {slot} to delete");
+            Debug.LogWarning($"SaveSystem: No save at slot {slot} to delete");
         }
     }
 }

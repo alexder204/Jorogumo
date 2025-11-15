@@ -11,6 +11,8 @@ public class PauseManager : MonoBehaviour
     private AudioSource[] allAudioSources; // Array to store all audio sources
 
     public static bool isGamePaused = false;
+    public static bool isJournalOpen = false;
+    public static bool isInventoryOpen = false;
 
     private bool isPaused = false;
     private bool isConfirmingQuit = false;  // To track whether the user is confirming quit
@@ -23,7 +25,7 @@ public class PauseManager : MonoBehaviour
     void Update()
     {
         // Only allow pausing if not in dialogue
-        if (Input.GetKeyDown(KeyCode.Escape) && !TopDownMovement.isInDialogue)
+        if (Input.GetKeyDown(KeyCode.Escape) && !TopDownMovement.isInDialogue && !isJournalOpen && !isInventoryOpen)
         {
             if (isConfirmingQuit)
             {
@@ -41,7 +43,6 @@ public class PauseManager : MonoBehaviour
             }
         }
     }
-
 
     public void TogglePause()
     {
@@ -125,7 +126,7 @@ public class PauseManager : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
-    Application.Quit();
+        Application.Quit();
 #endif
     }
 
@@ -182,6 +183,44 @@ public class PauseManager : MonoBehaviour
         foreach (Button button in buttons)
         {
             button.interactable = true;
+        }
+    }
+
+    // ==============================
+    // NEW: global unpause helper
+    // ==============================
+    public static void ForceUnpause()
+    {
+        isGamePaused = false;
+        isJournalOpen = false;   // <-- add
+        isInventoryOpen = false;  // <-- add
+        Time.timeScale = 1f;
+
+        // Try to find an active PauseManager to fix its local state + UI
+        var mgr = Object.FindFirstObjectByType<PauseManager>();
+        if (mgr != null)
+        {
+            mgr.isPaused = false;
+            mgr.isConfirmingQuit = false;
+
+            if (mgr.pauseMenu != null)
+                mgr.pauseMenu.SetActive(false);
+            if (mgr.settingsMenu != null)
+                mgr.settingsMenu.SetActive(false);
+            if (mgr.areYouSure != null)
+                mgr.areYouSure.SetActive(false);
+
+            mgr.UnpauseAllAudio();
+        }
+        else
+        {
+            // No PauseManager? Just unpause all audio anyway
+            var sources = Object.FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+            foreach (AudioSource audioSource in sources)
+            {
+                if (audioSource != null && audioSource.isActiveAndEnabled)
+                    audioSource.UnPause();
+            }
         }
     }
 }

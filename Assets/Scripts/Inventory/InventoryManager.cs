@@ -21,27 +21,35 @@ public class Inventory : MonoBehaviour
     // Add items to inventory, stacking them if possible
     public bool Add(Item item)
     {
-        // Check if the item already exists and can stack
+        if (item == null)
+        {
+            Debug.LogWarning("Inventory.Add called with null item.");
+            return false;
+        }
+
+        // Try to stack with existing item of same ID
         foreach (Item invItem in items)
         {
-            if (invItem == item && invItem.currentAmount < invItem.stackAmount)
+            if (invItem.id == item.id && invItem.currentAmount < invItem.stackAmount)
             {
-                invItem.currentAmount++;  // Stack the item
+                invItem.currentAmount++;
                 onItemChangedCallback?.Invoke();
-                return true;  // Item stacked
+                return true;
             }
         }
 
-        // If there's space and the item doesn't exist, add a new item
+        // No stack found: need a new slot
         if (items.Count >= maxSpace)
         {
-            Debug.Log("Not enough room.");
-            return false;  // Inventory full
+            Debug.Log("Inventory: Not enough room.");
+            return false;
         }
 
-        // Add new item to the inventory
-        item.currentAmount = 1;
-        items.Add(item);
+        // Clone ScriptableObject so we don't mutate the asset
+        Item itemClone = ScriptableObject.Instantiate(item);
+        itemClone.currentAmount = 1;
+        items.Add(itemClone);
+
         onItemChangedCallback?.Invoke();
         return true;
     }
@@ -82,9 +90,47 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(Item item, int amount)
     {
-        Item itemClone = ScriptableObject.Instantiate(item);
-        itemClone.currentAmount = amount;
-        items.Add(itemClone);
+        if (item == null || amount <= 0)
+            return;
+
+        // First, try to stack onto existing stacks
+        foreach (Item invItem in items)
+        {
+            if (invItem.id != item.id)
+                continue;
+
+            int spaceLeft = invItem.stackAmount - invItem.currentAmount;
+            if (spaceLeft <= 0)
+                continue;
+
+            int toAdd = Mathf.Min(spaceLeft, amount);
+            invItem.currentAmount += toAdd;
+            amount -= toAdd;
+
+            if (amount <= 0)
+            {
+                onItemChangedCallback?.Invoke();
+                return;
+            }
+        }
+
+        // Then create new stacks as needed
+        while (amount > 0)
+        {
+            if (items.Count >= maxSpace)
+            {
+                Debug.Log("Inventory: Not enough room while loading/adding stack.");
+                break;
+            }
+
+            Item clone = ScriptableObject.Instantiate(item);
+            int toAdd = Mathf.Min(clone.stackAmount, amount);
+            clone.currentAmount = toAdd;
+            items.Add(clone);
+
+            amount -= toAdd;
+        }
+
         onItemChangedCallback?.Invoke();
     }
 }

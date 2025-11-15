@@ -44,7 +44,6 @@ public class DialoguePickUp : MonoBehaviour
         if (interactPopUp == null)
             interactPopUp = GameObject.Find("InteractPopUp");
 
-        // **Exactly the same as Dialogue.cs**
         if (DialogueUIManager.Instance.HasCompletedDialogue(dialogueID))
         {
             if (interactPopUp != null)
@@ -57,6 +56,10 @@ public class DialoguePickUp : MonoBehaviour
 
     private void Update()
     {
+        // Block dialogue input when game is paused or journal is open
+        if (PauseManager.isGamePaused || JournalManager.IsJournalOpen)
+            return;
+
         if (Input.GetButtonDown("Interact"))
         {
             if (dialogueActived && canContinueText)
@@ -67,12 +70,11 @@ public class DialoguePickUp : MonoBehaviour
                 if (step >= speaker.Length)
                 {
                     DialogueUIManager.Instance.MarkDialogueComplete(dialogueID);
-                    EndDialogue();  // Same method name as Dialogue.cs
+                    EndDialogueWithPickup();
                 }
+
                 else
-                {
                     ContinueDialogue();
-                }
             }
             else if (playerInRange && !dialogueActived)
             {
@@ -110,6 +112,16 @@ public class DialoguePickUp : MonoBehaviour
 
     private void EndDialogue()
     {
+        EndDialogueInternal(false);
+    }
+
+    private void EndDialogueWithPickup()
+    {
+        EndDialogueInternal(true);
+    }
+
+    private void EndDialogueInternal(bool giveItem)
+    {
         dialogueCanvas.SetActive(false);
         interactItem?.SetActive(false);
         interactPopUp?.SetActive(false);
@@ -123,8 +135,7 @@ public class DialoguePickUp : MonoBehaviour
         step = 0;
         dialogueActived = false;
 
-        // **Add the item pickup logic here exactly as you want:**
-        if (itemToPickUp != null)
+        if (giveItem && itemToPickUp != null)
         {
             bool added = Inventory.instance.Add(itemToPickUp);
             if (added)
@@ -194,13 +205,27 @@ public class DialoguePickUp : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (!collision.CompareTag("Player"))
+            return;
+
+        playerInRange = false;
+        interactPopUp?.SetActive(false);
+
+        if (dialogueActived)
         {
-            playerInRange = false;
-            interactPopUp?.SetActive(false);
-            dialogueCanvas.SetActive(false);
-            dialogueActived = false;
-            TopDownMovement.isInDialogue = false;
+            if (typingRoutine != null)
+            {
+                StopCoroutine(typingRoutine);
+                typingRoutine = null;
+            }
+
+            // Cancel dialogue without granting the item
+            EndDialogue();
+        }
+        else
+        {
+            if (dialogueCanvas != null)
+                dialogueCanvas.SetActive(false);
         }
     }
 }

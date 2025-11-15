@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -22,62 +21,81 @@ public class InventoryUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            // Trying to open inventory but cooldown is active
-            if (!inventoryUI.activeSelf && !canToggle)
+            HandleInventoryKey();
+        }
+    }
+
+    private void HandleInventoryKey()
+    {
+        bool isOpening = !inventoryUI.activeSelf;
+
+        if (isOpening)
+        {
+            // Cooldown check
+            if (!canToggle)
             {
                 Debug.Log("Inventory opening is on cooldown.");
                 return;
             }
 
-            // If both inventory and item details are open, close both
-            if (inventoryUI.activeSelf && itemDetailsUI.panel.activeSelf)
+            // Block opening when:
+            // - game is already paused by pause menu
+            // - in dialogue
+            // - journal is open
+            if (PauseManager.isGamePaused ||
+                TopDownMovement.isInDialogue ||
+                PauseManager.isJournalOpen)
             {
-                itemDetailsUI.panel.SetActive(false); // Instantly hide detail panel
-                inventoryUI.SetActive(false);         // Close inventory
-                canToggle = false;
-                StartCoroutine(CooldownTimer(1f));    // Start cooldown after closing
                 return;
             }
 
-            // Otherwise just toggle inventory normally
-            ToggleInventory();
+            OpenInventory();
+        }
+        else
+        {
+            CloseInventory();
         }
     }
-
 
     public void ToggleInventoryWithButton()
     {
         StartCoroutine(ToggleInventoryTimer(0.25f));
     }
 
-    public void ToggleInventory()
+    private void OpenInventory()
     {
-        bool isOpening = !inventoryUI.activeSelf;
+        inventoryUI.SetActive(true);
 
-        inventoryUI.SetActive(isOpening);
+        if (itemDetailsUI != null && itemDetailsUI.panel != null)
+            itemDetailsUI.panel.SetActive(false);
 
-        if (!isOpening)
-        {
-            // Inventory just closed, start cooldown
-            canToggle = false;
-            StartCoroutine(CooldownTimer(1f));
-        }
+        // Mark inventory as open and pause the game
+        PauseManager.isInventoryOpen = true;
+        PauseManager.isGamePaused = true;
+        Time.timeScale = 0f;
+    }
+
+    private void CloseInventory()
+    {
+        inventoryUI.SetActive(false);
+
+        if (itemDetailsUI != null && itemDetailsUI.panel != null)
+            itemDetailsUI.panel.SetActive(false);
+
+        // Mark inventory as closed and unpause the game
+        PauseManager.isInventoryOpen = false;
+        PauseManager.isGamePaused = false;
+        Time.timeScale = 1f;
+
+        // Start cooldown so player can't spam
+        canToggle = false;
+        StartCoroutine(CooldownTimer(1f));
     }
 
     private IEnumerator ToggleInventoryTimer(float delay)
     {
         yield return new WaitForSecondsRealtime(delay);
-
-        bool isOpening = !inventoryUI.activeSelf;
-
-        inventoryUI.SetActive(isOpening);
-
-        if (!isOpening)
-        {
-            // Inventory closed after animation delay - start cooldown
-            canToggle = false;
-            StartCoroutine(CooldownTimer(1f));
-        }
+        HandleInventoryKey();
     }
 
     private IEnumerator CooldownTimer(float duration)
@@ -103,7 +121,7 @@ public class InventoryUI : MonoBehaviour
         {
             GameObject newSlot = Instantiate(slotPrefab, itemsParent);
             InventorySlot slot = newSlot.GetComponent<InventorySlot>();
-            slot.itemDetailsUI = itemDetailsUI;  // Assign the reference here
+            slot.itemDetailsUI = itemDetailsUI;
             slot.AddItem(item);
         }
     }

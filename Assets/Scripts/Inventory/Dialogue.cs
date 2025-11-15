@@ -51,9 +51,12 @@ namespace PlayerDialogue
             }
         }
 
-
         private void Update()
         {
+            // Block dialogue input when game is paused or journal is open
+            if (PauseManager.isGamePaused || JournalManager.IsJournalOpen)
+                return;
+
             if (Input.GetButtonDown("Interact"))
             {
                 if (dialogueActived && canContinueText)
@@ -172,13 +175,27 @@ namespace PlayerDialogue
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.CompareTag("Player"))
-            {
-                playerInRange = false;
+            if (!collision.CompareTag("Player"))
+                return;
+
+            playerInRange = false;
+            if (interactPopUp != null)
                 interactPopUp.SetActive(false);
-                dialogueCanvas.SetActive(false);
-                dialogueActived = false;
-                TopDownMovement.isInDialogue = false;
+
+            if (dialogueActived)
+            {
+                if (typingRoutine != null)
+                {
+                    StopCoroutine(typingRoutine);
+                    typingRoutine = null;
+                }
+
+                EndDialogue();
+            }
+            else
+            {
+                if (dialogueCanvas != null)
+                    dialogueCanvas.SetActive(false);
             }
         }
     }

@@ -1,12 +1,16 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 
 public class JournalManager : MonoBehaviour
 {
     public static JournalManager instance;
-    public static bool IsJournalOpen => instance != null && instance.journalUI.activeSelf;
+    public static bool IsJournalOpen =>
+        instance != null &&
+        instance.journalUI != null &&
+        instance.journalUI.activeSelf;
 
+    [Header("UI")]
     public GameObject journalUI;
     public TextMeshProUGUI noteTitleText;
     public TextMeshProUGUI noteContentText;
@@ -22,16 +26,59 @@ public class JournalManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J) && !PauseManager.isGamePaused)
+        // If dialogue starts while journal is open → auto-close
+        if (TopDownMovement.isInDialogue && journalUI.activeSelf)
         {
-            ToggleJournal();
+            CloseJournal();
+            return;
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && journalUI.activeSelf)
+
+        // Do NOT allow opening journal during dialogue
+        if (TopDownMovement.isInDialogue)
+            return;
+
+        // Toggle journal with J (open or close)
+        if (Input.GetKeyDown(KeyCode.J))
         {
-            ToggleJournal(); // Close journal
+            // Cannot open journal while paused
+            if (!journalUI.activeSelf && PauseManager.isGamePaused)
+                return;
+
+            ToggleJournal();
         }
     }
 
+    public void ToggleJournal()
+    {
+        if (journalUI.activeSelf)
+            CloseJournal();
+        else
+            OpenJournal();
+    }
+
+    private void OpenJournal()
+    {
+        journalUI.SetActive(true);
+        PauseManager.isJournalOpen = true;
+
+        // Pause the game
+        PauseManager.isGamePaused = true;
+        Time.timeScale = 0f;
+
+        PauseAllAudio();
+    }
+
+    private void CloseJournal()
+    {
+        journalUI.SetActive(false);
+        PauseManager.isJournalOpen = false;
+
+        // Unpause the game
+        PauseManager.isGamePaused = false;
+        Time.timeScale = 1f;
+
+        UnpauseAllAudio();
+    }
 
     public void FlipForward()
     {
@@ -53,11 +100,10 @@ public class JournalManager : MonoBehaviour
 
     public void AddNote(JournalNote note)
     {
-        if (collectedNotes.Contains(note)) return;
+        if (note == null || collectedNotes.Contains(note)) return;
 
         collectedNotes.Add(note);
 
-        // If this is the first note, show it immediately
         if (collectedNotes.Count == 1)
         {
             currentPageIndex = 0;
@@ -74,9 +120,9 @@ public class JournalManager : MonoBehaviour
     {
         collectedNotes.Clear();
         currentPageIndex = 0;
-        // Optionally clear displayed text:
-        noteTitleText.text = "";
-        noteContentText.text = "";
+
+        if (noteTitleText != null) noteTitleText.text = "";
+        if (noteContentText != null) noteContentText.text = "";
     }
 
     public JournalNote GetNoteByID(string id)
@@ -84,21 +130,31 @@ public class JournalManager : MonoBehaviour
         return AllNoteDatabase.GetNoteByID(id);
     }
 
-
-
-    public void ToggleJournal()
-    {
-        bool isActive = journalUI.activeSelf;
-        journalUI.SetActive(!isActive);
-
-        Time.timeScale = isActive ? 1f : 0f;
-
-        UIState.isJournalOpen = !isActive;  // Update global flag
-    }
-
     public void DisplayNote(JournalNote note)
     {
+        if (note == null) return;
+
         noteTitleText.text = note.noteTitle;
         noteContentText.text = note.noteText;
+    }
+
+    private void PauseAllAudio()
+    {
+        var sources = Object.FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        foreach (var src in sources)
+        {
+            if (src.enabled && src.gameObject.activeInHierarchy)
+                src.Pause();
+        }
+    }
+
+    private void UnpauseAllAudio()
+    {
+        var sources = Object.FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        foreach (var src in sources)
+        {
+            if (src.enabled && src.gameObject.activeInHierarchy)
+                src.UnPause();
+        }
     }
 }
