@@ -24,6 +24,20 @@ public class TopDownMovement : MonoBehaviour
 
     private bool lockedDirection = false;
 
+    [Header("Interaction")]
+    [SerializeField] private BoxCollider2D interactCollider;  // the trigger collider on the player
+                                                              // Distance from player per direction
+    [SerializeField] private float distUp = 0.5f;
+    [SerializeField] private float distDown = 0.5f;
+    [SerializeField] private float distLeft = 0.5f;
+    [SerializeField] private float distRight = 0.5f;
+
+    // Collider size per direction
+    [SerializeField] private Vector2 sizeUp = new Vector2(0.6f, 0.4f);
+    [SerializeField] private Vector2 sizeDown = new Vector2(0.6f, 0.4f);
+    [SerializeField] private Vector2 sizeLeft = new Vector2(0.4f, 0.6f);
+    [SerializeField] private Vector2 sizeRight = new Vector2(0.4f, 0.6f);
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -97,7 +111,36 @@ public class TopDownMovement : MonoBehaviour
                 lastDirection = "Down";
         }
 
+        UpdateInteractionCollider(lastDirection);
         animator.Play(prefix + lastDirection);
+    }
+
+    private void UpdateInteractionCollider(string direction)
+    {
+        if (interactCollider == null) return;
+
+        switch (direction)
+        {
+            case "Up":
+                interactCollider.offset = new Vector2(0f, distUp);
+                interactCollider.size = sizeUp;
+                break;
+
+            case "Down":
+                interactCollider.offset = new Vector2(0f, -distDown);
+                interactCollider.size = sizeDown;
+                break;
+
+            case "Left":
+                interactCollider.offset = new Vector2(-distLeft, 0f);
+                interactCollider.size = sizeLeft;
+                break;
+
+            case "Right":
+                interactCollider.offset = new Vector2(distRight, 0f);
+                interactCollider.size = sizeRight;
+                break;
+        }
     }
 
     void HandleFootsteps()
