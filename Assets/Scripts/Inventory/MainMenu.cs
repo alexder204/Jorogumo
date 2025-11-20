@@ -2,35 +2,50 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using TMPro;
-using UnityEditor.Overlays;
+using System.Collections.Generic;
 
 public class MainMenu : MonoBehaviour
 {
+    [Header("Panels")]
     public GameObject mainMenu;
     public GameObject settingsMenu;
     public GameObject areYouSure;
     public GameObject loadPanel;
 
-    public TextMeshProUGUI slot0Label;
-    public TextMeshProUGUI slot1Label;
-    public TextMeshProUGUI slot2Label;
-    public TextMeshProUGUI slot3Label;
+    [Header("Save Slot Labels (0–9)")]
+    public List<TextMeshProUGUI> slotLabels;   // assign 10 labels in inspector
+    public TextMeshProUGUI autosaveLabel;
 
     [SerializeField] private string newLevel;
 
     private bool isConfirmingQuit = false;
 
+    private const int ManualSlotCount = 10;    // slots 0..9
+
     private void Start()
     {
-        mainMenu.SetActive(true);
-        areYouSure.SetActive(false);
-        settingsMenu.SetActive(false);
+        if (mainMenu != null) mainMenu.SetActive(true);
+        if (areYouSure != null) areYouSure.SetActive(false);
+        if (settingsMenu != null) settingsMenu.SetActive(false);
+
+        // Safety check: do we actually have 10 labels?
+        if (slotLabels == null || slotLabels.Count != ManualSlotCount)
+        {
+            Debug.LogWarning(
+                $"MainMenu: Expected {ManualSlotCount} slot labels, " +
+                $"but found {(slotLabels == null ? 0 : slotLabels.Count)}. " +
+                $"Slots and labels may be out of sync."
+            );
+        }
+
         UpdateSaveSlotLabels();
     }
 
+    // =========================
+    // NEW GAME
+    // =========================
     public void LoadSceneByName()
     {
         if (SceneFader.instance != null)
@@ -39,6 +54,9 @@ public class MainMenu : MonoBehaviour
             SceneManager.LoadScene(newLevel);
     }
 
+    // =========================
+    // CONTINUE (AUTOSAVE 99)
+    // =========================
     public void ContinueGame()
     {
         string path = Application.persistentDataPath + "/saveslot99.json";
@@ -52,10 +70,13 @@ public class MainMenu : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No autosave found!");
+            Debug.LogWarning($"MainMenu: No autosave found at {path}");
         }
     }
 
+    // =========================
+    // LOAD SPECIFIC MANUAL SLOT
+    // =========================
     public void LoadSlot(int slot)
     {
         string path = Application.persistentDataPath + $"/saveslot{slot}.json";
@@ -65,20 +86,27 @@ public class MainMenu : MonoBehaviour
             SaveData saveData = JsonUtility.FromJson<SaveData>(json);
             PendingLoadSlot.loadSlot = slot;
 
+            Debug.Log($"MainMenu: Loading slot {slot} from {path}");
             SceneFader.instance.FadeOutAndLoad(saveData.sceneName);
         }
         else
         {
-            Debug.LogWarning($"No save in slot {slot}.");
+            Debug.LogWarning($"MainMenu: No save in slot {slot} at path {path}");
         }
     }
 
+    // =========================
+    // UPDATE SLOT LABELS
+    // =========================
     private void UpdateSaveSlotLabels()
     {
-        UpdateSlotLabel(slot0Label, 0);
-        UpdateSlotLabel(slot1Label, 1);
-        UpdateSlotLabel(slot2Label, 2);
-        UpdateSlotLabel(slot3Label, 3);
+        // update normal slots
+        for (int i = 0; i < slotLabels.Count; i++)
+            UpdateSlotLabel(slotLabels[i], i);
+
+        // update autosave separately
+        if (autosaveLabel != null)
+            UpdateSlotLabel(autosaveLabel, 99);
     }
 
     private void UpdateSlotLabel(TextMeshProUGUI label, int slot)
@@ -87,9 +115,16 @@ public class MainMenu : MonoBehaviour
 
         string path = Application.persistentDataPath + $"/saveslot{slot}.json";
         bool exists = File.Exists(path);
-        label.text = $"Save Slot {slot} - {(exists ? "Saved" : "Empty")}";
+
+        if (slot == 99)
+            label.text = $"Autosave - {(exists ? "Saved" : "Empty")}";
+        else
+            label.text = $"Save Slot {slot} - {(exists ? "Saved" : "Empty")}";
     }
 
+    // =========================
+    // SETTINGS
+    // =========================
     public void OpenSettings()
     {
         StartCoroutine(OpenSettingsDelay(0.25f));
@@ -114,6 +149,9 @@ public class MainMenu : MonoBehaviour
         EnableMainMenuInteractions();
     }
 
+    // =========================
+    // QUIT
+    // =========================
     public void OnQuitButtonClicked()
     {
         if (!isConfirmingQuit)
@@ -160,6 +198,9 @@ public class MainMenu : MonoBehaviour
         EnableMainMenuInteractions();
     }
 
+    // =========================
+    // BUTTON INTERACTABILITY
+    // =========================
     private void DisableMainMenuInteractions()
     {
         Button[] buttons = mainMenu.GetComponentsInChildren<Button>();
@@ -174,6 +215,9 @@ public class MainMenu : MonoBehaviour
             button.interactable = true;
     }
 
+    // =========================
+    // LOAD PANEL
+    // =========================
     public void ShowLoadPanel()
     {
         StartCoroutine(ShowLoadPanelAfterDelay(0.25f));
