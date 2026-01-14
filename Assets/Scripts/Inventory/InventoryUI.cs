@@ -11,10 +11,21 @@ public class InventoryUI : MonoBehaviour
     public ItemDetailsUI itemDetailsUI;
     private bool canToggle = true;
 
-    void Start()
+    void OnEnable()
     {
         inventory = Inventory.instance;
-        inventory.onItemChangedCallback += UpdateUI;
+        if (inventory != null)
+        {
+            inventory.onItemChangedCallback -= UpdateUI; // safety: prevent duplicates
+            inventory.onItemChangedCallback += UpdateUI;
+            UpdateUI(); // initial draw
+        }
+    }
+
+    void OnDisable()
+    {
+        if (inventory != null)
+            inventory.onItemChangedCallback -= UpdateUI;
     }
 
     void Update()
@@ -64,6 +75,7 @@ public class InventoryUI : MonoBehaviour
 
     private void OpenInventory()
     {
+        UpdateUI();
         inventoryUI.SetActive(true);
 
         if (itemDetailsUI != null && itemDetailsUI.panel != null)
@@ -106,6 +118,15 @@ public class InventoryUI : MonoBehaviour
 
     public void UpdateUI()
     {
+        if (inventory == null)
+            inventory = Inventory.instance;
+
+        if (inventory == null)
+        {
+            Debug.LogWarning("InventoryUI: Inventory instance is null. Skipping update.");
+            return;
+        }
+
         if (itemsParent == null || slotPrefab == null)
         {
             Debug.LogWarning("InventoryUI not fully initialized yet. Skipping UI update.");
@@ -113,14 +134,22 @@ public class InventoryUI : MonoBehaviour
         }
 
         foreach (Transform child in itemsParent)
-        {
             Destroy(child.gameObject);
-        }
 
         foreach (Item item in inventory.items)
         {
+            if (item == null) continue;
+
             GameObject newSlot = Instantiate(slotPrefab, itemsParent);
+
             InventorySlot slot = newSlot.GetComponent<InventorySlot>();
+            if (slot == null)
+            {
+                Debug.LogError("slotPrefab does not have an InventorySlot component.");
+                Destroy(newSlot);
+                continue;
+            }
+
             slot.itemDetailsUI = itemDetailsUI;
             slot.AddItem(item);
         }

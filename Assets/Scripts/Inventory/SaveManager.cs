@@ -256,6 +256,14 @@ public class SaveSystem : MonoBehaviour
             }
         }
 
+        // after inventory restore
+        yield return null; // let UI objects enable
+
+        var uis = FindObjectsByType<InventoryUI>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+        foreach (var ui in uis)
+            ui.UpdateUI();
+
+
         // 7. Restore dialogue
         DialogueUIManager.Instance.ClearCompletedDialogues();
 

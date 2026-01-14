@@ -1,0 +1,6 @@
+﻿<Solution>
+  <Project Path="InventoryAssembly.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="MovementAssembly.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+</Solution>

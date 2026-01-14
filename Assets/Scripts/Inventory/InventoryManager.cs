@@ -13,9 +13,11 @@ public class Inventory : MonoBehaviour
     {
         if (instance != null && instance != this)
         {
+            Destroy(gameObject);
             return;
         }
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     // Add items to inventory, stacking them if possible
