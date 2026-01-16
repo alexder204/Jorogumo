@@ -104,6 +104,9 @@ public class SaveSystem : MonoBehaviour
         if (!autosaveOnSceneChange) return;
         if (PauseManager.isGamePaused || isLoading) return;
 
+        if (scene.name == "MainMenu")
+        return;
+
         if (suppressNextSceneAutosave)
         {
             suppressNextSceneAutosave = false;
