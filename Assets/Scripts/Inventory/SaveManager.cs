@@ -11,8 +11,11 @@ public class SaveSystem : MonoBehaviour
     public UniqueIDRegistry uniqueIDRegistry;
 
     [Header("Autosave")]
-    public float autosaveInterval = 10f; // seconds
+    public bool autosaveOnSceneChange = true;
+    public float autosaveAfterSceneLoadDelay = 0.2f;
     public int autosaveSlot = 99;        // Reserved slot for autosave
+
+    private bool suppressNextSceneAutosave = false;
 
     private Coroutine autosaveCoroutine;
     private bool isLoading = false;
@@ -24,19 +27,17 @@ public class SaveSystem : MonoBehaviour
     private string GetSlotPath(int slot) =>
         Application.persistentDataPath + $"/saveslot{slot}.json";
 
-    private void FindPlayerTransform()
+    private void FindPlayerTransform(bool force = false)
     {
-        if (playerTransform != null) return;
+        // Unity "fake null" handling: destroyed objects compare == null
+        if (!force && playerTransform != null)
+            return;
 
         GameObject playerObj = GameObject.FindWithTag("Player");
         if (playerObj != null)
-        {
             playerTransform = playerObj.transform;
-        }
         else
-        {
-            Debug.LogWarning("SaveSystem: Player object not found in scene.");
-        }
+            playerTransform = null;
     }
 
     private void FindRegistry()
@@ -79,28 +80,62 @@ public class SaveSystem : MonoBehaviour
 
     public void StartAutosave()
     {
+        // Stop old timer coroutine if it exists
+        if (autosaveCoroutine != null)
+        {
+            StopCoroutine(autosaveCoroutine);
+            autosaveCoroutine = null;
+        }
+
+        // Subscribe once
+        SceneManager.sceneLoaded -= OnSceneLoaded_Autosave; // safety
+        SceneManager.sceneLoaded += OnSceneLoaded_Autosave;
+
+        Debug.Log("Autosave (scene-change) path: " + GetSlotPath(autosaveSlot));
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded_Autosave;
+    }
+
+    private void OnSceneLoaded_Autosave(Scene scene, LoadSceneMode mode)
+    {
+        if (!autosaveOnSceneChange) return;
+        if (PauseManager.isGamePaused || isLoading) return;
+
+        if (suppressNextSceneAutosave)
+        {
+            suppressNextSceneAutosave = false;
+            return;
+        }
+
         if (autosaveCoroutine != null)
             StopCoroutine(autosaveCoroutine);
 
-        autosaveCoroutine = StartCoroutine(AutosaveLoop());
-        Debug.Log("Autosave path: " + GetSlotPath(autosaveSlot));
+        autosaveCoroutine = StartCoroutine(AutosaveAfterSceneLoad());
     }
 
-    private IEnumerator AutosaveLoop()
+    private IEnumerator AutosaveAfterSceneLoad()
     {
-        while (true)
+        yield return new WaitForSecondsRealtime(autosaveAfterSceneLoadDelay);
+
+        FindPlayerTransform(force: true);
+        int safetyFrames = 120;
+        while (playerTransform == null && safetyFrames-- > 0)
         {
-            yield return new WaitForSecondsRealtime(autosaveInterval);
-
-            if (PauseManager.isGamePaused || isLoading)
-            {
-                Debug.Log("SaveSystem: Skipping autosave (paused or loading).");
-                continue;
-            }
-
-            SaveGame(autosaveSlot);
-            Debug.Log($"SaveSystem: Autosaved at {System.DateTime.Now}");
+            yield return null;
+            FindPlayerTransform(force: true);
         }
+
+        if (playerTransform == null)
+        {
+            Debug.LogWarning("SaveSystem: Autosave skipped (player not found).");
+            yield break;
+        }
+
+        SaveGame(autosaveSlot);
+        Debug.Log($"SaveSystem: Autosaved on scene load '{SceneManager.GetActiveScene().name}' at {System.DateTime.Now}");
     }
 
     // -------------------------------------------------------------------------
@@ -109,7 +144,7 @@ public class SaveSystem : MonoBehaviour
 
     public void SaveGame(int slot)
     {
-        FindPlayerTransform();
+        FindPlayerTransform(force: true);
         if (playerTransform == null) return;
 
         SaveData data = new SaveData
@@ -188,6 +223,7 @@ public class SaveSystem : MonoBehaviour
         if (currentScene != data.sceneName)
         {
             Debug.Log($"SaveSystem: Loading saved scene '{data.sceneName}'");
+            suppressNextSceneAutosave = true;
             AsyncOperation loadOp = SceneManager.LoadSceneAsync(data.sceneName);
 
             while (!loadOp.isDone)
@@ -201,7 +237,7 @@ public class SaveSystem : MonoBehaviour
         ResetPauseState();
 
         // 3. Re-acquire references that exist in the scene
-        FindPlayerTransform();
+        FindPlayerTransform(force: true);
         if (playerTransform == null)
         {
             Debug.LogWarning("SaveSystem: Player transform not found after scene load.");
