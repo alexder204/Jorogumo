@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4ea0a93896b53794d81bc369c17138d0
+guid: c6ec643920a196c44805df2c6a2a1e4d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4648805530109613586
-    second: tree5_0
+      213: -2465458015574104117
+    second: tree5top_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,17 +109,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tree5_0
+      name: tree5top_0
       rect:
         serializedVersion: 2
         x: 136
-        y: 168
+        y: 277
         width: 377
-        height: 447
+        height: 338
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee9e1f330002c7fb0800000000000000
-      internalID: -4648805530109613586
+      spriteID: bc7e0155ffee8cdd0800000000000000
+      internalID: -2465458015574104117
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tree5_0: -4648805530109613586
+      tree5top_0: -2465458015574104117
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
