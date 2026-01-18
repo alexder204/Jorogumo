@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BushesAndSideWalkCornerTilemap_21
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
   m_Sprite: {fileID: -1562580790, guid: ad40c4ae388672a4dbfd41a2ea8ae029, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6528301, g: 0.6528301, b: 0.6528301, a: 1}
   m_Transform:
     e00: 1
     e01: 0
