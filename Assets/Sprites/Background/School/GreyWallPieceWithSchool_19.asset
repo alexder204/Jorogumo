@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GreyWallPieceWithSchool_19
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
   m_Sprite: {fileID: -552169827, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  m_Color: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
+  m_Color: {r: 0.75686276, g: 0.7411765, b: 0.7411765, a: 1}
   m_Transform:
     e00: 1
     e01: 0
