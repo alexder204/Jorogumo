@@ -1666,6 +1666,10 @@ MonoBehaviour:
     musicClip: {fileID: 8300000, guid: f674759239ff6bb4e9ac350ed5aa3edf, type: 3}
     allowCrossfade: 0
     allowFade: 1
+  - sceneName: Cutscene1
+    musicClip: {fileID: 8300000, guid: b2a0d65e7befbc34ab6ea87bfaa3733b, type: 3}
+    allowCrossfade: 0
+    allowFade: 1
   - sceneName: Scene1
     musicClip: {fileID: 8300000, guid: 5de079d38fb6f0d48b5c45a73214f1ab, type: 3}
     allowCrossfade: 0
@@ -1675,7 +1679,11 @@ MonoBehaviour:
     allowCrossfade: 0
     allowFade: 1
   - sceneName: Scene3
-    musicClip: {fileID: 0}
+    musicClip: {fileID: 8300000, guid: 5de079d38fb6f0d48b5c45a73214f1ab, type: 3}
+    allowCrossfade: 0
+    allowFade: 1
+  - sceneName: Scene4
+    musicClip: {fileID: 8300000, guid: 5de079d38fb6f0d48b5c45a73214f1ab, type: 3}
     allowCrossfade: 0
     allowFade: 1
   mainMixer: {fileID: 24100000, guid: e3e221e39854f9246b799872b91947c0, type: 2}
@@ -2373,7 +2381,7 @@ MonoBehaviour:
   - {fileID: 1118307403}
   - {fileID: 631822358}
   autosaveLabel: {fileID: 905181804}
-  newLevel: Scene1
+  newLevel: Cutscene1
 --- !u!114 &346182134
 MonoBehaviour:
   m_ObjectHideFlags: 0

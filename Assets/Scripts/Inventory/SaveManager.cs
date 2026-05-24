@@ -15,6 +15,13 @@ public class SaveSystem : MonoBehaviour
     public float autosaveAfterSceneLoadDelay = 0.2f;
     public int autosaveSlot = 99;        // Reserved slot for autosave
 
+    [Header("Autosave Scene Blocking")]
+    public List<string> scenesWithoutAutosave = new List<string>
+    {
+        "MainMenu",
+        "Cutscene1"
+    };
+
     private bool suppressNextSceneAutosave = false;
 
     private Coroutine autosaveCoroutine;
@@ -69,9 +76,23 @@ public class SaveSystem : MonoBehaviour
             int slotToLoad = PendingLoadSlot.loadSlot;
             PendingLoadSlot.loadSlot = -1;
             LoadGame(slotToLoad);
+            return;
         }
 
         StartAutosave();
+
+        if (autosaveOnSceneChange)
+        {
+            Scene activeScene = SceneManager.GetActiveScene();
+
+            if (!scenesWithoutAutosave.Contains(activeScene.name))
+            {
+                if (autosaveCoroutine != null)
+                    StopCoroutine(autosaveCoroutine);
+
+                autosaveCoroutine = StartCoroutine(AutosaveAfterSceneLoad());
+            }
+        }
     }
 
     // -------------------------------------------------------------------------
@@ -104,7 +125,7 @@ public class SaveSystem : MonoBehaviour
         if (!autosaveOnSceneChange) return;
         if (PauseManager.isGamePaused || isLoading) return;
 
-        if (scene.name == "MainMenu")
+        if (scenesWithoutAutosave.Contains(scene.name))
         return;
 
         if (suppressNextSceneAutosave)
