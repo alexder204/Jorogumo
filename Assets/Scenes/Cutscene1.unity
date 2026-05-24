@@ -874,28 +874,43 @@ MonoBehaviour:
   scenesParent: {fileID: 2057580383}
   speakerText: {fileID: 1043529844}
   dialogueText: {fileID: 1735671194}
-  speaker:
-  - goat
-  - someone
-  - Ligma
-  - test
-  - help me
-  - Lea
-  dialogueWords:
-  - sialodo
-  - goated individual speaks heavily
-  - Ligma balls xd
-  - hello there
-  - HELPPPPPP
-  - '"Guess I should get going..."'
+  dialogueLines:
+  - speaker: 
+    dialogueWords: 
+    showDialogueBox: 0
+    allowDialogueToggle: 0
+  - speaker: 
+    dialogueWords: This place is nice.
+    showDialogueBox: 1
+    allowDialogueToggle: 1
+  - speaker: 
+    dialogueWords: 
+    showDialogueBox: 0
+    allowDialogueToggle: 0
+  - speaker: 
+    dialogueWords: 
+    showDialogueBox: 0
+    allowDialogueToggle: 0
+  - speaker: Lea
+    dialogueWords: '"I wish I didn''t agree to this."'
+    showDialogueBox: 1
+    allowDialogueToggle: 1
+  - speaker: Lea
+    dialogueWords: '*sigh*'
+    showDialogueBox: 1
+    allowDialogueToggle: 1
+  - speaker: Lea
+    dialogueWords: '"I guess I should get going..."'
+    showDialogueBox: 1
+    allowDialogueToggle: 1
   cgEvents:
   - dialogueIndex: 0
     sceneImage: {fileID: 1296505756}
-  - dialogueIndex: 2
+  - dialogueIndex: 1
     sceneImage: {fileID: 1457395023}
-  - dialogueIndex: 3
+  - dialogueIndex: 2
     sceneImage: {fileID: 25344865}
-  - dialogueIndex: 4
+  - dialogueIndex: 3
     sceneImage: {fileID: 646574388}
   - dialogueIndex: 5
     sceneImage: {fileID: 887297712}

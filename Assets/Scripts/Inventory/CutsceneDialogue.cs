@@ -7,6 +7,21 @@ using UnityEngine.SceneManagement;
 public class SceneCGDialogueManager : MonoBehaviour
 {
     [System.Serializable]
+    public class DialogueLine
+    {
+        public string speaker;
+
+        [TextArea(3, 10)]
+        public string dialogueWords;
+
+        [Tooltip("If false, this dialogue line will not show the dialogue box at all.")]
+        public bool showDialogueBox = true;
+
+        [Tooltip("If false, the player cannot hide/show the dialogue box during this line.")]
+        public bool allowDialogueToggle = true;
+    }
+
+    [System.Serializable]
     public class CGEvent
     {
         [Tooltip("Which dialogue line should trigger this CG? First line is 0.")]
@@ -29,10 +44,7 @@ public class SceneCGDialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
 
     [Header("Dialogue Data")]
-    [SerializeField] private string[] speaker;
-
-    [SerializeField, TextArea(3, 10)]
-    private string[] dialogueWords;
+    [SerializeField] private DialogueLine[] dialogueLines;
 
     [Header("CG Events")]
     [SerializeField] private CGEvent[] cgEvents;
@@ -70,8 +82,7 @@ public class SceneCGDialogueManager : MonoBehaviour
         if (cutsceneCanvas != null)
             cutsceneCanvas.SetActive(true);
 
-        if (dialogueCanvas != null)
-            dialogueCanvas.SetActive(false);
+        SetDialogueCanvasVisible(false, true);
 
         PrepareSceneImages();
 
@@ -86,20 +97,22 @@ public class SceneCGDialogueManager : MonoBehaviour
         if (PauseManager.isGamePaused || JournalManager.IsJournalOpen)
             return;
 
+        DialogueLine currentLine = GetCurrentLine();
+
         if (Input.GetKeyDown(toggleDialogueKey))
         {
-            ToggleDialogueCanvas();
+            if (currentLine != null &&
+                currentLine.showDialogueBox &&
+                currentLine.allowDialogueToggle)
+            {
+                ToggleDialogueCanvas();
+            }
+
             return;
         }
 
         if (Input.GetKeyDown(advanceKey))
         {
-            if (!dialogueCanvasVisible)
-            {
-                SetDialogueCanvasVisible(true);
-                return;
-            }
-
             if (isTyping)
             {
                 FinishTyping();
@@ -111,14 +124,34 @@ public class SceneCGDialogueManager : MonoBehaviour
         }
     }
 
-    private void ToggleDialogueCanvas()
+    private DialogueLine GetCurrentLine()
     {
-        SetDialogueCanvasVisible(!dialogueCanvasVisible);
+        if (dialogueLines == null)
+            return null;
+
+        if (step < 0 || step >= dialogueLines.Length)
+            return null;
+
+        return dialogueLines[step];
     }
 
-    private void SetDialogueCanvasVisible(bool visible)
+    private void ToggleDialogueCanvas()
     {
-        dialogueCanvasVisible = visible;
+        DialogueLine currentLine = GetCurrentLine();
+
+        if (currentLine == null)
+            return;
+
+        if (!currentLine.showDialogueBox || !currentLine.allowDialogueToggle)
+            return;
+
+        SetDialogueCanvasVisible(!dialogueCanvasVisible, true);
+    }
+
+    private void SetDialogueCanvasVisible(bool visible, bool updateState = true)
+    {
+        if (updateState)
+            dialogueCanvasVisible = visible;
 
         if (dialogueCanvas != null)
             dialogueCanvas.SetActive(visible);
@@ -165,8 +198,6 @@ public class SceneCGDialogueManager : MonoBehaviour
         if (cutsceneCanvas != null)
             cutsceneCanvas.SetActive(true);
 
-        SetDialogueCanvasVisible(true);
-
         displayRoutine = StartCoroutine(DisplayCurrentDialogue());
 
         yield break;
@@ -174,11 +205,13 @@ public class SceneCGDialogueManager : MonoBehaviour
 
     private IEnumerator DisplayCurrentDialogue()
     {
-        if (step >= dialogueWords.Length)
+        if (step >= dialogueLines.Length)
         {
             StartCoroutine(EndCutscene());
             yield break;
         }
+
+        DialogueLine line = dialogueLines[step];
 
         canContinueText = false;
         isTyping = false;
@@ -189,23 +222,35 @@ public class SceneCGDialogueManager : MonoBehaviour
         if (dialogueText != null)
             dialogueText.text = "";
 
+        // Handle dialogue box visibility immediately, BEFORE the CG fade.
+        if (!line.showDialogueBox)
+        {
+            SetDialogueCanvasVisible(false, false);
+        }
+        else
+        {
+            SetDialogueCanvasVisible(true, true);
+        }
+
         bool cgChanged = ApplyCGEvent(step);
 
         if (cgChanged && cgFadeRoutine != null)
             yield return cgFadeRoutine;
 
-        if (speakerText != null)
+        if (!line.showDialogueBox)
         {
-            if (step < speaker.Length)
-                speakerText.text = speaker[step];
-            else
-                speakerText.text = "";
+            isTyping = false;
+            canContinueText = true;
+            yield break;
         }
+
+        if (speakerText != null)
+            speakerText.text = line.speaker;
 
         if (typingRoutine != null)
             StopCoroutine(typingRoutine);
 
-        typingRoutine = StartCoroutine(Typing(dialogueWords[step]));
+        typingRoutine = StartCoroutine(Typing(line.dialogueWords));
     }
 
     private bool ApplyCGEvent(int dialogueIndex)
@@ -243,6 +288,7 @@ public class SceneCGDialogueManager : MonoBehaviour
     {
         newImage.gameObject.SetActive(true);
 
+        // First CG: fade it in from transparent.
         if (oldImage == null)
         {
             Color firstColor = newImage.color;
@@ -272,12 +318,15 @@ public class SceneCGDialogueManager : MonoBehaviour
             yield break;
         }
 
+        // Put the new image behind the old image.
         newImage.transform.SetSiblingIndex(oldImage.transform.GetSiblingIndex());
 
+        // New image stays fully visible behind the old image.
         Color newColor = newImage.color;
         newColor.a = 1f;
         newImage.color = newColor;
 
+        // Fade only the old image out.
         float timer = 0f;
         float oldStartAlpha = oldImage.color.a;
 
@@ -342,11 +391,19 @@ public class SceneCGDialogueManager : MonoBehaviour
 
     private void FinishTyping()
     {
+        DialogueLine currentLine = GetCurrentLine();
+
+        if (currentLine == null)
+            return;
+
+        if (!currentLine.showDialogueBox)
+            return;
+
         if (typingRoutine != null)
             StopCoroutine(typingRoutine);
 
-        if (dialogueText != null && step < dialogueWords.Length)
-            dialogueText.text = dialogueWords[step];
+        if (dialogueText != null)
+            dialogueText.text = currentLine.dialogueWords;
 
         typingRoutine = null;
         isTyping = false;
@@ -357,7 +414,7 @@ public class SceneCGDialogueManager : MonoBehaviour
     {
         step++;
 
-        if (step >= dialogueWords.Length)
+        if (step >= dialogueLines.Length)
         {
             StartCoroutine(EndCutscene());
             return;
@@ -397,7 +454,7 @@ public class SceneCGDialogueManager : MonoBehaviour
             cgFadeRoutine = null;
         }
 
-        SetDialogueCanvasVisible(false);
+        SetDialogueCanvasVisible(false, true);
 
         UnlockPlayer();
 
