@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: c292b720e2cbee84a82c8329e310611e
+guid: ac4d82072b1ed404a80ee1a97f17beb1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 724720506018008238
-    second: MCSprite_0
-  - first:
-      213: 6810760330393977724
-    second: MCSprite_1
-  - first:
-      213: -5517301673709765105
-    second: MCSprite_2
+      213: -7140904576443883745
+    second: SamAngryV7_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -43,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -59,7 +53,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -78,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -119,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MCSprite_0
+      name: SamAngryV7_0
       rect:
         serializedVersion: 2
-        x: 624
+        x: 779
         y: 0
-        width: 466
-        height: 947
+        width: 315
+        height: 674
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,52 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eac05a2e579be0a00800000000000000
-      internalID: 724720506018008238
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MCSprite_1
-      rect:
-        serializedVersion: 2
-        x: 1191
-        y: 701
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c73847f7f6ea48e50800000000000000
-      internalID: 6810760330393977724
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MCSprite_2
-      rect:
-        serializedVersion: 2
-        x: 559
-        y: 683
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f0e7cd31c5b9e63b0800000000000000
-      internalID: -5517301673709765105
+      spriteID: f1fd9123f1966ec90800000000000000
+      internalID: -7140904576443883745
       vertices: []
       indices: 
       edges: []
@@ -198,9 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MCSprite_0: 724720506018008238
-      MCSprite_1: 6810760330393977724
-      MCSprite_2: -5517301673709765105
+      SamAngryV7_0: -7140904576443883745
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

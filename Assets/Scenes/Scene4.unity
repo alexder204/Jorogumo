@@ -153,7 +153,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8932785
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -210,6 +210,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &14911680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2276,9 +2277,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 1
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 2764244076442157355
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.32133263, b: 0, a: 1}
   m_Intensity: 1.5
@@ -2498,6 +2503,19 @@ MonoBehaviour:
   - {x: -36.890892, y: 7.5309935, z: -0.0000004980431}
   - {x: -37.27934, y: 7.9971304, z: -0.00000009813251}
   - {x: -38.010387, y: 8.17439, z: 0.00000017651837}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2764244076442157355
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!1 &213855998
 GameObject:
   m_ObjectHideFlags: 0
@@ -2542,9 +2560,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 1
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 2764244076442157358
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.32133263, b: 0, a: 1}
   m_Intensity: 1.7
@@ -2582,6 +2604,19 @@ MonoBehaviour:
   - {x: -24.675379, y: 23.290396, z: 0}
   - {x: -25.635347, y: 23.184418, z: 0}
   - {x: -25.658817, y: 21.386364, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2764244076442157358
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!1 &216056679
 GameObject:
   m_ObjectHideFlags: 0
@@ -2960,9 +2995,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 1
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 2764244076442157352
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.32133263, b: 0, a: 1}
   m_Intensity: 2.78
@@ -3000,6 +3039,19 @@ MonoBehaviour:
   - {x: -25.98997, y: 4.2800636, z: 0}
   - {x: -26.436857, y: 4.285959, z: 0}
   - {x: -26.431362, y: 3.887787, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2764244076442157352
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!1 &244457658
 GameObject:
   m_ObjectHideFlags: 0
@@ -3810,7 +3862,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &304434967
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3867,6 +3919,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &337113046
 GameObject:
   m_ObjectHideFlags: 0
@@ -3896,9 +3949,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 1
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 2764244076442157362
   m_FalloffIntensity: 1
   m_Color: {r: 0.690566, g: 0.28942838, b: 0, a: 1}
   m_Intensity: 1.5
@@ -3964,6 +4021,19 @@ MonoBehaviour:
   - {x: 0.4157348, y: -0.27778515, z: 0}
   - {x: 0.46193978, y: -0.19134171, z: 0}
   - {x: 0.49039266, y: -0.09754512, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2764244076442157362
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!4 &337113048
 Transform:
   m_ObjectHideFlags: 0
@@ -4006,16 +4076,16 @@ RectTransform:
   m_GameObject: {fileID: 345557744}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.15, y: 1.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1572285867}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 300, y: 0}
-  m_SizeDelta: {x: 1200, y: 650}
-  m_Pivot: {x: 1, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 800, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &345557746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4259,9 +4329,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 1
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 2764244076442157349
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.32133263, b: 0, a: 1}
   m_Intensity: 2.78
@@ -4299,6 +4373,19 @@ MonoBehaviour:
   - {x: -25.98997, y: 4.2800636, z: 0}
   - {x: -26.436857, y: 4.285959, z: 0}
   - {x: -26.431362, y: 3.887787, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2764244076442157349
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!1 &389752137
 GameObject:
   m_ObjectHideFlags: 0
@@ -4356,7 +4443,7 @@ Animator:
   m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &389752140
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4413,6 +4500,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &436455094
 GameObject:
   m_ObjectHideFlags: 0
@@ -6095,7 +6183,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &555389303
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6152,6 +6240,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &566879176
 GameObject:
   m_ObjectHideFlags: 0
@@ -6596,9 +6685,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 1
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 2764244076442157346
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.32133263, b: 0, a: 1}
   m_Intensity: 2.78
@@ -6660,6 +6753,19 @@ MonoBehaviour:
   - {x: -22.189053, y: -0.5182195, z: 0}
   - {x: -21.438429, y: -1.6349068, z: 0}
   - {x: -20.08881, y: -2.2844157, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2764244076442157346
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!1 &665111057
 GameObject:
   m_ObjectHideFlags: 0
@@ -6704,9 +6810,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 1
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 2764244076442157356
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.32133263, b: 0, a: 1}
   m_Intensity: 2.78
@@ -6781,6 +6891,19 @@ MonoBehaviour:
   - {x: -36.890892, y: 7.5309935, z: -0.0000004980431}
   - {x: -37.27934, y: 7.9971304, z: -0.00000009813251}
   - {x: -38.010387, y: 8.17439, z: 0.00000017651837}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2764244076442157356
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!1 &680680959
 GameObject:
   m_ObjectHideFlags: 0
@@ -6825,9 +6948,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 1
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 2764244076442157348
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.32133263, b: 0, a: 1}
   m_Intensity: 2.78
@@ -6865,6 +6992,19 @@ MonoBehaviour:
   - {x: -25.98997, y: 4.2800636, z: 0}
   - {x: -26.436857, y: 4.285959, z: 0}
   - {x: -26.431362, y: 3.887787, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2764244076442157348
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!1 &702141629
 GameObject:
   m_ObjectHideFlags: 0
@@ -8409,9 +8549,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 1
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 2764244076442157351
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.32133263, b: 0, a: 1}
   m_Intensity: 2.78
@@ -8449,6 +8593,19 @@ MonoBehaviour:
   - {x: -25.98997, y: 4.2800636, z: 0}
   - {x: -26.436857, y: 4.285959, z: 0}
   - {x: -26.431362, y: 3.887787, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2764244076442157351
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!1 &879622830
 GameObject:
   m_ObjectHideFlags: 0
@@ -9754,7 +9911,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!212 &944518488
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -9811,6 +9968,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!4 &944518489
 Transform:
   m_ObjectHideFlags: 0
@@ -10488,9 +10646,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 1
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 2764244076442157359
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.32133263, b: 0, a: 1}
   m_Intensity: 4
@@ -10528,184 +10690,19 @@ MonoBehaviour:
   - {x: -25.204948, y: 27.971834, z: 0}
   - {x: -25.931908, y: 27.929407, z: 0}
   - {x: -26.606083, y: 0.6700544, z: 0}
---- !u!43 &1005445487
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 12
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 45
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 25
-    localAABB:
-      m_Center: {x: 23.38768, y: 6.1925507, z: 0}
-      m_Extent: {x: 63.38768, y: 48.407448, z: 0}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 0
-  m_KeepIndices: 0
-  m_IndexFormat: 1
-  m_IndexBuffer: 04000000050000000600000006000000000000000400000000000000090000000a0000000a0000000100000000000000010000000d0000000e0000000e0000000200000001000000020000001100000012000000120000000300000002000000030000001500000016000000160000000400000003000000040000000700000008000000000000000b0000000c000000010000000f00000010000000020000001300000014000000030000001700000018000000
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 25
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 700
-    _typelessdata: 000020c29a9909c200000000000080bf0000000000001cc266665a4200001cc266665a4200000000000080bf00000000904d1440fe374d42904d1440fe374d4200000000000080bf00000000fc8cad4225593242fc8cad422559324200000000000080bf00000000fc139c420edc28c2fc139c420edc28c200000000000080bf00000000000020c29a9909c2fc139c420edc28c2000000000000000000000000000020c29a9909c2000020c29a9909c2000000000000000000000000fc139c420edc28c2fc139c420edc28c2000000000000803f00000000000020c29a9909c2fc139c420edc28c2000000000000404000000000000020c29a9909c2000020c29a9909c200000000000000000000000000001cc266665a4200001cc266665a42000000000000000000000000000020c29a9909c2000020c29a9909c2000000000000803f0000000000001cc266665a42000020c29a9909c200000000000040400000000000001cc266665a4200001cc266665a42000000000000000000000000904d1440fe374d42904d1440fe374d4200000000000000000000000000001cc266665a4200001cc266665a42000000000000803f00000000904d1440fe374d4200001cc266665a42000000000000404000000000904d1440fe374d42904d1440fe374d42000000000000000000000000fc8cad4225593242fc8cad4225593242000000000000000000000000904d1440fe374d42904d1440fe374d42000000000000803f00000000fc8cad4225593242904d1440fe374d42000000000000404000000000fc8cad4225593242fc8cad4225593242000000000000000000000000fc139c420edc28c2fc139c420edc28c2000000000000000000000000fc8cad4225593242fc8cad4225593242000000000000803f00000000fc139c420edc28c2fc8cad4225593242000000000000404000000000fc139c420edc28c2
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
-  m_MeshUsageFlags: 0
-  m_CookingOptions: 30
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
-  m_MeshLodInfo:
-    serializedVersion: 2
-    m_LodSelectionCurve:
-      serializedVersion: 1
-      m_LodSlope: 0
-      m_LodBias: 0
-    m_NumLevels: 1
-    m_SubMeshes:
-    - serializedVersion: 2
-      m_Levels:
-      - serializedVersion: 1
-        m_IndexStart: 0
-        m_IndexCount: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2764244076442157359
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!1 &1012044916
 GameObject:
   m_ObjectHideFlags: 0
@@ -35306,101 +35303,148 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 3
+  - serializedVersion: 2
+    m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 7e9d467ca6893294989f448fb7e479f6, type: 2}
-  - m_RefCount: 3
+  - serializedVersion: 2
+    m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 35e5b3090b46fcb4d8ffa20eb333aea7, type: 2}
-  - m_RefCount: 82
+  - serializedVersion: 2
+    m_RefCount: 82
     m_Data: {fileID: 11400000, guid: 71b8d4babc0824046b3711910eb15f8e, type: 2}
-  - m_RefCount: 1
+  - serializedVersion: 2
+    m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 9ed42e22dd8353548bfe867bfd48bcec, type: 2}
-  - m_RefCount: 1
+  - serializedVersion: 2
+    m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 23608136b4d570a4e93b8e6af4d434b4, type: 2}
-  - m_RefCount: 16
+  - serializedVersion: 2
+    m_RefCount: 16
     m_Data: {fileID: 11400000, guid: 18bc5ad9ef6090040b7d5a9e9f810049, type: 2}
-  - m_RefCount: 87
+  - serializedVersion: 2
+    m_RefCount: 87
     m_Data: {fileID: 11400000, guid: bcfa8df17dcc8c64eb4bad4244e2efaa, type: 2}
-  - m_RefCount: 87
+  - serializedVersion: 2
+    m_RefCount: 87
     m_Data: {fileID: 11400000, guid: f5a7bc767610fbc4590ebfe2ce0ee53d, type: 2}
-  - m_RefCount: 1
+  - serializedVersion: 2
+    m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 3323c8f9896df314db7f6e5d2bff9bd5, type: 2}
-  - m_RefCount: 15
+  - serializedVersion: 2
+    m_RefCount: 15
     m_Data: {fileID: 11400000, guid: cb89ceb333e3fc1449bf056849bf78a7, type: 2}
-  - m_RefCount: 41
+  - serializedVersion: 2
+    m_RefCount: 41
     m_Data: {fileID: 11400000, guid: c2dcad4848b8b2948ace2a8e86f3de78, type: 2}
-  - m_RefCount: 40
+  - serializedVersion: 2
+    m_RefCount: 40
     m_Data: {fileID: 11400000, guid: 6ac0cc7d92a78924c88323cfbcba1b05, type: 2}
-  - m_RefCount: 1
+  - serializedVersion: 2
+    m_RefCount: 1
     m_Data: {fileID: 11400000, guid: fbea754605551584c9a90de3f3d5aa98, type: 2}
-  - m_RefCount: 522
+  - serializedVersion: 2
+    m_RefCount: 522
     m_Data: {fileID: 11400000, guid: 09de71298e8086f4faae68d950589acc, type: 2}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1456
+  - serializedVersion: 2
+    m_RefCount: 1456
     m_Data: {fileID: 11400000, guid: 27e952409eb837a4ea74f5a3fa91059b, type: 2}
-  - m_RefCount: 80
+  - serializedVersion: 2
+    m_RefCount: 80
     m_Data: {fileID: 11400000, guid: 618c483a1b3b2e34b86d129434e43cdf, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 3
+  - serializedVersion: 2
+    m_RefCount: 3
     m_Data: {fileID: 787523096, guid: b1c0b6fd9788e7c41b7821de188fb966, type: 3}
-  - m_RefCount: 3
+  - serializedVersion: 2
+    m_RefCount: 3
     m_Data: {fileID: -5602604610458428068, guid: b1c0b6fd9788e7c41b7821de188fb966, type: 3}
-  - m_RefCount: 82
+  - serializedVersion: 2
+    m_RefCount: 82
     m_Data: {fileID: -1980189486, guid: b1c0b6fd9788e7c41b7821de188fb966, type: 3}
-  - m_RefCount: 80
+  - serializedVersion: 2
+    m_RefCount: 80
     m_Data: {fileID: 2973896377979058760, guid: b1c0b6fd9788e7c41b7821de188fb966, type: 3}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 16
+  - serializedVersion: 2
+    m_RefCount: 16
     m_Data: {fileID: 1174295821, guid: b1c0b6fd9788e7c41b7821de188fb966, type: 3}
-  - m_RefCount: 87
+  - serializedVersion: 2
+    m_RefCount: 87
     m_Data: {fileID: 693560071, guid: b1c0b6fd9788e7c41b7821de188fb966, type: 3}
-  - m_RefCount: 87
+  - serializedVersion: 2
+    m_RefCount: 87
     m_Data: {fileID: -2011662645, guid: b1c0b6fd9788e7c41b7821de188fb966, type: 3}
-  - m_RefCount: 1
+  - serializedVersion: 2
+    m_RefCount: 1
     m_Data: {fileID: 290303521, guid: b1c0b6fd9788e7c41b7821de188fb966, type: 3}
-  - m_RefCount: 15
+  - serializedVersion: 2
+    m_RefCount: 15
     m_Data: {fileID: -744504064, guid: b1c0b6fd9788e7c41b7821de188fb966, type: 3}
-  - m_RefCount: 41
+  - serializedVersion: 2
+    m_RefCount: 41
     m_Data: {fileID: -1957635266, guid: b1c0b6fd9788e7c41b7821de188fb966, type: 3}
-  - m_RefCount: 40
+  - serializedVersion: 2
+    m_RefCount: 40
     m_Data: {fileID: -1281003509, guid: b1c0b6fd9788e7c41b7821de188fb966, type: 3}
-  - m_RefCount: 1
+  - serializedVersion: 2
+    m_RefCount: 1
     m_Data: {fileID: 1240504213, guid: b1c0b6fd9788e7c41b7821de188fb966, type: 3}
-  - m_RefCount: 522
+  - serializedVersion: 2
+    m_RefCount: 522
     m_Data: {fileID: -368697767993817583, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 1
+  - serializedVersion: 2
+    m_RefCount: 1
     m_Data: {fileID: -1998073707, guid: b1c0b6fd9788e7c41b7821de188fb966, type: 3}
-  - m_RefCount: 1
+  - serializedVersion: 2
+    m_RefCount: 1
     m_Data: {fileID: -2036759673, guid: b1c0b6fd9788e7c41b7821de188fb966, type: 3}
-  - m_RefCount: 1456
+  - serializedVersion: 2
+    m_RefCount: 1456
     m_Data: {fileID: 3786305197583864658, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 2436
+  - serializedVersion: 2
+    m_RefCount: 2436
     m_Data:
       e00: 1
       e01: 0
@@ -35419,11 +35463,14 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 1978
+  - serializedVersion: 2
+    m_RefCount: 1978
     m_Data: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 4e-44, g: 4e-44, b: 4e-44, a: 4e-44}
-  - m_RefCount: 458
+  - serializedVersion: 2
+    m_RefCount: 458
     m_Data: {r: 0.6528301, g: 0.6528301, b: 0.6528301, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -35994,7 +36041,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!212 &1064559171
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -36051,6 +36098,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!4 &1064559172
 Transform:
   m_ObjectHideFlags: 0
@@ -36803,7 +36851,7 @@ Animator:
   m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &1133422597
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -36860,6 +36908,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &1145302308
 GameObject:
   m_ObjectHideFlags: 0
@@ -36979,9 +37028,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 1
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 2764244076442157353
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.32133263, b: 0, a: 1}
   m_Intensity: 2.78
@@ -37019,6 +37072,19 @@ MonoBehaviour:
   - {x: -25.98997, y: 4.2800636, z: 0}
   - {x: -26.436857, y: 4.285959, z: 0}
   - {x: -26.431362, y: 3.887787, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2764244076442157353
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!1 &1155428613
 GameObject:
   m_ObjectHideFlags: 0
@@ -37275,7 +37341,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192833459}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -37286,8 +37352,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1500, y: 500}
+  m_AnchoredPosition: {x: -25, y: 25}
+  m_SizeDelta: {x: 1400, y: 500}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1192833461
 MonoBehaviour:
@@ -37659,7 +37725,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!212 &1205809944
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -37716,6 +37782,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!4 &1205809945
 Transform:
   m_ObjectHideFlags: 0
@@ -37931,9 +37998,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 1
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 2764244076442157360
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.32133263, b: 0, a: 1}
   m_Intensity: 2.78
@@ -37971,6 +38042,19 @@ MonoBehaviour:
   - {x: -25.98997, y: 4.2800636, z: 0}
   - {x: -26.436857, y: 4.285959, z: 0}
   - {x: -26.431362, y: 3.887787, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2764244076442157360
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!1 &1241845437
 GameObject:
   m_ObjectHideFlags: 0
@@ -38188,7 +38272,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1254233201
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -38245,6 +38329,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &1261352382
 GameObject:
   m_ObjectHideFlags: 0
@@ -38435,7 +38520,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1263851350
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -38492,6 +38577,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &1273106202
 GameObject:
   m_ObjectHideFlags: 0
@@ -38601,7 +38687,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1278616275
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -38658,6 +38744,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &1279775341
 GameObject:
   m_ObjectHideFlags: 0
@@ -42928,165 +43015,244 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 48
+  - serializedVersion: 2
+    m_RefCount: 48
     m_Data: {fileID: 11400000, guid: d3bb2905b7dae7242adccc4dc8338ce9, type: 2}
-  - m_RefCount: 48
+  - serializedVersion: 2
+    m_RefCount: 48
     m_Data: {fileID: 11400000, guid: 743305983cbadeb4cbcb75a6d31de28a, type: 2}
-  - m_RefCount: 48
+  - serializedVersion: 2
+    m_RefCount: 48
     m_Data: {fileID: 11400000, guid: 75bcf76418fef694baee2c65add9df29, type: 2}
-  - m_RefCount: 48
+  - serializedVersion: 2
+    m_RefCount: 48
     m_Data: {fileID: 11400000, guid: d52b7a06733e0cd48945a198ed68499e, type: 2}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: 11400000, guid: 139744e2fe6e54f499ce08e93de5290d, type: 2}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: 11400000, guid: 087495b4b7db3004fbc6cd321b4d248e, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: dda8f00b99dc0864cbada92d6582ee95, type: 2}
-  - m_RefCount: 30
+  - serializedVersion: 2
+    m_RefCount: 30
     m_Data: {fileID: 11400000, guid: 8d8d2ac634ef56144b74072ca5fb57fc, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: a20c8dd24dbd0f841bf361587cf90f3b, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 54fe463003509b748a2dc681764ddd98, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 10641dcdd846cd74280ba27f172060b5, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 992a6e6afcc48b94288602c73f572835, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 47b85dd2c7920614e9276787041d8320, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 2d0a3da9977ec3a42a26c08abf835c9b, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 6f6e17ff51016b54ab33611f7206d315, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: f111d7889f3f4864e93215f5713d3249, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 28cdc25143900e649912cde19c08dafd, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 3cd06398cb34e364c9b1ef0f6fecc372, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 6416a51a91e067a478ea84315a876ac8, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 03a343e3bc0513c4ba17b08231ff30af, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: bca523ff9d7f869488f1c351a4eb66c0, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 30b68265341551445a24e5884ce4391f, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: b4dd8df607f8732419d8e798dd8c9bd9, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 264179ca54104dd4c8488b902771e7d8, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: aa40102934ff7fd4eadc65cff23a848e, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: -536665983, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 30
+  - serializedVersion: 2
+    m_RefCount: 30
     m_Data: {fileID: -951679900, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 48
+  - serializedVersion: 2
+    m_RefCount: 48
     m_Data: {fileID: 793672813239230475, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 48
+  - serializedVersion: 2
+    m_RefCount: 48
     m_Data: {fileID: 7534811995456216726, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 48
+  - serializedVersion: 2
+    m_RefCount: 48
     m_Data: {fileID: -1839182648, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: -882576919, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: -995531508, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: -579867254, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 866065674, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 4846678, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: 1022444565274639047, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: 3417788150637269805, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 48
+  - serializedVersion: 2
+    m_RefCount: 48
     m_Data: {fileID: 8466995305061653422, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 296506830, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 558434662, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 1785306369, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: -71508474, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: -1241885787, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: -666398337, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 1491798165, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: -1175263340, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: -1033116324, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: -1348349555, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: -182278853, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 1081909890, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 310
+  - serializedVersion: 2
+    m_RefCount: 310
     m_Data:
       e00: 1
       e01: 0
@@ -43105,53 +43271,77 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 34
+  - serializedVersion: 2
+    m_RefCount: 34
     m_Data: {r: 0.75686276, g: 0.7411765, b: 0.7411765, a: 1}
-  - m_RefCount: 244
+  - serializedVersion: 2
+    m_RefCount: 244
     m_Data: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
-  - m_RefCount: 32
+  - serializedVersion: 2
+    m_RefCount: 32
     m_Data: {r: 0.7584905, g: 0.74274826, b: 0.74274826, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -43238,18 +43428,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391164839}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.15, y: 1.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1572285867}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 900, y: 0}
-  m_SizeDelta: {x: 1200, y: 650}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -800, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1391164841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43631,7 +43821,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1513312447
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -43688,6 +43878,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &1525369253
 GameObject:
   m_ObjectHideFlags: 0
@@ -44055,9 +44246,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 1
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 2764244076442157357
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.32133263, b: 0, a: 1}
   m_Intensity: 3.7
@@ -44095,6 +44290,19 @@ MonoBehaviour:
   - {x: -25.107666, y: 23.3625, z: 0}
   - {x: -26.179914, y: 23.261105, z: 0}
   - {x: -25.658817, y: 21.402113, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2764244076442157357
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!1 &1547287994
 GameObject:
   m_ObjectHideFlags: 0
@@ -44323,6 +44531,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -85899,145 +86108,214 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 207
+  - serializedVersion: 2
+    m_RefCount: 207
     m_Data: {fileID: 11400000, guid: bdefbb233c1d8044fb032295714e3c14, type: 2}
-  - m_RefCount: 206
+  - serializedVersion: 2
+    m_RefCount: 206
     m_Data: {fileID: 11400000, guid: 6daa7746dc48de6418694a26a2b5bd64, type: 2}
-  - m_RefCount: 209
+  - serializedVersion: 2
+    m_RefCount: 209
     m_Data: {fileID: 11400000, guid: ebbfcd5898583c54fbaa8e7692a63e8b, type: 2}
-  - m_RefCount: 231
+  - serializedVersion: 2
+    m_RefCount: 231
     m_Data: {fileID: 11400000, guid: 97aa85bf919084a47a3d9951f5b87492, type: 2}
-  - m_RefCount: 226
+  - serializedVersion: 2
+    m_RefCount: 226
     m_Data: {fileID: 11400000, guid: 5a74bf28d1ccd224091f215913451aed, type: 2}
-  - m_RefCount: 225
+  - serializedVersion: 2
+    m_RefCount: 225
     m_Data: {fileID: 11400000, guid: 3e7b2642d41d0e240bba9e0d2102d32b, type: 2}
-  - m_RefCount: 225
+  - serializedVersion: 2
+    m_RefCount: 225
     m_Data: {fileID: 11400000, guid: a76fce801b1547d419798a6c4e2a48cb, type: 2}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: 11400000, guid: 6b5a40361f5b95b4a84a363e7791d5f6, type: 2}
-  - m_RefCount: 30
+  - serializedVersion: 2
+    m_RefCount: 30
     m_Data: {fileID: 11400000, guid: 0398a531458ac724ea0cf2004e1dfb01, type: 2}
-  - m_RefCount: 30
+  - serializedVersion: 2
+    m_RefCount: 30
     m_Data: {fileID: 11400000, guid: 26f3f4b2d8dffe44388868d84f989eb9, type: 2}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: 11400000, guid: fbe397893167cf24ab42197e4ca84e99, type: 2}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: 11400000, guid: 79abbcc377f811040b4eef62e07efe3d, type: 2}
-  - m_RefCount: 30
+  - serializedVersion: 2
+    m_RefCount: 30
     m_Data: {fileID: 11400000, guid: 1bd7aeb518ff6f041ace7de7ad6affa9, type: 2}
-  - m_RefCount: 30
+  - serializedVersion: 2
+    m_RefCount: 30
     m_Data: {fileID: 11400000, guid: 86a6f2ebde3d9dc40ba493c4aee6d0ca, type: 2}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: 11400000, guid: 46f77f79dd82e02468a8d669e647a416, type: 2}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: 11400000, guid: f324bc4f3be06834bb34105146c7b847, type: 2}
-  - m_RefCount: 30
+  - serializedVersion: 2
+    m_RefCount: 30
     m_Data: {fileID: 11400000, guid: a9e13ac3d0a363844bbd3a41eff50e70, type: 2}
-  - m_RefCount: 30
+  - serializedVersion: 2
+    m_RefCount: 30
     m_Data: {fileID: 11400000, guid: c8acaaea3b8e2b7409e035b6cd26ace1, type: 2}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: 11400000, guid: 0d2c4776181e5014cbc653e2e127777d, type: 2}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: 11400000, guid: acb2ab88c3168f444bf41c4957afa498, type: 2}
-  - m_RefCount: 30
+  - serializedVersion: 2
+    m_RefCount: 30
     m_Data: {fileID: 11400000, guid: 023f5e7d076be4f43ba77e1f06266aa2, type: 2}
-  - m_RefCount: 30
+  - serializedVersion: 2
+    m_RefCount: 30
     m_Data: {fileID: 11400000, guid: 54fdd8ba2a4b7ae469ccd92b65091f76, type: 2}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: 11400000, guid: 9ffaed70243b3a14bbe011f24e1f466b, type: 2}
-  - m_RefCount: 211
+  - serializedVersion: 2
+    m_RefCount: 211
     m_Data: {fileID: 11400000, guid: 1ce4d305787b1734eb325370c8600cde, type: 2}
-  - m_RefCount: 209
+  - serializedVersion: 2
+    m_RefCount: 209
     m_Data: {fileID: 11400000, guid: bcb0d110a7b74644085475809c49cd22, type: 2}
-  - m_RefCount: 207
+  - serializedVersion: 2
+    m_RefCount: 207
     m_Data: {fileID: 11400000, guid: b9778aedbb666f141bc2dd3433758bb8, type: 2}
-  - m_RefCount: 208
+  - serializedVersion: 2
+    m_RefCount: 208
     m_Data: {fileID: 11400000, guid: b8747cfbf0196fc4b8138a09bc80375d, type: 2}
-  - m_RefCount: 210
+  - serializedVersion: 2
+    m_RefCount: 210
     m_Data: {fileID: 11400000, guid: 4cee7dd4df7129e4d96e88996fbfcd9c, type: 2}
-  - m_RefCount: 258
+  - serializedVersion: 2
+    m_RefCount: 258
     m_Data: {fileID: 11400000, guid: df9b9f4ff089cf642ae2f748727922c6, type: 2}
-  - m_RefCount: 267
+  - serializedVersion: 2
+    m_RefCount: 267
     m_Data: {fileID: 11400000, guid: 1ed2c74cc4996674cbb96b0d523405ab, type: 2}
-  - m_RefCount: 268
+  - serializedVersion: 2
+    m_RefCount: 268
     m_Data: {fileID: 11400000, guid: 930caa7adf89da246a4f9ae68b92ea0e, type: 2}
-  - m_RefCount: 273
+  - serializedVersion: 2
+    m_RefCount: 273
     m_Data: {fileID: 11400000, guid: e3995f455b8a8934f943ddac3c5c77e4, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 5c147167f6aad7747a82e24953436f09, type: 2}
-  - m_RefCount: 54
+  - serializedVersion: 2
+    m_RefCount: 54
     m_Data: {fileID: 11400000, guid: 908bdcee3499969499170cd8488ae5bb, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 207
+  - serializedVersion: 2
+    m_RefCount: 207
     m_Data: {fileID: 1919424587, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 206
+  - serializedVersion: 2
+    m_RefCount: 206
     m_Data: {fileID: -1846737615, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 209
+  - serializedVersion: 2
+    m_RefCount: 209
     m_Data: {fileID: 1000392399, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 231
+  - serializedVersion: 2
+    m_RefCount: 231
     m_Data: {fileID: -1649134637, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 226
+  - serializedVersion: 2
+    m_RefCount: 226
     m_Data: {fileID: 500860950, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 225
+  - serializedVersion: 2
+    m_RefCount: 225
     m_Data: {fileID: 1060974982, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 225
+  - serializedVersion: 2
+    m_RefCount: 225
     m_Data: {fileID: -2026658390, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: 346322421, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 30
+  - serializedVersion: 2
+    m_RefCount: 30
     m_Data: {fileID: 1031866731, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 30
+  - serializedVersion: 2
+    m_RefCount: 30
     m_Data: {fileID: 274914234, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: 324809309, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: -1782912297, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 30
+  - serializedVersion: 2
+    m_RefCount: 30
     m_Data: {fileID: 1120096850, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 30
+  - serializedVersion: 2
+    m_RefCount: 30
     m_Data: {fileID: -712860445, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: 1052164339, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: 81201756, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 30
+  - serializedVersion: 2
+    m_RefCount: 30
     m_Data: {fileID: 1327051761, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 30
+  - serializedVersion: 2
+    m_RefCount: 30
     m_Data: {fileID: 1361461310, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: -750949284, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: -2086052005, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 30
+  - serializedVersion: 2
+    m_RefCount: 30
     m_Data: {fileID: -1871719177, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 30
+  - serializedVersion: 2
+    m_RefCount: 30
     m_Data: {fileID: 773100084, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data: {fileID: 379320873, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 211
+  - serializedVersion: 2
+    m_RefCount: 211
     m_Data: {fileID: 1231758233, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 209
+  - serializedVersion: 2
+    m_RefCount: 209
     m_Data: {fileID: 1160849711, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 207
+  - serializedVersion: 2
+    m_RefCount: 207
     m_Data: {fileID: -1008590830, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 208
+  - serializedVersion: 2
+    m_RefCount: 208
     m_Data: {fileID: 511227486, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 210
+  - serializedVersion: 2
+    m_RefCount: 210
     m_Data: {fileID: -1294120908, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 258
+  - serializedVersion: 2
+    m_RefCount: 258
     m_Data: {fileID: -954806356534217276, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 267
+  - serializedVersion: 2
+    m_RefCount: 267
     m_Data: {fileID: -1406594574, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 268
+  - serializedVersion: 2
+    m_RefCount: 268
     m_Data: {fileID: -1082909326, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 273
+  - serializedVersion: 2
+    m_RefCount: 273
     m_Data: {fileID: 1788003276, guid: 7eaa92b0c6f96a6488a8e25faa0960eb, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 1032183454, guid: b1c0b6fd9788e7c41b7821de188fb966, type: 3}
-  - m_RefCount: 54
+  - serializedVersion: 2
+    m_RefCount: 54
     m_Data: {fileID: -1929312608, guid: b1c0b6fd9788e7c41b7821de188fb966, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 4088
+  - serializedVersion: 2
+    m_RefCount: 4088
     m_Data:
       e00: 1
       e01: 0
@@ -86055,7 +86333,8 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 28
+  - serializedVersion: 2
+    m_RefCount: 28
     m_Data:
       e00: 0
       e01: 1
@@ -86073,7 +86352,8 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 28
+  - serializedVersion: 2
+    m_RefCount: 28
     m_Data:
       e00: 0
       e01: -1
@@ -86092,13 +86372,17 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 3640
+  - serializedVersion: 2
+    m_RefCount: 3640
     m_Data: {r: 0.554717, g: 0.554717, b: 0.554717, a: 1}
-  - m_RefCount: 448
+  - serializedVersion: 2
+    m_RefCount: 448
     m_Data: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
-  - m_RefCount: 56
+  - serializedVersion: 2
+    m_RefCount: 56
     m_Data: {r: 0.47058824, g: 0.47058824, b: 0.47058824, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -86486,7 +86770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShadowGroup: 0
   m_Priority: 0
-  m_ComponentVersion: 5
+  m_ComponentVersion: 6
   m_HasRenderer: 0
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
@@ -86506,25 +86790,90 @@ MonoBehaviour:
     rid: -2
   m_ShadowCastingSource: 1
   m_ShadowMesh:
-    m_Mesh: {fileID: 1005445487}
-    m_LocalBounds:
-      m_Center: {x: 23.38768, y: 6.1925507, z: 0}
-      m_Extent: {x: 63.38768, y: 48.407448, z: 0}
-    m_EdgeProcessing: 1
-    m_TrimEdge: 0
-    m_FlipX: 0
-    m_FlipY: 0
-    m_InitialTrim: 0
+    rid: 2764244076442157344
   m_CastingOption: 1
   m_PreviousTrimEdge: 0
   m_PreviousEdgeProcessing: 1
   m_PreviousShadowCastingSource: 1
   m_PreviousShadowShape2DSource: {fileID: 0}
+  m_SelectionSources:
+    rid: 2764244076442157345
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+    - rid: 2764244076442157344
+      type: {class: ShadowMesh2D, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_Vertices:
+        - position: {x: -40, y: -34.4, z: 0}
+          tangent: {x: -1, y: 0, z: -39, w: 54.6}
+        - position: {x: -39, y: 54.6, z: 0}
+          tangent: {x: -1, y: 0, z: 2.317234, w: 51.30468}
+        - position: {x: 2.317234, y: 51.30468, z: 0}
+          tangent: {x: -1, y: 0, z: 86.77536, w: 44.587055}
+        - position: {x: 86.77536, y: 44.587055, z: 0}
+          tangent: {x: -1, y: 0, z: 78.03903, w: -42.214897}
+        - position: {x: 78.03903, y: -42.214897, z: 0}
+          tangent: {x: -1, y: 0, z: -40, w: -34.4}
+        - position: {x: 78.03903, y: -42.214897, z: 0}
+          tangent: {x: 0, y: 0, z: -40, w: -34.4}
+        - position: {x: -40, y: -34.4, z: 0}
+          tangent: {x: 0, y: 0, z: 78.03903, w: -42.214897}
+        - position: {x: 78.03903, y: -42.214897, z: 0}
+          tangent: {x: 1, y: 0, z: -40, w: -34.4}
+        - position: {x: 78.03903, y: -42.214897, z: 0}
+          tangent: {x: 3, y: 0, z: -40, w: -34.4}
+        - position: {x: -40, y: -34.4, z: 0}
+          tangent: {x: 0, y: 0, z: -39, w: 54.6}
+        - position: {x: -39, y: 54.6, z: 0}
+          tangent: {x: 0, y: 0, z: -40, w: -34.4}
+        - position: {x: -40, y: -34.4, z: 0}
+          tangent: {x: 1, y: 0, z: -39, w: 54.6}
+        - position: {x: -40, y: -34.4, z: 0}
+          tangent: {x: 3, y: 0, z: -39, w: 54.6}
+        - position: {x: -39, y: 54.6, z: 0}
+          tangent: {x: 0, y: 0, z: 2.317234, w: 51.30468}
+        - position: {x: 2.317234, y: 51.30468, z: 0}
+          tangent: {x: 0, y: 0, z: -39, w: 54.6}
+        - position: {x: -39, y: 54.6, z: 0}
+          tangent: {x: 1, y: 0, z: 2.317234, w: 51.30468}
+        - position: {x: -39, y: 54.6, z: 0}
+          tangent: {x: 3, y: 0, z: 2.317234, w: 51.30468}
+        - position: {x: 2.317234, y: 51.30468, z: 0}
+          tangent: {x: 0, y: 0, z: 86.77536, w: 44.587055}
+        - position: {x: 86.77536, y: 44.587055, z: 0}
+          tangent: {x: 0, y: 0, z: 2.317234, w: 51.30468}
+        - position: {x: 2.317234, y: 51.30468, z: 0}
+          tangent: {x: 1, y: 0, z: 86.77536, w: 44.587055}
+        - position: {x: 2.317234, y: 51.30468, z: 0}
+          tangent: {x: 3, y: 0, z: 86.77536, w: 44.587055}
+        - position: {x: 86.77536, y: 44.587055, z: 0}
+          tangent: {x: 0, y: 0, z: 78.03903, w: -42.214897}
+        - position: {x: 78.03903, y: -42.214897, z: 0}
+          tangent: {x: 0, y: 0, z: 86.77536, w: 44.587055}
+        - position: {x: 86.77536, y: 44.587055, z: 0}
+          tangent: {x: 1, y: 0, z: 78.03903, w: -42.214897}
+        - position: {x: 86.77536, y: 44.587055, z: 0}
+          tangent: {x: 3, y: 0, z: 78.03903, w: -42.214897}
+        m_Indices: 04000000050000000600000006000000000000000400000000000000090000000a0000000a0000000100000000000000010000000d0000000e0000000e0000000200000001000000020000001100000012000000120000000300000002000000030000001500000016000000160000000400000003000000040000000700000008000000000000000b0000000c000000010000000f00000010000000020000001300000014000000030000001700000018000000
+        m_LocalBounds:
+          m_Center: {x: 23.38768, y: 6.1925507, z: 0}
+          m_Extent: {x: 63.38768, y: 48.407448, z: 0}
+        m_EdgeProcessing: 1
+        m_TrimEdge: 0
+        m_FlipX: 0
+        m_FlipY: 0
+        m_InitialTrim: 0
+    - rid: 2764244076442157345
+      type: {class: Shadow2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!4 &1632765648
 Transform:
   m_ObjectHideFlags: 0
@@ -87039,9 +87388,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 1
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 2764244076442157347
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.32133263, b: 0, a: 1}
   m_Intensity: 2.78
@@ -87103,6 +87456,19 @@ MonoBehaviour:
   - {x: -22.189053, y: -0.5182195, z: 0}
   - {x: -21.438429, y: -1.6349068, z: 0}
   - {x: -20.08881, y: -2.2844157, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2764244076442157347
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!1 &1746184563
 GameObject:
   m_ObjectHideFlags: 0
@@ -87137,7 +87503,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1746184565
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -87194,6 +87560,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &1749526803
 GameObject:
   m_ObjectHideFlags: 0
@@ -87340,9 +87707,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 1
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 2764244076442157354
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.32133263, b: 0, a: 1}
   m_Intensity: 2.78
@@ -87380,6 +87751,19 @@ MonoBehaviour:
   - {x: -25.98997, y: 4.2800636, z: 0}
   - {x: -26.436857, y: 4.285959, z: 0}
   - {x: -26.431362, y: 3.887787, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2764244076442157354
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!1 &1792525409
 GameObject:
   m_ObjectHideFlags: 0
@@ -87627,9 +88011,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 4
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 2764244076442157361
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.7096189, b: 0.5566037, a: 1}
   m_Intensity: 0.6
@@ -87667,6 +88055,19 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2764244076442157361
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 4
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!4 &1835644067
 Transform:
   m_ObjectHideFlags: 0
@@ -89514,101 +89915,148 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 6
+  - serializedVersion: 2
+    m_RefCount: 6
     m_Data: {fileID: 11400000, guid: 00c23138a2a701741be4bfabb0eea377, type: 2}
-  - m_RefCount: 17
+  - serializedVersion: 2
+    m_RefCount: 17
     m_Data: {fileID: 11400000, guid: baac0c43da493eb4283d05530f2e9655, type: 2}
-  - m_RefCount: 5
+  - serializedVersion: 2
+    m_RefCount: 5
     m_Data: {fileID: 11400000, guid: e7c20509dff6298429488d84863ef0d7, type: 2}
-  - m_RefCount: 15
+  - serializedVersion: 2
+    m_RefCount: 15
     m_Data: {fileID: 11400000, guid: f79ad6765c02177409664181ab5e9f55, type: 2}
-  - m_RefCount: 8
+  - serializedVersion: 2
+    m_RefCount: 8
     m_Data: {fileID: 11400000, guid: 4e967df63dcaf7b47940a321d668e082, type: 2}
-  - m_RefCount: 8
+  - serializedVersion: 2
+    m_RefCount: 8
     m_Data: {fileID: 11400000, guid: 71fc6373a7a4613448c2c4c98334bc41, type: 2}
-  - m_RefCount: 8
+  - serializedVersion: 2
+    m_RefCount: 8
     m_Data: {fileID: 11400000, guid: 32fd34f1fa2d8c54aa35a852ab7de0de, type: 2}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: 11400000, guid: ff93d63f42c6317448ade8e64c714de4, type: 2}
-  - m_RefCount: 3
+  - serializedVersion: 2
+    m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 89d83de7bb8061b429fbd4d625cd0e1c, type: 2}
-  - m_RefCount: 22
+  - serializedVersion: 2
+    m_RefCount: 22
     m_Data: {fileID: 11400000, guid: 422a964c798908e43aac0ce76759b20b, type: 2}
-  - m_RefCount: 38
+  - serializedVersion: 2
+    m_RefCount: 38
     m_Data: {fileID: 11400000, guid: bf24684defc00c34eb39094c9f092b91, type: 2}
-  - m_RefCount: 20
+  - serializedVersion: 2
+    m_RefCount: 20
     m_Data: {fileID: 11400000, guid: 59ab4a1f1fb16594d9cea8d58853ec61, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 6
+  - serializedVersion: 2
+    m_RefCount: 6
     m_Data: {fileID: 498921111, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 17
+  - serializedVersion: 2
+    m_RefCount: 17
     m_Data: {fileID: 765851552, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 5
+  - serializedVersion: 2
+    m_RefCount: 5
     m_Data: {fileID: 215431519, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 15
+  - serializedVersion: 2
+    m_RefCount: 15
     m_Data: {fileID: 2012020494, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 8
+  - serializedVersion: 2
+    m_RefCount: 8
     m_Data: {fileID: 1635965958, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 8
+  - serializedVersion: 2
+    m_RefCount: 8
     m_Data: {fileID: -280121576, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 8
+  - serializedVersion: 2
+    m_RefCount: 8
     m_Data: {fileID: 337478868, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data: {fileID: -552169827, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 3
+  - serializedVersion: 2
+    m_RefCount: 3
     m_Data: {fileID: 490300478, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 22
+  - serializedVersion: 2
+    m_RefCount: 22
     m_Data: {fileID: 1037853099, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 20
+  - serializedVersion: 2
+    m_RefCount: 20
     m_Data: {fileID: 983016421, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
-  - m_RefCount: 38
+  - serializedVersion: 2
+    m_RefCount: 38
     m_Data: {fileID: 1975130285, guid: 2dcfb460175efce49aea130858d9ee4f, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data:
       e00: 0
       e01: 1
@@ -89626,7 +90074,8 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data:
       e00: 0
       e01: 1
@@ -89644,7 +90093,8 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 26
+  - serializedVersion: 2
+    m_RefCount: 26
     m_Data:
       e00: 0
       e01: -1
@@ -89662,7 +90112,8 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 2
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data:
       e00: 0
       e01: -1
@@ -89680,7 +90131,8 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 96
+  - serializedVersion: 2
+    m_RefCount: 96
     m_Data:
       e00: 1
       e01: 0
@@ -89699,9 +90151,11 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 152
+  - serializedVersion: 2
+    m_RefCount: 152
     m_Data: {r: 0.75686276, g: 0.7411765, b: 0.7411765, a: 1}
-  - m_RefCount: 0
+  - serializedVersion: 2
+    m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -90084,7 +90538,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1937834849
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -90141,6 +90595,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &1949025230
 GameObject:
   m_ObjectHideFlags: 0
@@ -90778,9 +91233,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 4
   m_LightType: 1
   m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 2764244076442157350
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.32133263, b: 0, a: 1}
   m_Intensity: 2.78
@@ -90818,6 +91277,19 @@ MonoBehaviour:
   - {x: -25.98997, y: 4.2800636, z: 0}
   - {x: -26.436857, y: 4.285959, z: 0}
   - {x: -26.431362, y: 3.887787, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2764244076442157350
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: -2
 --- !u!1 &1997671615
 GameObject:
   m_ObjectHideFlags: 0
@@ -90875,7 +91347,7 @@ Animator:
   m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &1997671618
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -90932,6 +91404,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &2008356134
 GameObject:
   m_ObjectHideFlags: 0
@@ -91565,7 +92038,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!212 &2030677119
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -91622,6 +92095,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!4 &2030677120
 Transform:
   m_ObjectHideFlags: 0
@@ -91809,7 +92283,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2050158179
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -91866,6 +92340,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &2069777513
 GameObject:
   m_ObjectHideFlags: 0
@@ -92735,7 +93210,7 @@ MonoBehaviour:
   sizeRight: {x: 0.4, y: 0.8}
 --- !u!212 &2124234901
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92792,6 +93267,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!4 &2124234902
 Transform:
   m_ObjectHideFlags: 0
