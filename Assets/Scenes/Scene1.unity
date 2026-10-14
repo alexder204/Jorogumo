@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8842ea256b8b78a42a72353a452badca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c065003ac36c1344a54c9edd8671502, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1115,7 +1115,7 @@ GameObject:
   - component: {fileID: 42585811}
   - component: {fileID: 42585810}
   m_Layer: 5
-  m_Name: ItemsPanel
+  m_Name: ItemsInventoryPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

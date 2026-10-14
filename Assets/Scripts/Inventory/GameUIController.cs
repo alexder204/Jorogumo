@@ -112,7 +112,7 @@ public class GameUIController : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Debug.LogError("Only one PauseManager should be active.");
+            Debug.LogWarning("Only one GameUIController should be active.");
             enabled = false;
             return;
         }
