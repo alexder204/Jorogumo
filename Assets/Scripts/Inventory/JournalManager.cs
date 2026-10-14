@@ -2,105 +2,108 @@
 using TMPro;
 using System.Collections.Generic;
 
+/*
+ * PURPOSE:
+ * Stores collected journal notes and displays their pages.
+ * PauseManager controls opening, closing, and pausing.
+ *
+ * IMPORTANT VARIABLES:
+ * instance         - Shared journal reference.
+ * journalUI        - Journal panel.
+ * noteTitleText    - Displays the current note title.
+ * noteContentText  - Displays the current note contents.
+ * currentPageIndex - Index of the displayed note.
+ * collectedNotes   - Notes the player has collected.
+ *
+ * SETUP:
+ * Keep this component on an always-active object.
+ * Assign the journal panel and both text fields.
+ */
+
 public class JournalManager : MonoBehaviour
 {
     public static JournalManager instance;
-    public static bool IsJournalOpen =>
-        instance != null &&
-        instance.journalUI != null &&
-        instance.journalUI.activeSelf;
 
-    [Header("UI")]
+    public static bool IsJournalOpen =>
+        GameUIController.isJournalOpen;
+
+    [Header("Journal Display")]
     public GameObject journalUI;
     public TextMeshProUGUI noteTitleText;
     public TextMeshProUGUI noteContentText;
 
-    private int currentPageIndex = 0;
-    private List<JournalNote> collectedNotes = new List<JournalNote>();
+    private int currentPageIndex;
+
+    private readonly List<JournalNote> collectedNotes =
+        new List<JournalNote>();
 
     private void Awake()
     {
-        if (instance == null) instance = this;
-        else Destroy(gameObject);
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
     }
 
-    private void Update()
+    public void SetVisible(bool visible)
     {
-        // If dialogue starts while journal is open → auto-close
-        if (TopDownMovement.isInDialogue && journalUI.activeSelf)
-        {
-            CloseJournal();
+        if (journalUI == null)
             return;
+
+        journalUI.SetActive(visible);
+
+        if (!visible)
+            return;
+
+        if (collectedNotes.Count > 0)
+        {
+            currentPageIndex = Mathf.Clamp(
+                currentPageIndex, 0, collectedNotes.Count - 1);
+
+            DisplayNote(collectedNotes[currentPageIndex]);
         }
-
-        // Do NOT allow opening journal during dialogue
-        if (TopDownMovement.isInDialogue)
-            return;
-
-        // Toggle journal with J (open or close)
-        if (Input.GetKeyDown(KeyCode.J))
+        else
         {
-            // Cannot open journal while paused
-            if (!journalUI.activeSelf && PauseManager.isGamePaused)
-                return;
+            if (noteTitleText != null)
+                noteTitleText.text = "";
 
-            ToggleJournal();
+            if (noteContentText != null)
+                noteContentText.text = "";
         }
     }
 
+    // Retains the existing method for Inspector button connections.
     public void ToggleJournal()
     {
-        if (journalUI.activeSelf)
-            CloseJournal();
-        else
-            OpenJournal();
-    }
-
-    private void OpenJournal()
-    {
-        journalUI.SetActive(true);
-        PauseManager.isJournalOpen = true;
-
-        // Pause the game
-        PauseManager.isGamePaused = true;
-        Time.timeScale = 0f;
-
-        PauseAllAudio();
-    }
-
-    private void CloseJournal()
-    {
-        journalUI.SetActive(false);
-        PauseManager.isJournalOpen = false;
-
-        // Unpause the game
-        PauseManager.isGamePaused = false;
-        Time.timeScale = 1f;
-
-        UnpauseAllAudio();
+        if (GameUIController.Instance != null)
+            GameUIController.Instance.ToggleJournal();
     }
 
     public void FlipForward()
     {
-        if (currentPageIndex < collectedNotes.Count - 1)
-        {
-            currentPageIndex++;
-            DisplayNote(collectedNotes[currentPageIndex]);
-        }
+        if (currentPageIndex >= collectedNotes.Count - 1)
+            return;
+
+        currentPageIndex++;
+        DisplayNote(collectedNotes[currentPageIndex]);
     }
 
     public void FlipBackward()
     {
-        if (currentPageIndex > 0)
-        {
-            currentPageIndex--;
-            DisplayNote(collectedNotes[currentPageIndex]);
-        }
+        if (currentPageIndex <= 0)
+            return;
+
+        currentPageIndex--;
+        DisplayNote(collectedNotes[currentPageIndex]);
     }
 
     public void AddNote(JournalNote note)
     {
-        if (note == null || collectedNotes.Contains(note)) return;
+        if (note == null || collectedNotes.Contains(note))
+            return;
 
         collectedNotes.Add(note);
 
@@ -121,8 +124,11 @@ public class JournalManager : MonoBehaviour
         collectedNotes.Clear();
         currentPageIndex = 0;
 
-        if (noteTitleText != null) noteTitleText.text = "";
-        if (noteContentText != null) noteContentText.text = "";
+        if (noteTitleText != null)
+            noteTitleText.text = "";
+
+        if (noteContentText != null)
+            noteContentText.text = "";
     }
 
     public JournalNote GetNoteByID(string id)
@@ -132,29 +138,19 @@ public class JournalManager : MonoBehaviour
 
     public void DisplayNote(JournalNote note)
     {
-        if (note == null) return;
+        if (note == null)
+            return;
 
-        noteTitleText.text = note.noteTitle;
-        noteContentText.text = note.noteText;
+        if (noteTitleText != null)
+            noteTitleText.text = note.noteTitle;
+
+        if (noteContentText != null)
+            noteContentText.text = note.noteText;
     }
 
-    private void PauseAllAudio()
+    private void OnDestroy()
     {
-        var sources = Object.FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
-        foreach (var src in sources)
-        {
-            if (src.enabled && src.gameObject.activeInHierarchy)
-                src.Pause();
-        }
-    }
-
-    private void UnpauseAllAudio()
-    {
-        var sources = Object.FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
-        foreach (var src in sources)
-        {
-            if (src.enabled && src.gameObject.activeInHierarchy)
-                src.UnPause();
-        }
+        if (instance == this)
+            instance = null;
     }
 }

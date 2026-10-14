@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour
 
         pickUpPanel.SetActive(false);
         TopDownMovement.isInDialogue = false;
+        GameUIController.BlockGameplayForThisFrame();
         messageCoroutine = null;
     }
 }

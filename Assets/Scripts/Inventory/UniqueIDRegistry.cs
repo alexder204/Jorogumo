@@ -41,7 +41,7 @@ public class UniqueIDRegistry : MonoBehaviour
 
     public void RefreshUniqueIDs()
     {
-        allUniqueIDs = Object.FindObjectsByType<UniqueID>(FindObjectsSortMode.None);
+        allUniqueIDs = Object.FindObjectsByType<UniqueID>();
 
         var sceneObjects = new System.Collections.Generic.List<UniqueID>();
         foreach (var obj in allUniqueIDs)

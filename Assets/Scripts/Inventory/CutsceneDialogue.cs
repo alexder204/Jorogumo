@@ -94,7 +94,7 @@ public class SceneCGDialogueManager : MonoBehaviour
         if (!cutsceneActive || endingCutscene)
             return;
 
-        if (PauseManager.isGamePaused || JournalManager.IsJournalOpen)
+        if (GameUIController.isGamePaused || JournalManager.IsJournalOpen)
             return;
 
         DialogueLine currentLine = GetCurrentLine();

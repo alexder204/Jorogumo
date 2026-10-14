@@ -44,7 +44,7 @@ public class PlayerSpawnManager : MonoBehaviour
         // position player
         if (!string.IsNullOrEmpty(SceneTransitionData.spawnPointID))
         {
-            var spawns = Object.FindObjectsByType<SpawnPoint>(FindObjectsSortMode.None);
+            var spawns = Object.FindObjectsByType<SpawnPoint>();
             foreach (var sp in spawns)
             {
                 if (sp.spawnPointID == SceneTransitionData.spawnPointID)

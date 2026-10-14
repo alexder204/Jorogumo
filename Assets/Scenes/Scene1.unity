@@ -21248,6 +21248,8 @@ MonoBehaviour:
   pauseMenu: {fileID: 418658448}
   settingsMenu: {fileID: 409034741}
   areYouSure: {fileID: 1291313306}
+  inventoryUI: {fileID: 924227104}
+  journalManager: {fileID: 924227115}
 --- !u!4 &924227103
 Transform:
   m_ObjectHideFlags: 0

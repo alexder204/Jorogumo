@@ -23,6 +23,8 @@ public class JournalNotePickup : MonoBehaviour
 
     private void Update()
     {
+        if (GameUIController.IsGameplayBlocked)
+            return;
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
         {
             PickupNote();

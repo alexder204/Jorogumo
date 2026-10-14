@@ -56,7 +56,7 @@ public class SaveSystem : MonoBehaviour
     private void ResetPauseState()
     {
         // Global unpause
-        PauseManager.isGamePaused = false;
+        GameUIController.isGamePaused = false;
         Time.timeScale = 1f;
 
         // Try to hide pause menu UI if tagged
@@ -123,7 +123,7 @@ public class SaveSystem : MonoBehaviour
     private void OnSceneLoaded_Autosave(Scene scene, LoadSceneMode mode)
     {
         if (!autosaveOnSceneChange) return;
-        if (PauseManager.isGamePaused || isLoading) return;
+        if (GameUIController.isGamePaused || isLoading) return;
 
         if (scenesWithoutAutosave.Contains(scene.name))
         return;
@@ -221,7 +221,7 @@ public class SaveSystem : MonoBehaviour
             StopCoroutine(autosaveCoroutine);
 
         // Make sure the game is not paused and audio is unpaused
-        PauseManager.ForceUnpause();
+        GameUIController.ForceUnpause();
 
         isLoading = true;
         StartCoroutine(LoadGameCoroutine(slot));
@@ -319,7 +319,7 @@ public class SaveSystem : MonoBehaviour
         // after inventory restore
         yield return null; // let UI objects enable
 
-        var uis = FindObjectsByType<InventoryUI>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+        var uis = FindObjectsByType<InventoryUI>(FindObjectsInactive.Exclude);
         foreach (var ui in uis)
             ui.UpdateUI();
 

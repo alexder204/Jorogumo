@@ -70,7 +70,7 @@ namespace PlayerDialogue
         void Update()
         {
             // Block dialogue input when game is paused or journal is open
-            if (PauseManager.isGamePaused || JournalManager.IsJournalOpen)
+            if (GameUIController.isGamePaused || JournalManager.IsJournalOpen)
                 return;
 
             if (!dialogueActive || !canContinueText) return;
@@ -93,7 +93,7 @@ namespace PlayerDialogue
         {
             if (!collision.CompareTag("Player")) return;
 
-            if (PauseManager.isGamePaused || JournalManager.IsJournalOpen)
+            if (GameUIController.isGamePaused || JournalManager.IsJournalOpen)
                 return;
 
             // If dialogue was completed, do not start or show interaction prompt

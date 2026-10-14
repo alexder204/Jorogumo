@@ -46,8 +46,9 @@ public class TopDownMovement : MonoBehaviour
 
     void Update()
     {
-        if (PauseManager.isGamePaused || isInDialogue || isFading || isSceneLoading)
+        if (GameUIController.IsGameplayBlocked)
         {
+            movement = Vector2.zero;
             if (!lockedDirection)
             {
                 animator.Play("Idle" + lastDirection);
@@ -71,8 +72,9 @@ public class TopDownMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (PauseManager.isGamePaused || isInDialogue || isFading || isSceneLoading)
+        if (GameUIController.IsGameplayBlocked)
         {
+            movement = Vector2.zero;
             rb.linearVelocity = Vector2.zero;
             return;
         }

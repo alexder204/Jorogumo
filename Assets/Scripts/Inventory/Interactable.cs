@@ -33,7 +33,8 @@ public class Interactable : MonoBehaviour
 
     private void Update()
     {
-        if (TopDownMovement.isInDialogue) return;
+        if (GameUIController.IsGameplayBlocked)
+            return;
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
         {
             TryInteract();

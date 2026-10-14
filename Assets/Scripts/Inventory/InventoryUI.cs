@@ -1,119 +1,96 @@
 using UnityEngine;
-using System.Collections;
+
+/*
+ * PURPOSE:
+ * Draws inventory slots and refreshes them when items change.
+ * PauseManager controls whether the inventory screen is visible.
+ *
+ * IMPORTANT VARIABLES:
+ * itemsParent   - Container where slots are created.
+ * slotPrefab    - Prefab containing InventorySlot.
+ * inventoryUI   - Inventory panel.
+ * itemDetailsUI - Displays the selected item's details.
+ * inventory     - Inventory data reference.
+ *
+ * SETUP:
+ * Keep this component on an always-active object.
+ * Assign its panel, slot container, prefab, and details component.
+ */
 
 public class InventoryUI : MonoBehaviour
 {
+    [Header("Inventory Display")]
     public Transform itemsParent;
-    public GameObject slotPrefab;  // Slot prefab to instantiate
+    public GameObject slotPrefab;
     public GameObject inventoryUI;
+    public ItemDetailsUI itemDetailsUI;
 
     private Inventory inventory;
-    public ItemDetailsUI itemDetailsUI;
-    private bool canToggle = true;
 
-    void OnEnable()
+    private void OnEnable()
     {
-        inventory = Inventory.instance;
-        if (inventory != null)
-        {
-            inventory.onItemChangedCallback -= UpdateUI; // safety: prevent duplicates
-            inventory.onItemChangedCallback += UpdateUI;
-            UpdateUI(); // initial draw
-        }
+        ConnectInventory();
     }
 
-    void OnDisable()
+    private void Start()
+    {
+        // Retry after other objects have completed Awake.
+        ConnectInventory();
+    }
+
+    private void ConnectInventory()
+    {
+        Inventory currentInventory = Inventory.instance;
+
+        if (currentInventory == null)
+            return;
+
+        if (inventory == currentInventory)
+            return;
+
+        if (inventory != null)
+            inventory.onItemChangedCallback -= UpdateUI;
+
+        inventory = currentInventory;
+        inventory.onItemChangedCallback += UpdateUI;
+
+        UpdateUI();
+    }
+
+    private void OnDisable()
     {
         if (inventory != null)
             inventory.onItemChangedCallback -= UpdateUI;
+
+        inventory = null;
     }
 
-    void Update()
+    public void SetVisible(bool visible)
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (inventoryUI == null)
+            return;
+
+        bool wasVisible = inventoryUI.activeSelf;
+
+        // Only redraw when opening, not when another menu changes.
+        if (visible && !wasVisible)
+            UpdateUI();
+
+        inventoryUI.SetActive(visible);
+
+        if (visible != wasVisible &&
+            itemDetailsUI != null &&
+            itemDetailsUI.panel != null)
         {
-            HandleInventoryKey();
+            itemDetailsUI.panel.SetActive(false);
         }
     }
 
-    private void HandleInventoryKey()
-    {
-        bool isOpening = !inventoryUI.activeSelf;
-
-        if (isOpening)
-        {
-            // Cooldown check
-            if (!canToggle)
-            {
-                Debug.Log("Inventory opening is on cooldown.");
-                return;
-            }
-
-            // Block opening when:
-            // - game is already paused by pause menu
-            // - in dialogue
-            // - journal is open
-            if (PauseManager.isGamePaused ||
-                TopDownMovement.isInDialogue ||
-                PauseManager.isJournalOpen)
-            {
-                return;
-            }
-
-            OpenInventory();
-        }
-        else
-        {
-            CloseInventory();
-        }
-    }
-
+    // Retains the existing method for Inspector button connections.
     public void ToggleInventoryWithButton()
     {
-        StartCoroutine(ToggleInventoryTimer(0.25f));
-    }
-
-    private void OpenInventory()
-    {
-        UpdateUI();
-        inventoryUI.SetActive(true);
-
-        if (itemDetailsUI != null && itemDetailsUI.panel != null)
-            itemDetailsUI.panel.SetActive(false);
-
-        // Mark inventory as open and pause the game
-        PauseManager.isInventoryOpen = true;
-        PauseManager.isGamePaused = true;
-        Time.timeScale = 0f;
-    }
-
-    private void CloseInventory()
-    {
-        inventoryUI.SetActive(false);
-
-        if (itemDetailsUI != null && itemDetailsUI.panel != null)
-            itemDetailsUI.panel.SetActive(false);
-
-        // Mark inventory as closed and unpause the game
-        PauseManager.isInventoryOpen = false;
-        PauseManager.isGamePaused = false;
-        Time.timeScale = 1f;
-
-        // Start cooldown so player can't spam
-        canToggle = false;
-        StartCoroutine(CooldownTimer(1f));
-    }
-
-    private IEnumerator ToggleInventoryTimer(float delay)
-    {
-        yield return new WaitForSecondsRealtime(delay);
-        HandleInventoryKey();
-    }
-
-    private IEnumerator CooldownTimer(float duration)
-    {
-        yield return new WaitForSecondsRealtime(duration);
-        canToggle = true;
+        if (GameUIController.Instance != null)
+            GameUIController.Instance.ToggleInventory();
     }
 
     public void UpdateUI()
@@ -121,31 +98,30 @@ public class InventoryUI : MonoBehaviour
         if (inventory == null)
             inventory = Inventory.instance;
 
-        if (inventory == null)
-        {
-            Debug.LogWarning("InventoryUI: Inventory instance is null. Skipping update.");
+        if (inventory == null ||
+            itemsParent == null ||
+            slotPrefab == null)
             return;
-        }
-
-        if (itemsParent == null || slotPrefab == null)
-        {
-            Debug.LogWarning("InventoryUI not fully initialized yet. Skipping UI update.");
-            return;
-        }
 
         foreach (Transform child in itemsParent)
             Destroy(child.gameObject);
 
         foreach (Item item in inventory.items)
         {
-            if (item == null) continue;
+            if (item == null)
+                continue;
 
-            GameObject newSlot = Instantiate(slotPrefab, itemsParent);
+            GameObject newSlot =
+                Instantiate(slotPrefab, itemsParent);
 
-            InventorySlot slot = newSlot.GetComponent<InventorySlot>();
+            InventorySlot slot =
+                newSlot.GetComponent<InventorySlot>();
+
             if (slot == null)
             {
-                Debug.LogError("slotPrefab does not have an InventorySlot component.");
+                Debug.LogError(
+                    "Slot prefab needs an InventorySlot component.");
+
                 Destroy(newSlot);
                 continue;
             }

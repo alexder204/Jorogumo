@@ -57,7 +57,7 @@ public class DialoguePickUp : MonoBehaviour
     private void Update()
     {
         // Block dialogue input when game is paused or journal is open
-        if (PauseManager.isGamePaused || JournalManager.IsJournalOpen)
+        if (GameUIController.isGamePaused || JournalManager.IsJournalOpen)
             return;
 
         if (Input.GetButtonDown("Interact"))
