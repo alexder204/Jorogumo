@@ -93133,15 +93133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764c515dd478e2a468e24b6b27ae0f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueCanvas: {fileID: 1156892991}
-  interactItem: {fileID: 669829402}
-  interactPopUp: {fileID: 1789002029}
-  charImage1: {fileID: 68017949}
-  charImage2: {fileID: 1539915506}
-  speakerText: {fileID: 1018543750}
-  dialogueText: {fileID: 1253282675}
-  portraitImage1: {fileID: 68017950}
-  portraitImage2: {fileID: 1539915507}
+  startMode: 0
   speaker:
   - 
   - 
@@ -93155,6 +93147,18 @@ MonoBehaviour:
   - It's a comfy looking bench.
   - Too bad you can't take a seat right now. You got more important things to take
     care of.
+  typingSpeed: 0.02
+  initialDelay: 0.5
+  itemToPickUp: {fileID: 0}
+  interactItem: {fileID: 669829402}
+  interactPopUp: {fileID: 1789002029}
+  dialogueCanvas: {fileID: 1156892991}
+  charImage1: {fileID: 68017949}
+  charImage2: {fileID: 1539915506}
+  speakerText: {fileID: 1018543750}
+  dialogueText: {fileID: 1253282675}
+  portraitImage1: {fileID: 68017950}
+  portraitImage2: {fileID: 1539915507}
 --- !u!114 &669829406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93242,7 +93246,7 @@ Transform:
   m_GameObject: {fileID: 671381367}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -94441,7 +94445,7 @@ GameObject:
   - component: {fileID: 773180821}
   - component: {fileID: 773180824}
   - component: {fileID: 773180823}
-  - component: {fileID: 773180822}
+  - component: {fileID: 773180826}
   - component: {fileID: 773180825}
   m_Layer: 0
   m_Name: Something
@@ -94465,40 +94469,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 280184588}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &773180822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 773180820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fd00aa8d7a2b9b43881bf3d6b83fc8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueCanvas: {fileID: 1156892991}
-  interactItem: {fileID: 773180820}
-  interactPopUp: {fileID: 1789002029}
-  charImage1: {fileID: 68017949}
-  charImage2: {fileID: 1539915506}
-  speakerText: {fileID: 1018543750}
-  dialogueText: {fileID: 1253282675}
-  portraitImage1: {fileID: 68017950}
-  portraitImage2: {fileID: 1539915507}
-  speaker:
-  - 
-  - 
-  portrait1:
-  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
-  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
-  portrait2:
-  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
-  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
-  dialogueWords:
-  - This is a mail box.
-  - There seems to be something inside it.
-  itemToPickUp: {fileID: 11400000, guid: 34fe3b9246773eb42b3e3a5ae38f6d81, type: 2}
 --- !u!114 &773180823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94543,21 +94513,21 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.8871517, y: 2.5276818}
+  m_Offset: {x: 0.91814995, y: 2.8683863}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10, y: 10}
-    newSize: {x: 10, y: 10}
-    adaptiveTilingThreshold: 0.5
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.5757942, y: 1.3392658}
+  m_Size: {x: 3.4305763, y: 1.5911455}
   m_EdgeRadius: 0
 --- !u!114 &773180825
 MonoBehaviour:
@@ -94573,6 +94543,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: somethingitem
   defaultActiveState: 0
+--- !u!114 &773180826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773180820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764c515dd478e2a468e24b6b27ae0f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDialogue.Dialogue
+  startMode: 0
+  speaker:
+  - 
+  - 
+  portrait1:
+  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
+  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
+  portrait2:
+  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
+  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
+  dialogueWords:
+  - It's a plain old mail box.
+  - There seems to be something inside.
+  typingSpeed: 0.02
+  initialDelay: 0.5
+  itemToPickUp: {fileID: 11400000, guid: 34fe3b9246773eb42b3e3a5ae38f6d81, type: 2}
+  interactItem: {fileID: 773180820}
+  interactPopUp: {fileID: 1789002029}
+  dialogueCanvas: {fileID: 1156892991}
+  charImage1: {fileID: 68017949}
+  charImage2: {fileID: 1539915506}
+  speakerText: {fileID: 1018543750}
+  dialogueText: {fileID: 1253282675}
+  portraitImage1: {fileID: 68017950}
+  portraitImage2: {fileID: 1539915507}
 --- !u!1 &781129564
 GameObject:
   m_ObjectHideFlags: 0
@@ -96090,7 +96097,11 @@ MonoBehaviour:
         m_SelectedSource:
           rid: -2
         m_Provider2DCache:
-          rid: -2
+          rid: 7492404617095151735
+    - rid: 7492404617095151735
+      type: {class: 'Provider2DCache`1[[UnityEngine.Rendering.Universal.ShadowShape2DProvider, Unity.RenderPipelines.Universal.2D.Runtime]]', ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_Cache: []
 --- !u!4 &873037657
 Transform:
   m_ObjectHideFlags: 0
@@ -96724,7 +96735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 902049599}
   - component: {fileID: 902049603}
-  - component: {fileID: 902049602}
+  - component: {fileID: 902049604}
   - component: {fileID: 902049601}
   - component: {fileID: 902049600}
   m_Layer: 0
@@ -96777,40 +96788,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: WrongWay
   defaultActiveState: 0
---- !u!114 &902049602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 902049598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fdf32a9bacefae43accd92e224c7d73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueCanvas: {fileID: 1156892991}
-  interactPopUp: {fileID: 721306696}
-  interactItem: {fileID: 902049598}
-  charImage1: {fileID: 68017949}
-  charImage2: {fileID: 1539915506}
-  speakerText: {fileID: 1018543750}
-  dialogueText: {fileID: 1253282675}
-  portraitImage1: {fileID: 68017950}
-  portraitImage2: {fileID: 1539915507}
-  speaker:
-  - 
-  - 
-  portrait1:
-  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
-  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
-  portrait2:
-  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
-  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
-  dialogueWords:
-  - Let's stay focused.
-  - Go to the school.
-  typingSpeed: 0.02
 --- !u!61 &902049603
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -96857,6 +96834,39 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 36.04184, y: 41.461956}
   m_EdgeRadius: 0
+--- !u!114 &902049604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902049598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764c515dd478e2a468e24b6b27ae0f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDialogue.Dialogue
+  startMode: 1
+  speaker:
+  - 
+  portrait1:
+  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
+  portrait2:
+  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
+  dialogueWords:
+  - There's nothing over there.
+  typingSpeed: 0.02
+  initialDelay: 0.5
+  itemToPickUp: {fileID: 0}
+  interactItem: {fileID: 902049598}
+  interactPopUp: {fileID: 721306696}
+  dialogueCanvas: {fileID: 1156892991}
+  charImage1: {fileID: 68017949}
+  charImage2: {fileID: 1539915506}
+  speakerText: {fileID: 1018543750}
+  dialogueText: {fileID: 1253282675}
+  portraitImage1: {fileID: 68017950}
+  portraitImage2: {fileID: 1539915507}
 --- !u!1 &951674060
 GameObject:
   m_ObjectHideFlags: 0
@@ -105444,7 +105454,7 @@ TilemapRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 9
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -106868,7 +106878,7 @@ Transform:
   m_GameObject: {fileID: 1379628451}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: -2.558406, z: 0}
+  m_LocalPosition: {x: 10, y: 8.79, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -110610,7 +110620,11 @@ MonoBehaviour:
         m_SelectedSource:
           rid: -2
         m_Provider2DCache:
-          rid: -2
+          rid: 7492404617095151736
+    - rid: 7492404617095151736
+      type: {class: 'Provider2DCache`1[[UnityEngine.Rendering.Universal.Light2DProvider, Unity.RenderPipelines.Universal.2D.Runtime]]', ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_Cache: []
 --- !u!1 &1583986604
 GameObject:
   m_ObjectHideFlags: 0
@@ -112894,7 +112908,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -2.351438, y: 24.540426}
+  m_Offset: {x: -2.351438, y: 24.26444}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -112904,7 +112918,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 11.652228, y: 9.231434}
+  m_Size: {x: 11.652228, y: 9.783405}
   m_EdgeRadius: 0
 --- !u!1 &1753248110
 GameObject:
@@ -115931,7 +115945,7 @@ TilemapRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 8
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -117002,7 +117016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2012892328}
   - component: {fileID: 2012892332}
-  - component: {fileID: 2012892331}
+  - component: {fileID: 2012892333}
   - component: {fileID: 2012892330}
   - component: {fileID: 2012892329}
   m_Layer: 0
@@ -117055,36 +117069,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: WrongWay2
   defaultActiveState: 0
---- !u!114 &2012892331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2012892327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fdf32a9bacefae43accd92e224c7d73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueCanvas: {fileID: 1156892991}
-  interactPopUp: {fileID: 721306696}
-  interactItem: {fileID: 2012892327}
-  charImage1: {fileID: 68017949}
-  charImage2: {fileID: 1539915506}
-  speakerText: {fileID: 1018543750}
-  dialogueText: {fileID: 1253282675}
-  portraitImage1: {fileID: 68017950}
-  portraitImage2: {fileID: 1539915507}
-  speaker:
-  - 
-  portrait1:
-  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
-  portrait2:
-  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
-  dialogueWords:
-  - That means go the other way dumbass.
-  typingSpeed: 0.02
 --- !u!61 &2012892332
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -117131,6 +117115,39 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 36.04184, y: 33.3948}
   m_EdgeRadius: 0
+--- !u!114 &2012892333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012892327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764c515dd478e2a468e24b6b27ae0f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDialogue.Dialogue
+  startMode: 1
+  speaker:
+  - 
+  portrait1:
+  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
+  portrait2:
+  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
+  dialogueWords:
+  - Seriously, there's nothing.
+  typingSpeed: 0.02
+  initialDelay: 0.5
+  itemToPickUp: {fileID: 0}
+  interactItem: {fileID: 2012892327}
+  interactPopUp: {fileID: 721306696}
+  dialogueCanvas: {fileID: 1156892991}
+  charImage1: {fileID: 68017949}
+  charImage2: {fileID: 1539915506}
+  speakerText: {fileID: 1018543750}
+  dialogueText: {fileID: 1253282675}
+  portraitImage1: {fileID: 68017950}
+  portraitImage2: {fileID: 1539915507}
 --- !u!1 &2017480943
 GameObject:
   m_ObjectHideFlags: 0

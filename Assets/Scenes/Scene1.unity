@@ -44813,7 +44813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1565721970}
   - component: {fileID: 1565721972}
-  - component: {fileID: 1565721973}
+  - component: {fileID: 1565721976}
   - component: {fileID: 1565721974}
   - component: {fileID: 1565721975}
   m_Layer: 0
@@ -44884,36 +44884,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 7.8251896, y: 17.562586}
   m_EdgeRadius: 0
---- !u!114 &1565721973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1565721969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fdf32a9bacefae43accd92e224c7d73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueCanvas: {fileID: 1964342573}
-  interactPopUp: {fileID: 692158498}
-  interactItem: {fileID: 1565721969}
-  charImage1: {fileID: 1622749493}
-  charImage2: {fileID: 525876928}
-  speakerText: {fileID: 1284704137}
-  dialogueText: {fileID: 210661902}
-  portraitImage1: {fileID: 1622749495}
-  portraitImage2: {fileID: 525876930}
-  speaker:
-  - 
-  portrait1:
-  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
-  portrait2:
-  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
-  dialogueWords:
-  - You just came from that direction. dumbass. Go the other way.
-  typingSpeed: 0.02
 --- !u!114 &1565721974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44942,6 +44912,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: StreetInteract
   defaultActiveState: 0
+--- !u!114 &1565721976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565721969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764c515dd478e2a468e24b6b27ae0f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDialogue.Dialogue
+  startMode: 1
+  speaker:
+  - 
+  portrait1:
+  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
+  portrait2:
+  - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
+  dialogueWords:
+  - You just came from that direction. Go the other way.
+  typingSpeed: 0.02
+  initialDelay: 0.5
+  itemToPickUp: {fileID: 0}
+  interactItem: {fileID: 1565721969}
+  interactPopUp: {fileID: 692158498}
+  dialogueCanvas: {fileID: 1964342573}
+  charImage1: {fileID: 1622749493}
+  charImage2: {fileID: 525876928}
+  speakerText: {fileID: 1284704137}
+  dialogueText: {fileID: 210661902}
+  portraitImage1: {fileID: 1622749495}
+  portraitImage2: {fileID: 525876930}
 --- !u!1 &1572878622
 GameObject:
   m_ObjectHideFlags: 0
@@ -47246,15 +47249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764c515dd478e2a468e24b6b27ae0f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueCanvas: {fileID: 1964342573}
-  interactItem: {fileID: 1750941814}
-  interactPopUp: {fileID: 1086021227}
-  charImage1: {fileID: 1622749493}
-  charImage2: {fileID: 525876928}
-  speakerText: {fileID: 1284704137}
-  dialogueText: {fileID: 210661902}
-  portraitImage1: {fileID: 1622749495}
-  portraitImage2: {fileID: 525876930}
+  startMode: 0
   speaker:
   - 
   portrait1:
@@ -47263,6 +47258,18 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 13af165bcf196cc4ca87db92d3b92c24, type: 3}
   dialogueWords:
   - The water looks extra wet today...
+  typingSpeed: 0.02
+  initialDelay: 0.5
+  itemToPickUp: {fileID: 0}
+  interactItem: {fileID: 1750941814}
+  interactPopUp: {fileID: 1086021227}
+  dialogueCanvas: {fileID: 1964342573}
+  charImage1: {fileID: 1622749493}
+  charImage2: {fileID: 525876928}
+  speakerText: {fileID: 1284704137}
+  dialogueText: {fileID: 210661902}
+  portraitImage1: {fileID: 1622749495}
+  portraitImage2: {fileID: 525876930}
 --- !u!114 &1750941818
 MonoBehaviour:
   m_ObjectHideFlags: 0

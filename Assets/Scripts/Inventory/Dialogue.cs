@@ -1,47 +1,119 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+/*
+ * PURPOSE:
+ * Handles interaction dialogue, automatic trigger dialogue,
+ * and an optional inventory item reward.
+ *
+ * IMPORTANT VARIABLES:
+ * startMode       - Interact button or automatic trigger entry.
+ * speaker         - Speaker name for each dialogue line.
+ * dialogueWords   - Text for each dialogue line.
+ * portrait1/2     - Portrait sprites for each line.
+ * typingSpeed     - Delay between visible characters.
+ * initialDelay    - Delay before each line starts typing.
+ * itemToPickUp    - Optional reward after completing dialogue.
+ * interactPopUp   - Shared popup above the player.
+ * interactItem    - Existing event UI shown during dialogue.
+ * charImage1/2    - Existing character/speaker UI containers.
+ * dialogueCanvas  - Shared dialogue panel.
+ * dialogueID      - Completion ID used by the save system.
+ * uniqueID        - Tracks the rewarded object's used state.
+ * playerColliders - Player colliders currently inside the trigger.
+ * step            - Current dialogue line.
+ * dialogueActive  - Whether this component owns the dialogue.
+ *
+ * SETUP:
+ * Attach to an object with a 2D trigger and DialogueID.
+ * Preserve the existing DialogueID and Inspector references.
+ * Assign UniqueID when awarding an item.
+ * Remove the old DialogueOnEnter or DialoguePickUp component
+ * after transferring its data.
+ */
+
 namespace PlayerDialogue
 {
+    [RequireComponent(typeof(DialogueID))]
     public class Dialogue : MonoBehaviour
     {
-        [SerializeField] private GameObject dialogueCanvas, interactItem, interactPopUp, charImage1, charImage2;
-        [SerializeField] private TextMeshProUGUI speakerText, dialogueText;
-        [SerializeField] private Image portraitImage1, portraitImage2;
+        public enum StartMode
+        {
+            Interact,
+            TriggerEnter
+        }
+
+        [Header("Start Behaviour")]
+        [SerializeField] private StartMode startMode =
+            StartMode.Interact;
+
+        [Header("Dialogue Data")]
         [SerializeField] private string[] speaker;
-        [SerializeField] private Sprite[] portrait1, portrait2;
-        [SerializeField, TextArea(3, 10)] private string[] dialogueWords;
+        [SerializeField] private Sprite[] portrait1;
+        [SerializeField] private Sprite[] portrait2;
 
-        private bool dialogueActived = false, playerInRange = false, canContinueText = true;
-        private int step;
-        private float typingSpeed = 0.02f;
-        private Coroutine typingRoutine;
-        private TopDownMovement playerMovement;
+        [SerializeField, TextArea(3, 10)]
+        private string[] dialogueWords;
 
+        [Header("Typing")]
+        [SerializeField, Min(0f)] private float typingSpeed = 0.02f;
+        [SerializeField, Min(0f)] private float initialDelay = 0.5f;
+
+        [Header("Optional Item Reward")]
+        [SerializeField] private Item itemToPickUp;
+
+        [Header("Interaction and Event UI")]
+        [SerializeField] private GameObject interactItem;
+        [SerializeField] private GameObject interactPopUp;
+
+        [Header("Shared UI — Supplied by DialogueUIManager")]
+        [SerializeField] private GameObject dialogueCanvas;
+        [SerializeField] private GameObject charImage1;
+        [SerializeField] private GameObject charImage2;
+        [SerializeField] private TextMeshProUGUI speakerText;
+        [SerializeField] private TextMeshProUGUI dialogueText;
+        [SerializeField] private Image portraitImage1;
+        [SerializeField] private Image portraitImage2;
+
+        private DialogueUIManager ui;
         private DialogueID dialogueID;
+        private UniqueID uniqueID;
+
+        private readonly HashSet<Collider2D> playerColliders =
+            new HashSet<Collider2D>();
+
+        private Coroutine typingRoutine;
+        private int step;
+        private int startedFrame;
+        private bool dialogueActive;
+        private bool isTyping;
+        private bool pendingAutomaticStart;
+
+        private bool PlayerInRange => playerColliders.Count > 0;
+
+        private bool IsCompleted =>
+            ui != null &&
+            dialogueID != null &&
+            ui.HasCompletedDialogue(dialogueID);
+
+        private void Awake()
+        {
+            dialogueID = GetComponent<DialogueID>();
+            uniqueID = GetComponent<UniqueID>();
+        }
 
         private void Start()
         {
-            dialogueID = GetComponent<DialogueID>();
+            ConnectUI();
 
-            playerMovement = GameObject.Find("Player").GetComponent<TopDownMovement>();
-
-            var ui = DialogueUIManager.Instance;
-
-            dialogueCanvas = ui.dialogueCanvas;
-            charImage1 = ui.charImage1;
-            charImage2 = ui.charImage2;
-            speakerText = ui.speakerText;
-            dialogueText = ui.dialogueText;
-            portraitImage1 = ui.portraitImage1;
-            portraitImage2 = ui.portraitImage2;
-
+            // Restore the old lookup for the shared player popup.
             if (interactPopUp == null)
                 interactPopUp = GameObject.Find("InteractPopUp");
 
-            if (DialogueUIManager.Instance.HasCompletedDialogue(dialogueID))
+            if (IsCompleted)
             {
                 if (interactPopUp != null)
                     interactPopUp.SetActive(false);
@@ -51,152 +123,330 @@ namespace PlayerDialogue
             }
         }
 
+        private bool ConnectUI()
+        {
+            ui = DialogueUIManager.Instance;
+
+            if (ui == null)
+                return false;
+
+            dialogueCanvas = ui.dialogueCanvas;
+            charImage1 = ui.charImage1;
+            charImage2 = ui.charImage2;
+            speakerText = ui.speakerText;
+            dialogueText = ui.dialogueText;
+            portraitImage1 = ui.portraitImage1;
+            portraitImage2 = ui.portraitImage2;
+
+            return dialogueCanvas != null && dialogueText != null;
+        }
+
         private void Update()
         {
-            // Block dialogue input when game is paused or journal is open
-            if (GameUIController.isGamePaused || JournalManager.IsJournalOpen)
+            if (dialogueActive)
+            {
+                // Dialogue must still receive its own input.
+                if (GameUIController.isGamePaused ||
+                    TopDownMovement.isFading ||
+                    TopDownMovement.isSceneLoading)
+                    return;
+
+                if (Time.frameCount == startedFrame)
+                    return;
+
+                if (Input.GetButtonDown("Interact"))
+                {
+                    if (isTyping)
+                        FinishTyping();
+                    else
+                        AdvanceDialogue();
+                }
+
+                return;
+            }
+
+            if (!PlayerInRange ||
+                IsCompleted ||
+                GameUIController.IsGameplayBlocked)
                 return;
 
-            if (Input.GetButtonDown("Interact"))
+            if (startMode == StartMode.TriggerEnter)
             {
-                if (dialogueActived && canContinueText)
-                {
-                    if (typingRoutine != null)
-                        StopCoroutine(typingRoutine);
-
-                    if (step >= speaker.Length)
-                    {
-                        DialogueUIManager.Instance.MarkDialogueComplete(dialogueID);
-                        EndDialogue();
-                    }
-
-                    else
-                        ContinueDialogue();
-                }
-                else if (playerInRange && !dialogueActived)
-                {
-                    if (DialogueUIManager.Instance.HasCompletedDialogue(dialogueID))
-                        return;
-                    StartDialogue();
-                }
+                if (pendingAutomaticStart)
+                    TryStartDialogue();
+            }
+            else if (Input.GetButtonDown("Interact"))
+            {
+                TryStartDialogue();
             }
         }
 
-        private void StartDialogue()
+        private void TryStartDialogue()
         {
-            dialogueActived = true;
-            dialogueCanvas.SetActive(true);
-            interactItem.SetActive(true);
-            interactPopUp.SetActive(true);
-            charImage1.SetActive(true);
-            charImage2.SetActive(true);
+            if (GameUIController.IsGameplayBlocked)
+                return;
 
-            playerMovement.moveSpeed = 0f;
-            playerMovement.sprintSpeed = 0f;
+            if (!ConnectUI())
+                return;
+
+            if (IsCompleted)
+                return;
+
+            if (string.IsNullOrWhiteSpace(dialogueID.id))
+            {
+                Debug.LogError(
+                    "Dialogue needs a non-empty DialogueID.", this);
+
+                pendingAutomaticStart = false;
+                return;
+            }
+
+            if (dialogueWords == null || dialogueWords.Length == 0)
+            {
+                Debug.LogError("Dialogue has no lines.", this);
+                pendingAutomaticStart = false;
+                return;
+            }
+
+            if (itemToPickUp != null &&
+                (uniqueID == null ||
+                 string.IsNullOrWhiteSpace(uniqueID.id)))
+            {
+                Debug.LogError(
+                    "An item reward needs a valid UniqueID.", this);
+
+                pendingAutomaticStart = false;
+                return;
+            }
+
+            pendingAutomaticStart = false;
+            dialogueActive = true;
+            startedFrame = Time.frameCount;
+            step = 0;
+
             TopDownMovement.isInDialogue = true;
 
-            step = 0;
-            ContinueDialogue();
+            // Original UI activation behaviour.
+            dialogueCanvas.SetActive(true);
+
+            if (interactItem != null)
+                interactItem.SetActive(true);
+
+            if (interactPopUp != null)
+                interactPopUp.SetActive(true);
+
+            if (charImage1 != null)
+                charImage1.SetActive(true);
+
+            if (charImage2 != null)
+                charImage2.SetActive(true);
+
+            DisplayLine();
         }
 
-        private void ContinueDialogue()
+        private void DisplayLine()
         {
-            typingRoutine = StartCoroutine(Typing(dialogueWords[step]));
-            UpdateUIForDialogue(step);
-            step++;
+            if (speakerText != null)
+            {
+                speakerText.text =
+                    speaker != null && step < speaker.Length
+                    ? speaker[step]
+                    : "";
+            }
+
+            UpdatePortrait(portraitImage1, portrait1);
+            UpdatePortrait(portraitImage2, portrait2);
+
+            dialogueText.text = dialogueWords[step] ?? "";
+            dialogueText.maxVisibleCharacters = 0;
+            dialogueText.ForceMeshUpdate();
+
+            isTyping = true;
+            typingRoutine = StartCoroutine(TypeLine());
+        }
+
+        private void UpdatePortrait(Image image, Sprite[] portraits)
+        {
+            if (image == null)
+                return;
+
+            image.sprite =
+                portraits != null && step < portraits.Length
+                ? portraits[step]
+                : null;
+
+            // Do not hide speaker UI because a sprite is missing.
+            image.enabled = true;
+        }
+
+        private IEnumerator TypeLine()
+        {
+            if (initialDelay > 0f)
+                yield return new WaitForSeconds(initialDelay);
+
+            int characterCount = dialogueText.textInfo.characterCount;
+
+            if (typingSpeed <= 0f)
+            {
+                dialogueText.maxVisibleCharacters = int.MaxValue;
+            }
+            else
+            {
+                WaitForSeconds delay = new WaitForSeconds(typingSpeed);
+
+                for (int visible = 1; visible <= characterCount; visible++)
+                {
+                    dialogueText.maxVisibleCharacters = visible;
+                    yield return delay;
+                }
+            }
+
+            isTyping = false;
+            typingRoutine = null;
+        }
+
+        private void FinishTyping()
+        {
+            if (typingRoutine != null)
+                StopCoroutine(typingRoutine);
+
+            typingRoutine = null;
+            isTyping = false;
+
+            if (dialogueText != null)
+                dialogueText.maxVisibleCharacters = int.MaxValue;
+        }
+
+        private void AdvanceDialogue()
+        {
+            if (step + 1 < dialogueWords.Length)
+            {
+                step++;
+                DisplayLine();
+            }
+            else
+            {
+                CompleteDialogue();
+            }
+        }
+
+        private void CompleteDialogue()
+        {
+            if (itemToPickUp != null)
+            {
+                if (Inventory.instance == null ||
+                    !Inventory.instance.Add(itemToPickUp))
+                {
+                    EndDialogue();
+
+                    if (UIManager.instance != null)
+                        UIManager.instance.ShowMessage("Inventory full.");
+
+                    // Remain incomplete so the reward can be retried.
+                    return;
+                }
+
+                if (ObjectStateTracker.Instance != null)
+                    ObjectStateTracker.Instance.MarkUsed(uniqueID.id);
+            }
+
+            ui.MarkDialogueComplete(dialogueID);
+            EndDialogue();
+
+            if (itemToPickUp != null)
+            {
+                if (UIManager.instance != null)
+                {
+                    UIManager.instance.ShowMessage(
+                        $"Picked up {itemToPickUp.itemName}!");
+                }
+
+                gameObject.SetActive(false);
+            }
         }
 
         private void EndDialogue()
         {
-            dialogueCanvas.SetActive(false);
-            interactItem.SetActive(false);
-            interactPopUp.SetActive(false);
-            charImage1.SetActive(false);
-            charImage2.SetActive(false);
+            if (!dialogueActive)
+                return;
 
-            playerMovement.moveSpeed = 6f;
-            playerMovement.sprintSpeed = 14f;
+            if (typingRoutine != null)
+                StopCoroutine(typingRoutine);
+
+            typingRoutine = null;
+            isTyping = false;
+            dialogueActive = false;
+
+            // Original UI closing behaviour.
+            if (dialogueCanvas != null)
+                dialogueCanvas.SetActive(false);
+
+            if (interactItem != null)
+                interactItem.SetActive(false);
+
+            if (interactPopUp != null)
+                interactPopUp.SetActive(false);
+
+            if (charImage1 != null)
+                charImage1.SetActive(false);
+
+            if (charImage2 != null)
+                charImage2.SetActive(false);
+
+            if (dialogueText != null)
+                dialogueText.maxVisibleCharacters = int.MaxValue;
+
             TopDownMovement.isInDialogue = false;
-
-            step = 0;
-            dialogueActived = false;
-        }
-
-        private void UpdateUIForDialogue(int index)
-        {
-            speakerText.text = speaker[index];
-            portraitImage1.sprite = portrait1[index];
-            portraitImage2.sprite = portrait2[index];
-        }
-
-        private IEnumerator Typing(string line)
-        {
-            dialogueText.text = "";
-            canContinueText = false;
-
-            bool addingRichTextTag = false;
-            yield return new WaitForSeconds(0.5f);
-
-            foreach (char letter in line)
-            {
-                if (Input.GetButtonDown("Interact"))
-                {
-                    dialogueText.text = line;
-                    break;
-                }
-
-                if (letter == '<' || addingRichTextTag)
-                {
-                    addingRichTextTag = true;
-                    dialogueText.text += letter;
-                    if (letter == '>') addingRichTextTag = false;
-                }
-                else
-                {
-                    dialogueText.text += letter;
-                    yield return new WaitForSeconds(typingSpeed);
-                }
-            }
-
-            canContinueText = true;
+            GameUIController.BlockGameplayForThisFrame();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("Player"))
+            if (!collision.CompareTag("Player"))
+                return;
+
+            bool wasInRange = PlayerInRange;
+            playerColliders.Add(collision);
+
+            if (wasInRange)
+                return;
+
+            if (startMode == StartMode.TriggerEnter)
             {
-                playerInRange = true;
-                if (!DialogueUIManager.Instance.HasCompletedDialogue(dialogueID))
-                {
-                    interactPopUp.SetActive(true);
-                }
+                pendingAutomaticStart = true;
+            }
+            else if (!IsCompleted && interactPopUp != null)
+            {
+                interactPopUp.SetActive(true);
             }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (!collision.CompareTag("Player"))
+            if (!playerColliders.Remove(collision))
                 return;
 
-            playerInRange = false;
+            if (PlayerInRange)
+                return;
+
+            pendingAutomaticStart = false;
+            EndDialogue();
+
             if (interactPopUp != null)
                 interactPopUp.SetActive(false);
+        }
 
-            if (dialogueActived)
-            {
-                if (typingRoutine != null)
-                {
-                    StopCoroutine(typingRoutine);
-                    typingRoutine = null;
-                }
+        private void OnDisable()
+        {
+            bool wasUsingPopup = PlayerInRange || dialogueActive;
 
-                EndDialogue();
-            }
-            else
-            {
-                if (dialogueCanvas != null)
-                    dialogueCanvas.SetActive(false);
-            }
+            EndDialogue();
+            playerColliders.Clear();
+            pendingAutomaticStart = false;
+
+            // A distant disabled object should not hide the shared popup.
+            if (wasUsingPopup && interactPopUp != null)
+                interactPopUp.SetActive(false);
         }
     }
 }
