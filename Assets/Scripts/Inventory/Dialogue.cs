@@ -43,7 +43,8 @@ namespace PlayerDialogue
         public enum StartMode
         {
             Interact,
-            TriggerEnter
+            TriggerEnter,
+            Manual
         }
 
         [Header("Start Behaviour")]
@@ -165,6 +166,10 @@ namespace PlayerDialogue
                 return;
             }
 
+            // Manual dialogue starts only through another script.
+            if (startMode == StartMode.Manual)
+                return;
+
             if (!PlayerInRange ||
                 IsCompleted ||
                 GameUIController.IsGameplayBlocked)
@@ -181,10 +186,32 @@ namespace PlayerDialogue
             }
         }
 
-        private void TryStartDialogue()
+        public void PlayNoteReaction()
         {
-            if (GameUIController.IsGameplayBlocked)
+            TryStartDialogue(true);
+        }
+
+        private void TryStartDialogue(bool fromNoteReader = false)
+        {
+            if (!isActiveAndEnabled || dialogueActive)
                 return;
+
+            if (fromNoteReader)
+            {
+                // The note screen has just closed. Its frame input block
+                // must remain active for world interactions, but the
+                // reaction can start immediately.
+                if (startMode != StartMode.Manual ||
+                    GameUIController.isGamePaused ||
+                    TopDownMovement.isInDialogue ||
+                    TopDownMovement.isFading ||
+                    TopDownMovement.isSceneLoading)
+                    return;
+            }
+            else if (GameUIController.IsGameplayBlocked)
+            {
+                return;
+            }
 
             if (!ConnectUI())
                 return;
@@ -402,6 +429,9 @@ namespace PlayerDialogue
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            if (startMode == StartMode.Manual)
+                return;
+
             if (!collision.CompareTag("Player"))
                 return;
 
@@ -423,6 +453,9 @@ namespace PlayerDialogue
 
         private void OnTriggerExit2D(Collider2D collision)
         {
+            if (startMode == StartMode.Manual)
+                return;
+
             if (!playerColliders.Remove(collision))
                 return;
 

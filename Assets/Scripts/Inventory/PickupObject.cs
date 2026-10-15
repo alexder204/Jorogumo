@@ -1,23 +1,57 @@
 using UnityEngine;
+using PlayerDialogue;
+
+/*
+ * PURPOSE:
+ * Collects either an inventory item or a journal note.
+ * Optionally opens a collected note immediately and plays
+ * a character reaction after the player closes it.
+ *
+ * IMPORTANT VARIABLES:
+ * pickupType            - Item or journal note.
+ * item                  - Inventory item to collect.
+ * note                  - Journal note to collect.
+ * readImmediately       - Opens the note after collection.
+ * reactionAfterReading  - Optional separate Manual dialogue.
+ * interactPopUp         - Existing shared player popup.
+ * uniqueID              - Existing save-state identifier.
+ * isPlayerNearby        - Whether interaction is available.
+ *
+ * SETUP:
+ * Attach to the pickup object with its existing trigger.
+ * Keep its UniqueID and ID value unchanged.
+ * Assign either an item or a note based on pickupType.
+ * Put reaction dialogue on a separate active GameObject.
+ */
 
 public class PickupItem : MonoBehaviour
 {
-    [Header("Item Data")]
+    public enum PickupType
+    {
+        InventoryItem,
+        JournalNote
+    }
+
+    [Header("Pickup Type")]
+    [SerializeField] private PickupType pickupType =
+        PickupType.InventoryItem;
+
+    [Header("Inventory Item")]
     [SerializeField] private Item item;
 
-    [Header("UI References")]
+    [Header("Journal Note")]
+    [SerializeField] private JournalNote note;
+    [SerializeField] private bool readImmediately = true;
+    [SerializeField] private Dialogue reactionAfterReading;
+
+    [Header("Interaction")]
     public GameObject interactPopUp;
 
-    private bool isPlayerNearby = false;
-    private SpriteRenderer spriteRenderer;
-    private Collider2D collider2d;
-
+    private bool isPlayerNearby;
     private UniqueID uniqueID;
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        collider2d = GetComponent<Collider2D>();
         uniqueID = GetComponent<UniqueID>();
     }
 
@@ -25,43 +59,107 @@ public class PickupItem : MonoBehaviour
     {
         if (GameUIController.IsGameplayBlocked)
             return;
+
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
-        {
             AttemptPickup();
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player")) return;
+        if (!collision.CompareTag("Player"))
+            return;
 
         isPlayerNearby = true;
-        interactPopUp?.SetActive(true);
+
+        if (interactPopUp != null)
+            interactPopUp.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player")) return;
+        if (!collision.CompareTag("Player"))
+            return;
 
         isPlayerNearby = false;
-        interactPopUp?.SetActive(false);
+
+        if (interactPopUp != null)
+            interactPopUp.SetActive(false);
     }
 
     private void AttemptPickup()
     {
-        bool wasPickedUp = Inventory.instance.Add(item);
-        if (wasPickedUp)
-        {
-            if (uniqueID != null)
-                ObjectStateTracker.Instance.MarkPickedUp(uniqueID.id);
+        if (pickupType == PickupType.InventoryItem)
+            PickUpInventoryItem();
+        else
+            PickUpJournalNote();
+    }
 
+    private void PickUpInventoryItem()
+    {
+        if (item == null || Inventory.instance == null)
+        {
+            Debug.LogWarning(
+                "Pickup needs an item and an Inventory instance.", this);
+            return;
+        }
+
+        if (!Inventory.instance.Add(item))
+        {
+            Debug.Log("Inventory full.", this);
+            return;
+        }
+
+        MarkPickedUp();
+
+        if (UIManager.instance != null)
             UIManager.instance.ShowMessage($"Picked up {item.itemName}!");
 
-            gameObject.SetActive(false);
+        DisablePickup();
+    }
+
+    private void PickUpJournalNote()
+    {
+        if (note == null || JournalManager.instance == null)
+        {
+            Debug.LogWarning(
+                "Pickup needs a note and a JournalManager.", this);
+            return;
+        }
+
+        if (readImmediately)
+        {
+            if (!JournalManager.instance.TryReadPickedUpNote(
+                    note, reactionAfterReading))
+                return;
         }
         else
         {
-            Debug.Log("Inventory full, cannot pick up item.");
+            JournalManager.instance.AddNote(note);
+
+            if (UIManager.instance != null)
+                UIManager.instance.ShowMessage(
+                    $"Note added: {note.noteTitle}");
         }
+
+        MarkPickedUp();
+        DisablePickup();
+    }
+
+    private void MarkPickedUp()
+    {
+        if (uniqueID != null &&
+            ObjectStateTracker.Instance != null)
+        {
+            ObjectStateTracker.Instance.MarkPickedUp(uniqueID.id);
+        }
+    }
+
+    private void DisablePickup()
+    {
+        if (interactPopUp != null)
+            interactPopUp.SetActive(false);
+
+        isPlayerNearby = false;
+        gameObject.SetActive(false);
     }
 }

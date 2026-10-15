@@ -31,7 +31,8 @@ public class GameUIController : MonoBehaviour
         Inventory,
         Journal,
         Settings,
-        QuitConfirmation
+        QuitConfirmation,
+        NoteReading
     }
 
     public static GameUIController Instance { get; private set; }
@@ -139,6 +140,16 @@ public class GameUIController : MonoBehaviour
         }
     }
 
+    public bool OpenNoteReading()
+    {
+        if (currentScreen != MenuScreen.None || !CanOpenMenu)
+            return false;
+
+        OpenScreen(MenuScreen.NoteReading);
+
+        return currentScreen == MenuScreen.NoteReading;
+    }
+
     private void HandleEscape()
     {
         switch (currentScreen)
@@ -152,7 +163,14 @@ public class GameUIController : MonoBehaviour
                 break;
 
             case MenuScreen.QuitConfirmation:
-                // Keep the original requirement to choose Yes or No.
+                // Require the player to choose Yes or No.
+                break;
+
+            case MenuScreen.NoteReading:
+                if (journalManager != null)
+                    journalManager.ClosePickedUpNote();
+                else
+                    CloseMenus();
                 break;
 
             default:
@@ -223,6 +241,10 @@ public class GameUIController : MonoBehaviour
                 return journalManager != null &&
                     journalManager.journalUI != null;
 
+            case MenuScreen.NoteReading:
+                return journalManager != null &&
+                    journalManager.CanDisplayPickedUpNote;
+
             default:
                 return false;
         }
@@ -233,12 +255,20 @@ public class GameUIController : MonoBehaviour
         if (currentScreen == MenuScreen.None)
             return;
 
+        bool wasReadingNote =
+            currentScreen == MenuScreen.NoteReading;
+
         currentScreen = MenuScreen.None;
         BlockGameplayForThisFrame();
 
         UpdatePanels();
         Time.timeScale = previousTimeScale;
         UnpauseAllAudio();
+
+        // General resets, including loading a save, cancel the reaction.
+        // ClosePickedUpNote captures it before calling this method.
+        if (wasReadingNote && journalManager != null)
+            journalManager.CancelPickedUpNote();
     }
 
     public void OpenSettings()
@@ -330,6 +360,12 @@ public class GameUIController : MonoBehaviour
         if (journalManager != null)
             journalManager.SetVisible(
                 currentScreen == MenuScreen.Journal);
+
+        if (journalManager != null)
+        {
+            journalManager.SetNoteReadingVisible(
+                currentScreen == MenuScreen.NoteReading);
+        }
     }
 
     private void PauseAllAudio()
