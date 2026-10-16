@@ -92,8 +92,11 @@ public class GameUIController : MonoBehaviour
     // Prevents world input before this controller's Update runs.
     private static bool MenuKeyPressed =>
         Input.GetKeyDown(KeyCode.I) ||
-        Input.GetKeyDown(KeyCode.J) ||
-        Input.GetKeyDown(KeyCode.Escape);
+        Input.GetKeyDown(KeyCode.Escape) ||
+        (Input.GetKeyDown(KeyCode.J) &&
+        Instance != null &&
+        Instance.journalManager != null &&
+        Instance.journalManager.HasNotes);
 
     private static bool CanOpenMenu =>
         !TopDownMovement.isInDialogue &&
@@ -209,6 +212,11 @@ public class GameUIController : MonoBehaviour
     private void OpenScreen(MenuScreen screen)
     {
         if (currentScreen != MenuScreen.None || !CanOpenMenu)
+            return;
+
+        // Guard the opening path, including keyboard and UI button access.
+        if (screen == MenuScreen.Journal &&
+            (journalManager == null || !journalManager.HasNotes))
             return;
 
         if (!HasPanel(screen))

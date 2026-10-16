@@ -15,3 +15,7 @@ MonoBehaviour:
   noteID: notetest1
   noteTitle: NoteTest
   noteText: This is a test of something.
+  paperSprite: {fileID: 21300000, guid: d8a0076bd7a16d64c98b8296fd3bf9eb, type: 3}
+  writingFont: {fileID: 11400000, guid: 3f9b4a73ee067ba459e7b6dab800d69b, type: 2}
+  titleFontSize: 55
+  bodyFontSize: 45

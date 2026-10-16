@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8515f95b2dd0299438b0f9127df3e39d
+guid: caaddc85e20162446922a766d62d025c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8978235283241549524
-    second: EventSpiderUi_0
+      213: -7630095825655696243
+    second: DialogueSpiderUi_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,11 +109,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EventSpiderUi_0
+      name: DialogueSpiderUi_0
       rect:
         serializedVersion: 2
         x: 10
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4debd7fdb69199c70800000000000000
-      internalID: 8978235283241549524
+      spriteID: d84f995c5447c1690800000000000000
+      internalID: -7630095825655696243
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      EventSpiderUi_0: 8978235283241549524
+      DialogueSpiderUi_0: -7630095825655696243
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

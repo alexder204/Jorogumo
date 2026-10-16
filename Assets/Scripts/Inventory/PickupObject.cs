@@ -126,6 +126,8 @@ public class PickupItem : MonoBehaviour
             return;
         }
 
+        bool wasLocked = !JournalManager.instance.HasNotes;
+
         if (readImmediately)
         {
             if (!JournalManager.instance.TryReadPickedUpNote(
@@ -136,10 +138,13 @@ public class PickupItem : MonoBehaviour
         {
             JournalManager.instance.AddNote(note);
 
-            if (UIManager.instance != null)
+            if (!wasLocked && UIManager.instance != null)
                 UIManager.instance.ShowMessage(
                     $"Note added: {note.noteTitle}");
         }
+
+        if (wasLocked && JournalManager.instance.HasNotes)
+            JournalManager.instance.NotifyFirstNoteCollected();
 
         MarkPickedUp();
         DisablePickup();

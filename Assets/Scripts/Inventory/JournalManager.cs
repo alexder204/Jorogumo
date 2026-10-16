@@ -2,10 +2,11 @@
 using TMPro;
 using System.Collections.Generic;
 using PlayerDialogue;
+using UnityEngine.UI;
 
 /*
  * PURPOSE:
- * Stores collected notes and displays the normal journal.
+ * Stores collected notes and displays two journal pages instantly.
  * Also displays a newly collected note and optionally starts
  * a character reaction when the player closes it.
  *
@@ -22,7 +23,10 @@ using PlayerDialogue;
  *
  * SETUP:
  * Keep this component on an always-active object.
- * Keep existing journal references assigned.
+ * Existing noteTitleText/noteContentText fields are the RIGHT page.
+ * Assign separate left-page texts and optional note containers.
+ * Note containers must contain only their paper and texts, not the book.
+ * Keep the pickup reading panel separate from the journal.
  * Assign the separate reading panel and its text fields.
  * Connect its Close button to ClosePickedUpNote().
  */
@@ -34,16 +38,98 @@ public class JournalManager : MonoBehaviour
     public static bool IsJournalOpen =>
         GameUIController.isJournalOpen;
 
-    [Header("Existing Journal Display")]
+    [Header("Journal Panel")]
     public GameObject journalUI;
+    [Header("Right Page - Existing Fields")]
+    public GameObject rightNoteContainer;
     public TextMeshProUGUI noteTitleText;
     public TextMeshProUGUI noteContentText;
+
+    [Header("Left Page")]
+    public GameObject leftNoteContainer;
+    public TextMeshProUGUI leftNoteTitleText;
+    public TextMeshProUGUI leftNoteContentText;
 
     [Header("Pickup Note Reading")]
     public GameObject noteReadingUI;
     public TextMeshProUGUI readingTitleText;
     public TextMeshProUGUI readingContentText;
     public TextMeshProUGUI readingStatusText;
+
+    [Header("Page Arrows")]
+    [SerializeField] private JournalArrow leftArrow;
+    [SerializeField] private JournalArrow rightArrow;
+
+    [Header("Note Paper Images")]
+    [SerializeField] private Image leftPaperImage;
+    [SerializeField] private Image rightPaperImage;
+    [SerializeField] private Image readingPaperImage;
+
+    // Remember each Image's original paper as its fallback.
+    private Sprite defaultLeftPaper;
+    private Sprite defaultRightPaper;
+    private Sprite defaultReadingPaper;
+    private bool paperDefaultsCached;
+
+    // Store a separate fallback for every text field before applying note fonts.
+    private readonly Dictionary<TMP_Text, TMP_FontAsset> defaultFonts =
+        new Dictionary<TMP_Text, TMP_FontAsset>();
+
+    private void CacheFont(TMP_Text text)
+    {
+        if (text != null && !defaultFonts.ContainsKey(text))
+            defaultFonts.Add(text, text.font);
+    }
+
+    private void CacheFontDefaults()
+    {
+        CacheFont(noteTitleText);
+        CacheFont(noteContentText);
+        CacheFont(leftNoteTitleText);
+        CacheFont(leftNoteContentText);
+        CacheFont(readingTitleText);
+        CacheFont(readingContentText);
+    }
+
+    private void ApplyNoteFont(TMP_Text text, JournalNote note)
+    {
+        if (text == null)
+            return;
+
+        CacheFont(text);
+        text.font = note != null && note.writingFont != null
+            ? note.writingFont
+            : defaultFonts[text];
+    }
+
+    public bool HasNotes => collectedNotes.Count > 0;
+
+    private bool journalUnlockHintPending;
+    private int journalUnlockQueuedFrame;
+
+    // Called by a successful world pickup only. AddNote stays silent for saves.
+    public void NotifyFirstNoteCollected()
+    {
+        if (collectedNotes.Count != 1)
+            return;
+
+        journalUnlockHintPending = true;
+        journalUnlockQueuedFrame = Time.frameCount;
+    }
+
+    private void LateUpdate()
+    {
+        if (!journalUnlockHintPending || !HasNotes ||
+            isReadingPickedUpNote ||
+            Time.frameCount == journalUnlockQueuedFrame ||
+            GameUIController.IsGameplayBlocked ||
+            UIManager.instance == null)
+            return;
+
+        journalUnlockHintPending = false;
+        UIManager.instance.ShowMessage(
+            "You can now open the journal using J.");
+    }
 
     private int currentPageIndex;
     private int readingOpenedFrame;
@@ -67,7 +153,38 @@ public class JournalManager : MonoBehaviour
         }
 
         instance = this;
+        CacheFontDefaults();
+        CachePaperDefaults();
         SetNoteReadingVisible(false);
+    }
+
+    private void CachePaperDefaults()
+    {
+        if (paperDefaultsCached)
+            return;
+
+        defaultLeftPaper =
+            leftPaperImage != null ? leftPaperImage.sprite : null;
+
+        defaultRightPaper =
+            rightPaperImage != null ? rightPaperImage.sprite : null;
+
+        defaultReadingPaper =
+            readingPaperImage != null ? readingPaperImage.sprite : null;
+
+        paperDefaultsCached = true;
+    }
+
+    private void ApplyPaper(
+        Image paperImage, JournalNote note, Sprite fallback)
+    {
+        if (paperImage == null)
+            return;
+
+        paperImage.sprite =
+            note != null && note.paperSprite != null
+            ? note.paperSprite
+            : fallback;
     }
 
     private void Update()
@@ -101,21 +218,7 @@ public class JournalManager : MonoBehaviour
         if (!visible)
             return;
 
-        if (collectedNotes.Count > 0)
-        {
-            currentPageIndex = Mathf.Clamp(
-                currentPageIndex, 0, collectedNotes.Count - 1);
-
-            DisplayNote(collectedNotes[currentPageIndex]);
-        }
-        else
-        {
-            if (noteTitleText != null)
-                noteTitleText.text = "";
-
-            if (noteContentText != null)
-                noteContentText.text = "";
-        }
+        RefreshJournalPages();
     }
 
     public void ToggleJournal()
@@ -126,11 +229,11 @@ public class JournalManager : MonoBehaviour
 
     public void FlipForward()
     {
-        if (currentPageIndex >= collectedNotes.Count - 1)
+        if (currentPageIndex >= collectedNotes.Count)
             return;
 
         currentPageIndex++;
-        DisplayNote(collectedNotes[currentPageIndex]);
+        RefreshJournalPages();
     }
 
     public void FlipBackward()
@@ -139,7 +242,7 @@ public class JournalManager : MonoBehaviour
             return;
 
         currentPageIndex--;
-        DisplayNote(collectedNotes[currentPageIndex]);
+        RefreshJournalPages();
     }
 
     public void AddNote(JournalNote note)
@@ -150,10 +253,9 @@ public class JournalManager : MonoBehaviour
         collectedNotes.Add(note);
 
         if (collectedNotes.Count == 1)
-        {
             currentPageIndex = 0;
-            DisplayNote(note);
-        }
+
+        RefreshJournalPages();
     }
 
     public bool TryReadPickedUpNote(
@@ -171,8 +273,15 @@ public class JournalManager : MonoBehaviour
             return false;
         }
 
+        CacheFontDefaults();
+        ApplyNoteFont(readingTitleText, note);
+        ApplyNoteFont(readingContentText, note);
+
         readingTitleText.text = note.noteTitle;
         readingContentText.text = note.noteText;
+
+        CachePaperDefaults();
+        ApplyPaper(readingPaperImage, note, defaultReadingPaper);
 
         if (readingStatusText != null)
             readingStatusText.text = $"Note added: {note.noteTitle}";
@@ -209,8 +318,11 @@ public class JournalManager : MonoBehaviour
 
         // Closing the menu clears pendingReaction, so capture it first.
         Dialogue reaction = pendingReaction;
+        bool showUnlockHint = journalUnlockHintPending;
 
         GameUIController.Instance.CloseMenus();
+
+        journalUnlockHintPending = showUnlockHint;
 
         // Starts synchronously: world input stays blocked throughout
         // the transition from reading to dialogue.
@@ -220,6 +332,7 @@ public class JournalManager : MonoBehaviour
 
     public void CancelPickedUpNote()
     {
+        journalUnlockHintPending = false;
         pendingReaction = null;
         isReadingPickedUpNote = false;
         SetNoteReadingVisible(false);
@@ -243,11 +356,7 @@ public class JournalManager : MonoBehaviour
         collectedNotes.Clear();
         currentPageIndex = 0;
 
-        if (noteTitleText != null)
-            noteTitleText.text = "";
-
-        if (noteContentText != null)
-            noteContentText.text = "";
+        RefreshJournalPages();
     }
 
     public JournalNote GetNoteByID(string id)
@@ -255,16 +364,72 @@ public class JournalManager : MonoBehaviour
         return AllNoteDatabase.GetNoteByID(id);
     }
 
+    // Retained for callers that select a collected note directly.
+    // The selected note appears on the right with its predecessor on the left.
     public void DisplayNote(JournalNote note)
     {
         if (note == null)
             return;
 
-        if (noteTitleText != null)
-            noteTitleText.text = note.noteTitle;
+        int index = collectedNotes.IndexOf(note);
+        if (index >= 0)
+        {
+            currentPageIndex = index;
+            RefreshJournalPages();
+            return;
+        }
 
-        if (noteContentText != null)
-            noteContentText.text = note.noteText;
+        // Preserve the previous ability to display a note before collecting it.
+        SetPage(leftNoteContainer, leftNoteTitleText, leftNoteContentText, null);
+        SetPage(rightNoteContainer, noteTitleText, noteContentText, note);
+    }
+
+    private void RefreshJournalPages()
+    {
+        // Index 0: blank / note 1. Index Count: last note / blank.
+        currentPageIndex = Mathf.Clamp(currentPageIndex, 0, collectedNotes.Count);
+
+        JournalNote left = currentPageIndex > 0
+            ? collectedNotes[currentPageIndex - 1]
+            : null;
+        JournalNote right = currentPageIndex < collectedNotes.Count
+            ? collectedNotes[currentPageIndex]
+            : null;
+
+        SetPage(leftNoteContainer, leftNoteTitleText, leftNoteContentText, left);
+        SetPage(rightNoteContainer, noteTitleText, noteContentText, right);
+
+        if (leftArrow != null)
+            leftArrow.SetAvailable(currentPageIndex > 0);
+
+        if (rightArrow != null)
+            rightArrow.SetAvailable(currentPageIndex < collectedNotes.Count);
+    }
+
+    private void SetPage(
+        GameObject container, TextMeshProUGUI title,
+        TextMeshProUGUI content, JournalNote note)
+    {
+        CachePaperDefaults();
+
+        CacheFontDefaults();
+        ApplyNoteFont(title, note);
+        ApplyNoteFont(content, note);
+
+        if (title != null)
+            title.text = note != null ? note.noteTitle : "";
+
+        if (content != null)
+            content.text = note != null ? note.noteText : "";
+
+        if (container == leftNoteContainer)
+            ApplyPaper(leftPaperImage, note, defaultLeftPaper);
+
+        if (container == rightNoteContainer)
+            ApplyPaper(rightPaperImage, note, defaultRightPaper);
+
+        if (container != null)
+            container.SetActive(note != null);
     }
 
     private void OnDestroy()

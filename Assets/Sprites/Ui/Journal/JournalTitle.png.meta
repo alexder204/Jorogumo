@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 481a072e77ae9d246977450e0bed6a1e
+guid: 9691a0fd418862b46afdf524702d3d50
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4436689568754471503
-    second: EventSpiderUi2_0
+      213: -3614747394025767937
+    second: JournalTitle_0
+  - first:
+      213: 970146633451579956
+    second: JournalTitle_1
+  - first:
+      213: -2218639781152882142
+    second: JournalTitle_2
+  - first:
+      213: 8567844991030643312
+    second: JournalTitle_3
+  - first:
+      213: -2599909695220346874
+    second: JournalTitle_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +63,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,7 +109,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -113,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EventSpiderUi2_0
+      name: JournalTitle_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 12
-        width: 44
-        height: 40
+        x: 105
+        y: 156
+        width: 108
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +140,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f429a4cf7a9429d30800000000000000
-      internalID: 4436689568754471503
+      spriteID: ffb335a9566d5ddc0800000000000000
+      internalID: -3614747394025767937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JournalTitle_1
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 144
+        width: 79
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43a2cea1937a67d00800000000000000
+      internalID: 970146633451579956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JournalTitle_2
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 133
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22205d7bfdec531e0800000000000000
+      internalID: -2218639781152882142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JournalTitle_3
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 144
+        width: 79
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07acdfcff9917e670800000000000000
+      internalID: 8567844991030643312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JournalTitle_4
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 156
+        width: 108
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6001c4838e34bebd0800000000000000
+      internalID: -2599909695220346874
       vertices: []
       indices: 
       edges: []
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      EventSpiderUi2_0: 4436689568754471503
+      JournalTitle_0: -3614747394025767937
+      JournalTitle_1: 970146633451579956
+      JournalTitle_2: -2218639781152882142
+      JournalTitle_3: 8567844991030643312
+      JournalTitle_4: -2599909695220346874
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
