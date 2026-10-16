@@ -54,6 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 7028106256050688046}
   amountText: {fileID: 2597320006390412576}
+  itemDetailsUI: {fileID: 0}
 --- !u!114 &-6058192590406567005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 115, y: 25}
+  m_AnchoredPosition: {x: 95, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2311588570432495792
@@ -201,6 +202,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -269,7 +271,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9111444948423344871
 CanvasRenderer:
@@ -299,7 +301,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ce77867eebf58d045be9734f70a1777a, type: 3}
+  m_Sprite: {fileID: 7751154378869643173, guid: 7ca23fc77607d4c42b399710ff571297, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

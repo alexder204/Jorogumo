@@ -11,11 +11,10 @@ public class SaveMenuUI : MonoBehaviour
     public SaveSystem saveSystem;
     public bool isSaveMode = true;
 
-    [Header("Slot Labels (0–9 + autosave)")]
+    [Header("Slot Labels (0ï¿½9 + autosave)")]
     public List<TextMeshProUGUI> manualSlotLabels; // Assign 10 labels in Inspector
     public TextMeshProUGUI autosaveLabel;          // Assign autosave TMP label
 
-    private const int manualSlotCount = 10; // slots 0–9
     private const int autosaveSlot = 99;
 
     private void Update()
@@ -82,17 +81,29 @@ public class SaveMenuUI : MonoBehaviour
 
     public void UpdateSlotLabels()
     {
-        // Manual slots: 0–9
-        for (int i = 0; i < manualSlotCount; i++)
+        if (manualSlotLabels != null)
         {
-            string path = Application.persistentDataPath + $"/saveslot{i}.json";
-            string status = File.Exists(path) ? "Saved" : "Empty";
-            manualSlotLabels[i].text = $"Slot {i} - {status}";
+            for (int i = 0; i < manualSlotLabels.Count; i++)
+            {
+                if (manualSlotLabels[i] == null)
+                    continue;
+
+                string path =
+                    Application.persistentDataPath + $"/saveslot{i}.json";
+
+                string status = File.Exists(path) ? "Saved" : "Empty";
+                manualSlotLabels[i].text = $"Slot {i + 1} - {status}";
+            }
         }
 
-        // Autosave slot (99)
-        string autoPath = Application.persistentDataPath + "/saveslot99.json";
-        autosaveLabel.text = $"Autosave - {(File.Exists(autoPath) ? "Saved" : "Empty")}";
+        if (autosaveLabel != null)
+        {
+            string autoPath =
+                Application.persistentDataPath + "/saveslot99.json";
+
+            autosaveLabel.text =
+                $"Autosave - {(File.Exists(autoPath) ? "Saved" : "Empty")}";
+        }
     }
 
     public void SetSaveMode(bool saveMode)

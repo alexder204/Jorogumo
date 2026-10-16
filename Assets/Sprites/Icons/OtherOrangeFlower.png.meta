@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: efbb9cda588e12745baa3452e73c0b68
+guid: 91fd3374c7fb7a3428619b654ad7a18a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6727513793500611562
-    second: stock-vector-triangle-silhouette-icon-with-rounded-corners-triangle-shape-vector-2258019643_0
+      213: -4154322247221958346
+    second: OtherOrangeFlower_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stock-vector-triangle-silhouette-icon-with-rounded-corners-triangle-shape-vector-2258019643_0
+      name: OtherOrangeFlower_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 1500
-        height: 1600
+        width: 63
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ae3052bb62eec5d50800000000000000
-      internalID: 6727513793500611562
+      spriteID: 63925db3de1e856c0800000000000000
+      internalID: -4154322247221958346
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      stock-vector-triangle-silhouette-icon-with-rounded-corners-triangle-shape-vector-2258019643_0: 6727513793500611562
+      OtherOrangeFlower_0: -4154322247221958346
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

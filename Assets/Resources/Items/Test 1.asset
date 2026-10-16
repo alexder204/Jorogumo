@@ -15,7 +15,7 @@ MonoBehaviour:
   id: test1
   itemName: Test1
   description: Key or sm shit.
-  icon: {fileID: 21300000, guid: 5c4f55efc21877949831a8647add7cb3, type: 3}
+  icon: {fileID: 21300000, guid: 87dc945454f89604eb8b80acac11f22d, type: 3}
   stackAmount: 1
   currentAmount: 0
   isUsable: 1
