@@ -104,8 +104,7 @@ public class SaveMenuUI : MonoBehaviour
 
                 if (manualSlotLabels[i] != null)
                 {
-                    manualSlotLabels[i].text =
-                        $"Slot {i + 1} - {(exists ? "Saved" : "Empty")}";
+                    manualSlotLabels[i].text = GetSlotDescription(i, $"Slot {i + 1}");
                 }
 
                 if (manualSlotRows != null &&
@@ -122,8 +121,7 @@ public class SaveMenuUI : MonoBehaviour
 
         if (autosaveLabel != null)
         {
-            autosaveLabel.text =
-                $"Autosave - {(autosaveExists ? "Saved" : "Empty")}";
+            autosaveLabel.text = GetSlotDescription(autosaveSlot, "Autosave");
         }
 
         if (autosaveRow != null)
@@ -139,5 +137,53 @@ public class SaveMenuUI : MonoBehaviour
     {
         isSaveMode = saveMode;
         UpdateSlotLabels();
+    }
+
+    private string GetSlotDescription(int slot, string title)
+    {
+        string path = Application.persistentDataPath +
+            $"/saveslot{slot}.json";
+
+        if (!File.Exists(path))
+            return $"{title} - Empty";
+
+        try
+        {
+            SaveData data = JsonUtility.FromJson<SaveData>(
+                File.ReadAllText(path));
+
+            if (data == null)
+                return $"{title} - Unreadable save";
+
+            string location =
+                !string.IsNullOrWhiteSpace(data.sceneDisplayName)
+                ? data.sceneDisplayName
+                : data.sceneName;
+
+            System.DateTimeOffset savedTime;
+
+            if (!System.DateTimeOffset.TryParse(
+                    data.savedAtUtc,
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    System.Globalization.DateTimeStyles.None,
+                    out savedTime))
+            {
+                // Older saves do not contain a timestamp.
+                savedTime = new System.DateTimeOffset(
+                    File.GetLastWriteTimeUtc(path));
+            }
+
+            string date = savedTime.ToLocalTime().ToString(
+                "yyyy-MM-dd  HH:mm");
+
+            return $"{title}\n{location}\n{date}";
+        }
+        catch (System.Exception exception)
+        {
+            Debug.LogWarning(
+                $"Cannot read slot {slot}: {exception.Message}", this);
+
+            return $"{title} - Unreadable save";
+        }
     }
 }

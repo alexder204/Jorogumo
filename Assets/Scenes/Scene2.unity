@@ -68435,8 +68435,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -70902,8 +70902,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -86161,8 +86161,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -94390,6 +94390,15 @@ MonoBehaviour:
   scenesWithoutAutosave:
   - MainMenu
   - Cutscene1
+  sceneDisplayNames:
+  - sceneName: Scene1
+    displayName: Bridge
+  - sceneName: Scene2
+    displayName: Park
+  - sceneName: Scene3
+    displayName: Park With A Nice Bench
+  - sceneName: Scene4
+    displayName: SchoolYard
 --- !u!114 &1714442272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100896,8 +100905,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

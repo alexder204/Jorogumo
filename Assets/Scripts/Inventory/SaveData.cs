@@ -28,6 +28,9 @@ public class SaveData
 {
     public string sceneName;
 
+    public string sceneDisplayName;
+    public string savedAtUtc;
+
     public float playerPosX;
     public float playerPosY;
     public float playerPosZ;

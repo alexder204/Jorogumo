@@ -206,9 +206,39 @@ public class SaveSystem : MonoBehaviour
             });
         }
 
+        data.sceneDisplayName = GetSceneDisplayName(data.sceneName);
+        data.savedAtUtc = System.DateTime.UtcNow.ToString(
+            "O", System.Globalization.CultureInfo.InvariantCulture);
+
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(GetSlotPath(slot), json);
         Debug.Log($"SaveSystem: Game saved to slot {slot}");
+    }
+
+    [System.Serializable]
+    public class SceneDisplayName
+    {
+        public string sceneName;
+        public string displayName;
+    }
+
+    [Header("Save Location Names")]
+    [SerializeField] private List<SceneDisplayName> sceneDisplayNames =
+        new List<SceneDisplayName>();
+
+    private string GetSceneDisplayName(string sceneName)
+    {
+        foreach (var entry in sceneDisplayNames)
+        {
+            if (entry != null &&
+                entry.sceneName == sceneName &&
+                !string.IsNullOrWhiteSpace(entry.displayName))
+            {
+                return entry.displayName;
+            }
+        }
+
+        return sceneName;
     }
 
     // -------------------------------------------------------------------------
