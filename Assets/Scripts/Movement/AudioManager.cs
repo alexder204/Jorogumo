@@ -38,6 +38,16 @@ public class AudioManager : MonoBehaviour
 
     private Coroutine transitionCoroutine;
 
+    private void Start()
+    {
+        if (mainMixer == null)
+            return;
+
+        SetMasterVolume(PlayerPrefs.GetFloat("MasterVolume", 0f));
+        SetMusicVolume(PlayerPrefs.GetFloat("MusicVolume", 0f));
+        SetSFXVolume(PlayerPrefs.GetFloat("SFXVolume", 0f));
+    }
+
     void Awake()
     {
         // Singleton setup
@@ -187,19 +197,18 @@ public class AudioManager : MonoBehaviour
         transitionCoroutine = null;
     }
 
-    // Optional: Volume setters for menus or sliders
     public void SetMasterVolume(float volume)
     {
-        mainMixer.SetFloat("MasterVolume", volume);
+        mainMixer.SetFloat("MasterVolume", Mathf.Clamp(volume, -80f, 0f));
     }
 
     public void SetMusicVolume(float volume)
     {
-        mainMixer.SetFloat("MusicVolume", volume);
+        mainMixer.SetFloat("MusicVolume", Mathf.Clamp(volume, -80f, 0f));
     }
 
     public void SetSFXVolume(float volume)
     {
-        mainMixer.SetFloat("SFXVolume", volume);
+        mainMixer.SetFloat("SFXVolume", Mathf.Clamp(volume, -80f, 0f));
     }
 }
