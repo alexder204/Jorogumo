@@ -14,6 +14,10 @@ public class SaveMenuUI : MonoBehaviour
     [Header("Slot Labels (0�9 + autosave)")]
     public List<TextMeshProUGUI> manualSlotLabels; // Assign 10 labels in Inspector
     public TextMeshProUGUI autosaveLabel;          // Assign autosave TMP label
+    [Tooltip("The whole autosave row, including its button and label.")]
+    [SerializeField] private GameObject autosaveRow;
+    [Header("Manual Slot Rows — Same Order As Labels")]
+    [SerializeField] private List<GameObject> manualSlotRows = new List<GameObject>();
 
     private const int autosaveSlot = 99;
 
@@ -47,6 +51,15 @@ public class SaveMenuUI : MonoBehaviour
         if (slot == autosaveSlot && isSaveMode)
         {
             Debug.LogWarning("Autosave slot is read-only!");
+            return;
+        }
+
+        // Ignore load requests if the file no longer exists.
+        if (!isSaveMode &&
+            !File.Exists(Application.persistentDataPath +
+                $"/saveslot{slot}.json"))
+        {
+            UpdateSlotLabels();
             return;
         }
 
@@ -85,25 +98,41 @@ public class SaveMenuUI : MonoBehaviour
         {
             for (int i = 0; i < manualSlotLabels.Count; i++)
             {
-                if (manualSlotLabels[i] == null)
-                    continue;
+                bool exists = File.Exists(
+                    Application.persistentDataPath +
+                    $"/saveslot{i}.json");
 
-                string path =
-                    Application.persistentDataPath + $"/saveslot{i}.json";
+                if (manualSlotLabels[i] != null)
+                {
+                    manualSlotLabels[i].text =
+                        $"Slot {i + 1} - {(exists ? "Saved" : "Empty")}";
+                }
 
-                string status = File.Exists(path) ? "Saved" : "Empty";
-                manualSlotLabels[i].text = $"Slot {i + 1} - {status}";
+                if (manualSlotRows != null &&
+                    i < manualSlotRows.Count &&
+                    manualSlotRows[i] != null)
+                {
+                    manualSlotRows[i].SetActive(isSaveMode || exists);
+                }
             }
         }
 
+        bool autosaveExists = File.Exists(
+            Application.persistentDataPath + "/saveslot99.json");
+
         if (autosaveLabel != null)
         {
-            string autoPath =
-                Application.persistentDataPath + "/saveslot99.json";
-
             autosaveLabel.text =
-                $"Autosave - {(File.Exists(autoPath) ? "Saved" : "Empty")}";
+                $"Autosave - {(autosaveExists ? "Saved" : "Empty")}";
         }
+
+        if (autosaveRow != null)
+            autosaveRow.SetActive(!isSaveMode && autosaveExists);
+    }
+
+    private void OnEnable()
+    {
+        UpdateSlotLabels();
     }
 
     public void SetSaveMode(bool saveMode)
