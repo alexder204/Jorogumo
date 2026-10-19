@@ -212,6 +212,13 @@ public class SaveSystem : MonoBehaviour
 
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(GetSlotPath(slot), json);
+        // Remove the previous image so a failed capture cannot show an old location.
+        string previewPath = GetPreviewPath(slot);
+
+        if (File.Exists(previewPath))
+            File.Delete(previewPath);
+
+        StartCoroutine(CaptureSavePreview(slot, json));
         Debug.Log($"SaveSystem: Game saved to slot {slot}");
     }
 
@@ -239,6 +246,101 @@ public class SaveSystem : MonoBehaviour
         }
 
         return sceneName;
+    }
+
+    private bool capturingPreview;
+
+    private string GetPreviewPath(int slot) =>
+        Application.persistentDataPath + $"/saveslot{slot}.png";
+
+    private IEnumerator CaptureSavePreview(int slot, string savedJson)
+    {
+        if (capturingPreview)
+            yield break;
+
+        capturingPreview = true;
+
+        var hiddenCanvases = new List<Canvas>();
+        Texture2D screenshot = null;
+        Texture2D thumbnail = null;
+        RenderTexture target = null;
+
+        RenderTexture previousTarget = RenderTexture.active;
+        var sceneHandle = SceneManager.GetActiveScene().handle;
+
+        try
+        {
+            // Hide rendering only. Do not deactivate menu GameObjects.
+            foreach (Canvas canvas in
+                    FindObjectsByType<Canvas>(FindObjectsInactive.Exclude))
+            {
+                if (canvas.enabled)
+                {
+                    hiddenCanvases.Add(canvas);
+                    canvas.enabled = false;
+                }
+            }
+
+            yield return new WaitForEndOfFrame();
+
+            try
+            {
+                string savePath = GetSlotPath(slot);
+
+                // Cancel if the scene changed, or this save was deleted/replaced.
+                if (SceneManager.GetActiveScene().handle != sceneHandle ||
+                    !File.Exists(savePath) ||
+                    File.ReadAllText(savePath) != savedJson)
+                {
+                    yield break;
+                }
+
+                screenshot = ScreenCapture.CaptureScreenshotAsTexture();
+
+                // Small preview, preserving the screen's aspect ratio.
+                int width = Mathf.Min(480, screenshot.width);
+                int height = Mathf.Max(1, Mathf.RoundToInt(
+                    width * (float)screenshot.height / screenshot.width));
+
+                target = RenderTexture.GetTemporary(
+                    width, height, 0, RenderTextureFormat.ARGB32);
+
+                Graphics.Blit(screenshot, target);
+                RenderTexture.active = target;
+
+                thumbnail = new Texture2D(
+                    width, height, TextureFormat.RGB24, false);
+
+                thumbnail.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+                thumbnail.Apply();
+
+                File.WriteAllBytes(
+                    GetPreviewPath(slot), thumbnail.EncodeToPNG());
+            }
+            finally
+            {
+                RenderTexture.active = previousTarget;
+
+                if (target != null)
+                    RenderTexture.ReleaseTemporary(target);
+
+                if (screenshot != null)
+                    Destroy(screenshot);
+
+                if (thumbnail != null)
+                    Destroy(thumbnail);
+            }
+        }
+        finally
+        {
+            foreach (Canvas canvas in hiddenCanvases)
+            {
+                if (canvas != null)
+                    canvas.enabled = true;
+            }
+
+            capturingPreview = false;
+        }
     }
 
     // -------------------------------------------------------------------------
@@ -424,5 +526,10 @@ public class SaveSystem : MonoBehaviour
         {
             Debug.LogWarning($"SaveSystem: No save at slot {slot} to delete");
         }
+
+        string previewPath = GetPreviewPath(slot);
+
+        if (File.Exists(previewPath))
+            File.Delete(previewPath);
     }
 }

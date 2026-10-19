@@ -3,6 +3,7 @@ using TMPro;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class SaveMenuUI : MonoBehaviour
 {
@@ -19,12 +20,85 @@ public class SaveMenuUI : MonoBehaviour
     [Header("Manual Slot Rows — Same Order As Labels")]
     [SerializeField] private List<GameObject> manualSlotRows = new List<GameObject>();
 
+    [Header("Screenshot Previews — Same Order As Slot Labels")]
+    [SerializeField] private List<RawImage> manualSlotPreviews =
+        new List<RawImage>();
+
+    [SerializeField] private RawImage autosavePreview;
+    [SerializeField] private Texture placeholderPreview;
+
+    private readonly Dictionary<RawImage, Texture2D> loadedPreviews =
+        new Dictionary<RawImage, Texture2D>();
+
     private const int autosaveSlot = 99;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             saveSlotsMenu.SetActive(false);
+    }
+
+    private void UpdatePreview(RawImage image, int slot)
+    {
+        if (image == null)
+            return;
+
+        image.texture = placeholderPreview;
+
+        if (loadedPreviews.TryGetValue(image, out Texture2D previous))
+        {
+            if (previous != null)
+                Destroy(previous);
+
+            loadedPreviews.Remove(image);
+        }
+
+        string basePath =
+            Application.persistentDataPath + $"/saveslot{slot}";
+
+        if (!File.Exists(basePath + ".json") ||
+            !File.Exists(basePath + ".png"))
+            return;
+
+        Texture2D texture = null;
+
+        try
+        {
+            texture = new Texture2D(2, 2, TextureFormat.RGB24, false);
+
+            if (!texture.LoadImage(File.ReadAllBytes(basePath + ".png")))
+            {
+                Destroy(texture);
+                return;
+            }
+
+            texture.filterMode = FilterMode.Point;
+            image.texture = texture;
+            loadedPreviews[image] = texture;
+        }
+        catch (System.Exception exception)
+        {
+            if (texture != null)
+                Destroy(texture);
+
+            Debug.LogWarning(
+                $"Cannot read preview for slot {slot}: {exception.Message}",
+                this);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        foreach (var entry in loadedPreviews)
+        {
+            if (entry.Key != null)
+                entry.Key.texture = null;
+
+            if (entry.Value != null)
+                Destroy(entry.Value);
+        }
+
+        loadedPreviews.Clear();
     }
 
     public void ToggleSaveSlots()
@@ -126,6 +200,11 @@ public class SaveMenuUI : MonoBehaviour
 
         if (autosaveRow != null)
             autosaveRow.SetActive(!isSaveMode && autosaveExists);
+
+        for (int i = 0; i < manualSlotPreviews.Count; i++)
+            UpdatePreview(manualSlotPreviews[i], i);
+
+        UpdatePreview(autosavePreview, autosaveSlot);
     }
 
     private void OnEnable()
