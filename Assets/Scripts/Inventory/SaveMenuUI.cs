@@ -29,6 +29,9 @@ public class SaveMenuUI : MonoBehaviour
 
     private readonly Dictionary<RawImage, Texture2D> loadedPreviews =
         new Dictionary<RawImage, Texture2D>();
+    
+    [Header("Delete Buttons — Same Order As Slot Labels")]
+    [SerializeField] private List<GameObject> manualDeleteButtons = new List<GameObject>();
 
     private const int autosaveSlot = 99;
 
@@ -175,6 +178,13 @@ public class SaveMenuUI : MonoBehaviour
                 bool exists = File.Exists(
                     Application.persistentDataPath +
                     $"/saveslot{i}.json");
+
+                if (manualDeleteButtons != null &&
+                    i < manualDeleteButtons.Count &&
+                    manualDeleteButtons[i] != null)
+                {
+                    manualDeleteButtons[i].SetActive(exists);
+                }
 
                 if (manualSlotLabels[i] != null)
                 {
