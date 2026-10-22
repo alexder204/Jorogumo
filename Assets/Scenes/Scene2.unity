@@ -106843,7 +106843,7 @@ MonoBehaviour:
   surfaces:
   - surfaceName: Grass
     footstepClips:
-    - {fileID: 8300000, guid: 580dcc221afd3014aa0a5df63543c5a2, type: 3}
+    - {fileID: 8300000, guid: 41f47f0cba7b1ee42a4956a4c0f4a0b3, type: 3}
   surfaceType: Grass
   priority: 1
 --- !u!4 &2109329518
