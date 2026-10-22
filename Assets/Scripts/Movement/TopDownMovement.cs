@@ -15,8 +15,13 @@ public class TopDownMovement : MonoBehaviour
     private Vector2 movement;
     private Animator animator;
     private string lastDirection = "Down";
-    private string currentSurface = "Default";
     private float footstepTimer;
+
+    [Tooltip("Optional point at the player's feet. Uses the player position if empty.")]
+    [SerializeField] private Transform footstepPoint;
+
+    [Tooltip("Sounds used outside any footstep zone.")]
+    [SerializeField] private AudioClip[] defaultFootstepClips;
 
     public static bool isInDialogue = false;
     public static bool isFading = false;
@@ -147,6 +152,19 @@ public class TopDownMovement : MonoBehaviour
 
     void HandleFootsteps()
     {
+        if (footstepSource == null)
+            return;
+
+        bool hasDefaultClips =
+            defaultFootstepClips != null &&
+            defaultFootstepClips.Length > 0;
+
+        if (!hasDefaultClips && GetCurrentFootstepZone() == null)
+        {
+            footstepSource.Stop();
+            footstepTimer = 0f;
+            return;
+        }
         if (movement.magnitude <= 0.01f)
         {
             footstepSource.Stop();
@@ -166,38 +184,54 @@ public class TopDownMovement : MonoBehaviour
 
     void PlayFootstep()
     {
+        if (footstepSource == null)
+            return;
+
         FootstepZone zone = GetCurrentFootstepZone();
-        if (zone != null)
+
+        AudioClip clip = zone != null
+            ? zone.GetRandomClip(zone.surfaceType)
+            : null;
+
+        if (clip == null &&
+            defaultFootstepClips != null &&
+            defaultFootstepClips.Length > 0)
         {
-            AudioClip clip = zone.GetRandomClip(currentSurface);
-            if (clip != null)
-                footstepSource.PlayOneShot(clip);
+            clip = defaultFootstepClips[
+                Random.Range(0, defaultFootstepClips.Length)];
         }
+
+        if (clip != null)
+            footstepSource.PlayOneShot(clip);
     }
 
     FootstepZone GetCurrentFootstepZone()
     {
-        Collider2D[] colliders = Physics2D.OverlapPointAll(transform.position);
-        foreach (var col in colliders)
+        Vector2 point = footstepPoint != null
+            ? (Vector2)footstepPoint.position
+            : (Vector2)transform.position;
+
+        Collider2D[] colliders = Physics2D.OverlapPointAll(point);
+        FootstepZone selectedZone = null;
+
+        foreach (Collider2D area in colliders)
         {
-            FootstepZone zone = col.GetComponent<FootstepZone>();
-            if (zone != null && zone.surfaceType == currentSurface)
-                return zone;
+            if (!area.isTrigger)
+                continue;
+
+            FootstepZone zone =
+                area.GetComponentInParent<FootstepZone>();
+
+            if (zone == null || !zone.isActiveAndEnabled)
+                continue;
+
+            if (selectedZone == null ||
+                zone.priority > selectedZone.priority)
+            {
+                selectedZone = zone;
+            }
         }
-        return null;
-    }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        FootstepZone zone = other.GetComponent<FootstepZone>();
-        if (zone != null)
-            currentSurface = zone.surfaceType;
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        FootstepZone zone = other.GetComponent<FootstepZone>();
-        if (zone != null && currentSurface == zone.surfaceType)
-            currentSurface = "Default";
+        return selectedZone;
     }
 }

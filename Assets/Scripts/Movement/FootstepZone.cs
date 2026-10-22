@@ -5,32 +5,50 @@ public class FootstepZone : MonoBehaviour
     [System.Serializable]
     public class SurfaceAudio
     {
-        public string surfaceName;              // e.g. "Grass", "Pavement"
-        public AudioClip[] footstepClips;       // Footstep sounds for this surface
+        public string surfaceName;
+        public AudioClip[] footstepClips;
     }
 
     public SurfaceAudio[] surfaces;
 
-    // This method is called by the player to get footstep sounds
+    [Tooltip("Must match a surface name in the list above.")]
+    public string surfaceType;
+
+    [Tooltip("Higher priority wins when zones overlap.")]
+    public int priority;
+
     public AudioClip GetRandomClip(string surfaceName)
     {
-        foreach (var surface in surfaces)
+        if (surfaces == null)
+            return null;
+
+        foreach (SurfaceAudio surface in surfaces)
         {
-            if (surface.surfaceName == surfaceName && surface.footstepClips.Length > 0)
-            {
-                return surface.footstepClips[Random.Range(0, surface.footstepClips.Length)];
-            }
+            if (surface == null ||
+                surface.surfaceName != surfaceName ||
+                surface.footstepClips == null ||
+                surface.footstepClips.Length == 0)
+                continue;
+
+            return surface.footstepClips[
+                Random.Range(0, surface.footstepClips.Length)];
         }
 
         return null;
     }
 
-    [Tooltip("The type of surface this zone represents (must match one of the SurfaceAudio names above).")]
-    public string surfaceType;
-
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(transform.position, GetComponent<Collider2D>().bounds.size);
+
+        foreach (Collider2D area in
+            GetComponentsInChildren<Collider2D>())
+        {
+            // Only draw colliders belonging to this zone.
+            if (area.GetComponentInParent<FootstepZone>() != this)
+                continue;
+
+            Gizmos.DrawWireCube(area.bounds.center, area.bounds.size);
+        }
     }
 }
