@@ -62,6 +62,9 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        musicSourceA.ignoreListenerPause = true;
+        musicSourceB.ignoreListenerPause = true;
+
         // Build scene-to-music mapping
         sceneMusicMap = new Dictionary<string, SceneMusic>();
         foreach (var entry in sceneMusicArray)

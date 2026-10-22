@@ -10,6 +10,43 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider SFXSlider;
 
+    public enum SettingsTab
+    {
+        Audio,
+        Controls
+    }
+
+    [Header("Tab Panels")]
+    [SerializeField] private GameObject audioPanel;
+    [SerializeField] private GameObject controlsPanel;
+
+    [Header("Opening Tab")]
+    [SerializeField] private SettingsTab openingTab = SettingsTab.Audio;
+
+    private void OnEnable()
+    {
+        ShowTab(openingTab);
+    }
+
+    private void ShowTab(SettingsTab tab)
+    {
+        if (audioPanel != null)
+            audioPanel.SetActive(tab == SettingsTab.Audio);
+
+        if (controlsPanel != null)
+            controlsPanel.SetActive(tab == SettingsTab.Controls);
+    }
+
+    public void ShowAudioTab()
+    {
+        ShowTab(SettingsTab.Audio);
+    }
+
+    public void ShowControlsTab()
+    {
+        ShowTab(SettingsTab.Controls);
+    }
+
     private bool initialized;
 
     private void Start()
