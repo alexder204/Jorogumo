@@ -92681,8 +92681,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb55c71f9ddf5d040ae8d0baa2c42f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDialogue.MoveScenes2D
-  newLevel: Scene4
-  spawnPointID: Scene4 Spawn1
+  newLevel: Cutscene2
+  spawnPointID: 
 --- !u!1 &1471998184
 GameObject:
   m_ObjectHideFlags: 0
