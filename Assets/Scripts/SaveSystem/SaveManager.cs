@@ -120,13 +120,18 @@ public class SaveSystem : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded_Autosave;
     }
 
-    private void OnSceneLoaded_Autosave(Scene scene, LoadSceneMode mode)
+    private void OnSceneLoaded_Autosave(
+        Scene scene, LoadSceneMode mode)
     {
-        if (!autosaveOnSceneChange) return;
-        if (GameUIController.isGamePaused || isLoading) return;
+        // Cancel a pending autosave from the scene we just left.
+        if (autosaveCoroutine != null)
+        {
+            StopCoroutine(autosaveCoroutine);
+            autosaveCoroutine = null;
+        }
 
-        if (scenesWithoutAutosave.Contains(scene.name))
-        return;
+        if (!autosaveOnSceneChange)
+            return;
 
         if (suppressNextSceneAutosave)
         {
@@ -134,32 +139,55 @@ public class SaveSystem : MonoBehaviour
             return;
         }
 
-        if (autosaveCoroutine != null)
-            StopCoroutine(autosaveCoroutine);
+        if (CutsceneScene.IsActive ||
+            scenesWithoutAutosave.Contains(scene.name) ||
+            GameUIController.isGamePaused ||
+            isLoading)
+            return;
 
-        autosaveCoroutine = StartCoroutine(AutosaveAfterSceneLoad());
+        autosaveCoroutine =
+            StartCoroutine(AutosaveAfterSceneLoad());
     }
 
     private IEnumerator AutosaveAfterSceneLoad()
     {
-        yield return new WaitForSecondsRealtime(autosaveAfterSceneLoadDelay);
+        Scene expectedScene = SceneManager.GetActiveScene();
 
-        FindPlayerTransform(force: true);
-        int safetyFrames = 120;
-        while (playerTransform == null && safetyFrames-- > 0)
+        yield return new WaitForSecondsRealtime(
+            autosaveAfterSceneLoadDelay);
+
+        float deadline = Time.realtimeSinceStartup + 30f;
+
+        while (true)
         {
-            yield return null;
+            if (SceneManager.GetActiveScene() != expectedScene ||
+                CutsceneScene.IsActive ||
+                scenesWithoutAutosave.Contains(expectedScene.name) ||
+                isLoading)
+                yield break;
+
             FindPlayerTransform(force: true);
-        }
 
-        if (playerTransform == null)
-        {
-            Debug.LogWarning("SaveSystem: Autosave skipped (player not found).");
-            yield break;
+            bool ready =
+                playerTransform != null &&
+                !TopDownMovement.isSceneLoading &&
+                !TopDownMovement.isFading &&
+                !GameUIController.isGamePaused;
+
+            if (ready)
+                break;
+
+            if (Time.realtimeSinceStartup >= deadline)
+            {
+                Debug.LogWarning(
+                    "SaveSystem: Autosave skipped; scene was not ready.");
+                yield break;
+            }
+
+            yield return null;
         }
 
         SaveGame(autosaveSlot);
-        Debug.Log($"SaveSystem: Autosaved on scene load '{SceneManager.GetActiveScene().name}' at {System.DateTime.Now}");
     }
 
     // -------------------------------------------------------------------------
@@ -168,6 +196,9 @@ public class SaveSystem : MonoBehaviour
 
     public void SaveGame(int slot)
     {
+        if (CutsceneScene.IsActive)
+            return;
+
         FindPlayerTransform(force: true);
         if (playerTransform == null) return;
 

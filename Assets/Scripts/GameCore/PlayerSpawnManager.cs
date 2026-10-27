@@ -6,6 +6,9 @@ public class PlayerSpawnManager : MonoBehaviour
 {
     public Transform playerTransform;
 
+    [Tooltip("Enable on the gameplay manager. Disable on the cutscene manager.")]
+    [SerializeField] private bool skipDuringCutscenes = true;
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -18,6 +21,9 @@ public class PlayerSpawnManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (skipDuringCutscenes && CutsceneScene.IsActive)
+            return;
+
         StartCoroutine(MovePlayerToSpawnPoint());
     }
 
@@ -33,6 +39,7 @@ public class PlayerSpawnManager : MonoBehaviour
             if (playerObj == null)
             {
                 Debug.LogWarning("[PlayerSpawnManager] Player tag not found.");
+                TopDownMovement.isSceneLoading = false;
                 yield break;
             }
             playerTransform = playerObj.transform;

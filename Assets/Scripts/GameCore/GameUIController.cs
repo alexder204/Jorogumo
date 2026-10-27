@@ -128,6 +128,9 @@ public class GameUIController : MonoBehaviour
 
     private void Update()
     {
+        if (CutsceneScene.IsActive)
+            return;
+            
         // Priority prevents two shortcuts opening screens together.
         if (Input.GetKeyDown(KeyCode.Escape))
         {

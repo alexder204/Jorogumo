@@ -1129,6 +1129,7 @@ GameObject:
   - component: {fileID: 1259674403}
   - component: {fileID: 1259674402}
   - component: {fileID: 1259674401}
+  - component: {fileID: 1259674404}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1334,6 +1335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 841638302}
+  skipDuringCutscenes: 0
 --- !u!4 &1259674403
 Transform:
   m_ObjectHideFlags: 0
@@ -1349,6 +1351,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1259674404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259674400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3330921a2cf0de346ad707f4b051f145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CutsceneScene
+  cutsceneFadePanel: {fileID: 1430386812}
 --- !u!1 &1291367877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,6 +1889,7 @@ GameObject:
   - component: {fileID: 1424303162}
   - component: {fileID: 1424303161}
   - component: {fileID: 1424303160}
+  - component: {fileID: 1424303163}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1942,6 +1958,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1424303163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424303159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bd04ae4d54f3345860ec6a675498de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PersistBetweenScenes
+  objectIndex: 2
 --- !u!1 &1430386811
 GameObject:
   m_ObjectHideFlags: 0

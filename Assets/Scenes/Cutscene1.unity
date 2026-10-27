@@ -1036,6 +1036,7 @@ GameObject:
   - component: {fileID: 929321833}
   - component: {fileID: 929321832}
   - component: {fileID: 929321834}
+  - component: {fileID: 929321835}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1056,6 +1057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1473577020}
+  skipDuringCutscenes: 0
 --- !u!4 &929321833
 Transform:
   m_ObjectHideFlags: 0
@@ -1134,6 +1136,19 @@ MonoBehaviour:
   cgFadeSpeed: 0.75
   advanceKey: 32
   toggleDialogueKey: 304
+--- !u!114 &929321835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929321831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3330921a2cf0de346ad707f4b051f145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CutsceneScene
+  cutsceneFadePanel: {fileID: 804276256}
 --- !u!1 &974838253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,6 +1235,7 @@ GameObject:
   - component: {fileID: 1141191916}
   - component: {fileID: 1141191915}
   - component: {fileID: 1141191914}
+  - component: {fileID: 1141191917}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1288,6 +1304,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1141191917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141191913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bd04ae4d54f3345860ec6a675498de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PersistBetweenScenes
+  objectIndex: 2
 --- !u!1 &1296505754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,6 +1867,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
