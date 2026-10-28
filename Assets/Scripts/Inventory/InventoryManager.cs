@@ -4,8 +4,8 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public static Inventory instance;
-    public List<Item> items = new List<Item>();  // List of items in the inventory
-    public int maxSpace = 20;  // Maximum number of different items
+    public List<Item> items = new List<Item>();
+    public int maxSpace = 20;
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
 

@@ -31,8 +31,7 @@ public class SaveSystem : MonoBehaviour
     // Helpers
     // -------------------------------------------------------------------------
 
-    private string GetSlotPath(int slot) =>
-        Application.persistentDataPath + $"/saveslot{slot}.json";
+    private string GetSlotPath(int slot) => Application.persistentDataPath + $"/saveslot{slot}.json";
 
     private void FindPlayerTransform(bool force = false)
     {
@@ -139,48 +138,35 @@ public class SaveSystem : MonoBehaviour
             return;
         }
 
-        if (CutsceneScene.IsActive ||
-            scenesWithoutAutosave.Contains(scene.name) ||
-            GameUIController.isGamePaused ||
-            isLoading)
+        if (CutsceneScene.IsActive || scenesWithoutAutosave.Contains(scene.name) || GameUIController.isGamePaused || isLoading)
             return;
 
-        autosaveCoroutine =
-            StartCoroutine(AutosaveAfterSceneLoad());
+        autosaveCoroutine = StartCoroutine(AutosaveAfterSceneLoad());
     }
 
     private IEnumerator AutosaveAfterSceneLoad()
     {
         Scene expectedScene = SceneManager.GetActiveScene();
 
-        yield return new WaitForSecondsRealtime(
-            autosaveAfterSceneLoadDelay);
+        yield return new WaitForSecondsRealtime(autosaveAfterSceneLoadDelay);
 
         float deadline = Time.realtimeSinceStartup + 30f;
 
         while (true)
         {
-            if (SceneManager.GetActiveScene() != expectedScene ||
-                CutsceneScene.IsActive ||
-                scenesWithoutAutosave.Contains(expectedScene.name) ||
-                isLoading)
+            if (SceneManager.GetActiveScene() != expectedScene || CutsceneScene.IsActive || scenesWithoutAutosave.Contains(expectedScene.name) || isLoading)
                 yield break;
 
             FindPlayerTransform(force: true);
 
-            bool ready =
-                playerTransform != null &&
-                !TopDownMovement.isSceneLoading &&
-                !TopDownMovement.isFading &&
-                !GameUIController.isGamePaused;
+            bool ready = playerTransform != null && !TopDownMovement.isSceneLoading && !TopDownMovement.isFading && !GameUIController.isGamePaused;
 
             if (ready)
                 break;
 
             if (Time.realtimeSinceStartup >= deadline)
             {
-                Debug.LogWarning(
-                    "SaveSystem: Autosave skipped; scene was not ready.");
+                Debug.LogWarning("SaveSystem: Autosave skipped; scene was not ready.");
                 yield break;
             }
 
@@ -238,8 +224,7 @@ public class SaveSystem : MonoBehaviour
         }
 
         data.sceneDisplayName = GetSceneDisplayName(data.sceneName);
-        data.savedAtUtc = System.DateTime.UtcNow.ToString(
-            "O", System.Globalization.CultureInfo.InvariantCulture);
+        data.savedAtUtc = System.DateTime.UtcNow.ToString("O", System.Globalization.CultureInfo.InvariantCulture);
 
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(GetSlotPath(slot), json);
@@ -261,16 +246,13 @@ public class SaveSystem : MonoBehaviour
     }
 
     [Header("Save Location Names")]
-    [SerializeField] private List<SceneDisplayName> sceneDisplayNames =
-        new List<SceneDisplayName>();
+    [SerializeField] private List<SceneDisplayName> sceneDisplayNames = new List<SceneDisplayName>();
 
     private string GetSceneDisplayName(string sceneName)
     {
         foreach (var entry in sceneDisplayNames)
         {
-            if (entry != null &&
-                entry.sceneName == sceneName &&
-                !string.IsNullOrWhiteSpace(entry.displayName))
+            if (entry != null && entry.sceneName == sceneName && !string.IsNullOrWhiteSpace(entry.displayName))
             {
                 return entry.displayName;
             }
@@ -281,8 +263,7 @@ public class SaveSystem : MonoBehaviour
 
     private bool capturingPreview;
 
-    private string GetPreviewPath(int slot) =>
-        Application.persistentDataPath + $"/saveslot{slot}.png";
+    private string GetPreviewPath(int slot) => Application.persistentDataPath + $"/saveslot{slot}.png";
 
     private IEnumerator CaptureSavePreview(int slot, string savedJson)
     {
@@ -302,8 +283,7 @@ public class SaveSystem : MonoBehaviour
         try
         {
             // Hide rendering only. Do not deactivate menu GameObjects.
-            foreach (Canvas canvas in
-                    FindObjectsByType<Canvas>(FindObjectsInactive.Exclude))
+            foreach (Canvas canvas in FindObjectsByType<Canvas>(FindObjectsInactive.Exclude))
             {
                 if (canvas.enabled)
                 {
@@ -319,9 +299,7 @@ public class SaveSystem : MonoBehaviour
                 string savePath = GetSlotPath(slot);
 
                 // Cancel if the scene changed, or this save was deleted/replaced.
-                if (SceneManager.GetActiveScene().handle != sceneHandle ||
-                    !File.Exists(savePath) ||
-                    File.ReadAllText(savePath) != savedJson)
+                if (SceneManager.GetActiveScene().handle != sceneHandle || !File.Exists(savePath) || File.ReadAllText(savePath) != savedJson)
                 {
                     yield break;
                 }
@@ -330,23 +308,19 @@ public class SaveSystem : MonoBehaviour
 
                 // Small preview, preserving the screen's aspect ratio.
                 int width = Mathf.Min(480, screenshot.width);
-                int height = Mathf.Max(1, Mathf.RoundToInt(
-                    width * (float)screenshot.height / screenshot.width));
+                int height = Mathf.Max(1, Mathf.RoundToInt(width * (float)screenshot.height / screenshot.width));
 
-                target = RenderTexture.GetTemporary(
-                    width, height, 0, RenderTextureFormat.ARGB32);
+                target = RenderTexture.GetTemporary(width, height, 0, RenderTextureFormat.ARGB32);
 
                 Graphics.Blit(screenshot, target);
                 RenderTexture.active = target;
 
-                thumbnail = new Texture2D(
-                    width, height, TextureFormat.RGB24, false);
+                thumbnail = new Texture2D(width, height, TextureFormat.RGB24, false);
 
                 thumbnail.ReadPixels(new Rect(0, 0, width, height), 0, 0);
                 thumbnail.Apply();
 
-                File.WriteAllBytes(
-                    GetPreviewPath(slot), thumbnail.EncodeToPNG());
+                File.WriteAllBytes(GetPreviewPath(slot), thumbnail.EncodeToPNG());
             }
             finally
             {
@@ -505,8 +479,7 @@ public class SaveSystem : MonoBehaviour
         foreach (var obj in uniqueObjects)
         {
             var dialogue = obj.GetComponent<DialogueID>();
-            if (dialogue != null &&
-                DialogueUIManager.Instance.HasCompletedDialogue(dialogue))
+            if (dialogue != null && DialogueUIManager.Instance.HasCompletedDialogue(dialogue))
             {
                 obj.gameObject.SetActive(false);
                 Debug.Log($"SaveSystem: Disabling completed dialogue object '{dialogue.id}'");
@@ -530,9 +503,7 @@ public class SaveSystem : MonoBehaviour
 
         if (JournalManager.instance.GetCollectedNotes().Count > 0)
         {
-            JournalManager.instance.DisplayNote(
-                JournalManager.instance.GetCollectedNotes()[0]
-            );
+            JournalManager.instance.DisplayNote(JournalManager.instance.GetCollectedNotes()[0]);
         }
 
         Debug.Log($"SaveSystem: Game loaded from slot {slot}");

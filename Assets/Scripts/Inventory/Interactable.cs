@@ -13,7 +13,6 @@ public class Interactable : MonoBehaviour
     {
         Door,
         LockedDoor
-        // Add more types easily later!
     }
 
     private void Start()
@@ -23,8 +22,7 @@ public class Interactable : MonoBehaviour
 
         uniqueID = GetComponent<UniqueID>();
 
-        if (uniqueID != null && ObjectStateTracker.Instance != null &&
-            ObjectStateTracker.Instance.HasBeenUsed(uniqueID.id))
+        if (uniqueID != null && ObjectStateTracker.Instance != null && ObjectStateTracker.Instance.HasBeenUsed(uniqueID.id))
         {
             gameObject.SetActive(false);
         }
@@ -63,9 +61,7 @@ public class Interactable : MonoBehaviour
     {
         if (type == InteractableType.LockedDoor)
         {
-            // ✅ Use ID comparison instead of instance reference
-            Item itemToUse = Inventory.instance.items.Find(item =>
-                item.id == requiredItem.id && item.currentAmount > 0);
+            Item itemToUse = Inventory.instance.items.Find(item => item.id == requiredItem.id && item.currentAmount > 0);
 
             if (itemToUse != null)
             {
@@ -85,7 +81,7 @@ public class Interactable : MonoBehaviour
 
     private void ShowMessage(string message)
     {
-        UIManager.instance.ShowMessage(message);  // Use UIManager to show message
+        UIManager.instance.ShowMessage(message);
     }
 
     private void PerformAction()

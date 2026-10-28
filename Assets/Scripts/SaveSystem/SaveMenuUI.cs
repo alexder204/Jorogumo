@@ -12,23 +12,21 @@ public class SaveMenuUI : MonoBehaviour
     public SaveSystem saveSystem;
     public bool isSaveMode = true;
 
-    [Header("Slot Labels (0�9 + autosave)")]
-    public List<TextMeshProUGUI> manualSlotLabels; // Assign 10 labels in Inspector
-    public TextMeshProUGUI autosaveLabel;          // Assign autosave TMP label
+    [Header("Slot Labels")]
+    public List<TextMeshProUGUI> manualSlotLabels;
+    public TextMeshProUGUI autosaveLabel;
     [Tooltip("The whole autosave row, including its button and label.")]
     [SerializeField] private GameObject autosaveRow;
     [Header("Manual Slot Rows — Same Order As Labels")]
     [SerializeField] private List<GameObject> manualSlotRows = new List<GameObject>();
 
     [Header("Screenshot Previews — Same Order As Slot Labels")]
-    [SerializeField] private List<RawImage> manualSlotPreviews =
-        new List<RawImage>();
+    [SerializeField] private List<RawImage> manualSlotPreviews = new List<RawImage>();
 
     [SerializeField] private RawImage autosavePreview;
     [SerializeField] private Texture placeholderPreview;
 
-    private readonly Dictionary<RawImage, Texture2D> loadedPreviews =
-        new Dictionary<RawImage, Texture2D>();
+    private readonly Dictionary<RawImage, Texture2D> loadedPreviews = new Dictionary<RawImage, Texture2D>();
     
     [Header("Delete Buttons — Same Order As Slot Labels")]
     [SerializeField] private List<GameObject> manualDeleteButtons = new List<GameObject>();
@@ -56,11 +54,9 @@ public class SaveMenuUI : MonoBehaviour
             loadedPreviews.Remove(image);
         }
 
-        string basePath =
-            Application.persistentDataPath + $"/saveslot{slot}";
+        string basePath = Application.persistentDataPath + $"/saveslot{slot}";
 
-        if (!File.Exists(basePath + ".json") ||
-            !File.Exists(basePath + ".png"))
+        if (!File.Exists(basePath + ".json") || !File.Exists(basePath + ".png"))
             return;
 
         Texture2D texture = null;
@@ -84,9 +80,7 @@ public class SaveMenuUI : MonoBehaviour
             if (texture != null)
                 Destroy(texture);
 
-            Debug.LogWarning(
-                $"Cannot read preview for slot {slot}: {exception.Message}",
-                this);
+            Debug.LogWarning($"Cannot read preview for slot {slot}: {exception.Message}", this);
         }
     }
 
@@ -132,9 +126,7 @@ public class SaveMenuUI : MonoBehaviour
         }
 
         // Ignore load requests if the file no longer exists.
-        if (!isSaveMode &&
-            !File.Exists(Application.persistentDataPath +
-                $"/saveslot{slot}.json"))
+        if (!isSaveMode && !File.Exists(Application.persistentDataPath + $"/saveslot{slot}.json"))
         {
             UpdateSlotLabels();
             return;
@@ -175,13 +167,9 @@ public class SaveMenuUI : MonoBehaviour
         {
             for (int i = 0; i < manualSlotLabels.Count; i++)
             {
-                bool exists = File.Exists(
-                    Application.persistentDataPath +
-                    $"/saveslot{i}.json");
+                bool exists = File.Exists(Application.persistentDataPath + $"/saveslot{i}.json");
 
-                if (manualDeleteButtons != null &&
-                    i < manualDeleteButtons.Count &&
-                    manualDeleteButtons[i] != null)
+                if (manualDeleteButtons != null && i < manualDeleteButtons.Count && manualDeleteButtons[i] != null)
                 {
                     manualDeleteButtons[i].SetActive(exists);
                 }
@@ -191,17 +179,14 @@ public class SaveMenuUI : MonoBehaviour
                     manualSlotLabels[i].text = GetSlotDescription(i, $"Slot {i + 1}");
                 }
 
-                if (manualSlotRows != null &&
-                    i < manualSlotRows.Count &&
-                    manualSlotRows[i] != null)
+                if (manualSlotRows != null && i < manualSlotRows.Count && manualSlotRows[i] != null)
                 {
                     manualSlotRows[i].SetActive(isSaveMode || exists);
                 }
             }
         }
 
-        bool autosaveExists = File.Exists(
-            Application.persistentDataPath + "/saveslot99.json");
+        bool autosaveExists = File.Exists(Application.persistentDataPath + "/saveslot99.json");
 
         if (autosaveLabel != null)
         {
@@ -230,47 +215,35 @@ public class SaveMenuUI : MonoBehaviour
 
     private string GetSlotDescription(int slot, string title)
     {
-        string path = Application.persistentDataPath +
-            $"/saveslot{slot}.json";
+        string path = Application.persistentDataPath + $"/saveslot{slot}.json";
 
         if (!File.Exists(path))
             return $"{title} - Empty";
 
         try
         {
-            SaveData data = JsonUtility.FromJson<SaveData>(
-                File.ReadAllText(path));
+            SaveData data = JsonUtility.FromJson<SaveData>(File.ReadAllText(path));
 
             if (data == null)
                 return $"{title} - Unreadable save";
 
-            string location =
-                !string.IsNullOrWhiteSpace(data.sceneDisplayName)
-                ? data.sceneDisplayName
-                : data.sceneName;
+            string location = !string.IsNullOrWhiteSpace(data.sceneDisplayName) ? data.sceneDisplayName : data.sceneName;
 
             System.DateTimeOffset savedTime;
 
-            if (!System.DateTimeOffset.TryParse(
-                    data.savedAtUtc,
-                    System.Globalization.CultureInfo.InvariantCulture,
-                    System.Globalization.DateTimeStyles.None,
-                    out savedTime))
+            if (!System.DateTimeOffset.TryParse(data.savedAtUtc, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out savedTime))
             {
                 // Older saves do not contain a timestamp.
-                savedTime = new System.DateTimeOffset(
-                    File.GetLastWriteTimeUtc(path));
+                savedTime = new System.DateTimeOffset(File.GetLastWriteTimeUtc(path));
             }
 
-            string date = savedTime.ToLocalTime().ToString(
-                "yyyy-MM-dd  HH:mm");
+            string date = savedTime.ToLocalTime().ToString("yyyy-MM-dd  HH:mm");
 
             return $"{title}\n{location}\n{date}";
         }
         catch (System.Exception exception)
         {
-            Debug.LogWarning(
-                $"Cannot read slot {slot}: {exception.Message}", this);
+            Debug.LogWarning($"Cannot read slot {slot}: {exception.Message}", this);
 
             return $"{title} - Unreadable save";
         }

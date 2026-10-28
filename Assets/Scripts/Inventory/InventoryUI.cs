@@ -78,9 +78,7 @@ public class InventoryUI : MonoBehaviour
 
         inventoryUI.SetActive(visible);
 
-        if (visible != wasVisible &&
-            itemDetailsUI != null &&
-            itemDetailsUI.panel != null)
+        if (visible != wasVisible && itemDetailsUI != null && itemDetailsUI.panel != null)
         {
             itemDetailsUI.panel.SetActive(false);
         }
@@ -98,9 +96,7 @@ public class InventoryUI : MonoBehaviour
         if (inventory == null)
             inventory = Inventory.instance;
 
-        if (inventory == null ||
-            itemsParent == null ||
-            slotPrefab == null)
+        if (inventory == null || itemsParent == null || slotPrefab == null)
             return;
 
         foreach (Transform child in itemsParent)
@@ -111,16 +107,13 @@ public class InventoryUI : MonoBehaviour
             if (item == null)
                 continue;
 
-            GameObject newSlot =
-                Instantiate(slotPrefab, itemsParent);
+            GameObject newSlot = Instantiate(slotPrefab, itemsParent);
 
-            InventorySlot slot =
-                newSlot.GetComponent<InventorySlot>();
+            InventorySlot slot = newSlot.GetComponent<InventorySlot>();
 
             if (slot == null)
             {
-                Debug.LogError(
-                    "Slot prefab needs an InventorySlot component.");
+                Debug.LogError("Slot prefab needs an InventorySlot component.");
 
                 Destroy(newSlot);
                 continue;

@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
 public class Item : ScriptableObject
 {
-    public string id;  // Unique identifier for the item
+    public string id;
     public string itemName;
     [TextArea]
     public string description;

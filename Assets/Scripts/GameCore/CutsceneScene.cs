@@ -7,11 +7,9 @@ public class CutsceneScene : MonoBehaviour
 {
     public static bool IsActive { get; private set; }
 
-    private readonly Dictionary<Graphic, bool> hiddenGraphics =
-        new Dictionary<Graphic, bool>();
+    private readonly Dictionary<Graphic, bool> hiddenGraphics = new Dictionary<Graphic, bool>();
 
-    [RuntimeInitializeOnLoadMethod(
-        RuntimeInitializeLoadType.SubsystemRegistration)]
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     private static void ResetState()
     {
         IsActive = false;
@@ -34,17 +32,12 @@ public class CutsceneScene : MonoBehaviour
         {
             // Index 0 is your persistent gameplay Canvas.
             // Ignore objects belonging to this cutscene itself.
-            if (persistent.objectIndex != 0 ||
-                persistent.gameObject.scene == gameObject.scene)
+            if (persistent.objectIndex != 0 || persistent.gameObject.scene == gameObject.scene)
                 continue;
 
-            foreach (Graphic graphic in
-                persistent.GetComponentsInChildren<Graphic>(true))
+            foreach (Graphic graphic in persistent.GetComponentsInChildren<Graphic>(true))
             {
-                bool isFadePanel =
-                    graphic.CompareTag("FadePanel") ||
-                    (SceneFader.instance != null &&
-                     graphic == SceneFader.instance.fadePanel);
+                bool isFadePanel = graphic.CompareTag("FadePanel") || (SceneFader.instance != null && graphic == SceneFader.instance.fadePanel);
 
                 if (isFadePanel)
                     continue;
@@ -65,8 +58,7 @@ public class CutsceneScene : MonoBehaviour
         previousFadePanel = fader.fadePanel;
 
         // Make the old gameplay fade panel transparent.
-        if (previousFadePanel != null &&
-            previousFadePanel != cutsceneFadePanel)
+        if (previousFadePanel != null && previousFadePanel != cutsceneFadePanel)
         {
             Color color = previousFadePanel.color;
             color.a = 0f;

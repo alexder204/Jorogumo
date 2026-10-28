@@ -10,7 +10,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
 
     private Item currentItem;
 
-    public ItemDetailsUI itemDetailsUI; // Reference to the details UI script
+    public ItemDetailsUI itemDetailsUI;
 
     public void AddItem(Item newItem)
     {

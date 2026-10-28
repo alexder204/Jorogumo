@@ -14,15 +14,15 @@ public class MainMenu : MonoBehaviour
     public GameObject areYouSure;
     public GameObject loadPanel;
 
-    [Header("Save Slot Labels (0–9)")]
-    public List<TextMeshProUGUI> slotLabels;   // assign 10 labels in inspector
+    [Header("Save Slot Labels")]
+    public List<TextMeshProUGUI> slotLabels;
     public TextMeshProUGUI autosaveLabel;
 
     [SerializeField] private string newLevel;
 
     private bool isConfirmingQuit = false;
 
-    private const int ManualSlotCount = 10;    // slots 0..9
+    private const int ManualSlotCount = 10;
 
     private void Start()
     {
@@ -30,14 +30,9 @@ public class MainMenu : MonoBehaviour
         if (areYouSure != null) areYouSure.SetActive(false);
         if (settingsMenu != null) settingsMenu.SetActive(false);
 
-        // Safety check: do we actually have 10 labels?
         if (slotLabels == null || slotLabels.Count != ManualSlotCount)
         {
-            Debug.LogWarning(
-                $"MainMenu: Expected {ManualSlotCount} slot labels, " +
-                $"but found {(slotLabels == null ? 0 : slotLabels.Count)}. " +
-                $"Slots and labels may be out of sync."
-            );
+            Debug.LogWarning($"MainMenu: Expected {ManualSlotCount} slot labels, " + $"but found {(slotLabels == null ? 0 : slotLabels.Count)}. " + $"Slots and labels may be out of sync.");
         }
 
         UpdateSaveSlotLabels();

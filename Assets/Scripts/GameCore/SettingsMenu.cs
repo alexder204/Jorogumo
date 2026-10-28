@@ -68,12 +68,9 @@ public class SettingsMenu : MonoBehaviour
             return;
 
         // Existing preferences contain decibel values.
-        float savedDb = Mathf.Clamp(
-            PlayerPrefs.GetFloat(parameter, 0f), -80f, 0f);
+        float savedDb = Mathf.Clamp(PlayerPrefs.GetFloat(parameter, 0f), -80f, 0f);
 
-        float value = savedDb <= -80f
-            ? 0f
-            : Mathf.Pow(10f, savedDb / 20f);
+        float value = savedDb <= -80f ? 0f : Mathf.Pow(10f, savedDb / 20f);
 
         // Prevent existing Inspector callbacks during setup.
         slider.SetValueWithoutNotify(0f);
@@ -90,14 +87,11 @@ public class SettingsMenu : MonoBehaviour
 
         float value = Mathf.Clamp01(slider.value);
 
-        float decibels = value <= 0f
-            ? -80f
-            : Mathf.Clamp(20f * Mathf.Log10(value), -80f, 0f);
+        float decibels = value <= 0f ? -80f : Mathf.Clamp(20f * Mathf.Log10(value), -80f, 0f);
 
         if (!mainMixer.SetFloat(parameter, decibels))
         {
-            Debug.LogWarning(
-                $"Check exposed mixer parameter: {parameter}", this);
+            Debug.LogWarning($"Check exposed mixer parameter: {parameter}", this);
             return;
         }
 

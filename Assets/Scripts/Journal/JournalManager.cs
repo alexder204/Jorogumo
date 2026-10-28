@@ -35,8 +35,7 @@ public class JournalManager : MonoBehaviour
 {
     public static JournalManager instance;
 
-    public static bool IsJournalOpen =>
-        GameUIController.isJournalOpen;
+    public static bool IsJournalOpen => GameUIController.isJournalOpen;
 
     [Header("Journal Panel")]
     public GameObject journalUI;
@@ -72,8 +71,7 @@ public class JournalManager : MonoBehaviour
     private bool paperDefaultsCached;
 
     // Store a separate fallback for every text field before applying note fonts.
-    private readonly Dictionary<TMP_Text, TMP_FontAsset> defaultFonts =
-        new Dictionary<TMP_Text, TMP_FontAsset>();
+    private readonly Dictionary<TMP_Text, TMP_FontAsset> defaultFonts = new Dictionary<TMP_Text, TMP_FontAsset>();
 
     private void CacheFont(TMP_Text text)
     {
@@ -97,9 +95,7 @@ public class JournalManager : MonoBehaviour
             return;
 
         CacheFont(text);
-        text.font = note != null && note.writingFont != null
-            ? note.writingFont
-            : defaultFonts[text];
+        text.font = note != null && note.writingFont != null ? note.writingFont : defaultFonts[text];
     }
 
     public bool HasNotes => collectedNotes.Count > 0;
@@ -119,16 +115,11 @@ public class JournalManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!journalUnlockHintPending || !HasNotes ||
-            isReadingPickedUpNote ||
-            Time.frameCount == journalUnlockQueuedFrame ||
-            GameUIController.IsGameplayBlocked ||
-            UIManager.instance == null)
+        if (!journalUnlockHintPending || !HasNotes || isReadingPickedUpNote || Time.frameCount == journalUnlockQueuedFrame || GameUIController.IsGameplayBlocked || UIManager.instance == null)
             return;
 
         journalUnlockHintPending = false;
-        UIManager.instance.ShowMessage(
-            "You can now open the journal using J.");
+        UIManager.instance.ShowMessage("You can now open the journal using J.");
     }
 
     private int currentPageIndex;
@@ -136,13 +127,9 @@ public class JournalManager : MonoBehaviour
     private bool isReadingPickedUpNote;
     private Dialogue pendingReaction;
 
-    private readonly List<JournalNote> collectedNotes =
-        new List<JournalNote>();
+    private readonly List<JournalNote> collectedNotes = new List<JournalNote>();
 
-    public bool CanDisplayPickedUpNote =>
-        noteReadingUI != null &&
-        readingTitleText != null &&
-        readingContentText != null;
+    public bool CanDisplayPickedUpNote => noteReadingUI != null && readingTitleText != null && readingContentText != null;
 
     private void Awake()
     {
@@ -163,45 +150,26 @@ public class JournalManager : MonoBehaviour
         if (paperDefaultsCached)
             return;
 
-        defaultLeftPaper =
-            leftPaperImage != null ? leftPaperImage.sprite : null;
-
-        defaultRightPaper =
-            rightPaperImage != null ? rightPaperImage.sprite : null;
-
-        defaultReadingPaper =
-            readingPaperImage != null ? readingPaperImage.sprite : null;
-
+        defaultLeftPaper = leftPaperImage != null ? leftPaperImage.sprite : null;
+        defaultRightPaper = rightPaperImage != null ? rightPaperImage.sprite : null;
+        defaultReadingPaper = readingPaperImage != null ? readingPaperImage.sprite : null;
         paperDefaultsCached = true;
     }
 
-    private void ApplyPaper(
-        Image paperImage, JournalNote note, Sprite fallback)
+    private void ApplyPaper(Image paperImage, JournalNote note, Sprite fallback)
     {
         if (paperImage == null)
             return;
 
-        paperImage.sprite =
-            note != null && note.paperSprite != null
-            ? note.paperSprite
-            : fallback;
+        paperImage.sprite = note != null && note.paperSprite != null ? note.paperSprite : fallback;
     }
 
     private void Update()
     {
-        if (!isReadingPickedUpNote ||
-            GameUIController.CurrentScreen !=
-                GameUIController.MenuScreen.NoteReading ||
-            Time.frameCount == readingOpenedFrame ||
-            TopDownMovement.isFading ||
-            TopDownMovement.isSceneLoading)
+        if (!isReadingPickedUpNote || GameUIController.CurrentScreen != GameUIController.MenuScreen.NoteReading || Time.frameCount == readingOpenedFrame || TopDownMovement.isFading || TopDownMovement.isSceneLoading)
             return;
 
-        // Escape is handled by GameUIController.
-        // Ignore simultaneous menu shortcuts here.
-        if (Input.GetKeyDown(KeyCode.Escape) ||
-            Input.GetKeyDown(KeyCode.I) ||
-            Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.J))
             return;
 
         if (Input.GetButtonDown("Interact"))
@@ -261,15 +229,9 @@ public class JournalManager : MonoBehaviour
     public bool TryReadPickedUpNote(
         JournalNote note, Dialogue reaction)
     {
-        if (note == null ||
-            !CanDisplayPickedUpNote ||
-            GameUIController.Instance == null ||
-            isReadingPickedUpNote)
+        if (note == null || !CanDisplayPickedUpNote || GameUIController.Instance == null || isReadingPickedUpNote)
         {
-            Debug.LogWarning(
-                "Cannot open note: check the reading panel, " +
-                "text fields, and GameUIController.", this);
-
+            Debug.LogWarning("Cannot open note: check the reading panel, " + "text fields, and GameUIController.", this);
             return false;
         }
 
@@ -308,12 +270,7 @@ public class JournalManager : MonoBehaviour
 
     public void ClosePickedUpNote()
     {
-        if (!isReadingPickedUpNote ||
-            GameUIController.CurrentScreen !=
-                GameUIController.MenuScreen.NoteReading ||
-            GameUIController.Instance == null ||
-            TopDownMovement.isFading ||
-            TopDownMovement.isSceneLoading)
+        if (!isReadingPickedUpNote || GameUIController.CurrentScreen != GameUIController.MenuScreen.NoteReading || GameUIController.Instance == null || TopDownMovement.isFading || TopDownMovement.isSceneLoading)
             return;
 
         // Closing the menu clears pendingReaction, so capture it first.
@@ -345,9 +302,7 @@ public class JournalManager : MonoBehaviour
 
     public void ClearNotes()
     {
-        if (GameUIController.CurrentScreen ==
-                GameUIController.MenuScreen.NoteReading &&
-            GameUIController.Instance != null)
+        if (GameUIController.CurrentScreen == GameUIController.MenuScreen.NoteReading && GameUIController.Instance != null)
         {
             GameUIController.Instance.CloseMenus();
         }
@@ -389,12 +344,8 @@ public class JournalManager : MonoBehaviour
         // Index 0: blank / note 1. Index Count: last note / blank.
         currentPageIndex = Mathf.Clamp(currentPageIndex, 0, collectedNotes.Count);
 
-        JournalNote left = currentPageIndex > 0
-            ? collectedNotes[currentPageIndex - 1]
-            : null;
-        JournalNote right = currentPageIndex < collectedNotes.Count
-            ? collectedNotes[currentPageIndex]
-            : null;
+        JournalNote left = currentPageIndex > 0 ? collectedNotes[currentPageIndex - 1] : null;
+        JournalNote right = currentPageIndex < collectedNotes.Count ? collectedNotes[currentPageIndex] : null;
 
         SetPage(leftNoteContainer, leftNoteTitleText, leftNoteContentText, left);
         SetPage(rightNoteContainer, noteTitleText, noteContentText, right);

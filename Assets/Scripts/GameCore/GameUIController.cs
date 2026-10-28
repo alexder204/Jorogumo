@@ -49,19 +49,16 @@ public class GameUIController : MonoBehaviour
     private static MenuScreen currentScreen = MenuScreen.None;
     private static int blockedInputFrame = -1;
 
-    private readonly List<AudioSource> pausedSources =
-        new List<AudioSource>();
+    private readonly List<AudioSource> pausedSources = new List<AudioSource>();
 
     private float previousTimeScale = 1f;
 
     public static MenuScreen CurrentScreen => currentScreen;
 
     // Retain these names because other scripts already use them.
-    public static bool isJournalOpen =>
-        currentScreen == MenuScreen.Journal;
+    public static bool isJournalOpen => currentScreen == MenuScreen.Journal;
 
-    public static bool isInventoryOpen =>
-        currentScreen == MenuScreen.Inventory;
+    public static bool isInventoryOpen => currentScreen == MenuScreen.Inventory;
 
     public static bool isGamePaused
     {
@@ -81,30 +78,14 @@ public class GameUIController : MonoBehaviour
         }
     }
 
-    public static bool IsGameplayBlocked =>
-        isGamePaused ||
-        TopDownMovement.isInDialogue ||
-        TopDownMovement.isFading ||
-        TopDownMovement.isSceneLoading ||
-        blockedInputFrame == Time.frameCount ||
-        MenuKeyPressed;
+    public static bool IsGameplayBlocked => isGamePaused || TopDownMovement.isInDialogue || TopDownMovement.isFading || TopDownMovement.isSceneLoading || blockedInputFrame == Time.frameCount || MenuKeyPressed;
 
     // Prevents world input before this controller's Update runs.
-    private static bool MenuKeyPressed =>
-        Input.GetKeyDown(KeyCode.I) ||
-        Input.GetKeyDown(KeyCode.Escape) ||
-        (Input.GetKeyDown(KeyCode.J) &&
-        Instance != null &&
-        Instance.journalManager != null &&
-        Instance.journalManager.HasNotes);
+    private static bool MenuKeyPressed => Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Escape) || (Input.GetKeyDown(KeyCode.J) && Instance != null && Instance.journalManager != null && Instance.journalManager.HasNotes);
 
-    private static bool CanOpenMenu =>
-        !TopDownMovement.isInDialogue &&
-        !TopDownMovement.isFading &&
-        !TopDownMovement.isSceneLoading;
+    private static bool CanOpenMenu => !TopDownMovement.isInDialogue && !TopDownMovement.isFading && !TopDownMovement.isSceneLoading;
 
-    [RuntimeInitializeOnLoadMethod(
-        RuntimeInitializeLoadType.SubsystemRegistration)]
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     private static void ResetStaticState()
     {
         Instance = null;
@@ -130,7 +111,7 @@ public class GameUIController : MonoBehaviour
     {
         if (CutsceneScene.IsActive)
             return;
-            
+
         // Priority prevents two shortcuts opening screens together.
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -218,8 +199,7 @@ public class GameUIController : MonoBehaviour
             return;
 
         // Guard the opening path, including keyboard and UI button access.
-        if (screen == MenuScreen.Journal &&
-            (journalManager == null || !journalManager.HasNotes))
+        if (screen == MenuScreen.Journal && (journalManager == null || !journalManager.HasNotes))
             return;
 
         if (!HasPanel(screen))
@@ -245,16 +225,13 @@ public class GameUIController : MonoBehaviour
                 return pauseMenu != null;
 
             case MenuScreen.Inventory:
-                return inventoryUI != null &&
-                    inventoryUI.inventoryUI != null;
+                return inventoryUI != null && inventoryUI.inventoryUI != null;
 
             case MenuScreen.Journal:
-                return journalManager != null &&
-                    journalManager.journalUI != null;
+                return journalManager != null && journalManager.journalUI != null;
 
             case MenuScreen.NoteReading:
-                return journalManager != null &&
-                    journalManager.CanDisplayPickedUpNote;
+                return journalManager != null && journalManager.CanDisplayPickedUpNote;
 
             default:
                 return false;
@@ -266,8 +243,7 @@ public class GameUIController : MonoBehaviour
         if (currentScreen == MenuScreen.None)
             return;
 
-        bool wasReadingNote =
-            currentScreen == MenuScreen.NoteReading;
+        bool wasReadingNote = currentScreen == MenuScreen.NoteReading;
 
         currentScreen = MenuScreen.None;
         BlockGameplayForThisFrame();
@@ -284,8 +260,7 @@ public class GameUIController : MonoBehaviour
 
     public void OpenSettings()
     {
-        if (currentScreen != MenuScreen.Pause ||
-            settingsMenu == null)
+        if (currentScreen != MenuScreen.Pause || settingsMenu == null)
             return;
 
         currentScreen = MenuScreen.Settings;
@@ -303,8 +278,7 @@ public class GameUIController : MonoBehaviour
 
     public void OnQuitButtonClicked()
     {
-        if (currentScreen != MenuScreen.Pause ||
-            areYouSure == null)
+        if (currentScreen != MenuScreen.Pause || areYouSure == null)
             return;
 
         currentScreen = MenuScreen.QuitConfirmation;
@@ -337,45 +311,33 @@ public class GameUIController : MonoBehaviour
         // Leave pause visible behind the quit confirmation.
         if (pauseMenu != null)
         {
-            pauseMenu.SetActive(
-                currentScreen == MenuScreen.Pause ||
-                currentScreen == MenuScreen.QuitConfirmation);
+            pauseMenu.SetActive(currentScreen == MenuScreen.Pause || currentScreen == MenuScreen.QuitConfirmation);
 
-            Button[] buttons =
-                pauseMenu.GetComponentsInChildren<Button>(true);
+            Button[] buttons = pauseMenu.GetComponentsInChildren<Button>(true);
 
             foreach (Button button in buttons)
             {
                 // Do not disable the confirmation's own buttons.
-                if (areYouSure != null &&
-                    button.transform.IsChildOf(areYouSure.transform))
+                if (areYouSure != null && button.transform.IsChildOf(areYouSure.transform))
                     continue;
 
-                button.interactable =
-                    currentScreen == MenuScreen.Pause;
+                button.interactable = currentScreen == MenuScreen.Pause;
             }
         }
 
         if (settingsMenu != null)
-            settingsMenu.SetActive(
-                currentScreen == MenuScreen.Settings);
+            settingsMenu.SetActive(currentScreen == MenuScreen.Settings);
 
         if (areYouSure != null)
-            areYouSure.SetActive(
-                currentScreen == MenuScreen.QuitConfirmation);
+            areYouSure.SetActive(currentScreen == MenuScreen.QuitConfirmation);
 
         if (inventoryUI != null)
-            inventoryUI.SetVisible(
-                currentScreen == MenuScreen.Inventory);
-
-        if (journalManager != null)
-            journalManager.SetVisible(
-                currentScreen == MenuScreen.Journal);
+            inventoryUI.SetVisible(currentScreen == MenuScreen.Inventory);
 
         if (journalManager != null)
         {
-            journalManager.SetNoteReadingVisible(
-                currentScreen == MenuScreen.NoteReading);
+            journalManager.SetVisible(currentScreen == MenuScreen.Journal);
+            journalManager.SetNoteReadingVisible(currentScreen == MenuScreen.NoteReading);
         }
     }
 
@@ -383,15 +345,11 @@ public class GameUIController : MonoBehaviour
     {
         pausedSources.Clear();
 
-        AudioSource[] sources =
-            Object.FindObjectsByType<AudioSource>();
+        AudioSource[] sources = Object.FindObjectsByType<AudioSource>();
 
         foreach (AudioSource source in sources)
         {
-            if (source != null &&
-                source.isActiveAndEnabled &&
-                source.isPlaying &&
-                !source.ignoreListenerPause)
+            if (source != null && source.isActiveAndEnabled && source.isPlaying && !source.ignoreListenerPause)
             {
                 source.Pause();
                 pausedSources.Add(source);

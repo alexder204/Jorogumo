@@ -26,7 +26,6 @@ public class SceneFader : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
-        // keep black immediately
         if (fadePanel != null)
         {
             var c = fadePanel.color;
@@ -42,7 +41,6 @@ public class SceneFader : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Try to find the FadePanel in the newly loaded scene (if our reference is null)
         if (fadePanel == null)
         {
             var go = GameObject.FindWithTag("FadePanel");
@@ -50,7 +48,6 @@ public class SceneFader : MonoBehaviour
             {
                 fadePanel = go.GetComponent<Image>();
                 Debug.Log("[SceneFader] Found FadePanel in new scene.");
-                // make sure it starts fully opaque
                 var c = fadePanel.color;
                 c.a = 1f;
                 fadePanel.color = c;

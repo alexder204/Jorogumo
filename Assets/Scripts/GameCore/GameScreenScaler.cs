@@ -20,11 +20,7 @@ public class GameScreenScaler : MonoBehaviour
         // Black bars are siblings of GameArea.
         for (int i = 0; i < bars.Length; i++)
         {
-            GameObject bar = new GameObject(
-                "ScreenBar" + i,
-                typeof(RectTransform),
-                typeof(CanvasRenderer),
-                typeof(Image));
+            GameObject bar = new GameObject("ScreenBar" + i, typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
 
             bar.transform.SetParent(transform, false);
 
@@ -69,23 +65,14 @@ public class GameScreenScaler : MonoBehaviour
         gameArea.anchoredPosition = Vector2.zero;
         gameArea.sizeDelta = new Vector2(DesignWidth, DesignHeight);
 
-        float scale = Mathf.Min(
-            canvasRect.rect.width / DesignWidth,
-            canvasRect.rect.height / DesignHeight);
+        float scale = Mathf.Min(canvasRect.rect.width / DesignWidth, canvasRect.rect.height / DesignHeight);
 
         gameArea.localScale = new Vector3(scale, scale, 1f);
 
-        SetBar(bars[0], Vector2.zero,
-            new Vector2(viewport.xMin, 1f));
-
-        SetBar(bars[1], new Vector2(viewport.xMax, 0f),
-            Vector2.one);
-
-        SetBar(bars[2], new Vector2(viewport.xMin, 0f),
-            new Vector2(viewport.xMax, viewport.yMin));
-
-        SetBar(bars[3], new Vector2(viewport.xMin, viewport.yMax),
-            new Vector2(viewport.xMax, 1f));
+        SetBar(bars[0], Vector2.zero, new Vector2(viewport.xMin, 1f));
+        SetBar(bars[1], new Vector2(viewport.xMax, 0f), Vector2.one);
+        SetBar(bars[2], new Vector2(viewport.xMin, 0f), new Vector2(viewport.xMax, viewport.yMin));
+        SetBar(bars[3], new Vector2(viewport.xMin, viewport.yMax), new Vector2(viewport.xMax, 1f));
     }
 
     private void SetBar(Image bar, Vector2 min, Vector2 max)

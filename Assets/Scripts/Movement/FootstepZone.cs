@@ -24,14 +24,10 @@ public class FootstepZone : MonoBehaviour
 
         foreach (SurfaceAudio surface in surfaces)
         {
-            if (surface == null ||
-                surface.surfaceName != surfaceName ||
-                surface.footstepClips == null ||
-                surface.footstepClips.Length == 0)
+            if (surface == null || surface.surfaceName != surfaceName || surface.footstepClips == null || surface.footstepClips.Length == 0)
                 continue;
 
-            return surface.footstepClips[
-                Random.Range(0, surface.footstepClips.Length)];
+            return surface.footstepClips[Random.Range(0, surface.footstepClips.Length)];
         }
 
         return null;
@@ -41,8 +37,7 @@ public class FootstepZone : MonoBehaviour
     {
         Gizmos.color = Color.green;
 
-        foreach (Collider2D area in
-            GetComponentsInChildren<Collider2D>())
+        foreach (Collider2D area in GetComponentsInChildren<Collider2D>())
         {
             // Only draw colliders belonging to this zone.
             if (area.GetComponentInParent<FootstepZone>() != this)

@@ -12,8 +12,7 @@ public class JournalArrow : MonoBehaviour,
     [SerializeField] private string activeState;
     [SerializeField] private string idleState;
     [SerializeField] private Color enabledColor = Color.white;
-    [SerializeField] private Color disabledColor =
-        new Color(1f, 1f, 1f, 0.35f);
+    [SerializeField] private Color disabledColor = new Color(1f, 1f, 1f, 0.35f);
 
     private Button button;
     private bool hovered;

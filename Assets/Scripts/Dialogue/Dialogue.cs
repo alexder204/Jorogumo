@@ -48,8 +48,7 @@ namespace PlayerDialogue
         }
 
         [Header("Start Behaviour")]
-        [SerializeField] private StartMode startMode =
-            StartMode.Interact;
+        [SerializeField] private StartMode startMode = StartMode.Interact;
 
         [Header("Dialogue Data")]
         [SerializeField] private string[] speaker;
@@ -83,8 +82,7 @@ namespace PlayerDialogue
         private DialogueID dialogueID;
         private UniqueID uniqueID;
 
-        private readonly HashSet<Collider2D> playerColliders =
-            new HashSet<Collider2D>();
+        private readonly HashSet<Collider2D> playerColliders = new HashSet<Collider2D>();
 
         private Coroutine typingRoutine;
         private int step;
@@ -95,10 +93,7 @@ namespace PlayerDialogue
 
         private bool PlayerInRange => playerColliders.Count > 0;
 
-        private bool IsCompleted =>
-            ui != null &&
-            dialogueID != null &&
-            ui.HasCompletedDialogue(dialogueID);
+        private bool IsCompleted => ui != null && dialogueID != null && ui.HasCompletedDialogue(dialogueID);
 
         private void Awake()
         {
@@ -147,9 +142,7 @@ namespace PlayerDialogue
             if (dialogueActive)
             {
                 // Dialogue must still receive its own input.
-                if (GameUIController.isGamePaused ||
-                    TopDownMovement.isFading ||
-                    TopDownMovement.isSceneLoading)
+                if (GameUIController.isGamePaused || TopDownMovement.isFading || TopDownMovement.isSceneLoading)
                     return;
 
                 if (Time.frameCount == startedFrame)
@@ -170,9 +163,7 @@ namespace PlayerDialogue
             if (startMode == StartMode.Manual)
                 return;
 
-            if (!PlayerInRange ||
-                IsCompleted ||
-                GameUIController.IsGameplayBlocked)
+            if (!PlayerInRange || IsCompleted || GameUIController.IsGameplayBlocked)
                 return;
 
             if (startMode == StartMode.TriggerEnter)
@@ -201,11 +192,7 @@ namespace PlayerDialogue
                 // The note screen has just closed. Its frame input block
                 // must remain active for world interactions, but the
                 // reaction can start immediately.
-                if (startMode != StartMode.Manual ||
-                    GameUIController.isGamePaused ||
-                    TopDownMovement.isInDialogue ||
-                    TopDownMovement.isFading ||
-                    TopDownMovement.isSceneLoading)
+                if (startMode != StartMode.Manual || GameUIController.isGamePaused || TopDownMovement.isInDialogue || TopDownMovement.isFading || TopDownMovement.isSceneLoading)
                     return;
             }
             else if (GameUIController.IsGameplayBlocked)
@@ -221,8 +208,7 @@ namespace PlayerDialogue
 
             if (string.IsNullOrWhiteSpace(dialogueID.id))
             {
-                Debug.LogError(
-                    "Dialogue needs a non-empty DialogueID.", this);
+                Debug.LogError("Dialogue needs a non-empty DialogueID.", this);
 
                 pendingAutomaticStart = false;
                 return;
@@ -235,12 +221,9 @@ namespace PlayerDialogue
                 return;
             }
 
-            if (itemToPickUp != null &&
-                (uniqueID == null ||
-                 string.IsNullOrWhiteSpace(uniqueID.id)))
+            if (itemToPickUp != null && (uniqueID == null || string.IsNullOrWhiteSpace(uniqueID.id)))
             {
-                Debug.LogError(
-                    "An item reward needs a valid UniqueID.", this);
+                Debug.LogError("An item reward needs a valid UniqueID.", this);
 
                 pendingAutomaticStart = false;
                 return;
@@ -275,10 +258,7 @@ namespace PlayerDialogue
         {
             if (speakerText != null)
             {
-                speakerText.text =
-                    speaker != null && step < speaker.Length
-                    ? speaker[step]
-                    : "";
+                speakerText.text = speaker != null && step < speaker.Length ? speaker[step]: "";
             }
 
             UpdatePortrait(portraitImage1, portrait1);
@@ -297,10 +277,7 @@ namespace PlayerDialogue
             if (image == null)
                 return;
 
-            image.sprite =
-                portraits != null && step < portraits.Length
-                ? portraits[step]
-                : null;
+            image.sprite = portraits != null && step < portraits.Length ? portraits[step] : null;
 
             // Do not hide speaker UI because a sprite is missing.
             image.enabled = true;
@@ -361,8 +338,7 @@ namespace PlayerDialogue
         {
             if (itemToPickUp != null)
             {
-                if (Inventory.instance == null ||
-                    !Inventory.instance.Add(itemToPickUp))
+                if (Inventory.instance == null || !Inventory.instance.Add(itemToPickUp))
                 {
                     EndDialogue();
 
@@ -384,8 +360,7 @@ namespace PlayerDialogue
             {
                 if (UIManager.instance != null)
                 {
-                    UIManager.instance.ShowMessage(
-                        $"Picked up {itemToPickUp.itemName}!");
+                    UIManager.instance.ShowMessage($"Picked up {itemToPickUp.itemName}!");
                 }
 
                 gameObject.SetActive(false);

@@ -30,8 +30,7 @@ public class TopDownMovement : MonoBehaviour
     private bool lockedDirection = false;
 
     [Header("Interaction")]
-    [SerializeField] private BoxCollider2D interactCollider;  // the trigger collider on the player
-                                                              // Distance from player per direction
+    [SerializeField] private BoxCollider2D interactCollider;
     [SerializeField] private float distUp = 0.5f;
     [SerializeField] private float distDown = 0.5f;
     [SerializeField] private float distLeft = 0.5f;
@@ -155,9 +154,7 @@ public class TopDownMovement : MonoBehaviour
         if (footstepSource == null)
             return;
 
-        bool hasDefaultClips =
-            defaultFootstepClips != null &&
-            defaultFootstepClips.Length > 0;
+        bool hasDefaultClips = defaultFootstepClips != null && defaultFootstepClips.Length > 0;
 
         if (!hasDefaultClips && GetCurrentFootstepZone() == null)
         {
@@ -189,16 +186,11 @@ public class TopDownMovement : MonoBehaviour
 
         FootstepZone zone = GetCurrentFootstepZone();
 
-        AudioClip clip = zone != null
-            ? zone.GetRandomClip(zone.surfaceType)
-            : null;
+        AudioClip clip = zone != null ? zone.GetRandomClip(zone.surfaceType) : null;
 
-        if (clip == null &&
-            defaultFootstepClips != null &&
-            defaultFootstepClips.Length > 0)
+        if (clip == null && defaultFootstepClips != null && defaultFootstepClips.Length > 0)
         {
-            clip = defaultFootstepClips[
-                Random.Range(0, defaultFootstepClips.Length)];
+            clip = defaultFootstepClips[Random.Range(0, defaultFootstepClips.Length)];
         }
 
         if (clip != null)
@@ -207,9 +199,7 @@ public class TopDownMovement : MonoBehaviour
 
     FootstepZone GetCurrentFootstepZone()
     {
-        Vector2 point = footstepPoint != null
-            ? (Vector2)footstepPoint.position
-            : (Vector2)transform.position;
+        Vector2 point = footstepPoint != null ? (Vector2)footstepPoint.position : (Vector2)transform.position;
 
         Collider2D[] colliders = Physics2D.OverlapPointAll(point);
         FootstepZone selectedZone = null;
@@ -219,14 +209,12 @@ public class TopDownMovement : MonoBehaviour
             if (!area.isTrigger)
                 continue;
 
-            FootstepZone zone =
-                area.GetComponentInParent<FootstepZone>();
+            FootstepZone zone = area.GetComponentInParent<FootstepZone>();
 
             if (zone == null || !zone.isActiveAndEnabled)
                 continue;
 
-            if (selectedZone == null ||
-                zone.priority > selectedZone.priority)
+            if (selectedZone == null || zone.priority > selectedZone.priority)
             {
                 selectedZone = zone;
             }

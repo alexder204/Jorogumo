@@ -4,8 +4,36 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+/*
+- PURPOSE
+Plays a scene-local CG cutscene: changes images at selected dialogue lines,
+reveals dialogue one character at a time, and optionally loads the next scene.
+
+- SETUP
+This component sits on the cutscene GameManager, outside any UI object it hides. Make sure cutscene GameManager doesn't have DontDestroyOnLoad enabled.
+Assign the cutscene Canvas, dialogue box, speaker/body texts and Scenes parent.
+Put an Image component on each direct child of Scenes. Configure dialogueLines in playback order and cgEvents using zero-based dialogue indices.
+Set nextSceneName when loadSceneWhenFinished is enabled.
+
+- CONTROLS
+advanceKey (Space by default): finish typing, or advance a completed line.
+toggleDialogueKey (Left Shift by default): hide/show the dialogue box when allowed.
+CG-only lines still require the advance key after their image transition finishes.
+
+- INTEGRATION
+This script controls CG transitions, not the full-screen entrance fade.
+CutsceneScene and PlayerSpawnManager handle the separate cutscene-entry setup.
+TopDownMovement.isInDialogue blocks gameplay while this cutscene is active.
+
+- CURRENT BEHAVIOUR RETAINED
+Player lookup uses the active object named Player, not the Player tag.
+UnlockPlayer restores fixed speeds of 6 and 14. It does not remember prior values.
+Typing and CG fades use scaled time. Dialogue data and text references must be valid.
+*/
+
 public class SceneCGDialogueManager : MonoBehaviour
 {
+    // One Inspector-editable dialogue entry. Array order determines playback order.
     [System.Serializable]
     public class DialogueLine
     {
@@ -21,6 +49,7 @@ public class SceneCGDialogueManager : MonoBehaviour
         public bool allowDialogueToggle = true;
     }
 
+    // Associates an existing UI image (Scene CGs) with the line that first introduces it. Make dialogueIndex = dialogueLine it appears at.
     [System.Serializable]
     public class CGEvent
     {
@@ -31,10 +60,11 @@ public class SceneCGDialogueManager : MonoBehaviour
         public Image sceneImage;
     }
 
+    // Scene-local UI references, assigned in the Inspector.
     [Header("UI References")]
-    [SerializeField] private GameObject cutsceneCanvas;
+    [SerializeField] private GameObject cutsceneCanvas; // The canvas where everything sits. DontDestroyOnLoad is not enabled.
 
-    [Tooltip("The dialogue box UI object that contains SpeakerText and DialogueText.")]
+    [Tooltip("The dialogue box UI object (Could be a GameOject where everything sits) that contains SpeakerText and DialogueText.")]
     [SerializeField] private GameObject dialogueCanvas;
 
     [Tooltip("Empty parent object that contains Scene1, Scene2, Scene3, etc.")]
@@ -43,19 +73,22 @@ public class SceneCGDialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI speakerText;
     [SerializeField] private TextMeshProUGUI dialogueText;
 
+    // The line array is required. All event indices refer to positions in this array.
     [Header("Dialogue Data")]
     [SerializeField] private DialogueLine[] dialogueLines;
 
     [Header("CG Events")]
     [SerializeField] private CGEvent[] cgEvents;
 
+    // Disabling automatic loading ends playback in the current scene.
     [Header("Scene Flow")]
     [SerializeField] private bool loadSceneWhenFinished = true;
     [SerializeField] private string nextSceneName;
 
+    // Both values are durations in seconds.
     [Header("Settings")]
-    [SerializeField] private float typingSpeed = 0.02f;
-    [SerializeField] private float cgFadeSpeed = 1.2f;
+    [SerializeField] private float typingSpeed = 0.02f; // delay per character
+    [SerializeField] private float cgFadeSpeed = 1.2f; // full CG fade duration.
 
     [Header("Input")]
     [SerializeField] private KeyCode advanceKey = KeyCode.Space;
@@ -75,6 +108,8 @@ public class SceneCGDialogueManager : MonoBehaviour
     private bool endingCutscene;
     private bool dialogueCanvasVisible = true;
 
+    // Initialize the existing scene UI and start playback automatically.
+    // The manager must remain active while its dialogue box is hidden.
     private void Start()
     {
         FindPlayerMovement();
@@ -83,31 +118,20 @@ public class SceneCGDialogueManager : MonoBehaviour
             cutsceneCanvas.SetActive(true);
 
         SetDialogueCanvasVisible(false, true);
-
         PrepareSceneImages();
-
         StartCoroutine(StartCutscene());
     }
 
+    // Handle cutscene controls only while playback is active and menus are closed. 
+    // A press during typing reveals the full line, then next advances.
     private void Update()
     {
-        if (!cutsceneActive || endingCutscene)
+        if (!cutsceneActive || endingCutscene || GameUIController.isGamePaused || JournalManager.IsJournalOpen)
             return;
-
-        if (GameUIController.isGamePaused || JournalManager.IsJournalOpen)
-            return;
-
-        DialogueLine currentLine = GetCurrentLine();
 
         if (Input.GetKeyDown(toggleDialogueKey))
         {
-            if (currentLine != null &&
-                currentLine.showDialogueBox &&
-                currentLine.allowDialogueToggle)
-            {
-                ToggleDialogueCanvas();
-            }
-
+            ToggleDialogueCanvas();
             return;
         }
 
@@ -124,30 +148,30 @@ public class SceneCGDialogueManager : MonoBehaviour
         }
     }
 
+    // Safely return the current data entry for input and visibility checks.
+    // Other playback methods assume the configured dialogue array is valid.
     private DialogueLine GetCurrentLine()
     {
-        if (dialogueLines == null)
-            return null;
-
-        if (step < 0 || step >= dialogueLines.Length)
+        if (dialogueLines == null || step < 0 || step >= dialogueLines.Length)
             return null;
 
         return dialogueLines[step];
     }
 
+    // Toggle only lines that both display a box and allow the player to hide it.
+    // This changes UI visibility. It does not pause typing or CG playback.
     private void ToggleDialogueCanvas()
     {
         DialogueLine currentLine = GetCurrentLine();
 
-        if (currentLine == null)
-            return;
-
-        if (!currentLine.showDialogueBox || !currentLine.allowDialogueToggle)
+        if (currentLine == null || !currentLine.showDialogueBox || !currentLine.allowDialogueToggle)
             return;
 
         SetDialogueCanvasVisible(!dialogueCanvasVisible, true);
     }
 
+    // Show/hide the dialogue object, optionally recording its toggle state.
+    // updateState = false hides a CG-only line without changing the remembered state.
     private void SetDialogueCanvasVisible(bool visible, bool updateState = true)
     {
         if (updateState)
@@ -157,6 +181,8 @@ public class SceneCGDialogueManager : MonoBehaviour
             dialogueCanvas.SetActive(visible);
     }
 
+    // Find an optional movement component on the active object named Player.
+    // A cutscene placeholder without TopDownMovement is allowed. The global lock still applies.
     private void FindPlayerMovement()
     {
         GameObject player = GameObject.Find("Player");
@@ -165,6 +191,8 @@ public class SceneCGDialogueManager : MonoBehaviour
             playerMovement = player.GetComponent<TopDownMovement>();
     }
 
+    // Reset each direct child Image to transparent before playing any CG events.
+    // Objects stay active so later transitions can reveal them by changing alpha.
     private void PrepareSceneImages()
     {
         if (scenesParent == null)
@@ -178,13 +206,12 @@ public class SceneCGDialogueManager : MonoBehaviour
                 continue;
 
             image.gameObject.SetActive(true);
-
-            Color color = image.color;
-            color.a = 0f;
-            image.color = color;
+            SetImageAlpha(image, 0f);
         }
     }
 
+    // Reset playback flags, lock gameplay and begin the first dialogue entry.
+    // This coroutine schedules line playback and then completes immediately.
     private IEnumerator StartCutscene()
     {
         step = 0;
@@ -199,10 +226,11 @@ public class SceneCGDialogueManager : MonoBehaviour
             cutsceneCanvas.SetActive(true);
 
         displayRoutine = StartCoroutine(DisplayCurrentDialogue());
-
         yield break;
     }
 
+    // Prepare one entry: clear old text, set box visibility, apply its CG event, then type.
+    // Advancing is disabled until the CG fade and any typing have completed.
     private IEnumerator DisplayCurrentDialogue()
     {
         if (step >= dialogueLines.Length)
@@ -216,13 +244,8 @@ public class SceneCGDialogueManager : MonoBehaviour
         canContinueText = false;
         isTyping = false;
 
-        if (speakerText != null)
-            speakerText.text = "";
+        ClearDialogueText();
 
-        if (dialogueText != null)
-            dialogueText.text = "";
-
-        // Handle dialogue box visibility immediately, BEFORE the CG fade.
         if (!line.showDialogueBox)
         {
             SetDialogueCanvasVisible(false, false);
@@ -244,15 +267,13 @@ public class SceneCGDialogueManager : MonoBehaviour
             yield break;
         }
 
-        if (speakerText != null)
-            speakerText.text = line.speaker;
-
-        if (typingRoutine != null)
-            StopCoroutine(typingRoutine);
+        SetText(speakerText, line.speaker);
+        StopRoutine(ref typingRoutine);
 
         typingRoutine = StartCoroutine(Typing(line.dialogueWords));
     }
 
+    // Find the first event matching this dialogue index. If two are the same event back-to-back, it ignores it.
     private bool ApplyCGEvent(int dialogueIndex)
     {
         if (cgEvents == null)
@@ -269,31 +290,28 @@ public class SceneCGDialogueManager : MonoBehaviour
         return false;
     }
 
+    // Start a new CG fade only when a different valid Image is requested.
+    // The return value tells line playback whether it needs to wait for a transition.
     private bool ChangeSceneImage(Image nextImage)
     {
-        if (nextImage == null)
+        if (nextImage == null || currentSceneImage == nextImage)
             return false;
 
-        if (currentSceneImage == nextImage)
-            return false;
-
-        if (cgFadeRoutine != null)
-            StopCoroutine(cgFadeRoutine);
+        StopRoutine(ref cgFadeRoutine);
 
         cgFadeRoutine = StartCoroutine(FadeSceneImages(currentSceneImage, nextImage));
         return true;
     }
 
+    // Fade the first CG in. For later CGs, reveal the new image beneath the old one.
+    // This is an image transition within the cutscene, independent of SceneFader.
     private IEnumerator FadeSceneImages(Image oldImage, Image newImage)
     {
         newImage.gameObject.SetActive(true);
 
-        // First CG: fade it in from transparent.
         if (oldImage == null)
         {
-            Color firstColor = newImage.color;
-            firstColor.a = 0f;
-            newImage.color = firstColor;
+            SetImageAlpha(newImage, 0f);
 
             float firstTimer = 0f;
 
@@ -302,31 +320,22 @@ public class SceneCGDialogueManager : MonoBehaviour
                 firstTimer += Time.deltaTime;
                 float t = Mathf.Clamp01(firstTimer / cgFadeSpeed);
 
-                Color c = newImage.color;
-                c.a = Mathf.Lerp(0f, 1f, t);
-                newImage.color = c;
+                SetImageAlpha(newImage, Mathf.Lerp(0f, 1f, t));
 
                 yield return null;
             }
 
-            firstColor = newImage.color;
-            firstColor.a = 1f;
-            newImage.color = firstColor;
+            SetImageAlpha(newImage, 1f);
 
             currentSceneImage = newImage;
             cgFadeRoutine = null;
             yield break;
         }
 
-        // Put the new image behind the old image.
         newImage.transform.SetSiblingIndex(oldImage.transform.GetSiblingIndex());
 
-        // New image stays fully visible behind the old image.
-        Color newColor = newImage.color;
-        newColor.a = 1f;
-        newImage.color = newColor;
+        SetImageAlpha(newImage, 1f);
 
-        // Fade only the old image out.
         float timer = 0f;
         float oldStartAlpha = oldImage.color.a;
 
@@ -335,32 +344,26 @@ public class SceneCGDialogueManager : MonoBehaviour
             timer += Time.deltaTime;
             float t = Mathf.Clamp01(timer / cgFadeSpeed);
 
-            Color oldColor = oldImage.color;
-            oldColor.a = Mathf.Lerp(oldStartAlpha, 0f, t);
-            oldImage.color = oldColor;
+            SetImageAlpha(oldImage, Mathf.Lerp(oldStartAlpha, 0f, t));
 
             yield return null;
         }
 
-        Color finalOldColor = oldImage.color;
-        finalOldColor.a = 0f;
-        oldImage.color = finalOldColor;
-
-        Color finalNewColor = newImage.color;
-        finalNewColor.a = 1f;
-        newImage.color = finalNewColor;
+        SetImageAlpha(oldImage, 0f);
+        SetImageAlpha(newImage, 1f);
 
         currentSceneImage = newImage;
         cgFadeRoutine = null;
     }
 
+    // Append dialogue characters with a delay while adding rich-text tags without delays.
+    // The angle-bracket tracking preserves TMP markup such as <b> while text appears.
     private IEnumerator Typing(string line)
     {
         isTyping = true;
         canContinueText = false;
 
-        if (dialogueText != null)
-            dialogueText.text = "";
+        SetText(dialogueText, "");
 
         bool addingRichTextTag = false;
 
@@ -389,27 +392,24 @@ public class SceneCGDialogueManager : MonoBehaviour
         canContinueText = true;
     }
 
+    // Cancel the reveal coroutine and show the complete current dialogue immediately.
+    // This completes the current line only. It does not advance to the next one.
     private void FinishTyping()
     {
         DialogueLine currentLine = GetCurrentLine();
 
-        if (currentLine == null)
+        if (currentLine == null || !currentLine.showDialogueBox)
             return;
 
-        if (!currentLine.showDialogueBox)
-            return;
+        StopRoutine(ref typingRoutine);
+        SetText(dialogueText, currentLine.dialogueWords);
 
-        if (typingRoutine != null)
-            StopCoroutine(typingRoutine);
-
-        if (dialogueText != null)
-            dialogueText.text = currentLine.dialogueWords;
-
-        typingRoutine = null;
         isTyping = false;
         canContinueText = true;
     }
 
+    // Move to the next data entry, or end playback after the last entry.
+    // Cancel the previous display routine before preparing another line.
     private void AdvanceDialogue()
     {
         step++;
@@ -420,12 +420,13 @@ public class SceneCGDialogueManager : MonoBehaviour
             return;
         }
 
-        if (displayRoutine != null)
-            StopCoroutine(displayRoutine);
+        StopRoutine(ref displayRoutine);
 
         displayRoutine = StartCoroutine(DisplayCurrentDialogue());
     }
 
+    // Stop ongoing work, hide the dialogue box and release the movement lock.
+    // When configured, ask the persistent fader to load the next scene, otherwise load directly.
     private IEnumerator EndCutscene()
     {
         if (endingCutscene)
@@ -436,23 +437,9 @@ public class SceneCGDialogueManager : MonoBehaviour
         canContinueText = false;
         isTyping = false;
 
-        if (displayRoutine != null)
-        {
-            StopCoroutine(displayRoutine);
-            displayRoutine = null;
-        }
-
-        if (typingRoutine != null)
-        {
-            StopCoroutine(typingRoutine);
-            typingRoutine = null;
-        }
-
-        if (cgFadeRoutine != null)
-        {
-            StopCoroutine(cgFadeRoutine);
-            cgFadeRoutine = null;
-        }
+        StopRoutine(ref displayRoutine);
+        StopRoutine(ref typingRoutine);
+        StopRoutine(ref cgFadeRoutine);
 
         SetDialogueCanvasVisible(false, true);
 
@@ -473,6 +460,7 @@ public class SceneCGDialogueManager : MonoBehaviour
         yield break;
     }
 
+    // This locks the player in place by putting move and sprint speed to 0.
     private void LockPlayer()
     {
         TopDownMovement.isInDialogue = true;
@@ -484,6 +472,7 @@ public class SceneCGDialogueManager : MonoBehaviour
         }
     }
 
+    // This unlocks the player by putting move and sprint speed back up to default values (6 and 14).
     private void UnlockPlayer()
     {
         TopDownMovement.isInDialogue = false;
@@ -493,5 +482,40 @@ public class SceneCGDialogueManager : MonoBehaviour
             playerMovement.moveSpeed = 6f;
             playerMovement.sprintSpeed = 14f;
         }
+    }
+
+    // Stop the coroutine and clear its original reference.
+    private void StopRoutine(ref Coroutine routine)
+    {
+        if (routine == null)
+            return;
+
+        StopCoroutine(routine);
+        routine = null;
+    }
+
+    // Assign text only when the referenced text component exists.
+    private static void SetText(TMP_Text target, string value)
+    {
+        if (target != null)
+            target.text = value;
+    }
+
+    // Clear both fields before displaying another dialogue line.
+    private void ClearDialogueText()
+    {
+        SetText(speakerText, "");
+        SetText(dialogueText, "");
+    }
+
+    // Change transparency while preserving the image's RGB color.
+    private static void SetImageAlpha(Image image, float alpha)
+    {
+        if (image == null)
+            return;
+
+        Color color = image.color;
+        color.a = alpha;
+        image.color = color;
     }
 }

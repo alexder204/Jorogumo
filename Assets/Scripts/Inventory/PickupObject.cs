@@ -33,8 +33,7 @@ public class PickupItem : MonoBehaviour
     }
 
     [Header("Pickup Type")]
-    [SerializeField] private PickupType pickupType =
-        PickupType.InventoryItem;
+    [SerializeField] private PickupType pickupType = PickupType.InventoryItem;
 
     [Header("Inventory Item")]
     [SerializeField] private Item item;
@@ -98,8 +97,7 @@ public class PickupItem : MonoBehaviour
     {
         if (item == null || Inventory.instance == null)
         {
-            Debug.LogWarning(
-                "Pickup needs an item and an Inventory instance.", this);
+            Debug.LogWarning("Pickup needs an item and an Inventory instance.", this);
             return;
         }
 
@@ -121,8 +119,7 @@ public class PickupItem : MonoBehaviour
     {
         if (note == null || JournalManager.instance == null)
         {
-            Debug.LogWarning(
-                "Pickup needs a note and a JournalManager.", this);
+            Debug.LogWarning("Pickup needs a note and a JournalManager.", this);
             return;
         }
 
@@ -130,8 +127,7 @@ public class PickupItem : MonoBehaviour
 
         if (readImmediately)
         {
-            if (!JournalManager.instance.TryReadPickedUpNote(
-                    note, reactionAfterReading))
+            if (!JournalManager.instance.TryReadPickedUpNote(note, reactionAfterReading))
                 return;
         }
         else
@@ -139,8 +135,7 @@ public class PickupItem : MonoBehaviour
             JournalManager.instance.AddNote(note);
 
             if (!wasLocked && UIManager.instance != null)
-                UIManager.instance.ShowMessage(
-                    $"Note added: {note.noteTitle}");
+                UIManager.instance.ShowMessage($"Note added: {note.noteTitle}");
         }
 
         if (wasLocked && JournalManager.instance.HasNotes)
